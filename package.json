@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "nodemon": "^3.1.4",
     "pdfmake": "^0.2.12"
+  },
+  "scripts": {
+    "SWRu": "npx nodemon .\\SavegedWarcraftRu\\server.js",
+    "start": "npx nodemon server.js"
   }
 }
