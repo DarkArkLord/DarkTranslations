@@ -1,3 +1,5 @@
+const { WordCaseForm, WordCountForm, StatesTranslations, SkillsTranslations, HindrancesTranslations, EdgesTranslations, CreaturesTranslations } = require('../common/savageWorldsTranslations')
+
 function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
 }
@@ -9,6 +11,36 @@ const fonts = {
         italics: getFontPath('Roboto-Italic.ttf'),
         bolditalics: getFontPath('Roboto-MediumItalic.ttf')
     },
+};
+
+const docDefinition = {
+    info: {
+        title: 'Savaged Warcraft Ru - v0.2',
+        author: 'Dark Ark Lord',
+        // subject: 'subject of document',
+        // keywords: 'keywords for document',
+    },
+    pageSize: 'A4',
+    pageOrientation: 'portrait',
+    defaultStyle: {
+        font: 'Roboto',
+        fontSize: 14,
+    },
+    styles: {
+        header1: { fontSize: 26, bold: true, alignment: 'center' },
+        header2: { fontSize: 22, bold: true, },
+        header3: { fontSize: 18, bold: true, },
+    },
+    footer: function (currentPage, pageCount, pageSize) {
+        return [
+            { text: `стр. ${currentPage}`, bold: true, italic: true, alignment: 'right', margin: [0, 0, 10, 0] },
+            { text: 'Savaged Warcraft Ru', bold: true, italic: true, alignment: 'left', margin: [10, 0, 0, 0] },
+        ]
+    },
+    content: [
+        getTitlePageContent(),
+        getCharacterCreationContent(),
+    ],
 };
 
 function getImagePath(path) {
@@ -66,7 +98,7 @@ function getTitlePageContent() {
                 '. Я крайне рекомендую последний в качестве справочного материала. Однако, когда компьютерная игра и материал S&S разошлись, я отдал предпочтение первому. Если бы я хотел играть в D&D Warcraft, я бы вообще не стал Savaged, не так ли?',
             ],
             alignment: 'center',
-            margin: [0, 0, 0, 15],
+            margin: [0, 0, 0, 10],
         },
         {
             text: [
@@ -96,56 +128,165 @@ function getTitlePageContent() {
     ];
 }
 
-const docDefinition = {
-    info: {
-        title: 'Savaged Warcraft Ru - v0.2',
-        author: 'Dark Ark Lord',
-        // subject: 'subject of document',
-        // keywords: 'keywords for document',
-    },
-    pageSize: 'A4',
-    pageOrientation: 'portrait',
-    defaultStyle: {
-        font: 'Roboto',
-        fontSize: 14,
-    },
-    content: [
-        ...getTitlePageContent(),
-        {
-            text: 'This is a bold text',
-            bold: true
-        },
-        {
-            text: 'This is an italic text',
-            italics: true
-        },
-        {
-            text: [
-                'This is a ',
+function getCharacterCreationContent() {
+    function getRacesContent() {
+        function getAllianceRacesContent() {
+            function getHumansRaceContent() {
+                return [
+                    {
+                        text: [
+                            { text: 'Люди (Humans)', bold: true },
+                            ': см. книгу правил ',
+                            { text: '(см. SW1 с. 21, SW2 с. 32)', bold: true, italic: true },
+                        ]
+                    }
+                ];
+            }
+
+            function getDwarvesRaceContent() {
+                return [
+                    {
+                        text: [
+                            { text: 'Дворфы (Dwarves)', bold: true },
+                            ': Дворфы — раса, склонная к технологиям, искусная в обращении с машинами и оружием. Однако в последнее время они отвернулись от своих изобретений и начали изучать наследие, которое им недавно открылось — детей Титанов.',
+                        ]
+                    },
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    'Как ',
+                                    { text: 'Гном', bold: true },
+                                    ' в книге правил ',
+                                    { text: '(см. SW1 с. 20, SW2 с. 32)', bold: true, italic: true },
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
+            function getHighElvesRaceContent() {
+                return [
+                    {
+                        text: [
+                            { text: 'Высшие эльфы (Elves, High)', bold: true },
+                            `: Высшие эльфы Кель'Таласа — долгоживущая раса, чья цивилизация построена на тайной магии.`,
+                        ]
+                    },
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    EdgesTranslations.getTranslationBuilder('Agile')
+                                        .configure(true, false, false, true, false, false).create(),
+                                    ': Эльфы грациозны и ловки. Они начинают с ',
+                                    StatesTranslations.getTranslationBuilder('Agility', WordCaseForm.INSTRUMENTAL)
+                                        .configure(true, false, false, true, false, false).create(),
+                                    ' ',
+                                    { text: 'd6', bold: true },
+                                    ' вместо ',
+                                    { text: 'd4', bold: true },
+                                    '.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    EdgesTranslations.getTranslationBuilder('Черта')
+                                        .configure(true, true, false, true, false, false).create(),
+                                    ': Описание',
+                                ]
+                            },
+                            {
+                                text: [
+                                    EdgesTranslations.getTranslationBuilder('Черта')
+                                        .configure(true, true, false, true, false, false).create(),
+                                    ': Описание',
+                                ]
+                            },
+                            {
+                                text: [
+                                    EdgesTranslations.getTranslationBuilder('Черта')
+                                        .configure(true, true, false, true, false, false).create(),
+                                    ': Описание',
+                                ]
+                            },
+                            {
+                                text: [
+                                    EdgesTranslations.getTranslationBuilder('Черта')
+                                        .configure(true, true, false, true, false, false).create(),
+                                    ': Описание',
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
+            return [
+                { text: 'Альянс (The Alliance)', style: 'header2', },
                 {
-                    text: 'LINK',
-                    bold: true,
-                }
-            ],
-            link: 'https://example.com',
-            color: "blue"
-        },
+                    ul: [
+                        getHumansRaceContent(),
+                        getDwarvesRaceContent(),
+                        getHighElvesRaceContent(),
+                    ]
+                },
+            ];
+        }
+
+        function getHordeRacesContent() {
+            return [
+                { text: 'Орда (The Horde)', style: 'header2', },
+                {
+                    ul: [
+                        'Test 1',
+                        'Test 2',
+                    ]
+                },
+            ];
+        }
+
+        function getSentinelsRacesContent() {
+            return [
+                { text: 'Стражи (The Sentinels)', style: 'header2', },
+                {
+                    ul: [
+                        'Test 1',
+                        'Test 2',
+                    ]
+                },
+            ];
+        }
+
+        function getNeutralRacesContent() {
+            return [
+                { text: 'Нейтральные расы (Neutral Races)', style: 'header2', },
+                {
+                    ul: [
+                        'Test 1',
+                        'Test 2',
+                    ]
+                },
+            ];
+        }
+
+        return [
+            getAllianceRacesContent(),
+            getHordeRacesContent(),
+            getSentinelsRacesContent(),
+            getNeutralRacesContent(),
+        ];
+    }
+
+    return [
         {
-            text: 'Тест',
+            text: 'Расы (Races)',
+            style: 'header1',
         },
-        {
-            text: 'Тест',
-            bold: true
-        },
-        {
-            text: 'Тест',
-            italics: true
-        },
-        'Тест',
-        'Тест',
-        'Тест',
-    ],
-};
+        ...getRacesContent(),
+    ];
+}
 
 module.exports = {
     fonts,
