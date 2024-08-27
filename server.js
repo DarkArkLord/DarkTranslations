@@ -10,15 +10,8 @@ http.createServer((req, res) => {
         pdfDoc.pipe(res);
         pdfDoc.end();
 
-        return
+        return;
     }
-
-    // const { fonts, docDefinition } = require('./SavegedWarcraftRu/content');
-
-    // const printer = new PdfPrinter(fonts);
-    // var pdfDoc = printer.createPdfKitDocument(docDefinition);
-    // pdfDoc.pipe(res);
-    // pdfDoc.end();
 
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end(`No content: ${req.url}`);
