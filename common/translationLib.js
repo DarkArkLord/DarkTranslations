@@ -108,7 +108,7 @@ class TranslationsBuilder {
         }
 
         if (hasError) {
-            parts.push(`(${this.translationData?.caseForm}, ${this.translationData?.countForm})`)
+            parts.push(`(${this.translationData.original}: ${this.translationData?.caseForm}, ${this.translationData?.countForm})`)
         }
 
         const result = { text: parts.join(' ') };
