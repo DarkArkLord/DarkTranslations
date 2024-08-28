@@ -1,4 +1,4 @@
-const { WordCaseForm, WordCountForm, States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Edges, EdgesTranslations, Creatures, CreaturesTranslations } = require('../common/savageWorldsTranslations')
+const { WordCaseForm, WordCountForm, States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Edges, EdgesTranslations, Creatures, CreaturesTranslations, Logger } = require('../common/savageWorldsTranslations')
 
 function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
@@ -86,6 +86,8 @@ const docDefinition = {
     content: [
         getTitlePageContent(),
         getCharacterCreationContent(),
+        // LOGGER
+        Logger.toPdf(),
     ],
 };
 
