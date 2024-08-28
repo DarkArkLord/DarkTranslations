@@ -91,6 +91,12 @@ const Skills = Object.freeze({
     return res;
 })();
 
+const Hindrances = Object.freeze({
+    Cautious: 'Cautious',
+    MagicAddiction: 'Magic Addiction',
+    Vengeful: 'Vengeful',
+});
+
 (function HindrancesTranslations() {
     const res = Translations.createDict(Dictionaries.Hindrances);
 
@@ -98,6 +104,12 @@ const Skills = Object.freeze({
 
     return res;
 })();
+
+const Edges = Object.freeze({
+    Agile: 'Agile',
+    LowLightVision: 'Low-Light Vision',
+    MagicAptitude: 'Magic Aptitude',
+});
 
 (function EdgesTranslations() {
     const res = Translations.createDict(Dictionaries.Edges);
@@ -107,6 +119,10 @@ const Skills = Object.freeze({
 
     return res;
 })();
+
+const Creatures = Object.freeze({
+    aaa: 'aaa',
+});
 
 (function CreaturesTranslations() {
     const res = Translations.createDict(Dictionaries.Creatures);
@@ -123,5 +139,8 @@ module.exports = {
     Dictionaries,
     States,
     Skills,
+    Hindrances,
+    Edges,
+    Creatures,
     swTranslations: Translations.createPDFManager(),
 };
