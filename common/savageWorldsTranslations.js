@@ -75,6 +75,7 @@ const States = Object.freeze({
 
 const Skills = Object.freeze({
     Spellcasting: 'Spellcasting',
+    Repair: 'Repair',
 });
 
 (function SkillsTranslations() {
@@ -93,7 +94,6 @@ const Skills = Object.freeze({
 
 const Hindrances = Object.freeze({
     Cautious: 'Cautious',
-    MagicAddiction: 'Magic Addiction',
     Vengeful: 'Vengeful',
 });
 
@@ -106,16 +106,13 @@ const Hindrances = Object.freeze({
 })();
 
 const Edges = Object.freeze({
-    Agile: 'Agile',
     LowLightVision: 'Low-Light Vision',
-    MagicAptitude: 'Magic Aptitude',
 });
 
 (function EdgesTranslations() {
     const res = DictionariesManager.create(Dictionaries.Edges);
 
-    res.create('Agile')
-        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Ловкий');
+    //
 
     return res;
 })();

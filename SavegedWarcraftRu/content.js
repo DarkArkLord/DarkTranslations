@@ -161,22 +161,14 @@ function getCharacterCreationContent() {
         function getAllianceRacesContent() {
             function getHumansRaceContent() {
                 return [
-                    {
-                        text: [
-                            { text: 'Люди (Humans)', bold: true },
-                            quickTextFormat(': см. книгу правил ***(см. SW1 с. 21, SW2 с. 32)***'),
-                        ]
-                    }
+                    quickTextFormat('**Люди (Humans)**: см. книгу правил ***(см. SW1 с. 21, SW2 с. 32)***'),
                 ];
             }
 
             function getDwarvesRaceContent() {
                 return [
                     {
-                        text: [
-                            { text: 'Дворфы (Dwarves)', bold: true },
-                            ': Дворфы — раса, склонная к технологиям, искусная в обращении с машинами и оружием. Однако в последнее время они отвернулись от своих изобретений и начали изучать наследие, которое им недавно открылось — детей Титанов.',
-                        ]
+                        text: quickTextFormat('**Дворфы (Dwarves)**: Дворфы — раса, склонная к технологиям, искусная в обращении с машинами и оружием. Однако в последнее время они отвернулись от своих изобретений и начали изучать наследие, которое им недавно открылось — детей Титанов.'),
                     },
                     {
                         ul: [
@@ -188,17 +180,12 @@ function getCharacterCreationContent() {
 
             function getHighElvesRaceContent() {
                 return [
-                    {
-                        text: [
-                            { text: 'Высшие эльфы (Elves, High)', bold: true },
-                            `: Высшие эльфы Кель'Таласа — долгоживущая раса, чья цивилизация построена на тайной магии.`,
-                        ]
-                    },
+                    quickTextFormat(`**Высшие эльфы (Elves, High)**: Высшие эльфы Кель'Таласа — долгоживущая раса, чья цивилизация построена на тайной магии.`),
                     {
                         ul: [
                             {
                                 text: [
-                                    EdgesTranslations.pdf(Edges.Agile).showOriginal().format(true, false).create(),
+                                    { text: 'Ловкий (Agile)', bold: true },
                                     ': Эльфы грациозны и ловки. Они начинают с ',
                                     StatesTranslations.pdf(States.Agility, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
                                     quickTextFormat(' **d6** вместо **d4**.'),
@@ -220,7 +207,7 @@ function getCharacterCreationContent() {
                             },
                             {
                                 text: [
-                                    HindrancesTranslations.pdf(Hindrances.MagicAddiction).showOriginal().format(true, false).create(),
+                                    { text: 'Зависимость от магии (Magic Addiction)', bold: true },
                                     quickTextFormat(': Насыщенная магией культура высших эльфов предрасполагает их к зависимости от тайной магии. Они получают штраф **-2** к броску '),
                                     StatesTranslations.pdf(States.Spirit, WordCaseForm.GENITIVE).format(true, false).create(),
                                     quickTextFormat(', чтобы противостоять зависимости от тайной магии. Они также получают штраф **-2** к '),
@@ -230,7 +217,7 @@ function getCharacterCreationContent() {
                             },
                             {
                                 text: [
-                                    EdgesTranslations.pdf(Edges.MagicAptitude).showOriginal().format(true, false).create(),
+                                    { text: 'Способность к магии (Magic Aptitude)', bold: true },
                                     ': Культура высших эльфов пропитана магией. Они начинают с навыком ',
                                     SkillsTranslations.pdf(Skills.Spellcasting).format(true, false).create(),
                                     quickTextFormat(' **d4**  и для улучшения '),
@@ -260,6 +247,42 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getGnomesRaceContent() {
+                return [
+                    quickTextFormat(`**Гномы (Gnomes)**: Этот крошечный народ самый инновационный в мире Азерота (за исключением, возможно, гоблинов). Они немного застенчивы, но очень увлечены своей техникой.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Гениальный (Brilliant)', bold: true },
+                                    ': Гномы начинают со ',
+                                    StatesTranslations.pdf(States.Smarts, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    quickTextFormat(' **d6** вместо **d4**, что отражает их острый ум.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Маленький (Small)', bold: true },
+                                    quickTextFormat(': Гномы в среднем ниже 4 футов ростом. Из-за небольшого размера их **Стойкость** уменьшена на 1. Их короткие ноги дают им **Шаг** **4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Мастер на все руки (Tinker)', bold: true },
+                                    ': Гномы от природы искусны в работе с техникой. Они начинают с ',
+                                    SkillsTranslations.pdf(Skills.Repair, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    quickTextFormat(' **d4** и для улучшения '),
+                                    SkillsTranslations.pdf(Skills.Repair, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    ' считают свою ',
+                                    StatesTranslations.pdf(States.Smarts, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    ' выше на один кубик.',
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
             return [
                 { text: 'Альянс (The Alliance)', style: 'header2', },
                 {
@@ -268,6 +291,7 @@ function getCharacterCreationContent() {
                         getDwarvesRaceContent(),
                         getHighElvesRaceContent(),
                         getBloodElvesRaceContent(),
+                        getGnomesRaceContent(),
                     ]
                 },
             ];
