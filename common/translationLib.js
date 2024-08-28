@@ -6,8 +6,8 @@ const WordCountForm = Object.freeze({
 const WordCaseForm = Object.freeze({
     NOMINATIVE: 'ИМЕНИТЕЛЬНЫЙ',
     GENITIVE: 'РОДИТЕЛЬНЫЙ',
-    ACCUSATIVE: 'ВИНИТЕЛЬНЫЙ',
     DATIVE: 'ДАТЕЛЬНЫЙ',
+    ACCUSATIVE: 'ВИНИТЕЛЬНЫЙ',
     INSTRUMENTAL: 'ТВОРИТЕЛЬНЫЙ',
     PREPOSITIONAL: 'ПРЕДЛОЖНЫЙ',
 });
