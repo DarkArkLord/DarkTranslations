@@ -49,7 +49,7 @@ class TranslationsBuilder {
     constructor(translationData) {
         this.translationData = translationData;
 
-        this.showTranslationFlag = false;
+        this.showTranslationFlag = true;
         this.showOriginalFlag = false;
         this.showPagesFlag = false;
 
@@ -72,8 +72,8 @@ class TranslationsBuilder {
         return this;
     }
 
-    showTranslation() {
-        this.showTranslationFlag = true;
+    hideTranslation() {
+        this.showTranslationFlag = false;
         return this;
     }
 
