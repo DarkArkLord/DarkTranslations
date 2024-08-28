@@ -4,6 +4,52 @@ function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
 }
 
+function getImagePath(path) {
+    return `${__dirname}/pic/${path}`;
+}
+
+function quickTextFormat(text, options = {}) {
+    // Splin input text by '*'
+    const temp = text.split('*').flatMap(p => [p, '*']).filter(p => p.length > 0);
+    temp.pop();
+
+    // Join some '*'
+    const tokenazed = [];
+    let tokens = 0;
+    for (const cur of temp) {
+        if (cur == '*') {
+            tokens++;
+        } else {
+            if (tokens > 0) {
+                tokenazed.push('*'.repeat(tokens));
+                tokens = 0;
+            }
+            tokenazed.push(cur);
+        }
+    }
+
+    // Map parts to text
+    const parts = [];
+    const flags = { italics: false, bold: false, bolditalics: false };
+    for (const cur of tokenazed) {
+        if (cur == '*') {
+            flags.italics = !flags.italics;
+        } else if (cur == '**') {
+            flags.bold = !flags.bold;
+        } else if (cur == '***') {
+            flags.bolditalics = !flags.bolditalics;
+        } else {
+            parts.push({
+                text: cur,
+                bold: flags.bolditalics || flags.bold,
+                italics: flags.bolditalics || flags.italics,
+            });
+        }
+    }
+
+    return { ...options, text: parts };
+}
+
 const fonts = {
     Roboto: {
         normal: getFontPath('Roboto-Regular.ttf'),
@@ -42,10 +88,6 @@ const docDefinition = {
         getCharacterCreationContent(),
     ],
 };
-
-function getImagePath(path) {
-    return `${__dirname}/pic/${path}`;
-}
 
 function getTitlePageContent() {
     return [
