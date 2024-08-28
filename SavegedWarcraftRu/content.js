@@ -1,4 +1,4 @@
-const { WordCaseForm, WordCountForm, Dictionaries, States, Skills, Hindrances, Edges, Creatures, swTranslations } = require('../common/savageWorldsTranslations')
+const { WordCaseForm, WordCountForm, States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Edges, EdgesTranslations, Creatures, CreaturesTranslations } = require('../common/savageWorldsTranslations')
 
 function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
@@ -196,45 +196,45 @@ function getCharacterCreationContent() {
                         ul: [
                             {
                                 text: [
-                                    swTranslations.translatePDF(Edges.Agile, Dictionaries.Edges).showOriginal().format(true, false).create(),
+                                    EdgesTranslations.pdf(Edges.Agile).showOriginal().format(true, false).create(),
                                     ': Эльфы грациозны и ловки. Они начинают с ',
-                                    swTranslations.translatePDF(States.Agility, Dictionaries.States, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    StatesTranslations.pdf(States.Agility, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
                                     quickTextFormat(' **d6** вместо **d4**.'),
                                 ]
                             },
                             {
                                 text: [
-                                    swTranslations.translatePDF(Hindrances.Cautious, Dictionaries.Hindrances).showOriginal().format(true, false).create(),
+                                    HindrancesTranslations.pdf(Hindrances.Cautious).showOriginal().format(true, false).create(),
                                     ': Их долгая жизнь и консервативная культура заставляют высших эльфов рассматривать вещи медленно и всесторонне. У них есть изъян ',
-                                    swTranslations.translatePDF(Hindrances.Cautious, Dictionaries.Hindrances).showOriginal().showPages(true).format(true, false).create(),
+                                    HindrancesTranslations.pdf(Hindrances.Cautious).showOriginal().showPages(true).format(true, false).create(),
                                     '.',
                                 ]
                             },
                             {
                                 text: [
-                                    swTranslations.translatePDF(Edges.LowLightVision, Dictionaries.Edges).showOriginal().format(true, false).create(),
+                                    EdgesTranslations.pdf(Edges.LowLightVision).showOriginal().format(true, false).create(),
                                     quickTextFormat(': Глаза персонажа усиливают (amplify) свет, словно кошачьи, и позволяют видеть в темноте. Он не получает штрафов к *проверкам атаки* в *темноте* и *сумраке*.'),
                                 ]
                             },
                             {
                                 text: [
-                                    swTranslations.translatePDF(Hindrances.MagicAddiction, Dictionaries.Hindrances).showOriginal().format(true, false).create(),
+                                    HindrancesTranslations.pdf(Hindrances.MagicAddiction).showOriginal().format(true, false).create(),
                                     quickTextFormat(': Насыщенная магией культура высших эльфов предрасполагает их к зависимости от тайной магии. Они получают штраф **-2** к броску '),
-                                    swTranslations.translatePDF(States.Spirit, Dictionaries.States, WordCaseForm.GENITIVE).format(true, false).create(),
+                                    StatesTranslations.pdf(States.Spirit, WordCaseForm.GENITIVE).format(true, false).create(),
                                     quickTextFormat(', чтобы противостоять зависимости от тайной магии. Они также получают штраф **-2** к '),
-                                    swTranslations.translatePDF(States.Charisma, Dictionaries.States, WordCaseForm.DATIVE).format(true, false).create(),
+                                    StatesTranslations.pdf(States.Charisma, WordCaseForm.DATIVE).format(true, false).create(),
                                     ', когда имеют дело с ночными эльфами и тауренами, которые могут чувствовать их связь с тайной магией и находят их отвратительными.'
                                 ]
                             },
                             {
                                 text: [
-                                    swTranslations.translatePDF(Edges.MagicAptitude, Dictionaries.Edges).showOriginal().format(true, false).create(),
+                                    EdgesTranslations.pdf(Edges.MagicAptitude).showOriginal().format(true, false).create(),
                                     ': Культура высших эльфов пропитана магией. Они начинают с навыком ',
-                                    swTranslations.translatePDF(Skills.Spellcasting, Dictionaries.Skills).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Spellcasting).format(true, false).create(),
                                     quickTextFormat(' **d4**  и для улучшения '),
-                                    swTranslations.translatePDF(Skills.Spellcasting, Dictionaries.Skills, WordCaseForm.GENITIVE).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Spellcasting, WordCaseForm.GENITIVE).format(true, false).create(),
                                     ' считают свою ',
-                                    swTranslations.translatePDF(States.Smarts, Dictionaries.States, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    SkillsTranslations.pdf(States.Smarts, WordCaseForm.ACCUSATIVE).format(true, false).create(),
                                     ' выше на один кубик.',
                                 ]
                             },
@@ -249,9 +249,9 @@ function getCharacterCreationContent() {
                         text: [
                             { text: 'Эльфы крови (Elves, Blood)', bold: true },
                             `: Эльфы крови, по сути, являются высшими эльфами и разделяют большинство черт своих более спокойных собратьев. Однако их поиски Мести поглотили их. Они получают изъян `,
-                            swTranslations.translatePDF(Hindrances.Vengeful, Dictionaries.Hindrances).showOriginal().format(true, false).create(),
+                            HindrancesTranslations.pdf(Hindrances.Vengeful).showOriginal().format(true, false).create(),
                             ` вместо `,
-                            swTranslations.translatePDF(Hindrances.Cautious, Dictionaries.Hindrances).showOriginal().format(true, false).create(),
+                            HindrancesTranslations.pdf(Hindrances.Cautious).showOriginal().format(true, false).create(),
                             '.'
                         ]
                     },

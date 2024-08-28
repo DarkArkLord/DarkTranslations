@@ -47,44 +47,6 @@ class TranslationUnit {
     }
 }
 
-class TranslationsDictionary {
-    #data;
-    constructor() {
-        this.#data = {};
-    }
-
-    createTU(text) {
-        if (this.#data[text]) {
-            throw new Error(`Уже существует набор переводов для "${text}"`);
-        }
-
-        return this.#data[text] = new TranslationUnit();
-    }
-
-    setTU(text, transUnit) {
-        if (this.#data[text]) {
-            throw new Error(`Уже существует набор переводов для "${text}"`);
-        }
-
-        return this.#data[text] = transUnit;
-    }
-
-    copyTU(from, to) {
-        if (!this.#data[from]) {
-            throw new Error(`Не существует набора переводов для "${from}"`);
-        }
-        if (this.#data[to]) {
-            throw new Error(`Уже существует набор переводов для "${to}"`);
-        }
-
-        return this.#data[text] = transUnit;
-    }
-
-    getTU(text) {
-        return this.#data[text];
-    }
-}
-
 class TranslationsPDFElementBuilder {
     #translationData;
     #showTranslationFlag;
@@ -186,74 +148,80 @@ class TranslationsPDFElementBuilder {
     }
 }
 
-class TranslationsPDFManager {
-    #dictionaryManager;
-    constructor(dictionaryManager) {
-        this.#dictionaryManager = dictionaryManager;
+class TranslationsDictionaryPDFManager {
+    #dictionary;
+    constructor(dictionary) {
+        this.#dictionary = dictionary;
     }
 
-    translate(text, dict, caseForm = WordCaseForm.NOMINATIVE, countForm = WordCountForm.SINGLE) {
-        const tu = this.#dictionaryManager?.getDict(dict)?.getTU(text);
-        return {
-            translation: tu?.getTranslation(caseForm, countForm),
-            original: text,
-            pages: tu?.pagesInfo,
-            dict,
-            caseForm,
-            countForm,
-        };
+    translate(text, caseForm = WordCaseForm.NOMINATIVE, countForm = WordCountForm.SINGLE) {
+        return this.#dictionary.translate(text, caseForm, countForm);
     }
 
-    translatePDF(text, dict, caseForm = WordCaseForm.NOMINATIVE, countForm = WordCountForm.SINGLE) {
-        const translationData = this.translate(text, dict, caseForm, countForm);
+    pdf(text, caseForm = WordCaseForm.NOMINATIVE, countForm = WordCountForm.SINGLE) {
+        const translationData = this.#dictionary.translate(text, caseForm, countForm);
         return new TranslationsPDFElementBuilder(translationData);
     }
 }
 
-class TranslationsDictionaryManager {
+class TranslationsDictionary {
+    #name;
     #data;
-    constructor() {
+    constructor(name) {
+        this.#name = name;
         this.#data = {};
     }
 
-    createDict(key) {
-        if (this.#data[key]) {
-            throw new Error(`Уже существует словарь "${key}"`);
+    create(text) {
+        if (this.#data[text]) {
+            throw new Error(`Уже существует набор переводов для "${text}"`);
         }
 
-        return this.#data[key] = new TranslationsDictionary();
+        return this.#data[text] = new TranslationUnit();
     }
 
-    setDict(key, transDict) {
-        if (this.#data[key]) {
-            throw new Error(`Уже существует словарь "${key}"`);
-        }
-
-        return this.#data[key] = transDict;
-    }
-
-    copyDict(from, to) {
-        if (!this.#data[from]) {
-            throw new Error(`Словарь "${from}" не существует`);
-        }
-        if (this.#data[to]) {
-            throw new Error(`Уже существует словарь "${to}"`);
+    set(text, transUnit) {
+        if (this.#data[text]) {
+            throw new Error(`Уже существует набор переводов для "${text}"`);
         }
 
         return this.#data[text] = transUnit;
     }
 
-    getDict(key) {
-        return this.#data[key];
+    copy(from, to) {
+        if (!this.#data[from]) {
+            throw new Error(`Не существует набора переводов для "${from}"`);
+        }
+        if (this.#data[to]) {
+            throw new Error(`Уже существует набор переводов для "${to}"`);
+        }
+
+        return this.#data[text] = transUnit;
+    }
+
+    get(text) {
+        return this.#data[text];
+    }
+
+    translate(text, caseForm = WordCaseForm.NOMINATIVE, countForm = WordCountForm.SINGLE) {
+        const tu = this.get(text);
+        return {
+            translation: tu?.getTranslation(caseForm, countForm),
+            original: text,
+            pages: tu?.pagesInfo,
+            dict: this.#name,
+            caseForm,
+            countForm,
+        };
     }
 
     createPDFManager() {
-        return new TranslationsPDFManager(this);
+        return new TranslationsDictionaryPDFManager(this);
     }
 }
 
 module.exports = {
     WordCountForm,
     WordCaseForm,
-    TranslationsDictionaryManager,
+    TranslationsDictionary,
 };

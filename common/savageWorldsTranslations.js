@@ -1,4 +1,4 @@
-const { WordCaseForm, WordCountForm, TranslationsDictionaryManager } = require('../common/translationLib');
+const { WordCaseForm, WordCountForm, TranslationsDictionary } = require('../common/translationLib');
 
 const Dictionaries = Object.freeze({
     States: 'States',
@@ -7,8 +7,6 @@ const Dictionaries = Object.freeze({
     Edges: 'Edges',
     Creatures: 'Creatures',
 });
-
-const Translations = new TranslationsDictionaryManager();
 
 const States = Object.freeze({
     Agility: 'Agility',
@@ -19,10 +17,10 @@ const States = Object.freeze({
     Charisma: 'Charisma',
 });
 
-(function StatesTranslations() {
-    const res = Translations.createDict(Dictionaries.States);
+const StatesTranslations = (function () {
+    const res = new TranslationsDictionary(Dictionaries.States);
 
-    res.createTU(States.Agility)
+    res.create(States.Agility)
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Ловкость')
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Ловкости')
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, 'Ловкости')
@@ -30,7 +28,7 @@ const States = Object.freeze({
         .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Ловкостью')
         .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, 'Ловкости');
 
-    res.createTU(States.Smarts)
+    res.create(States.Smarts)
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Смекалка')
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Смекалки')
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, 'Смекалке')
@@ -38,7 +36,7 @@ const States = Object.freeze({
         .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Смекалкой')
         .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, 'Смекалке');
 
-    res.createTU(States.Spirit)
+    res.create(States.Spirit)
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Характер')
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Характера')
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, 'Характеру')
@@ -46,7 +44,7 @@ const States = Object.freeze({
         .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Характером')
         .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, 'Характере');
 
-    res.createTU(States.Strength)
+    res.create(States.Strength)
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Сила')
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Силы')
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, 'Силе')
@@ -54,7 +52,7 @@ const States = Object.freeze({
         .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Силой')
         .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, 'Силе');
 
-    res.createTU(States.Vigor)
+    res.create(States.Vigor)
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Выносливость')
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Выносливости')
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, 'Выносливости')
@@ -62,7 +60,7 @@ const States = Object.freeze({
         .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Выносливостью')
         .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, 'Выносливости');
 
-    res.createTU(States.Charisma)
+    res.create(States.Charisma)
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Харизма')
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Харизмы')
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, 'Харизме')
@@ -77,10 +75,10 @@ const Skills = Object.freeze({
     Spellcasting: 'Spellcasting',
 });
 
-(function SkillsTranslations() {
-    const res = Translations.createDict(Dictionaries.Skills);
+const SkillsTranslations = (function () {
+    const res = new TranslationsDictionary(Dictionaries.Skills);
 
-    res.createTU(Skills.Spellcasting)
+    res.create(Skills.Spellcasting)
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Колдовство')
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Колдовства')
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, 'Колдовству')
@@ -97,8 +95,8 @@ const Hindrances = Object.freeze({
     Vengeful: 'Vengeful',
 });
 
-(function HindrancesTranslations() {
-    const res = Translations.createDict(Dictionaries.Hindrances);
+const HindrancesTranslations = (function () {
+    const res = new TranslationsDictionary(Dictionaries.Hindrances);
 
     //
 
@@ -111,10 +109,10 @@ const Edges = Object.freeze({
     MagicAptitude: 'Magic Aptitude',
 });
 
-(function EdgesTranslations() {
-    const res = Translations.createDict(Dictionaries.Edges);
+const EdgesTranslations = (function () {
+    const res = new TranslationsDictionary(Dictionaries.Edges);
 
-    res.createTU('Agile')
+    res.create('Agile')
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Ловкий');
 
     return res;
@@ -124,8 +122,8 @@ const Creatures = Object.freeze({
     aaa: 'aaa',
 });
 
-(function CreaturesTranslations() {
-    const res = Translations.createDict(Dictionaries.Creatures);
+const CreaturesTranslations = (function () {
+    const res = new TranslationsDictionary(Dictionaries.Creatures);
 
     //
 
@@ -136,11 +134,14 @@ const Creatures = Object.freeze({
 module.exports = {
     WordCaseForm,
     WordCountForm,
-    Dictionaries,
     States,
+    StatesTranslations: StatesTranslations.createPDFManager(),
     Skills,
+    SkillsTranslations: SkillsTranslations.createPDFManager(),
     Hindrances,
+    HindrancesTranslations: HindrancesTranslations.createPDFManager(),
     Edges,
+    EdgesTranslations: EdgesTranslations.createPDFManager(),
     Creatures,
-    swTranslations: Translations.createPDFManager(),
+    CreaturesTranslations: CreaturesTranslations.createPDFManager(),
 };
