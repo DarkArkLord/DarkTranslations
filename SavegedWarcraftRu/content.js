@@ -1,4 +1,4 @@
-const { WordCaseForm, WordCountForm, StatesTranslations, SkillsTranslations, HindrancesTranslations, EdgesTranslations, CreaturesTranslations } = require('../common/savageWorldsTranslations')
+const { WordCaseForm, WordCountForm, States, StatesTranslations, Skills, SkillsTranslations, HindrancesTranslations, EdgesTranslations, CreaturesTranslations } = require('../common/savageWorldsTranslations')
 
 function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
@@ -79,8 +79,8 @@ const docDefinition = {
     },
     footer: function (currentPage, pageCount, pageSize) {
         return [
-            { text: `стр. ${currentPage}`, bold: true, italic: true, alignment: 'right', margin: [0, 0, 10, 0] },
-            { text: 'Savaged Warcraft Ru', bold: true, italic: true, alignment: 'left', margin: [10, 0, 0, 0] },
+            { text: `стр. ${currentPage}`, bold: true, italics: true, alignment: 'right', margin: [0, 0, 10, 0] },
+            { text: 'Savaged Warcraft Ru', bold: true, italics: true, alignment: 'left', margin: [10, 0, 0, 0] },
         ]
     },
     content: [
@@ -131,27 +131,11 @@ function getTitlePageContent() {
             },
             margin: [0, 0, 0, 15],
         },
-        {
-            text: [
-                'В этом документе представлена конверсия сеттинга Warcraft под правила ',
-                { text: 'Savage Worlds', bold: true, },
-                '. Здесь представлено мало (либо вообще нет) информации о самом сеттинге, ибо он умело описан как Blizzard Entertainment в мануале Warcraft III, так и Sword and Sorcery Games в их ',
-                { text: 'Warcraft RPG', bold: true, },
-                '. Я крайне рекомендую последний в качестве справочного материала. Однако, когда компьютерная игра и материал S&S разошлись, я отдал предпочтение первому. Если бы я хотел играть в D&D Warcraft, я бы вообще не стал Savaged, не так ли?',
-            ],
-            alignment: 'center',
-            margin: [0, 0, 0, 10],
-        },
+        quickTextFormat('В этом документе представлена конверсия сеттинга Warcraft под правила **Savage Worlds**. Здесь представлено мало (либо вообще нет) информации о самом сеттинге, ибо он умело описан как Blizzard Entertainment в мануале Warcraft III, так и Sword and Sorcery Games в их **Warcraft RPG**. Я крайне рекомендую последний в качестве справочного материала. Однако, когда компьютерная игра и материал S&S разошлись, я отдал предпочтение первому. Если бы я хотел играть в D&D Warcraft, я бы вообще не стал Savaged, не так ли?', { alignment: 'center', margin: [0, 0, 0, 10], }),
         {
             text: [
                 { text: 'Примечание переводчика', decoration: 'underline', },
-                ': так как перевод сделан специально для тех, кому не комфортно пользоваться книгами на английском языке, страницы английской книги правил ',
-                { text: 'Savage Worlds', bold: true, },
-                ' в формате (see SW p. X) будут заменены на страницы переводов от Студии 101, в формате (см. SW1 с. A, SW2 с. B), где SW1 - это ',
-                { text: 'Savage Worlds: Дневник авантюриста', bold: true, },
-                ' 2011 года (ISBN 978-5-905471-04-9), а SW2 - ',
-                { text: 'Savage Worlds: Дневник авантюриста: Правила игры', bold: true, },
-                ' 2016 года (ISBN 978-5-905471-29-2).',
+                quickTextFormat(': так как перевод сделан специально для тех, кому не комфортно пользоваться книгами на английском языке, страницы английской книги правил **Savage Worlds** в формате *(see SW p. X)* будут заменены на страницы переводов от Студии 101, в формате *(см. SW1 с. A, SW2 с. B)*, где SW1 - это **Savage Worlds: Дневник авантюриста** 2011 года (ISBN 978-5-905471-04-9), а SW2 - **Savage Worlds: Дневник авантюриста: Правила игры** 2016 года (ISBN 978-5-905471-29-2).'),
             ],
             alignment: 'center',
             margin: [0, 0, 0, 15],
@@ -178,8 +162,7 @@ function getCharacterCreationContent() {
                     {
                         text: [
                             { text: 'Люди (Humans)', bold: true },
-                            ': см. книгу правил ',
-                            { text: '(см. SW1 с. 21, SW2 с. 32)', bold: true, italic: true },
+                            quickTextFormat(': см. книгу правил ***(см. SW1 с. 21, SW2 с. 32)***'),
                         ]
                     }
                 ];
@@ -195,14 +178,7 @@ function getCharacterCreationContent() {
                     },
                     {
                         ul: [
-                            {
-                                text: [
-                                    'Как ',
-                                    { text: 'Гном', bold: true },
-                                    ' в книге правил ',
-                                    { text: '(см. SW1 с. 20, SW2 с. 32)', bold: true, italic: true },
-                                ]
-                            },
+                            quickTextFormat('Как в **Гном** книге правил ***(см. SW1 с. 20, SW2 с. 32)***'),
                         ]
                     }
                 ];
@@ -220,48 +196,65 @@ function getCharacterCreationContent() {
                         ul: [
                             {
                                 text: [
-                                    EdgesTranslations.getTranslationBuilder('Agile')
-                                        .configure(true, false, false, true, false, false).create(),
+                                    EdgesTranslations.getTranslationBuilder('Agile').showOriginal().format(true, false).create(),
                                     ': Эльфы грациозны и ловки. Они начинают с ',
-                                    StatesTranslations.getTranslationBuilder('Agility', WordCaseForm.INSTRUMENTAL)
-                                        .configure(true, false, false, true, false, false).create(),
-                                    ' ',
-                                    { text: 'd6', bold: true },
-                                    ' вместо ',
-                                    { text: 'd4', bold: true },
+                                    StatesTranslations.getTranslationBuilder(States.Agility, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    quickTextFormat(' **d6** вместо **d4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    EdgesTranslations.getTranslationBuilder('Cautious').showOriginal().format(true, false).create(),
+                                    ': Их долгая жизнь и консервативная культура заставляют высших эльфов рассматривать вещи медленно и всесторонне. У них есть изъян ',
+                                    HindrancesTranslations.getTranslationBuilder('Cautious').showOriginal().showPages(true).format(true, false).create(),
                                     '.',
                                 ]
                             },
                             {
                                 text: [
-                                    EdgesTranslations.getTranslationBuilder('Черта')
-                                        .configure(true, true, false, true, false, false).create(),
-                                    ': Описание',
+                                    EdgesTranslations.getTranslationBuilder('Low-Light Vision').showOriginal().format(true, false).create(),
+                                    quickTextFormat(': Глаза персонажа усиливают (amplify) свет, словно кошачьи, и позволяют видеть в темноте. Он не получает штрафов к *проверкам атаки* в *темноте* и *сумраке*.'),
                                 ]
                             },
                             {
                                 text: [
-                                    EdgesTranslations.getTranslationBuilder('Черта')
-                                        .configure(true, true, false, true, false, false).create(),
-                                    ': Описание',
+                                    EdgesTranslations.getTranslationBuilder('Magic Addiction').showOriginal().format(true, false).create(),
+                                    quickTextFormat(': Насыщенная магией культура высших эльфов предрасполагает их к зависимости от тайной магии. Они получают штраф **-2** к броску '),
+                                    StatesTranslations.getTranslationBuilder(States.Spirit, WordCaseForm.GENITIVE).format(true, false).create(),
+                                    quickTextFormat(', чтобы противостоять зависимости от тайной магии. Они также получают штраф **-2** к '),
+                                    StatesTranslations.getTranslationBuilder(States.Charisma, WordCaseForm.DATIVE).format(true, false).create(),
+                                    ', когда имеют дело с ночными эльфами и тауренами, которые могут чувствовать их связь с тайной магией и находят их отвратительными.'
                                 ]
                             },
                             {
                                 text: [
-                                    EdgesTranslations.getTranslationBuilder('Черта')
-                                        .configure(true, true, false, true, false, false).create(),
-                                    ': Описание',
-                                ]
-                            },
-                            {
-                                text: [
-                                    EdgesTranslations.getTranslationBuilder('Черта')
-                                        .configure(true, true, false, true, false, false).create(),
-                                    ': Описание',
+                                    EdgesTranslations.getTranslationBuilder('Magic Aptitude').showOriginal().format(true, false).create(),
+                                    ': Культура высших эльфов пропитана магией. Они начинают с навыком ',
+                                    SkillsTranslations.getTranslationBuilder(Skills.Spellcasting).format(true, false).create(),
+                                    quickTextFormat(' **d4**  и для улучшения '),
+                                    SkillsTranslations.getTranslationBuilder(Skills.Spellcasting, WordCaseForm.GENITIVE).format(true, false).create(),
+                                    ' считают свою ',
+                                    StatesTranslations.getTranslationBuilder(States.Smarts, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    ' выше на один кубик.',
                                 ]
                             },
                         ]
                     }
+                ];
+            }
+
+            function getBloodElvesRaceContent() {
+                return [
+                    {
+                        text: [
+                            { text: 'Эльфы крови (Elves, Blood)', bold: true },
+                            `: Эльфы крови, по сути, являются высшими эльфами и разделяют большинство черт своих более спокойных собратьев. Однако их поиски Мести поглотили их. Они получают изъян `,
+                            HindrancesTranslations.getTranslationBuilder('Vengeful').showOriginal().format(true, false).create(),
+                            ` вместо `,
+                            HindrancesTranslations.getTranslationBuilder('Cautious').showOriginal().format(true, false).create(),
+                            '.'
+                        ]
+                    },
                 ];
             }
 
@@ -272,6 +265,7 @@ function getCharacterCreationContent() {
                         getHumansRaceContent(),
                         getDwarvesRaceContent(),
                         getHighElvesRaceContent(),
+                        getBloodElvesRaceContent(),
                     ]
                 },
             ];
