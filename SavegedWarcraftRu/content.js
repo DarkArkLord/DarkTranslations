@@ -234,7 +234,7 @@ function getCharacterCreationContent() {
                                     quickTextFormat(' **d4**  и для улучшения '),
                                     SkillsTranslations.pdf(Skills.Spellcasting, WordCaseForm.GENITIVE).format(true, false).create(),
                                     ' считают свою ',
-                                    SkillsTranslations.pdf(States.Smarts, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    StatesTranslations.pdf(States.Smarts, WordCaseForm.ACCUSATIVE).format(true, false).create(),
                                     ' выше на один кубик.',
                                 ]
                             },
