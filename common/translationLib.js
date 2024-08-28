@@ -59,19 +59,6 @@ class TranslationsBuilder {
         this.pagesBrackets = false;
     }
 
-    configure(showTranslation, showOriginal, showPages, bold, italics, pagesBrackets) {
-        this.showTranslationFlag = showTranslation;
-        this.showOriginalFlag = showOriginal;
-        this.showPagesFlag = showPages;
-
-        this.bold = bold;
-        this.italics = italics;
-
-        this.pagesBrackets = pagesBrackets;
-
-        return this;
-    }
-
     hideTranslation() {
         this.showTranslationFlag = false;
         return this;
