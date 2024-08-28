@@ -54,21 +54,43 @@ class TranslationsBuilder {
         this.showPagesFlag = false;
 
         this.bold = false;
-        this.italic = false;
+        this.italics = false;
 
         this.pagesBrackets = false;
     }
 
-    configure(showTranslation, showOriginal, showPages, bold, italic, pagesBrackets) {
+    configure(showTranslation, showOriginal, showPages, bold, italics, pagesBrackets) {
         this.showTranslationFlag = showTranslation;
         this.showOriginalFlag = showOriginal;
         this.showPagesFlag = showPages;
 
         this.bold = bold;
-        this.italic = italic;
+        this.italics = italics;
 
         this.pagesBrackets = pagesBrackets;
 
+        return this;
+    }
+
+    showTranslation() {
+        this.showTranslationFlag = true;
+        return this;
+    }
+
+    showOriginal() {
+        this.showOriginalFlag = true;
+        return this;
+    }
+
+    showPages(pagesBrackets) {
+        this.showPagesFlag = true;
+        this.pagesBrackets = pagesBrackets;
+        return this;
+    }
+
+    format(bold, italics) {
+        this.bold = bold;
+        this.italics = italics;
         return this;
     }
 
@@ -117,8 +139,8 @@ class TranslationsBuilder {
             result.bold = true;
         }
 
-        if (this.italic) {
-            result.italic = true;
+        if (this.italics) {
+            result.italics = true;
         }
 
         if (hasError) {
