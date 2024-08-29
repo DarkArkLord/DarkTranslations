@@ -107,6 +107,7 @@ const Hindrances = Object.freeze({
 
 const Edges = Object.freeze({
     LowLightVision: 'Low-Light Vision',
+    Brawny: 'Brawny',
 });
 
 (function EdgesTranslations() {

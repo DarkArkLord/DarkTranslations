@@ -298,36 +298,217 @@ function getCharacterCreationContent() {
         }
 
         function getHordeRacesContent() {
+            function getOrksRaceContent() {
+                return [
+                    quickTextFormat(`**Орки (Orcs)**: Крепкий зеленокожий народ из мира Дуротар. Застряв в Азероте, они сбросили с себя насланное чернокнижниками кровавое безумие и вернулись к своим жестоким, но благородным традициям и шаманской магии прошлого.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Грубый и эффективный (Rough and Ready)', bold: true },
+                                    ': Орки начинают с ',
+                                    StatesTranslations.pdf(States.Strength, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    ' и ',
+                                    StatesTranslations.pdf(States.Vigor, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    quickTextFormat(' **d6** вместо **d4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Дикое наследие (Savage Heritage)', bold: true },
+                                    quickTextFormat(': Появившись в истории дикими и кровожадными захватчиками, орки получают штраф **-2** к '),
+                                    StatesTranslations.pdf(States.Charisma, WordCaseForm.DATIVE).format(true, false).create(),
+                                    ' при взаимодействии с расами не из Орды.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Старые обиды (Old Grudges)', bold: true },
+                                    quickTextFormat(': Культура орков по-прежнему жестока и склонна решать проблемы, уничтожая их. Орки ведут себя так, как будто у них есть изъян '),
+                                    HindrancesTranslations.pdf(Hindrances.Vengeful).showOriginal().format(true, false).create(),
+                                    quickTextFormat('. Это считается **мелким** изъяном при общении с другими членами Орды и **крупным** изъяном при общении со всеми остальными.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    EdgesTranslations.pdf(Edges.Brawny).showOriginal().format(true, false).create(),
+                                    quickTextFormat(': Благодаря своему крепкому телосложению орки получают черту '),
+                                    EdgesTranslations.pdf(Edges.Brawny).showOriginal().format(true, false).create(),
+                                    quickTextFormat(', которая дает им +1 к **Стойкости** и увеличивает предел нагрузки.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
+            function getTaurensRaceContent() {
+                return [
+                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
+            function getJungleTrollsRaceContent() {
+                return [
+                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
             return [
                 { text: 'Орда (The Horde)', style: 'header2', },
                 {
                     ul: [
-                        'Test 1',
-                        'Test 2',
+                        getOrksRaceContent(),
+                        getTaurensRaceContent(),
+                        getJungleTrollsRaceContent(),
                     ]
                 },
             ];
         }
 
         function getSentinelsRacesContent() {
+            function getNightElvesRaceContent() {
+                return [
+                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
+            function getChildrenOfCenariusRaceContent() {
+                return [
+                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
             return [
                 { text: 'Стражи (The Sentinels)', style: 'header2', },
                 {
                     ul: [
-                        'Test 1',
-                        'Test 2',
+                        getNightElvesRaceContent(),
+                        getChildrenOfCenariusRaceContent(),
                     ]
                 },
             ];
         }
 
         function getNeutralRacesContent() {
+            function getGoblinsRaceContent() {
+                return [
+                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
+            function getTrollsRaceContent() {
+                return [
+                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
+            function getPandarenRaceContent() {
+                return [
+                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
+            function getForsakenRaceContent() {
+                return [
+                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    {
+                        ul: [
+                            {
+                                text: [
+                                    { text: 'Тест (Test)', bold: true },
+                                    quickTextFormat(': Test.'),
+                                ]
+                            },
+                        ]
+                    }
+                ];
+            }
+
             return [
                 { text: 'Нейтральные расы (Neutral Races)', style: 'header2', },
                 {
                     ul: [
-                        'Test 1',
-                        'Test 2',
+                        getGoblinsRaceContent(),
+                        getTrollsRaceContent(),
+                        getPandarenRaceContent(),
+                        getForsakenRaceContent(),
                     ]
                 },
             ];
