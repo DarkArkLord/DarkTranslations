@@ -1,4 +1,4 @@
-const { WordCaseForm, WordCountForm, States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Edges, EdgesTranslations, Creatures, CreaturesTranslations, Logger } = require('../common/savageWorldsTranslations')
+const { WordCaseForm, WordCountForm, States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Edges, EdgesTranslations, Creatures, CreaturesTranslations, Logger } = require('../common/savageWorldsTranslations');
 
 function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
@@ -143,7 +143,7 @@ function getTitlePageContent() {
             margin: [0, 0, 0, 15],
         },
         {
-            text: 'Оригинальный документ обновлен 28 марта 2004',
+            text: 'Оригинальный документ обновлен 29 марта 2005',
             alignment: 'center',
             bold: true,
         },
