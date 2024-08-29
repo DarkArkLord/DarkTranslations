@@ -337,12 +337,6 @@ function getCharacterCreationContent() {
                                     quickTextFormat(', которая дает им +1 к **Стойкости** и увеличивает предел нагрузки.'),
                                 ]
                             },
-                            {
-                                text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
-                                ]
-                            },
                         ]
                     }
                 ];
