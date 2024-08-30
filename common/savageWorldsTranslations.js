@@ -74,18 +74,221 @@ const States = Object.freeze({
 })();
 
 const Skills = Object.freeze({
-    Spellcasting: 'Spellcasting',
-    Repair: 'Repair',
-    Stealth: 'Stealth',
-    Persuasion: 'Persuasion',
-    Streetwise: 'Streetwise',
-    Tracking: 'Tracking',
+    Boating: 'Boating',
     Climbing: 'Climbing',
+    Driving: 'Driving',
+    Fighting: 'Fighting',
+    Gambling: 'Gambling',
+    Healing: 'Healing',
+    Intimidation: 'Intimidation',
+    Investigation: 'Investigation',
+    Knowledge: 'Knowledge',
+    Lockpicking: 'Lockpicking',
+    Notice: 'Notice',
+    Persuasion: 'Persuasion',
+    Piloting: 'Piloting',
+    Repair: 'Repair',
+    Riding: 'Riding',
+    Shooting: 'Shooting',
+    Stealth: 'Stealth',
+    Streetwise: 'Streetwise',
+    Survival: 'Survival',
+    Swimming: 'Swimming',
+    Taunt: 'Taunt',
+    Throwing: 'Throwing',
+    Tracking: 'Tracking',
+    // Arcane Skills
+    Spellcasting: 'Spellcasting',
 });
 
 (function SkillsTranslations() {
     const res = DictionariesManager.create(Dictionaries.Skills);
 
+    res.create(Skills.Boating)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Судовождение')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Climbing)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Лазанье')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Лазанья')
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Driving)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Вождение')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Fighting)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Драка')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Gambling)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Азартные игры')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Healing)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Лечение')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Intimidation)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Запугивание')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Investigation)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Расследование')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Knowledge)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Знание')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Lockpicking)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Взлом')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Notice)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Внимание')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Persuasion)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Убеждение')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Убеждения')
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, 'Убеждение')
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Piloting)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Пилотирование')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Repair)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Ремонт')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Ремонта')
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, 'Ремонт')
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Ремонтом')
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Riding)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Верховая езда')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Shooting)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Стрельба')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Stealth)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Маскировка')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Маскировки')
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, 'Маскировке')
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Streetwise)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Уличное чутьё')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Уличного чутья')
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Survival)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Выживание')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Swimming)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Плавание')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Taunt)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Провокация')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Throwing)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Метание')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Skills.Tracking)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Выслеживание')
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Выслеживания')
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, 'Выслеживание')
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Выслеживанием')
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    // Arcane Skills
     res.create(Skills.Spellcasting)
         .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, 'Колдовство')
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, 'Колдовства')
