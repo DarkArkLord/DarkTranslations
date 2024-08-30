@@ -76,6 +76,11 @@ const States = Object.freeze({
 const Skills = Object.freeze({
     Spellcasting: 'Spellcasting',
     Repair: 'Repair',
+    Stealth: 'Stealth',
+    Persuasion: 'Persuasion',
+    Streetwise: 'Streetwise',
+    Tracking: 'Tracking',
+    Climbing: 'Climbing',
 });
 
 (function SkillsTranslations() {
@@ -96,6 +101,11 @@ const Hindrances = Object.freeze({
     Cautious: 'Cautious',
     Vengeful: 'Vengeful',
     AllThumbs: 'All Thumbs',
+    Stubborn: 'Stubborn',
+    Greedy: 'Greedy',
+    Bloodthirsty: 'Bloodthirsty',
+    Outsider: 'Outsider',
+    Ugly: 'Ugly',
 });
 
 (function HindrancesTranslations() {
@@ -109,6 +119,7 @@ const Hindrances = Object.freeze({
 const Edges = Object.freeze({
     LowLightVision: 'Low-Light Vision',
     Brawny: 'Brawny',
+    Berserk: 'Berserk',
 });
 
 (function EdgesTranslations() {

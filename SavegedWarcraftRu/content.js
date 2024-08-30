@@ -186,9 +186,7 @@ function getCharacterCreationContent() {
                             {
                                 text: [
                                     { text: 'Ловкий (Agile)', bold: true },
-                                    ': Эльфы грациозны и ловки. Они начинают с ',
-                                    StatesTranslations.pdf(States.Agility, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
-                                    quickTextFormat(' **d6** вместо **d4**.'),
+                                    quickTextFormat(': Эльфы грациозны и ловки. Они начинают с **Ловкостью** **d6** вместо **d4**.'),
                                 ]
                             },
                             {
@@ -202,17 +200,15 @@ function getCharacterCreationContent() {
                             {
                                 text: [
                                     EdgesTranslations.pdf(Edges.LowLightVision).showOriginal().format(true, false).create(),
-                                    quickTextFormat(': Глаза персонажа усиливают (amplify) свет, словно кошачьи, и позволяют видеть в темноте. Он не получает штрафов к *проверкам атаки* в *темноте* и *сумраке*.'),
+                                    quickTextFormat(': Глаза персонажа усиливают свет, словно кошачьи, и позволяют видеть в темноте. Он не получает штрафов к *проверкам атаки* в *темноте* и *сумраке*.'),
                                 ]
                             },
                             {
                                 text: [
                                     { text: 'Зависимость от магии (Magic Addiction)', bold: true },
-                                    quickTextFormat(': Насыщенная магией культура высших эльфов предрасполагает их к зависимости от тайной магии. Они получают штраф **-2** к броску '),
-                                    StatesTranslations.pdf(States.Spirit, WordCaseForm.GENITIVE).format(true, false).create(),
-                                    quickTextFormat(', чтобы противостоять зависимости от тайной магии. Они также получают штраф **-2** к '),
-                                    StatesTranslations.pdf(States.Charisma, WordCaseForm.DATIVE).format(true, false).create(),
-                                    ', когда имеют дело с ночными эльфами и тауренами, которые могут чувствовать их связь с тайной магией и находят их отвратительными.'
+                                    quickTextFormat(': Насыщенная магией культура высших эльфов предрасполагает их к зависимости от тайной магии. Они получают штраф **-2** к броску **Характера**, чтобы противостоять '),
+                                    { text: 'зависимости от тайной магии (TODO: ДОБАВИТЬ ССЫЛКУ И СТРАНИЦУ)', color: 'red' },
+                                    quickTextFormat('. Они также получают штраф **-2** к **Харизме**, когда имеют дело с ночными эльфами и тауренами, которые могут чувствовать их связь с тайной магией и находят их отвратительными.'),
                                 ]
                             },
                             {
@@ -222,9 +218,7 @@ function getCharacterCreationContent() {
                                     SkillsTranslations.pdf(Skills.Spellcasting).format(true, false).create(),
                                     quickTextFormat(' **d4**  и для улучшения '),
                                     SkillsTranslations.pdf(Skills.Spellcasting, WordCaseForm.GENITIVE).format(true, false).create(),
-                                    ' считают свою ',
-                                    StatesTranslations.pdf(States.Smarts, WordCaseForm.ACCUSATIVE).format(true, false).create(),
-                                    ' выше на один кубик.',
+                                    quickTextFormat(' считают свою **Смекалку** выше на один кубик.'),
                                 ]
                             },
                         ]
@@ -255,9 +249,7 @@ function getCharacterCreationContent() {
                             {
                                 text: [
                                     { text: 'Гениальный (Brilliant)', bold: true },
-                                    ': Гномы начинают со ',
-                                    StatesTranslations.pdf(States.Smarts, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
-                                    quickTextFormat(' **d6** вместо **d4**, что отражает их острый ум.'),
+                                    quickTextFormat(': Гномы начинают со **Смекалкой** **d6** вместо **d4**, что отражает их острый ум.'),
                                 ]
                             },
                             {
@@ -273,9 +265,7 @@ function getCharacterCreationContent() {
                                     SkillsTranslations.pdf(Skills.Repair, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
                                     quickTextFormat(' **d4** и для улучшения '),
                                     SkillsTranslations.pdf(Skills.Repair, WordCaseForm.ACCUSATIVE).format(true, false).create(),
-                                    ' считают свою ',
-                                    StatesTranslations.pdf(States.Smarts, WordCaseForm.ACCUSATIVE).format(true, false).create(),
-                                    ' выше на один кубик.',
+                                    quickTextFormat(' считают свою **Смекалку** выше на один кубик.'),
                                 ]
                             },
                         ]
@@ -306,19 +296,13 @@ function getCharacterCreationContent() {
                             {
                                 text: [
                                     { text: 'Грубый и эффективный (Rough and Ready)', bold: true },
-                                    ': Орки начинают с ',
-                                    StatesTranslations.pdf(States.Strength, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
-                                    ' и ',
-                                    StatesTranslations.pdf(States.Vigor, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
-                                    quickTextFormat(' **d6** вместо **d4**.'),
+                                    quickTextFormat(': Орки начинают с **Силой** и **Выносливостью** **d6** вместо **d4**.'),
                                 ]
                             },
                             {
                                 text: [
                                     { text: 'Дикое наследие (Savage Heritage)', bold: true },
-                                    quickTextFormat(': Появившись в истории дикими и кровожадными захватчиками, орки получают штраф **-2** к '),
-                                    StatesTranslations.pdf(States.Charisma, WordCaseForm.DATIVE).format(true, false).create(),
-                                    ' при взаимодействии с расами не из Орды.',
+                                    quickTextFormat(': Появившись в истории дикими и кровожадными захватчиками, орки получают штраф **-2** к **Харизме** при взаимодействии с расами не из Орды.'),
                                 ]
                             },
                             {
@@ -350,21 +334,13 @@ function getCharacterCreationContent() {
                             {
                                 text: [
                                     { text: 'Огромный зверь (Hulking Brute)', bold: true },
-                                    ': Таурены начинают игру с ',
-                                    StatesTranslations.pdf(States.Strength, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
-                                    quickTextFormat(' **d8** и '),
-                                    StatesTranslations.pdf(States.Vigor, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
-                                    quickTextFormat(' **d6**. После создания персонажа они могут повысить свою '),
-                                    StatesTranslations.pdf(States.Strength, WordCaseForm.ACCUSATIVE).format(true, false).create(),
-                                    quickTextFormat(' до **d12+2**.'),
+                                    quickTextFormat(': Таурены начинают игру с **Силой** **d8** и **Выносливостью** **d6**. После создания персонажа они могут повысить свою **Силу** до **d12+2**.'),
                                 ]
                             },
                             {
                                 text: [
                                     { text: 'Медлительность (Slow)', bold: true },
-                                    ': Огромная масса Тауренов мешает более тонким движениям. Они повышают свою ',
-                                    StatesTranslations.pdf(States.Agility).format(true, false).create(),
-                                    '  за двойную цену, как при создании персонажа, так и во время последующих улучшений.',
+                                    quickTextFormat(': Огромная масса Тауренов мешает более тонким движениям. Они повышают свою **Ловкость** за двойную цену, как при создании персонажа, так и во время последующих улучшений.'),
                                 ]
                             },
                             {
@@ -394,17 +370,7 @@ function getCharacterCreationContent() {
 
             function getJungleTrollsRaceContent() {
                 return [
-                    quickTextFormat(`**Тест (Test)**: Тест.`),
-                    {
-                        ul: [
-                            {
-                                text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
-                                ]
-                            },
-                        ]
-                    }
+                    quickTextFormat(`**Тролли джунглей (Trolls, Jungle)**: Тролли джунглей из клана Черного Копья объединились с Ордой в отплату за спасение Траллом. Информацию о троллях см. в разделе **Нейтральные расы**.`),
                 ];
             }
 
@@ -423,13 +389,55 @@ function getCharacterCreationContent() {
         function getSentinelsRacesContent() {
             function getNightElvesRaceContent() {
                 return [
-                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    quickTextFormat(`**Ночные эльфы (Elves, Night)**:  Ночные эльфы (или калдорай, как они себя называют) — свирепая раса, живущая в лесах Калимдора. Они ненавидят тайную магию и развивают мощную связь с природой и полубогами Кенарием и Элуной. Ночные эльфы не могут обладать **Мистическим даром (Тайная магия) (Arcane Background (Arcane Magic))**.`),
                     {
                         ul: [
                             {
                                 text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
+                                    { text: 'Ловкий (Agile)', bold: true },
+                                    quickTextFormat(': Эльфы грациозны и ловки. Они начинают с **Ловкостью** **d6** вместо **d4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Духовные (Spirited)', bold: true },
+                                    quickTextFormat(': У ночных эльфов очень мистическая культура. Они начинают с **Характером** **d6** вместо **d4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    HindrancesTranslations.pdf(Hindrances.AllThumbs).showOriginal().format(true, false).create(),
+                                    quickTextFormat(': Связь с природой заставила ночных эльфов отказаться от пути технического прогресса. У них есть изъян '),
+                                    HindrancesTranslations.pdf(Hindrances.AllThumbs).showOriginal().showPages(true).format(true, false).create(),
+                                    '.'
+                                ]
+                            },
+                            {
+                                text: [
+                                    EdgesTranslations.pdf(Edges.LowLightVision).showOriginal().format(true, false).create(),
+                                    quickTextFormat(': Глаза персонажа усиливают свет, словно кошачьи, и позволяют видеть в темноте. Он не получает штрафов к *проверкам атаки* в *темноте* и *сумраке*.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Одиночество (Solitary)', bold: true },
+                                    quickTextFormat(': Ночные эльфы имеют долгую историю изоляции и недоверия к другим расам. Они получают штраф **-2** к **Харизме** при общении со всеми расами, не являющимися Стражами, за исключением тауренов.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Слияние с Тенью (Shadowmeld)', bold: true },
+                                    quickTextFormat(': Ночные эльфы получают бонус **+4** к проверкам '),
+                                    SkillsTranslations.pdf(Skills.Stealth, WordCaseForm.DATIVE).format(true, false).create(),
+                                    ' ночью, сливаясь с темнотой.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Гордость (Proud)', bold: true },
+                                    quickTextFormat(': Ночные эльфы имеют долгую и славную историю, в которой есть доля трагедий, которые калдорай (как они считают) превзошли. Таким образом, все ночные эльфы имеют изъян '),
+                                    HindrancesTranslations.pdf(Hindrances.Stubborn).showOriginal().format(true, false).create(),
+                                    ' в том, что касается их культуры и образа жизни.',
                                 ]
                             },
                         ]
@@ -439,13 +447,33 @@ function getCharacterCreationContent() {
 
             function getChildrenOfCenariusRaceContent() {
                 return [
-                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    quickTextFormat(`**Дети Кенария (Children of Cenarius)**: Эти существа, похожие на кентавров с телом оленя, являющются потомками ночных эльфов и полубога-оленя Кенария. Женщины известны как Дриады, а более редкие мужчины являются Хранителями Рощи.`),
                     {
                         ul: [
                             {
                                 text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
+                                    { text: 'Духовные (Spirited)', bold: true },
+                                    quickTextFormat(': У ночных эльфов очень мистическая культура. Они начинают с **Характером** **d6** вместо **d4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Дитя природы (Nature’s Child)', bold: true },
+                                    quickTextFormat(': Все Дети Кенария имеют изъян '),
+                                    HindrancesTranslations.pdf(Hindrances.AllThumbs).showOriginal().showPages(true).format(true, false).create(),
+                                    '.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Кровь Бога (Blood of the God)', bold: true },
+                                    quickTextFormat(': Все Дети Кенария имеют **Мистический дар (Чудеса): Магия природы (Arcane Background: Nature Magic (a form of Miracles))**. Кроме того, они начинают с **15** Пунктами Силы вместо **10**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    HindrancesTranslations.pdf(Hindrances.Outsider).showOriginal().format(true, false).create(),
+                                    quickTextFormat(': Как хранители леса с божественной кровью, Дети Кенария чувствуют себя неуютно даже среди ночных эльфов. Из-за этого они получают **-2** к **Харизме**.'),
                                 ]
                             },
                         ]
@@ -467,13 +495,50 @@ function getCharacterCreationContent() {
         function getNeutralRacesContent() {
             function getGoblinsRaceContent() {
                 return [
-                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    quickTextFormat(`**Гоблины (Goblins):** Этот маленький и хитрый народ когда-то была в союзе с орками, но теперь они продают свои технологические гаджеты и другие товары всем, кто заплатит.`),
                     {
                         ul: [
                             {
                                 text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
+                                    { text: 'Хитрость (Cunning)', bold: true },
+                                    quickTextFormat(': Гоблины начинают со **Смекалкой** **d6** вместо **d4**, чтобы отразить их врожденную хитрость.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Маленький (Small)', bold: true },
+                                    quickTextFormat(': Из-за небольшого размера **Выносливость** гоблинов уменьшена на 1. Их короткие ноги дают им **Шаг** **4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Мастер на все руки (Tinker)', bold: true },
+                                    quickTextFormat(': Гоблины начинают с **Ремонтом** **d4** и для улучшения **Ремонта** считают свою **Смекалку** выше на один кубик.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Наемник (Mercenary)', bold: true },
+                                    quickTextFormat(': Гоблины работают на того, кто больше заплатит, и все это знают. Они получают **-2** к **Харизме** всегда, ***за исключением случаев***, когда имеют дело с торговлей.'),
+                                    '',
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Торгаш (Haggler)', bold: true },
+                                    quickTextFormat(': Гоблины получают **+2** ко всем проверкам '),
+                                    SkillsTranslations.pdf(Skills.Persuasion, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    ' и ',
+                                    SkillsTranslations.pdf(Skills.Streetwise, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    ', когда торгуются или пытаются что-то купить или продать.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    HindrancesTranslations.pdf(Hindrances.Greedy).showOriginal().format(true, false).create(),
+                                    quickTextFormat(': Гоблины воспитываются так, чтобы уважать только прибыль. У них есть изъян '),
+                                    HindrancesTranslations.pdf(Hindrances.Greedy).showOriginal().showPages(true).format(true, false).create(),
+                                    '.'
                                 ]
                             },
                         ]
@@ -483,13 +548,65 @@ function getCharacterCreationContent() {
 
             function getTrollsRaceContent() {
                 return [
-                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    quickTextFormat(`**Тролли (Trolls):** Тролли — дикий и жестокий народ, делящийся на множество подвидов в зависимости от предпочитаемой территории. Тролли из разных регионов имеют немного отличающуюся культуру и разный цвет кожи. Наиболее распространенные типы троллей — лесные (зеленокожие, шаманские метатели топоров), джунглевые (синекожие копейщики и жрецы вуду) и ледяные (свирепые и дикие даже для троллей).`),
                     {
                         ul: [
                             {
                                 text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
+                                    { text: 'Жилистый (Wiry)', bold: true },
+                                    quickTextFormat(': Тролли начинают с **Силой** **d6** вместо **d4** из-за их плотной мускулатуры.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Проворный (Nimble)', bold: true },
+                                    quickTextFormat(': Тролли обладают естественной скоростью и координацией. Они начинают с **Ловкостью** **d6** вместо **d4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Низкая Хитрость (Low Cunning)', bold: true },
+                                    quickTextFormat(': Тролли примитивны в своих мыслительных процессах. Они повышают свою **Смекалку** за двойную цену, как при создании персонажа, так и во время последующих улучшений.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Регенерация (Regeneration)', bold: true },
+                                    ': Тролли обладают естественной способностью исцеляться от любых ран. Они делают бросок на Естественное исцеление каждый раунд.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Примитивный (Primitive)', bold: true },
+                                    ': У троллей есть изъян ',
+                                    HindrancesTranslations.pdf(Hindrances.AllThumbs).showOriginal().format(true, false).create(),
+                                    '. Они редко используют что-то сложнее копья или метательного топора.'
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Большой (Large)', bold: true },
+                                    quickTextFormat(': Тролли немного крупнее людей. Они получают **+1** к **Стойкости** из-за своего размера.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Дикий (Savage)', bold: true },
+                                    quickTextFormat(': Троллям не доверяет большинство рас, которые слишком хорошо знают их дикую хитрость, жажду крови и известный каннибализм. У троллей есть изъяны '),
+                                    HindrancesTranslations.pdf(Hindrances.Bloodthirsty).showOriginal().format(true, false).create(),
+                                    ' и ',
+                                    HindrancesTranslations.pdf(Hindrances.Outsider).showOriginal().format(true, false).create(),
+                                    '.'
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Охотник (Hunter)', bold: true },
+                                    ': Тролли получают навык ',
+                                    SkillsTranslations.pdf(Skills.Tracking, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    quickTextFormat(' **d4** и для улучшения '),
+                                    SkillsTranslations.pdf(Skills.Tracking, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    quickTextFormat(' считают свою **Смекалку** выше на один кубик.'),
                                 ]
                             },
                         ]
@@ -499,13 +616,47 @@ function getCharacterCreationContent() {
 
             function getPandarenRaceContent() {
                 return [
-                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    quickTextFormat(`**Панадарены (Pandaren):** Эта раса двуногих панд родом с таинственного острова к западу от Калимдора, который они называют Пандария. Это миролюбивый народ, мастера как элегантных боевых искусств, так и варки эля.`),
                     {
                         ul: [
                             {
                                 text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
+                                    { text: 'Неутомимый (Tireless)', bold: true },
+                                    quickTextFormat(': Здоровые и крепкие пандарены начинают с **Выносливостью** **d6** вместо **d4**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Медвежьи ноги (Bear Legs)', bold: true },
+                                    quickTextFormat(': У пандаренов **Шаг** **4**, если они не бегают на четвереньках. Если они это делают, их **Шаг** увеличивается до **6**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Альпинисты (Climbers)', bold: true },
+                                    ': Пандарены — прирожденные скалолазы. Они получают навык ',
+                                    SkillsTranslations.pdf(Skills.Climbing, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    quickTextFormat(' **d4** и для улучшения '),
+                                    SkillsTranslations.pdf(Skills.Climbing, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    quickTextFormat(' считают свою **Ловкость** выше на один кубик.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Толстая шкура (Test)', bold: true },
+                                    quickTextFormat(': У пандаренов толстые, пушистые шкуры, которые дают им **1** очко **Брони**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    HindrancesTranslations.pdf(Hindrances.Outsider).showOriginal().format(true, false).create(),
+                                    quickTextFormat(': Будучи загадочными иностранцами, которые отказываются принимать чью-либо сторону, пандарены получают **-2** к своей **Харизме**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Естественное оружие (Natural Weapons)', bold: true },
+                                    quickTextFormat(': Когти и укусы пандарена наносят **Сила+1** урон.'),
                                 ]
                             },
                         ]
@@ -515,13 +666,33 @@ function getCharacterCreationContent() {
 
             function getForsakenRaceContent() {
                 return [
-                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    quickTextFormat(`**Отрекшиеся (Forsaken):** Отрекшиеся не являются расой как таковой. Это те, кто был воскрешен Плетью и освободился от контроля Короля-лича. Таким образом, они также получают преимущества людей или высших эльфов.`),
                     {
                         ul: [
                             {
                                 text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
+                                    { text: 'Нежить (Undead)', bold: true },
+                                    quickTextFormat(': Отрекшиеся получают все преимущества нежити ***(см. SW1 с. 136, SW2 с. 172)***.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Ходячий труп (Walking Corpse)', bold: true },
+                                    ': Отрекшиеся получают изъяны ',
+                                    HindrancesTranslations.pdf(Hindrances.Outsider).showOriginal().format(true, false).create(),
+                                    ' и ',
+                                    HindrancesTranslations.pdf(Hindrances.Ugly).showOriginal().format(true, false).create(),
+                                    '.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Бешеный (Frenzied)', bold: true },
+                                    ': Все Отрекшиеся имеют черту ',
+                                    EdgesTranslations.pdf(Edges.Berserk).showOriginal().format(true, false).create(),
+                                    '. Однако они также страдают от изъяна ',
+                                    HindrancesTranslations.pdf(Hindrances.Bloodthirsty).showOriginal().format(true, false).create(),
+                                    '.',
                                 ]
                             },
                         ]
