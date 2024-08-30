@@ -527,9 +527,9 @@ function getCharacterCreationContent() {
                                 text: [
                                     { text: 'Торгаш (Haggler)', bold: true },
                                     quickTextFormat(': Гоблины получают **+2** ко всем проверкам '),
-                                    SkillsTranslations.pdf(Skills.Persuasion, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Persuasion, WordCaseForm.GENITIVE).format(true, false).create(),
                                     ' и ',
-                                    SkillsTranslations.pdf(Skills.Streetwise, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Streetwise, WordCaseForm.GENITIVE).format(true, false).create(),
                                     ', когда торгуются или пытаются что-то купить или продать.',
                                 ]
                             },
