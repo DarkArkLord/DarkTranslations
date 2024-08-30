@@ -95,6 +95,7 @@ const Skills = Object.freeze({
 const Hindrances = Object.freeze({
     Cautious: 'Cautious',
     Vengeful: 'Vengeful',
+    AllThumbs: 'All Thumbs',
 });
 
 (function HindrancesTranslations() {

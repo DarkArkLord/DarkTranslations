@@ -344,13 +344,47 @@ function getCharacterCreationContent() {
 
             function getTaurensRaceContent() {
                 return [
-                    quickTextFormat(`**Тест (Test)**: Тест.`),
+                    quickTextFormat(`**Таурены (Tauren)**: Таурены, коренные жители континента Калимдор, — огромные быколюди с культурой, основанной на тотемном шаманизме. Они объединились с орками, видя в них молодую культуру, нуждающуюся в надлежащем руководстве.`),
                     {
                         ul: [
                             {
                                 text: [
-                                    { text: 'Тест (Test)', bold: true },
-                                    quickTextFormat(': Test.'),
+                                    { text: 'Огромный зверь (Hulking Brute)', bold: true },
+                                    ': Таурены начинают игру с ',
+                                    StatesTranslations.pdf(States.Strength, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    quickTextFormat(' **d8** и '),
+                                    StatesTranslations.pdf(States.Vigor, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    quickTextFormat(' **d6**. После создания персонажа они могут повысить свою '),
+                                    StatesTranslations.pdf(States.Strength, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    quickTextFormat(' до **d12+2**.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Медлительность (Slow)', bold: true },
+                                    ': Огромная масса Тауренов мешает более тонким движениям. Они повышают свою ',
+                                    StatesTranslations.pdf(States.Agility).format(true, false).create(),
+                                    '  за двойную цену, как при создании персонажа, так и во время последующих улучшений.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Рога (Horns)', bold: true },
+                                    quickTextFormat(': Огромные рога Тауренов наносят **Сила+1** урона. Таурены могут атаковать своими рогами, как если бы они были верхом.'),
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Примитивы (Primitives)', bold: true },
+                                    ': Культура Тауренов основана на природе, и поэтому у Тауренов есть изъян ',
+                                    HindrancesTranslations.pdf(Hindrances.AllThumbs).showOriginal().format(true, false).create(),
+                                    '.',
+                                ]
+                            },
+                            {
+                                text: [
+                                    { text: 'Возвышающаяся громада (Towering Bulk)', bold: true },
+                                    quickTextFormat(': Таурены получают **+3** к **Стойкости** из-за своего огромного размера (в среднем более 7.5 футов ростом). Однако ракой рост делает Тауренов легкой мишенью, поэтому все атаки по ним получают **+2**.'),
                                 ]
                             },
                         ]
