@@ -264,7 +264,7 @@ function getCharacterCreationContent() {
                                     ': Гномы от природы искусны в работе с техникой. Они начинают с ',
                                     SkillsTranslations.pdf(Skills.Repair, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
                                     quickTextFormat(' **d4** и для улучшения '),
-                                    SkillsTranslations.pdf(Skills.Repair, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Repair, WordCaseForm.GENITIVE).format(true, false).create(),
                                     quickTextFormat(' считают свою **Смекалку** выше на один кубик.'),
                                 ]
                             },
@@ -428,7 +428,7 @@ function getCharacterCreationContent() {
                                 text: [
                                     { text: 'Слияние с Тенью (Shadowmeld)', bold: true },
                                     quickTextFormat(': Ночные эльфы получают бонус **+4** к проверкам '),
-                                    SkillsTranslations.pdf(Skills.Stealth, WordCaseForm.DATIVE).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Stealth, WordCaseForm.GENITIVE).format(true, false).create(),
                                     ' ночью, сливаясь с темнотой.',
                                 ]
                             },
@@ -603,9 +603,9 @@ function getCharacterCreationContent() {
                                 text: [
                                     { text: 'Охотник (Hunter)', bold: true },
                                     ': Тролли получают навык ',
-                                    SkillsTranslations.pdf(Skills.Tracking, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Tracking).format(true, false).create(),
                                     quickTextFormat(' **d4** и для улучшения '),
-                                    SkillsTranslations.pdf(Skills.Tracking, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Tracking, WordCaseForm.GENITIVE).format(true, false).create(),
                                     quickTextFormat(' считают свою **Смекалку** выше на один кубик.'),
                                 ]
                             },
@@ -635,9 +635,9 @@ function getCharacterCreationContent() {
                                 text: [
                                     { text: 'Альпинисты (Climbers)', bold: true },
                                     ': Пандарены — прирожденные скалолазы. Они получают навык ',
-                                    SkillsTranslations.pdf(Skills.Climbing, WordCaseForm.INSTRUMENTAL).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Climbing).format(true, false).create(),
                                     quickTextFormat(' **d4** и для улучшения '),
-                                    SkillsTranslations.pdf(Skills.Climbing, WordCaseForm.ACCUSATIVE).format(true, false).create(),
+                                    SkillsTranslations.pdf(Skills.Climbing, WordCaseForm.GENITIVE).format(true, false).create(),
                                     quickTextFormat(' считают свою **Ловкость** выше на один кубик.'),
                                 ]
                             },
