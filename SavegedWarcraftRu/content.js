@@ -74,8 +74,9 @@ const docDefinition = {
     },
     styles: {
         header1: { fontSize: 26, bold: true, alignment: 'center' },
-        header2: { fontSize: 22, bold: true, },
+        header2: { fontSize: 22, bold: true, alignment: 'center', },
         header3: { fontSize: 18, bold: true, },
+        header4: { fontSize: 14, bold: true, },
     },
     footer: function (currentPage, pageCount, pageSize) {
         return [
@@ -274,7 +275,7 @@ function getCharacterCreationContent() {
             }
 
             return [
-                { text: 'Альянс (The Alliance)', style: 'header2', },
+                { text: 'Альянс (The Alliance)', style: 'header3', },
                 {
                     ul: [
                         getHumansRaceContent(),
@@ -375,7 +376,7 @@ function getCharacterCreationContent() {
             }
 
             return [
-                { text: 'Орда (The Horde)', style: 'header2', },
+                { text: 'Орда (The Horde)', style: 'header3', },
                 {
                     ul: [
                         getOrksRaceContent(),
@@ -482,7 +483,7 @@ function getCharacterCreationContent() {
             }
 
             return [
-                { text: 'Стражи (The Sentinels)', style: 'header2', },
+                { text: 'Стражи (The Sentinels)', style: 'header3', },
                 {
                     ul: [
                         getNightElvesRaceContent(),
@@ -701,7 +702,7 @@ function getCharacterCreationContent() {
             }
 
             return [
-                { text: 'Нейтральные расы (Neutral Races)', style: 'header2', },
+                { text: 'Нейтральные расы (Neutral Races)', style: 'header3', },
                 {
                     ul: [
                         getGoblinsRaceContent(),
@@ -713,20 +714,87 @@ function getCharacterCreationContent() {
             ];
         }
 
-        return [
-            getAllianceRacesContent(),
-            getHordeRacesContent(),
-            getSentinelsRacesContent(),
-            getNeutralRacesContent(),
-        ];
+        return {
+            stack: [
+                {
+                    text: 'Расы (Races)',
+                    style: 'header2',
+                },
+                getAllianceRacesContent(),
+                getHordeRacesContent(),
+                getSentinelsRacesContent(),
+                getNeutralRacesContent(),
+            ],
+            pageBreak: 'after',
+        };
+    }
+
+    function getEdgesContent() {
+        function getCombatEdgesContent() {
+            return [
+                { text: 'Боевые черты (Combat Edges)', style: 'header3', },
+                {
+                    stack: [
+                        EdgesTranslations.pdf(Edges.Defend).showOriginal().style('header4').create(),
+                        {
+                            text: [
+                                { text: 'Требования', bold: true, },
+                                ':',
+                                EdgesTranslations.pdf(Edges.Seasoned).showOriginal().create(),
+                                ', ',
+                                EdgesTranslations.pdf(Edges.Block).showOriginal().create(),
+                            ],
+                        },
+                        'Some text',
+                    ],
+                },
+                '123',
+            ];
+        }
+
+        function getPowerEdgesContent() {
+            return [
+                { text: 'Сверхъестественные черты (Power Edges)', style: 'header3', },
+                '123',
+            ];
+        }
+
+        function getProfessionalEdgesContent() {
+            return [
+                { text: 'Профессиональные черты (Professional Edges)', style: 'header3', },
+                '123',
+            ];
+        }
+
+        function getWeirdEdgesContent() {
+            return [
+                { text: 'Потусторонние черты (Weird Edges)', style: 'header3', },
+                '123',
+            ];
+        }
+
+        return {
+            stack: [
+                {
+                    text: 'Новые Черты (New Edges)',
+                    style: 'header2',
+                },
+                getCombatEdgesContent(),
+                getPowerEdgesContent(),
+                getProfessionalEdgesContent(),
+                getWeirdEdgesContent(),
+            ],
+            pageBreak: 'after',
+        };
     }
 
     return [
         {
-            text: 'Расы (Races)',
+            text: 'Создание персонажа (Character Creation)',
             style: 'header1',
         },
-        ...getRacesContent(),
+        getRacesContent(),
+        getEdgesContent(),
     ];
 }
 

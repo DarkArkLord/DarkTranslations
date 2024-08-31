@@ -323,6 +323,15 @@ const Edges = Object.freeze({
     LowLightVision: 'Low-Light Vision',
     Brawny: 'Brawny',
     Berserk: 'Berserk',
+    Block: 'Block',
+    // Ranks
+    Novice: 'Novice',
+    Seasoned: 'Seasoned',
+    Veteran: 'Veteran',
+    Heroic: 'Heroic',
+    Legendary: 'Legendary',
+    // Warcraft Edges
+    Defend: 'Defend',
 });
 
 (function EdgesTranslations() {
