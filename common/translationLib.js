@@ -196,6 +196,7 @@ class TranslationsPDFElementBuilder {
     #showPagesFlag;
     #bold;
     #italics;
+    #style;
     #pagesBrackets;
 
     #logger;
@@ -209,6 +210,7 @@ class TranslationsPDFElementBuilder {
 
         this.#bold = false;
         this.#italics = false;
+        this.#style = undefined;
 
         this.#pagesBrackets = false;
 
@@ -234,6 +236,11 @@ class TranslationsPDFElementBuilder {
     format(bold, italics) {
         this.#bold = bold;
         this.#italics = italics;
+        return this;
+    }
+
+    style(style) {
+        this.#style = style;
         return this;
     }
 
@@ -285,6 +292,10 @@ class TranslationsPDFElementBuilder {
 
         if (this.#italics) {
             result.italics = true;
+        }
+
+        if (this.#style) {
+            result.style = this.#style;
         }
 
         if (hasError) {
