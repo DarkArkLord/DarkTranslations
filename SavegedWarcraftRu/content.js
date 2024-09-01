@@ -730,24 +730,61 @@ function getCharacterCreationContent() {
     }
 
     function getEdgesContent() {
+        function createEdgeElement(name, requirements, text) {
+            return {
+                stack: [
+                    EdgesTranslations.pdf(name).showOriginal().style('header4').create(),
+                    {
+                        text: [
+                            { text: 'Требования', bold: true, },
+                            ':',
+                            ...insertSeparator(requirements, ','),
+                        ],
+                    },
+                    {
+                        text: text,
+                    },
+                ],
+            };
+
+            function* insertSeparator(items, separator) {
+                if (items.length < 2) return items;
+                yield items[0];
+                for (const i in items) {
+                    if (i == 0) continue;
+                    yield separator;
+                    yield items[i];
+                }
+            }
+        }
+
         function getCombatEdgesContent() {
             return [
                 { text: 'Боевые черты (Combat Edges)', style: 'header3', },
-                {
-                    stack: [
-                        EdgesTranslations.pdf(Edges.Defend).showOriginal().style('header4').create(),
-                        {
-                            text: [
-                                { text: 'Требования', bold: true, },
-                                ':',
-                                EdgesTranslations.pdf(Edges.Seasoned).showOriginal().create(),
-                                ', ',
-                                EdgesTranslations.pdf(Edges.Block).showOriginal().create(),
-                            ],
-                        },
-                        'Some text',
+                // {
+                //     stack: [ // Добавить функцию для этого
+                //         EdgesTranslations.pdf(Edges.Defend).showOriginal().style('header4').create(),
+                //         {
+                //             text: [
+                //                 { text: 'Требования', bold: true, },
+                //                 ':',
+                //                 EdgesTranslations.pdf(Edges.Seasoned).showOriginal().create(),
+                //                 ', ',
+                //                 EdgesTranslations.pdf(Edges.Block).showOriginal().create(),
+                //             ],
+                //         },
+                //         'Some first text',
+                //     ],
+                // },
+                createEdgeElement(Edges.Defend,
+                    [
+                        EdgesTranslations.pdf(Edges.Seasoned).showOriginal().create(),
+                        EdgesTranslations.pdf(Edges.Block).showOriginal().create(),
                     ],
-                },
+                    [
+                        quickTextFormat('Вы научились мастерски пользоваться щитом. Теперь вы можете добавлять бонус **Брони** и **Защиты** от щита против всех атак, независимо от направления, с которого они наносятся. Ваш **Шаг** снижается до **2** при использовании этой черты.'),
+                    ]
+                ),
                 '123',
             ];
         }
