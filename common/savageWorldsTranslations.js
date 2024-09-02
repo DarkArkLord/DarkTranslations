@@ -2020,13 +2020,539 @@ const Edges = Object.freeze({
 })();
 
 const Powers = Object.freeze({
-    aaa: 'aaa',
+    //#region Base powers
+    Armor: 'Armor',
+    Banish: 'Banish',
+    Barrier: 'Barrier',
+    BeastFriend: 'Beast Friend',
+    Blast: 'Blast',
+    Blind: 'Blind',
+    Bolt: 'Bolt',
+    BoostLowerTrait: 'Boost/Lower Trait',
+    BoostTrait: 'Boost Trait',
+    LowerTrait: 'Lower Trait',
+    Burrow: 'Burrow',
+    Burst: 'Burst',
+    Confusion: 'Confusion',
+    DamageField: 'Damage Field',
+    Darksight: 'Darksight',
+    Deflection: 'Deflection',
+    DetectConcealArcana: 'Detect/Conceal Arcana',
+    DetectArcana: 'Detect Arcana',
+    ConcealArcana: 'Conceal Arcana',
+    Disguise: 'Disguise',
+    Dispel: 'Dispel',
+    Divination: 'Divination',
+    DrainPowerPoints: 'Drain Power Points',
+    ElementalManipulation: 'Elemental Manipulation',
+    Entangle: 'Entangle',
+    EnvironmentalProtection: 'Environmental Protection',
+    Farsight: 'Farsight',
+    Fear: 'Fear',
+    Fly: 'Fly',
+    GreaterHealing: 'Greater Healing',
+    GrowthShrink: 'Growth/Shrink',
+    Growth: 'Growth',
+    Shrink: 'Shrink',
+    Havoc: 'Havoc',
+    Healing: 'Healing',
+    Intangibility: 'Intangibility',
+    Invisibility: 'Invisibility',
+    LightObscure: 'Light/Obscure',
+    Light: 'Light',
+    Obscure: 'Obscure',
+    MindReading: 'Mind Reading',
+    Pummel: 'Pummel',
+    Puppet: 'Puppet',
+    Quickness: 'Quickness',
+    ShapeChange: 'Shape Change',
+    Slow: 'Slow',
+    Slumber: 'Slumber',
+    Smite: 'Smite',
+    SpeakLanguage: 'Speak Language',
+    Speed: 'Speed',
+    Stun: 'Stun',
+    Succor: 'Succor',
+    SummonAlly: 'Summon Ally',
+    Telekinesis: 'Telekinesis',
+    Teleport: 'Teleport',
+    WallWalker: 'Wall Walker',
+    WarriorsGift: `Warrior's Gift`,
+    Zombie: 'Zombie',
+    //#endregion
+    //#region Warcraft powers
+    aaaaaaaaa: 'aaaaaaaaa',
+    //#endregion
 });
 
 (function PowersTranslations() {
     const res = DictionariesManager.create(Dictionaries.Powers);
 
-    //
+    //#region Base powers
+    res.create(Powers.Armor)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Banish)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Barrier)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.BeastFriend)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Blast)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Blind)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Bolt)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.BoostLowerTrait)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.BoostTrait)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.LowerTrait)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Burrow)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Burst)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Confusion)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.DamageField)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Darksight)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Deflection)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.DetectConcealArcana)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.DetectArcana)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.ConcealArcana)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Disguise)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Dispel)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Divination)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.DrainPowerPoints)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.ElementalManipulation)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Entangle)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.EnvironmentalProtection)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Farsight)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Fear)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Fly)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.GreaterHealing)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.GrowthShrink)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Growth)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Shrink)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Havoc)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Healing)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Intangibility)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Invisibility)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.LightObscure)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Light)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Obscure)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.MindReading)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Pummel)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Puppet)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Quickness)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.ShapeChange)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Slow)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Slumber)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Smite)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.SpeakLanguage)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Speed)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Stun)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Succor)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.SummonAlly)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Telekinesis)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Teleport)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.WallWalker)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.WarriorsGift)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+
+    res.create(Powers.Zombie)
+        .addTranslation(WordCaseForm.NOMINATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
+    //#endregion
 
     return res;
 })();
