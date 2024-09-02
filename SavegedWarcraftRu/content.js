@@ -50,6 +50,8 @@ function quickTextFormat(text, options = {}) {
     return { ...options, text: parts };
 }
 
+const paragraphOffset = 20;
+
 const fonts = {
     Roboto: {
         normal: getFontPath('Roboto-Regular.ttf'),
@@ -730,25 +732,27 @@ function getCharacterCreationContent() {
     }
 
     function getEdgesContent() {
-        function createEdgeElement(name, requirements, text) {
+        function createEdgeElement(name, requirements, text, styles = {}) {
             return {
+                ...styles,
                 stack: [
                     EdgesTranslations.pdf(name).showOriginal().style('header4').create(),
                     {
                         text: [
                             { text: 'Требования', bold: true, },
-                            ':',
-                            ...insertSeparator(requirements, ','),
+                            ': ',
+                            ...insertSeparator(requirements, ', '),
                         ],
+                        leadingIndent: paragraphOffset,
                     },
                     {
                         text: text,
+                        leadingIndent: paragraphOffset,
                     },
                 ],
             };
 
             function* insertSeparator(items, separator) {
-                if (items.length < 2) return items;
                 yield items[0];
                 for (const i in items) {
                     if (i == 0) continue;
@@ -761,21 +765,6 @@ function getCharacterCreationContent() {
         function getCombatEdgesContent() {
             return [
                 { text: 'Боевые черты (Combat Edges)', style: 'header3', },
-                // {
-                //     stack: [ // Добавить функцию для этого
-                //         EdgesTranslations.pdf(Edges.Defend).showOriginal().style('header4').create(),
-                //         {
-                //             text: [
-                //                 { text: 'Требования', bold: true, },
-                //                 ':',
-                //                 EdgesTranslations.pdf(Edges.Seasoned).showOriginal().create(),
-                //                 ', ',
-                //                 EdgesTranslations.pdf(Edges.Block).showOriginal().create(),
-                //             ],
-                //         },
-                //         'Some first text',
-                //     ],
-                // },
                 createEdgeElement(Edges.Defend,
                     [
                         EdgesTranslations.pdf(Edges.Seasoned).showOriginal().create(),
@@ -785,7 +774,42 @@ function getCharacterCreationContent() {
                         quickTextFormat('Вы научились мастерски пользоваться щитом. Теперь вы можете добавлять бонус **Брони** и **Защиты** от щита против всех атак, независимо от направления, с которого они наносятся. Ваш **Шаг** снижается до **2** при использовании этой черты.'),
                     ]
                 ),
-                '123',
+                createEdgeElement(Edges.ImprovedDefend,
+                    [
+                        EdgesTranslations.pdf(Edges.Veteran).showOriginal().create(),
+                        EdgesTranslations.pdf(Edges.Defend).showOriginal().create(),
+                    ],
+                    [
+                        quickTextFormat('Ваше мастерство владения щитом возросло до такой степени, что вы можете подготовиться даже к ракетному обстрелу и защитить себя. Вы можете добавить бонус **Защиты** от '),
+                        EdgesTranslations.pdf(Edges.Block).showOriginal().create(),
+                        ' и ',
+                        EdgesTranslations.pdf(Edges.ImprovedBlock).showOriginal().create(),
+                        quickTextFormat(' к бонусу **Стойкости** вашего щита. Ваш **Шаг** снижается до **2** при использовании этой черты.'),
+                    ],
+                    {
+                        margin: [paragraphOffset, 0, 0, 0],
+                    }
+                ),
+                createEdgeElement(Edges.RapidShot,
+                    [
+                        EdgesTranslations.pdf(Edges.Seasoned).showOriginal().create(),
+                        {
+                            text: [
+                                SkillsTranslations.pdf(Skills.Shooting).showOriginal().create(),
+                                ' (или ',
+                                SkillsTranslations.pdf(Skills.Throwing).showOriginal().create(),
+                                ') d10+',
+                            ],
+                        },
+                    ],
+                    [
+                        'Быстрый лучник может быстро стрелять, жертвуя точностью ради скорости. Персонаж может совершать дополнительную атаку ',
+                        SkillsTranslations.pdf(Skills.Shooting, WordCaseForm.INSTRUMENTAL).showOriginal().create(),
+                        ' или ',
+                        SkillsTranslations.pdf(Skills.Throwing, WordCaseForm.INSTRUMENTAL).showOriginal().create(),
+                        quickTextFormat(' каждый раунд со штрафом **-2**. Оба выстрела должны быть сделаны одновременно, поэтому **Дикие Карты** бросают **два кубика Стрельбы и один Дикий кубик**.'),
+                    ],
+                ),
             ];
         }
 

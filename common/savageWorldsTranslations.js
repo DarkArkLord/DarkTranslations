@@ -231,7 +231,7 @@ const Skills = Object.freeze({
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
         .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
-        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Стрельбой')
         .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
 
     res.create(Skills.Stealth)
@@ -279,7 +279,7 @@ const Skills = Object.freeze({
         .addTranslation(WordCaseForm.GENITIVE, WordCountForm.SINGLE, undefined)
         .addTranslation(WordCaseForm.DATIVE, WordCountForm.SINGLE, undefined)
         .addTranslation(WordCaseForm.ACCUSATIVE, WordCountForm.SINGLE, undefined)
-        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, undefined)
+        .addTranslation(WordCaseForm.INSTRUMENTAL, WordCountForm.SINGLE, 'Метанием')
         .addTranslation(WordCaseForm.PREPOSITIONAL, WordCountForm.SINGLE, undefined);
 
     res.create(Skills.Tracking)
@@ -850,6 +850,8 @@ const Edges = Object.freeze({
     //#endregion
     //#region Warcraft edges
     Defend: 'Defend',
+    ImprovedDefend: 'Improved Defend',
+    RapidShot: 'Rapid Shot',
     //#endregion
 });
 
