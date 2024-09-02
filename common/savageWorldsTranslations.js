@@ -5,6 +5,8 @@ const Dictionaries = Object.freeze({
     Skills: 'Skills',
     Hindrances: 'Hindrances',
     Edges: 'Edges',
+    Powers: 'Powers',
+    Equipment: 'Equipment',
     Creatures: 'Creatures',
 });
 
@@ -719,6 +721,30 @@ const Edges = Object.freeze({
     return res;
 })();
 
+const Powers = Object.freeze({
+    aaa: 'aaa',
+});
+
+(function PowersTranslations() {
+    const res = DictionariesManager.create(Dictionaries.Powers);
+
+    //
+
+    return res;
+})();
+
+const Equipment = Object.freeze({
+    aaa: 'aaa',
+});
+
+(function EquipmentTranslations() {
+    const res = DictionariesManager.create(Dictionaries.Equipment);
+
+    //
+
+    return res;
+})();
+
 const Creatures = Object.freeze({
     aaa: 'aaa',
 });
@@ -743,6 +769,10 @@ module.exports = {
     HindrancesTranslations: DictionariesManager.get(Dictionaries.Hindrances).createPDFManager(),
     Edges,
     EdgesTranslations: DictionariesManager.get(Dictionaries.Edges).createPDFManager(),
+    Powers,
+    PowersTranslations: DictionariesManager.get(Dictionaries.Powers).createPDFManager(),
+    Equipment,
+    EquipmentTranslations: DictionariesManager.get(Dictionaries.Equipment).createPDFManager(),
     Creatures,
     CreaturesTranslations: DictionariesManager.get(Dictionaries.Creatures).createPDFManager(),
     Logger: DictionariesManager.getLoggerPdf(),
