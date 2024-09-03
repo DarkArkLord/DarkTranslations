@@ -108,6 +108,34 @@ function quickTextFormat(text, options = {}) {
     return { ...options, text: parts };
 }
 
+function getTipText(lines) {
+    return {
+        layout: 'noBorders',
+        table: {
+            widths: ['*'],
+            body: [
+                [
+                    {
+                        stack: lines,
+                        style: 'tip',
+                        leadingIndent: paragraphOffset,
+                    }
+                ],
+            ]
+        }
+    };
+}
+
+function getHorizontalLine(color, height = 2, margin = 5, styles = {}) {
+    return {
+        svg: `<svg width="500" height="${height}" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="2" x2="500" y2="2" style="stroke:${color};stroke-width:${height + 1}" /></svg>`,
+        width: 500,
+        alignment: 'center',
+        margin: [0, margin, 0, margin],
+        ...styles,
+    };
+}
+
 const paragraphOffset = 20;
 
 const fonts = {
@@ -137,6 +165,7 @@ const docDefinition = {
         header2: { fontSize: 22, bold: true, alignment: 'center', margin: [0, 10, 0, 10] },
         header3: { fontSize: 18, bold: true, margin: [0, 10, 0, 10] },
         header4: { fontSize: 14, bold: true, margin: [0, 5, 0, 5] },
+        tip: { fillColor: '#222', color: 'white', margin: 5 },
     },
     footer: function (currentPage, pageCount, pageSize) {
         return [
@@ -492,7 +521,7 @@ function getCharacterCreationContent() {
                         leadingIndent: paragraphOffset,
                     },
                     {
-                        text: text,
+                        stack: text,
                         leadingIndent: paragraphOffset,
                         margin: [0, 0, 0, 5],
                     },
@@ -595,7 +624,54 @@ function getCharacterCreationContent() {
         function getPowerEdgesContent() {
             return [
                 { text: 'Сверхъестественные черты (Power Edges)', style: 'header3', },
-                '123',
+                createEdgeElement(SettingEdges.ArcaneUndead,
+                    [
+                        `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
+                        `${SettingEdgesTranslations[SettingEdges.Necromancer]} (${SettingEdges.Necromancer})`,
+                        `${PowersTranslations[Powers.Zombie]} (${Powers.Zombie})`,
+                    ],
+                    [
+                        quickTextFormat(`Ваше мастерство владения энергией нежити возросло до такой степени, что вы можете передавать часть своей магической мощи вызываемой нежити. Используя силу **${PowersTranslations[Powers.Zombie]} (${Powers.Zombie})**, вы можете потратить дополнительный Пункт Силы, чтобы создать Скелета-Мага. Это скелет с Колдовством (${Skills.Spellcasting}) **d6**, **10** Пунктами Силы и способностью использовать Силу **${PowersTranslations[Powers.Bolt]} (${Powers.Bolt})**.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.BrillianceAura,
+                    [
+                        `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
+                        `${EdgesTranslations[Edges.Command]} (${Edges.Command})`,
+                        `${EdgesTranslations[Edges.RapidRecharge]} (${Edges.RapidRecharge})`,
+                        `${SkillsTranslations[Skills.Spellcasting]} (${Skills.Spellcasting}) d10+`,
+                    ],
+                    [
+                        quickTextFormat(`Заклинатель может помогать группе персонажей с Мистическим даром (${Edges.ArcaneBackground}) в восстановлении их магической энергии. Этот персонаж может делиться преимуществом черты **${EdgesTranslations[Edges.RapidRecharge]} (${Edges.RapidRecharge})** с заклинателями, в количестве равном его типу кубика **Характера**. Все затронутые заклинатели должны иметь возможность провести один час в совместной медитации, чтобы эта черта возымела эффект.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.CaptureSpell,
+                    [
+                        `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
+                        `${SettingEdgesTranslations[SettingEdges.SpellBreaker]} (${SettingEdges.SpellBreaker})`,
+                    ],
+                    [
+                        quickTextFormat(`Вы можете "поймать" заклинание, направленное на вас, и перенаправить его. Примените **${PowersTranslations[Powers.Dispel]} (${Powers.Dispel})** в ответ на заклинание Тайной Магии другого мага. Если вы сделаете подъём во встречной проверке, вы можете "поймать" заклинание. В следующем раунде вы можете переиспользовать "пойманное" заклинание бесплатно. Однако, если вы не можете применить "пойманное" заклинание, вы получаете штраф **-2** к броску Колдовства (${Skills.Spellcasting}) (иные Аспекты допустимы). Параметры и Аспекты заклинания остаются такими-же, какими их заявил оригинальный заклинатель. Однако вы получаете дополнительные эффекты за подъёмы, если получите их в своей проверке Колдовства (${Skills.Spellcasting}).`),
+                        quickTextFormat(`Если маг "ловит" заклинание Призыв, он не переиспользует его. Вместо этого он берет под контроль призванное существо, делая встречную проверку Колдовства (${Skills.Spellcasting}) против **Характера**. Если "ловец" проваливает проверку, Призыв немедленно заканчивается. Вы можете выбирать призванных существ целью данного действия после произнесения заклинания Призыва.`),
+                    ],
+                ),
+                getTipText([
+                    quickTextFormat(`Про заклинание, которое "вы не можете применить" (the spell is not one you are able to cast).`),
+                    getHorizontalLine('#FFF'),
+                    quickTextFormat(`Вероятно, имеется ввиду отсутствие "пойманного" заклинания среди списка Сил, доступных персонажу для использования без "ловли" чужих заклинаний..`),
+                    getHorizontalLine('#FFF'),
+                    quickTextFormat(`Про Аспекты (Trappings).`),
+                    getHorizontalLine('#FFF'),
+                    quickTextFormat(`Аспектами в системе называют визуализацию Сил, однако в этом понятии совмещены как "вид проявления" заклинания (огонь, лед, тьма и т.д.), так и метод применения (жест, молитва, шёпот, концентрация внимания и т.д.).`),
+                    quickTextFormat(`Не уверен, что хотел сказать автор конверсии, когда в одном предложении написал *"иные Аспекты допустимы (different trappings are okay)"*, а в следующем *"Параметры и Аспекты заклинания остаются такими-же, какими их заявил оригинальный заклинатель (The parameters and trappings of the spell remain unchanged from the original caster)"*.`),
+                    quickTextFormat(`Вероятно, имелось ввиду, что "вид проявления" заклинания остается неизменным (т.е. огненный шар не превратится в разряд молнии), но метод применения может быть иным (если оригинальный заклинатель тыкает иглой куклу вуду, для применения «пойманного» заклинания персонажу этого делать не надо).`),
+                    getHorizontalLine('#FFF'),
+                    quickTextFormat(`Про Призыв (Summon).`),
+                    getHorizontalLine('#FFF'),
+                    quickTextFormat(`По причине отсутствия уточнений на этот счет, Ведьмак (перевод юнита SpellBreaker из Warcraft 3) делает проверку **Рассеивания** и проверку **Колдовства** против **Характера** призывателя в одном и тот-же раунде раунде.`),
+                    quickTextFormat(`По поводу фразы *"Если "ловец" проваливает проверку, Призыв немедленно заканчивается (If the caster fails, the Summon ends immediately)"*. "The caster" переведено как "ловец", чтобы было понятнее, чей провал заканчивает призыв. Провал "ловца" заканчивает призыв, ибо подчинить призванное существо не удалось и применяется стандартный эффект **Рассеивания**.`),
+                    quickTextFormat(`По причине отсутствия уточнений на этот счет, для того, чтобы "поймать" атакующее заклинание, маг быть наготове и прервать действие оппонента согласно правилам по прерыванию ***(см. SW1 с. 69, SW2 с. 17)***, как указано в описании **Рассеивания**.`),
+                ]),
             ];
         }
 
