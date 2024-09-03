@@ -1,5 +1,63 @@
 const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('../common/savageWorldsTranslations');
 
+const SettingEdges = Object.freeze({
+    Defend: 'Defend',
+    ImprovedDefend: 'Improved Defend',
+    RapidShot: 'Rapid Shot',
+    ImprovedRapidShot: 'Improved Rapid Shot',
+    StrafingRun: 'Strafing Run',
+    TwoArrowsNocked: 'Two Arrows Nocked',
+    HailOfArrows: 'Hail of Arrows',
+    ArcaneUndead: 'Arcane Undead',
+    BrillianceAura: 'Brilliance Aura',
+    CaptureSpell: 'Capture Spell',
+    ImprovedCaptureSpell: 'Improved Capture Spell',
+    CreateUndead: 'Create Undead',
+    DarkRitual: 'Dark Ritual',
+    DrainSpell: 'Drain Spell',
+    MagicalBeastForm: 'Magical Beast Form',
+    SpellAura: 'Spell Aura',
+    Artillerist: 'Artillerist',
+    Cavalry: 'Cavalry',
+    Druid: 'Druid',
+    Priest: 'Priest',
+    Shaman: 'Shaman',
+    Musketeer: 'Musketeer',
+    Necromancer: 'Necromancer',
+    SpellBreaker: 'Spell Breaker',
+    Warlock: 'Warlock',
+    NaturesFury: 'Nature’s Fury',
+});
+
+const SettingEdgesTranslations = Object.freeze({
+    [SettingEdges.Defend]: 'Оборона',
+    [SettingEdges.ImprovedDefend]: 'Улучшенная Оборона',
+    [SettingEdges.RapidShot]: 'Быстрый выстрел',
+    [SettingEdges.ImprovedRapidShot]: 'Улучшенный быстрый выстрел',
+    [SettingEdges.StrafingRun]: 'Бреющий полет',
+    [SettingEdges.TwoArrowsNocked]: 'Две стрелы на тетиве',
+    [SettingEdges.HailOfArrows]: 'Град стрел',
+    [SettingEdges.ArcaneUndead]: 'Магическая нежить',
+    [SettingEdges.BrillianceAura]: 'Аура великолепия',
+    [SettingEdges.CaptureSpell]: 'Захват заклинания',
+    [SettingEdges.ImprovedCaptureSpell]: 'Улучшенный захват заклинания',
+    [SettingEdges.CreateUndead]: 'Создание нежити',
+    [SettingEdges.DarkRitual]: 'Темный ритуал',
+    [SettingEdges.DrainSpell]: 'Истощение заклинания',
+    [SettingEdges.MagicalBeastForm]: 'Форма магического зверя',
+    [SettingEdges.SpellAura]: 'Аура заклинания',
+    [SettingEdges.Artillerist]: 'Артиллерист',
+    [SettingEdges.Cavalry]: 'Кавалерия',
+    [SettingEdges.Druid]: 'Друид',
+    [SettingEdges.Priest]: 'Жрец',
+    [SettingEdges.Shaman]: 'Шаман',
+    [SettingEdges.Musketeer]: 'Мушкетер',
+    [SettingEdges.Necromancer]: 'Некромант',
+    [SettingEdges.SpellBreaker]: 'Разрушитель заклинаний',
+    [SettingEdges.Warlock]: 'Чернокнижник',
+    [SettingEdges.NaturesFury]: 'Ярость природы',
+});
+
 function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
 }
@@ -75,10 +133,10 @@ const docDefinition = {
         fontSize: 14,
     },
     styles: {
-        header1: { fontSize: 26, bold: true, alignment: 'center' },
-        header2: { fontSize: 22, bold: true, alignment: 'center', },
-        header3: { fontSize: 18, bold: true, },
-        header4: { fontSize: 14, bold: true, },
+        header1: { fontSize: 26, bold: true, alignment: 'center', margin: [0, 10, 0, 10] },
+        header2: { fontSize: 22, bold: true, alignment: 'center', margin: [0, 10, 0, 10] },
+        header3: { fontSize: 18, bold: true, margin: [0, 10, 0, 10] },
+        header4: { fontSize: 14, bold: true, margin: [0, 5, 0, 5] },
     },
     footer: function (currentPage, pageCount, pageSize) {
         return [
@@ -422,7 +480,7 @@ function getCharacterCreationContent() {
                 ...styles,
                 stack: [
                     {
-                        text: `${name} (${name})`,
+                        text: `${SettingEdgesTranslations[name]} (${name})`,
                         style: 'header4',
                     },
                     {
@@ -436,6 +494,7 @@ function getCharacterCreationContent() {
                     {
                         text: text,
                         leadingIndent: paragraphOffset,
+                        margin: [0, 0, 0, 5],
                     },
                 ],
             };
@@ -453,7 +512,7 @@ function getCharacterCreationContent() {
         function getCombatEdgesContent() {
             return [
                 { text: 'Боевые черты (Combat Edges)', style: 'header3', },
-                createEdgeElement(Edges.Defend,
+                createEdgeElement(SettingEdges.Defend,
                     [
                         `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
                         `${EdgesTranslations[Edges.Block]} (${Edges.Block})`,
@@ -462,19 +521,19 @@ function getCharacterCreationContent() {
                         quickTextFormat('Вы научились мастерски пользоваться щитом. Теперь вы можете добавлять бонус **Брони** и **Защиты** от щита против всех атак, независимо от направления, с которого они наносятся. Ваш **Шаг** снижается до **2** при использовании этой черты.'),
                     ]
                 ),
-                createEdgeElement(Edges.ImprovedDefend,
+                createEdgeElement(SettingEdges.ImprovedDefend,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${EdgesTranslations[Edges.Defend]} (${Edges.Defend})`,
+                        `${SettingEdgesTranslations[Edges.Defend]} (${SettingEdges.Defend})`,
                     ],
                     [
-                        quickTextFormat(`Ваше мастерство владения щитом возросло до такой степени, что вы можете подготовиться даже к ракетному обстрелу и защитить себя. Вы можете добавить бонус **Защиты** от Блока (${Hindrances.Block}) и Блока+ (${Hindrances.ImprovedBlock}) к бонусу **Стойкости** вашего щита. Ваш **Шаг** снижается до **2** при использовании этой черты.`),
+                        quickTextFormat(`Ваше мастерство владения щитом возросло до такой степени, что вы можете подготовиться даже к ракетному обстрелу и защитить себя. Вы можете добавить бонус **Защиты** от Блока (${Edges.Block}) и Блока+ (${Edges.ImprovedBlock}) к бонусу **Стойкости** вашего щита. Ваш **Шаг** снижается до **2** при использовании этой черты.`),
                     ],
                     {
                         margin: [paragraphOffset, 0, 0, 0],
                     }
                 ),
-                createEdgeElement(Edges.RapidShot,
+                createEdgeElement(SettingEdges.RapidShot,
                     [
                         `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
                         `Стрельба (${Skills.Shooting}) (или Метание (${Skills.Throwing})) d10+`,
