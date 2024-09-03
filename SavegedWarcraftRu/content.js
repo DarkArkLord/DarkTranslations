@@ -524,7 +524,7 @@ function getCharacterCreationContent() {
                 createEdgeElement(SettingEdges.ImprovedDefend,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${SettingEdgesTranslations[Edges.Defend]} (${SettingEdges.Defend})`,
+                        `${SettingEdgesTranslations[SettingEdges.Defend]} (${SettingEdges.Defend})`,
                     ],
                     [
                         quickTextFormat(`Ваше мастерство владения щитом возросло до такой степени, что вы можете подготовиться даже к ракетному обстрелу и защитить себя. Вы можете добавить бонус **Защиты** от Блока (${Edges.Block}) и Блока+ (${Edges.ImprovedBlock}) к бонусу **Стойкости** вашего щита. Ваш **Шаг** снижается до **2** при использовании этой черты.`),
@@ -541,6 +541,53 @@ function getCharacterCreationContent() {
                     [
                         quickTextFormat(`Быстрый лучник может быстро стрелять, жертвуя точностью ради скорости. Персонаж может совершать дополнительную атаку Стрельбой (${Skills.Shooting}) или Метанием (${Skills.Throwing}) каждый раунд со штрафом **-2**. Оба выстрела должны быть сделаны одновременно, поэтому **Дикие Карты** бросают **два кубика Стрельбы и один Дикий кубик**.`),
                     ],
+                ),
+                createEdgeElement(SettingEdges.ImprovedRapidShot,
+                    [
+                        `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
+                        `${SettingEdgesTranslations[SettingEdges.RapidShot]} (${SettingEdges.RapidShot})`,
+                    ],
+                    [
+                        quickTextFormat(`То же, что и выше, но персонаж может игнорировать штраф **-2** для **Быстрого выстрела**.`),
+                    ],
+                    {
+                        margin: [paragraphOffset, 0, 0, 0],
+                    }
+                ),
+                createEdgeElement(SettingEdges.StrafingRun,
+                    [
+                        `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
+                        `${SettingEdgesTranslations[SettingEdges.Cavalry]} (${SettingEdges.Cavalry})`,
+                        `${EdgesTranslations[Edges.SteadyHands]} (${Edges.SteadyHands})`,
+                        'Летающее ездовое животное (flying mount)',
+                    ],
+                    [
+                        quickTextFormat(`Вы можете в полной мере воспользоваться способностью летающего ездового животного пролетать мимо противника. Когда ваше ездовое животное проходит в пределах **2 дюймов** от цели (включая атаку налетом (Swoop)), вы получаете **+2** к атаке и урону по этой цели.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.TwoArrowsNocked,
+                    [
+                        `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
+                        `${StatesTranslations[States.Agility]} (${States.Agility}) d8+`,
+                        `${SkillsTranslations[Skills.Shooting]} (${Skills.Shooting}) d8+`,
+                    ],
+                    [
+                        quickTextFormat(`Вы можете использовать **Двойной выстрел (double-tap)** (см. SW1 с. 77, SW2 с. 73) с луком, ибо вы можете стрелять двумя стрелами одновременно или научились выхватывать стрелы почти мгновенно.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.HailOfArrows,
+                    [
+                        `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
+                        `${StatesTranslations[States.Agility]} (${States.Agility}) d10+`,
+                        `${SkillsTranslations[Skills.Shooting]} (${Skills.Shooting}) d12+`,
+                        `${SettingEdgesTranslations[SettingEdges.TwoArrowsNocked]} (${SettingEdges.TwoArrowsNocked})`,
+                    ],
+                    [
+                        quickTextFormat(`Вы так быстро натягиваете тетиву, что можете послать град из полудюжины (шести) стрел в группу противников, жертвуя любым намеком на точность. Это действует как **Огонь на подавление (Suppressive Fire)** (см. SW1 с. 74, SW2 с. 94).`),
+                    ],
+                    {
+                        margin: [paragraphOffset, 0, 0, 0],
+                    }
                 ),
             ];
         }
