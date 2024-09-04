@@ -19,6 +19,7 @@ const SettingEdges = Object.freeze({
     SpellAura: 'Spell Aura',
     Artillerist: 'Artillerist',
     Cavalry: 'Cavalry',
+    DruidPriestShaman: 'Druid/Priest/Shaman',
     Druid: 'Druid',
     Priest: 'Priest',
     Shaman: 'Shaman',
@@ -48,6 +49,7 @@ const SettingEdgesTranslations = Object.freeze({
     [SettingEdges.SpellAura]: 'Аура заклинания',
     [SettingEdges.Artillerist]: 'Артиллерист',
     [SettingEdges.Cavalry]: 'Кавалерия',
+    [SettingEdges.DruidPriestShaman]: 'Друид/Жрец/Шаман',
     [SettingEdges.Druid]: 'Друид',
     [SettingEdges.Priest]: 'Жрец',
     [SettingEdges.Shaman]: 'Шаман',
@@ -56,6 +58,14 @@ const SettingEdgesTranslations = Object.freeze({
     [SettingEdges.SpellBreaker]: 'Разрушитель заклинаний',
     [SettingEdges.Warlock]: 'Чернокнижник',
     [SettingEdges.NaturesFury]: 'Ярость природы',
+});
+
+const SettingPowers = Object.freeze({
+    ManaBurn: 'Mana Burn',
+});
+
+const SettingPowersTranslations = Object.freeze({
+    [SettingPowers.ManaBurn]: 'Сжигание маны',
 });
 
 function getFontPath(path) {
@@ -513,11 +523,13 @@ function getCharacterCreationContent() {
                         style: 'header4',
                     },
                     {
-                        text: [
-                            { text: 'Требования', bold: true, },
-                            ': ',
-                            ...insertSeparator(requirements, ', '),
-                        ],
+                        text: requirements?.length > 0
+                            ? [
+                                { text: 'Требования', bold: true, },
+                                ': ',
+                                ...insertSeparator(requirements, ', '),
+                            ]
+                            : [],
                         leadingIndent: paragraphOffset,
                     },
                     {
@@ -743,7 +755,70 @@ function getCharacterCreationContent() {
         function getProfessionalEdgesContent() {
             return [
                 { text: 'Профессиональные черты (Professional Edges)', style: 'header3', },
-                '123',
+                createEdgeElement(SettingEdges.Artillerist,
+                    [
+                        `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
+                        `${SkillsTranslations[Skills.Shooting]} (${Skills.Shooting}) d8+`,
+                        `не должно быть изъяна ${HindrancesTranslations[Hindrances.AllThumbs]} (${Hindrances.AllThumbs})`,
+                    ],
+                    [
+                        quickTextFormat(`Вы обучены использованию большого порохового оружия и искусны в его использовании. Время перезарядки пушек, мортир и т.п. сокращается для вас на одно Действие. Вы не можете перемещать такое оружие во время перезарядки.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.Cavalry,
+                    [
+                        `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
+                        `${SkillsTranslations[Skills.Riding]} (${Skills.Riding}) d6+`,
+                    ],
+                    [
+                        quickTextFormat(`Вы обучены верховому бою. Вы получаете **+2** ко всем проверкам **Верховой езды (${Skills.Riding})** и можете тратить Фишки, чтобы поглощать урон, нанесенный вашему скакуну. Кроме того, ваша **Верховая езда (${Skills.Riding})** считается на один тип кубика выше при определении низшего из ваших **Драки (${Skills.Fighting})** и **Верховой езды (${Skills.Riding})** во время верхового боя.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.DruidPriestShaman,
+                    [],
+                    [
+                        quickTextFormat(`Многие традиции Азерота превратили магию в точное искусство. Это идентично черте **${EdgesTranslations[Edges.Wizard]} (${Edges.Wizard})**, за исключением того, что оно применяется к различным **Мистическим дарам (${Edges.ArcaneBackground}) (Чудеса (Miracles))**, а требования к навыкам Знаний (${Skills.Knowledge}) различаются. Друиды и шаманы изучают Природу (Nature), Жрецы Света и Жрицы Луны изучают Религию (Religion). Однако из-за долгого изгнания шаманизма из орочьих племен шаманы орков должны иметь изъян **${HindrancesTranslations[Hindrances.Elderly]} (${Hindrances.Elderly})**, чтобы взять эту черту.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.Musketeer,
+                    [
+                        `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
+                        `${SkillsTranslations[Skills.Shooting]} (${Skills.Shooting}) d8+`,
+                        `не должно быть изъяна ${HindrancesTranslations[Hindrances.AllThumbs]} (${Hindrances.AllThumbs})`,
+                    ],
+                    [
+                        quickTextFormat(`Вы привыкли использовать огнестрельное оружие с черным порохом и можете быстро перезаряжаться. Вы можете перезарядить огнестрельное оружие одним действием. Вы можете ходить во время перезарядки, но не бежать. Это преимущество применимо только к ручному огнестрельному оружию, а не к пушкам, мортирам и т.п.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.Necromancer,
+                    [
+                        `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Тайная Магия (Arcane Magic))`,
+                    ],
+                    [
+                        quickTextFormat(`Вы проникли в тайны нежити. Вы получаете доступ к заклинаниям из списка Некроманта (${SettingEdges.Necromancer}). Вы также получаете **+2** ко всем проверкам на управление или взаимодействие с нежитью (включая использование Сил **${PowersTranslations[Powers.Zombie]} (${Powers.Zombie})** и **${PowersTranslations[Powers.Puppet]} (${Powers.Puppet})** на нежити) и можете использовать черту **${EdgesTranslations[Edges.Command]} (${Edges.Command})** на безмозглой нежити (обычно невозможно).`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.SpellBreaker,
+                    [
+                        `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
+                        `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Магия (Magic))`,
+                        `${PowersTranslations[Powers.Dispel]} (${Powers.Dispel}) и ${SettingPowersTranslations[SettingPowers.ManaBurn]} (${SettingPowers.ManaBurn})`,
+                    ],
+                    [
+                        quickTextFormat(`Вы изучили нюансы потока магической энергии. Вы получаете **+2** к своему броску Колдовства (${Skills.Spellcasting}), когда используете **${PowersTranslations[Powers.Dispel]} (${Powers.Dispel})** или **${SettingPowersTranslations[SettingPowers.ManaBurn]} (${SettingPowers.ManaBurn})**, и вы получаете **+1** к любому встречному броску на сопротивление эффектам заклинаний.`),
+                    ],
+                ),
+                createEdgeElement(SettingEdges.Warlock,
+                    [
+                        `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Тайная Магия (Arcane Magic))`,
+                    ],
+                    [
+                        quickTextFormat(`Вы раскрыли запретные силы демонов и Круговерти Пустоты. Вы получаете доступ к списку заклинаний Чернокнижника (${SettingEdges.Warlock}), получаете бонус в **5** Пунктов Силы и иммунитет к Зависимости от Тайной Магии (Arcane Magic Addiction). Однако вы автоматически страдаете от изъяна **${HindrancesTranslations[Hindrances.Bloodthirsty]} (${Hindrances.Bloodthirsty})**. Если у вас уже есть этот изъян, вы получаете либо **${HindrancesTranslations[Hindrances.Delusional]} (${Hindrances.Delusional})**, либо **${HindrancesTranslations[Hindrances.Vengeful]} (${Hindrances.Vengeful})**.`),
+                    ],
+                ),
+                getTipText([
+                    quickTextFormat(`В оригинале используется изъян *Delusion*, а не *${Hindrances.Delusional}*. Однако даже в английских книгах встречается именно *${Hindrances.Delusional}*, так что примем это за опечатку автора.`),
+                ]),
             ];
         }
 
