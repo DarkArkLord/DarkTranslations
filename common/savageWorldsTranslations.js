@@ -409,7 +409,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Mentalist]: undefined,
     [Edges.MightyBlow]: undefined,
     [Edges.MrFixIt]: undefined,
-    [Edges.NaturalLeader]: undefined,
+    [Edges.NaturalLeader]: 'Прирождённый лидер',
     [Edges.NervesOfSteel]: undefined,
     [Edges.ImprovedNervesOfSteel]: undefined,
     [Edges.NewPower]: undefined,
