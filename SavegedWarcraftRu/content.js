@@ -825,7 +825,17 @@ function getCharacterCreationContent() {
         function getWeirdEdgesContent() {
             return [
                 { text: 'Потусторонние черты (Weird Edges)', style: 'header3', },
-                '123',
+                createEdgeElement(SettingEdges.NaturesFury,
+                    [
+                        `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
+                        `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Магия природы (Nature Magic))`,
+                        `${StatesTranslations[States.Spirit]} (${States.Spirit}) d6+`,
+                        `${SkillsTranslations[Skills.Fighting]} (${Skills.Fighting}) d8+`,
+                    ],
+                    [
+                        quickTextFormat(`Сила природы преобразила вас, дав вам природное оружие, подобное одному из зверей или растений, которые являются вашими союзниками. Когда вы берете эту черту, вы получаете либо одно природное оружие, которое наносит урон **Сила+2**, либо пару оружий, которые наносят **Сила+1** каждое. Обратите внимание, что пара когтей (pair of claws) считается двумя оружиями.`),
+                    ],
+                ),
             ];
         }
 
