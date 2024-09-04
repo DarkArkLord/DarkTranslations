@@ -249,7 +249,7 @@ function getTitlePageContent() {
             text: 'Перевод ?? ?? 2024, версия 0.2',
             alignment: 'center',
             bold: true,
-            pageBreak: 'after',
+            // pageBreak: 'after',
         },
     ];
 }
@@ -509,7 +509,7 @@ function getCharacterCreationContent() {
                 getSentinelsRacesContent(),
                 getNeutralRacesContent(),
             ],
-            pageBreak: 'after',
+            // pageBreak: 'after',
         };
     }
 
@@ -844,13 +844,14 @@ function getCharacterCreationContent() {
                 {
                     text: 'Новые Черты (New Edges)',
                     style: 'header2',
+                    pageBreak: 'before',
                 },
                 getCombatEdgesContent(),
                 getPowerEdgesContent(),
                 getProfessionalEdgesContent(),
                 getWeirdEdgesContent(),
             ],
-            pageBreak: 'after',
+            // pageBreak: 'after',
         };
     }
 
@@ -858,6 +859,7 @@ function getCharacterCreationContent() {
         {
             text: 'Создание персонажа (Character Creation)',
             style: 'header1',
+            pageBreak: 'before',
         },
         getRacesContent(),
         getEdgesContent(),
