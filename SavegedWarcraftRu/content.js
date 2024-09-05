@@ -82,7 +82,7 @@ const SettingPowers = Object.freeze({
     AntiMagicShell: 'Anti-Magic Shell',
     ContinuousBlast: 'Continuous Blast',
     OffensiveArmor: 'Offensive Armor',
-    DeathCoil : 'Death Coil',
+    DeathCoil: 'Death Coil',
     DeathPact: 'Death Pact',
     Paralyze: 'Paralyze',
 });
@@ -901,6 +901,109 @@ function getCharacterCreationContent() {
         };
     }
 
+    function getArcaneBackgroundsContent() {
+        function getArcaneMagicContent() {
+            return {
+                stack: [
+                    {
+                        text: 'Тайная магия (Arcane Magic)',
+                        style: 'header3',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Навык**: ${SkillsTranslations[Skills.Spellcasting]} (${Skills.Spellcasting}) (${StatesTranslations[States.Smarts]} (${States.Smarts}))`),
+                            quickTextFormat(`**Начальные пункты силы**: 10`),
+                            quickTextFormat(`**Начальные силы**: 3`),
+                            quickTextFormat(`**Подтипы**: Маги (Волшебники, Колдуны); Некроманты; Чернокнижники`),
+                            [
+                                quickTextFormat(`**Зависимость от магии**: Когда маг выбрасывает **1** на своей кости **Колдовства (${Skills.Spellcasting})** (независимо от Дикой кости), он должен сделать бросок **Характера** со штрафом, равным Рангу заклинания (${RanksTranslations[Ranks.Novice]} (${Ranks.Novice}) = 0, ${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned}) = 1 и т. д.), а также для поддерживаемых заклинаний.`),
+                                {
+                                    stack: [
+                                        quickTextFormat(`Если персонаж проваливает проверку **Характера**, он получает изъян **${HindrancesTranslations[Hindrances.Habit]} (${Hindrances.Habit}) (мелкий)**. Он начнет выполнять мирские задачи, используя Тайную Магию (не требует броска). В дополнение к штрафу **Харизмы**, он все время считается потратившим **1** Пункт Силы из-за затраченной на эти задачи энергии.`),
+                                        quickTextFormat(`Если заклинатель проваливает проверку **Характера** второй раз или бросает Змеиные Глаза (snake-eyes), он получает **${HindrancesTranslations[Hindrances.Habit]} (${Hindrances.Habit}) (крупный)**. Чтобы удовлетворить зависимость, он выполняет практически все мирские задачи с помощью магии, тратя на это этого **2** Пункта Силы. Кроме того, он должен произносить свое самое сильное заклинание по крайней мере один раз каждые 24 часа, по самой высокой стоимости Пунктов Силы. Он продолжает страдать от штрафа **Харизмы** изъяна **${HindrancesTranslations[Hindrances.Habit]} (${Hindrances.Habit}) (мелкий)**.`),
+                                        quickTextFormat(`Если заклинатель проваливает третью проверку зависимости, он автоматически получает черту **${SettingEdgesTranslations[SettingEdges.Warlock]} (${SettingEdges.Warlock})** и один из изъянов: **${HindrancesTranslations[Hindrances.Delusional]} (${Hindrances.Delusional}) (крупный)**, **${HindrancesTranslations[Hindrances.Overconfident]} (${Hindrances.Overconfident})** или **${HindrancesTranslations[Hindrances.Vengeful]} (${Hindrances.Vengeful}) (крупный)**. Он также имеет **-2** к сопротивлению любым попыткам **Убеждения (${Skills.Persuasion})** или заклинанию **${PowersTranslations[Powers.Puppet]} (${Powers.Puppet})** от демонов.`),
+                                    ],
+                                    leadingIndent: paragraphOffset,
+                                },
+                            ],
+                        ],
+                    },
+                    {
+                        text: 'Списки заклинаний (Spell Lists)',
+                        style: 'header3',
+                    },
+                    quickTextFormat(`*Заклинания, выделенные курсивом, являются новыми в этой книге.*`),
+                    'Для некоторых заклинаний Аспекты указаны в скобках. Если Аспекты не перечислены, используйте любые из тех, что кажутся подходящими.',
+                    {
+                        text: 'Маги (Mages)',
+                        style: 'header3',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${SettingPowersTranslations[SettingPowers.AntiMagicShell]} (${SettingPowers.AntiMagicShell}) (${PowersTranslations[Powers.Armor]} (${Powers.Armor}) против магии, +2/4 к сопротивлению заклинаниям)`),
+                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.ArmorOffensive]} (${SettingPowers.ArmorOffensive})* (Огненный щит (Fire Shield))`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Barrier]} (${Powers.Barrier})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Blast]} (${Powers.Blast}) (Огненный шар (Fireball))`),
+                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.ContinuousBlast]} (${SettingPowers.ContinuousBlast})* (Метель (Blizzard))`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Bolt]} (${Powers.Bolt})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.BoostLowerTrait]} (${Powers.BoostLowerTrait})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Burst]} (${Powers.Burst}) (Молния (Lightning), Мороз (Frost))`),
+                                    quickTextFormat(`${PowersTranslations[Powers.DetectConcealArcana]} (${Powers.DetectConcealArcana})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Deflection]} (${Powers.Deflection})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Dispel]} (${Powers.Dispel})`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${PowersTranslations[Powers.Entangle]} (${Powers.Entangle})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.EnvironmentalProtection]} (${Powers.EnvironmentalProtection})`),
+                                    quickTextFormat(`${SettingPowersTranslations[SettingPowers.FarSight]} (${SettingPowers.FarSight})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Fly]} (${Powers.Fly})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Light]} (${Powers.Light})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Obscure]} (${Powers.Obscure})`),
+                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.ManaBurn]} (${SettingPowers.ManaBurn})* (${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}), высасывает 1d6 Пунктов Силы в дополнение к Ранам)`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Quickness]} (${Powers.Quickness})`),
+                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.Slow]} (${SettingPowers.Slow})*`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Smite]} (${Powers.Smite})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.SpeakLanguage]} (${Powers.SpeakLanguage})`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Speed]} (${Powers.Speed})`),
+                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.Summon]}: Элементали Воды (${SettingPowers.Summon}: Water Elementals)*`),
+                                    quickTextFormat(`${PowersTranslations[Powers.Telekinesis]} (${Powers.Telekinesis})`),
+                                    quickTextFormat(`*${PowersTranslations[Powers.Teleport]} (${Powers.Teleport})*`),
+                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.TransformOther]} (${SettingPowers.TransformOther})*`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                    },
+                    '\n',
+                    getTipText([
+                        quickTextFormat(`Выше написано, что новые заклинания будут выделяться курсивом, но раз на раз не приходится. Например, **Наступательная Броня** то выделяется, то нет, к тому-же пишется то как **Armor, Offensive**, то как **Offensive Armor**.`),
+                        quickTextFormat(`Иногда выделяются заклинания, которые отсутствовали в **Savage Worlds Revised**, но были добавлены в **Savage Worlds Delux**, например, **${PowersTranslations[Powers.Teleport]} (${Powers.Teleport})**. В версии конверсии от 28 марта 2004 она описывалась в списке новых Сил, а в версии от 29 марта 2005 встречается в списке модифицированных Сил. Описание же заклинания **${SettingPowersTranslations[SettingPowers.Paralyze]} (${SettingPowers.Paralyze})** было утеряно в версии от 29 марта 2005, хотя упоминание самого заклинания осталось.`),
+                        quickTextFormat(`Также встречаются новые заклинания с кратким описанием на основе других сил без выделания, например, **${SettingPowersTranslations[SettingPowers.ManaBurn]} (${SettingPowers.ManaBurn})**, **${SettingPowersTranslations[SettingPowers.AntiMagicShell]} (${SettingPowers.AntiMagicShell})**, **${SettingPowersTranslations[SettingPowers.DeathCoil]} (${SettingPowers.DeathCoil})** или **${SettingPowersTranslations[SettingPowers.DeathPact]} (${SettingPowers.DeathPact})**.`),
+                        quickTextFormat(`Каких либо комментариев по поводу стоимости или других параметров для них, конечно же, не предусмотрено. Например, **${SettingPowersTranslations[SettingPowers.DeathCoil]} (${SettingPowers.DeathCoil})** имеет короткое описание *"${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}) против живых, ${PowersTranslations[Powers.Healing]} (${Powers.Healing}) против нежити"*. ${PowersTranslations[Powers.Bolt]} стоит **1+** Пункт Силы и применяется на дистанции, ${PowersTranslations[Powers.Healing]} стоит **3** Пункта Силы и применяется касанием. И какие же характеристики у **Лика смерти**? Никто не знает.`),
+                        quickTextFormat(`**В рамках перевода оставим все эти вопросы на совести автора оригинала**.`),
+                    ]),
+                ],
+            }
+        }
+
+        return {
+            stack: [
+                {
+                    text: 'Мистические дары (Arcane Backgrounds)',
+                    style: 'header2',
+                    pageBreak: 'before',
+                },
+                getArcaneMagicContent(),
+            ],
+            // pageBreak: 'after',
+        };
+    }
+
     return [
         {
             text: 'Создание персонажа (Character Creation)',
@@ -909,6 +1012,7 @@ function getCharacterCreationContent() {
         },
         getRacesContent(),
         getEdgesContent(),
+        getArcaneBackgroundsContent(),
     ];
 }
 
