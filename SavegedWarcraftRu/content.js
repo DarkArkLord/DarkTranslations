@@ -61,11 +61,57 @@ const SettingEdgesTranslations = Object.freeze({
 });
 
 const SettingPowers = Object.freeze({
+    ArmorOffensive: 'Armor, Offensive',
+    BlastContinuous: 'Blast, Continuous',
+    Blight: 'Blight',
+    Bloodlust: 'Bloodlust',
+    Bombardment: 'Bombardment',
+    Contact: 'Contact',
+    Doom: 'Doom',
+    EtherealForm: 'Ethereal Form',
+    FarSight: 'Far Sight',
+    Inferno: 'Inferno',
+    InnerFire: 'Inner Fire',
+    LifeDrain: 'Life Drain',
+    Mend: 'Mend',
+    Slow: 'Slow',
+    Summon: 'Summon',
+    TransformOther: 'Transform Other',
+    // ???
     ManaBurn: 'Mana Burn',
+    AntiMagicShell: 'Anti-Magic Shell',
+    ContinuousBlast: 'Continuous Blast',
+    OffensiveArmor: 'Offensive Armor',
+    DeathCoil : 'Death Coil',
+    DeathPact: 'Death Pact',
+    Paralyze: 'Paralyze',
 });
 
 const SettingPowersTranslations = Object.freeze({
+    [SettingPowers.ArmorOffensive]: 'Наступательная Броня',
+    [SettingPowers.BlastContinuous]: 'Продолжительный взрыв',
+    [SettingPowers.Blight]: 'Порча',
+    [SettingPowers.Bloodlust]: 'Жажда крови',
+    [SettingPowers.Bombardment]: 'Бомбардировка',
+    [SettingPowers.Contact]: 'Контакт',
+    [SettingPowers.Doom]: 'Рок',
+    [SettingPowers.EtherealForm]: 'Эфирная форма',
+    [SettingPowers.FarSight]: 'Зоркость',
+    [SettingPowers.Inferno]: 'Инферно',
+    [SettingPowers.InnerFire]: 'Внутренний огонь',
+    [SettingPowers.LifeDrain]: 'Высасывание жизни',
+    [SettingPowers.Mend]: 'Починка',
+    [SettingPowers.Slow]: 'Медлительность',
+    [SettingPowers.Summon]: 'Призыв',
+    [SettingPowers.TransformOther]: 'Преобразование другого',
+    // ???
     [SettingPowers.ManaBurn]: 'Сжигание маны',
+    [SettingPowers.AntiMagicShell]: 'Доспех Антимагии',
+    [SettingPowers.ContinuousBlast]: 'Продолжительный взрыв',
+    [SettingPowers.OffensiveArmor]: 'Наступательная Броня',
+    [SettingPowers.DeathCoil]: 'Лик смерти',
+    [SettingPowers.DeathPact]: 'Смертельный союз',
+    [SettingPowers.Paralyze]: 'Паралич',
 });
 
 function getFontPath(path) {
