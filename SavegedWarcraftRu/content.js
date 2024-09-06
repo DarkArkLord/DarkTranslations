@@ -1067,7 +1067,10 @@ function getCharacterCreationContent() {
                         text: 'Списки заклинаний (Spell Lists)',
                         style: 'header4',
                     },
-                    quickTextFormat(`*Заклинания, выделенные курсивом, являются новыми в этой книге.*`),
+                    {
+                        text: 'Заклинания, выделенные курсивом, являются новыми в этой книге.',
+                        italics: true,
+                    },
                     'Для некоторых заклинаний Аспекты указаны в скобках. Если Аспекты не перечислены, используйте любые из тех, что кажутся подходящими.',
                     getMagesContent(),
                     getNecromancerContent(),
@@ -1726,6 +1729,72 @@ function getCharacterCreationContent() {
             }
         }
 
+        function getTinkeringContent() {
+            return {
+                stack: [
+                    {
+                        text: 'Мастерение (Основано на Безумной науке) (Tinkering (Based on Weird Science))',
+                        style: 'header3',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Tinkering)} (${getFromDict(StatesTranslations, States.Smarts)})`),
+                            quickTextFormat(`**Начальные пункты силы**: 10`),
+                            quickTextFormat(`**Начальные силы**: 1`),
+                            quickTextFormat(`**Особое требование**: Расовая способность **Мастер на все руки (Tinker)**. Хотя гномы способны к Мастерению (Tinkering), большинство из них избегают опасности и нестабильности, предпочитая более надежную инженерию.`),
+                        ],
+                    },
+                    {
+                        text: 'Мастерение (Tinkering) работает точно так же, как Безумная наука (Weird Science) (см. SW1 с. 109, SW2 с. 136), со следующими изменениями:',
+                        italics: true,
+                    },
+                    {
+                        text: quickTextFormat(`**Неполадки (Malfunction)**: Устройства Мастерильщика (Tinkerer) изначально нестабильны. Когда происходят неполадки (malfunction), устройство взрывается, нанося 1d6 урона за каждые **5** неизрасходованных Пунктов Силы. Взрыв затрагивает только пользователя при 1-5 Пунктов Силы. При 6-15 Пунктах Силы он затрагивает *Малый шаблон взрыва*, при 16-25 — *Средний шаблон взрыва*, а выше 25 — *Большой шаблон взрыва*. Чтобы восстановить взорвавшееся устройство требуется проверка Мастерения (Tinkering) и 2d6 часов работы (с соответствующими материалами).`),
+                        leadingIndent: paragraphOffset,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                    {
+                        text: 'Списки заклинаний (Spell Lists)',
+                        style: 'header4',
+                    },
+                    {
+                        text: 'Заклинания, выделенные курсивом, являются новыми в этой книге.',
+                        italics: true,
+                    },
+                    'Для некоторых заклинаний Аспекты указаны в скобках. Если Аспекты не перечислены, используйте любые из тех, что кажутся подходящими.',
+                    {
+                        ul: [
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)} (броня с силовым панцирем (powered armor shell))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Barrier)} (спонтанно возводящийся (spontaneously erecting); сталь (steel))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Ракеты (Rockets))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (Ракеты (Rockets))`),
+                            quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.Bombardment)} (Ракетный залп (Rocket Volley))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)} (Механические помощники (Mechanical assists))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burst)} (Огнемет (Flamethrower))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Entangle)}`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
+                            quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)} (Телескопы (Telescopes) — должна быть линия видимости)`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Fly)} (Орнитоптеры (Ornithopters), Воздушные шары (Balloons))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Light)}`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)} (Дымовое облако (Smoke cloud))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.ShapeChange)} (${getFromDict(RanksTranslations, Ranks.Legendary)}, Механогоблин (Mechano-goblin))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Перегрузка (Overpower); только техническое оружие (tech. weapons only))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)} (Колеса (Wheels), Гусеницы (Treads))`),
+                            quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Часовые гоблины (Clockwerk Goblins) (взрывается, нанося 2d6 урона (Малый взрыв) по окончании действия; поддержание "перепрезывает" гоблинов, но не поддерживает их существование)*`),
+                        ],
+                    },
+                    '\n',
+                    getTipText([
+                        quickTextFormat(`По поводу Часовых Гоблинов.`),
+                        quickTextFormat(`В оригнале фраза выглядит следующим образом: *"explode for 2d6 damage (Small Burst) when duration over; maintenance "re-spawns" goblins, but does not maintain their existence"*.`),
+                        quickTextFormat(`*"Re-spawns"* можно перевести как *"Возрождает"*, но, вероятно, имеется ввиду не это, так что был выбран вариант *"Перепрезывает"*. Другими словами, через **5** раундов стандартной длительности **Призыва (${SettingPowers.Summon})** призванные гоблины в любом случае взрываются, а при поддержании заклинания *"призываются"* новые. Имеют ли *"призванные поддержанием"* гоблины длительность в **5** раундов, в **1** или пока заклинание поддерживается - не понятно.`),
+                        quickTextFormat(`**В рамках перевода оставим этот вопрос на совести автора оригинала**.`),
+                        quickTextFormat(`По поводу вида списка заклинаний - это не моя инициатива. В оригинале у автора все предыдущие списки даны в две колонки, а тут одиночным списком.`),
+                    ]),
+                ],
+            }
+        }
+
         return {
             stack: [
                 {
@@ -1736,6 +1805,7 @@ function getCharacterCreationContent() {
                 getArcaneMagicContent(),
                 getDivinePowerContent(),
                 getChannelingContent(),
+                getTinkeringContent(),
             ],
             // pageBreak: 'after',
         };

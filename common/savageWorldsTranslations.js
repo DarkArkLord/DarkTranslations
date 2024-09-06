@@ -53,6 +53,7 @@ const Skills = Object.freeze({
     Faith: 'Faith',
     Focus: 'Focus',
     Geomancy: 'Geomancy',
+    Tinkering: 'Tinkering',
 });
 
 const SkillsTranslations = Object.freeze({
@@ -84,6 +85,7 @@ const SkillsTranslations = Object.freeze({
     [Skills.Faith]: 'Вера',
     [Skills.Focus]: 'Фокус',
     [Skills.Geomancy]: 'Геомантия',
+    [Skills.Tinkering]: 'Мастерение',
 });
 
 const Hindrances = Object.freeze({
