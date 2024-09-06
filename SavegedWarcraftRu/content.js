@@ -1444,6 +1444,73 @@ function getCharacterCreationContent() {
             }
         }
 
+        function getChannelingContent() {
+            function getDwarvenAvatarContent() {
+                return [
+                    {
+                        text: 'Дворфийский Аватар (Dwarven Avatar)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Требования**: раса - Дворф.`),
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Faith)} (${getFromDict(StatesTranslations, States.Spirit)}). Аватар верит в Титанов, будучи их творением.`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Силы (Powers)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)} (Каменная кожа (Stone Skin))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Удар грома (Thunderclap))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(StatesTranslations, States.Strength)}, ${getFromDict(StatesTranslations, States.Vigor)}, ${getFromDict(SkillsTranslations, Skills.Fighting)}, ${getFromDict(SkillsTranslations, Skills.Throwing)})`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burrow)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectArcana)} (в камне или металле — Каменная речь (Stone Speech))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)} (земля (earth), лава (lava))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Молот бурь (Storm Bolt) — брошенный молот возвращается к метателю, Оглушает (${Powers.Stun}) в дополнение к урону)`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                    '\n',
+                    getTipText([
+                        quickTextFormat(`В оригинале используется заклинание *"Burrowing"*. Такого заклинания нет в английской книге правил (есть только черта "${getFromDict(EdgesTranslations, Edges.Burrowing)}" в бестиарии), так что здесь и далее оно было заменено на "${getFromDict(PowersTranslations, Powers.Burrow)}"`),
+                    ]),
+                ];
+            }
+
+            return {
+                stack: [
+                    {
+                        text: 'Направление (Новое - Сродни Суперсилам) (Channeling (New - Akin to Superpowers))',
+                        style: 'header3',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Навык**: Различный`),
+                            quickTextFormat(`**Начальные пункты силы**: 15`),
+                            quickTextFormat(`**Начальные силы**: 1`),
+                            quickTextFormat(`**Подтипы**: Дворфийские Аватары (Dwarven Avatars), Тотемные Воины Тауренов (Tauren Totem-Warriors), Мастера клинка (Blademasters), Охотники на демонов (Demon Hunters), Пандаренский пивовар (Pandaren Brewmasters)`),
+                            quickTextFormat(`**Внутренняя сила (Inner Power)**: Направление -- это искусство фокусировки магической энергии посредством физического действия. Независимо от источника силы, Направители обращаются с ней не так, как другие, более лично. Диапазон всех заклинаний направления - это на себя или на предметы, которые он держит. Для наносящих урон заклинаний это означает, что заклинание сосредотачивается на Направителе, но не наносит ему урона. По этой причине Стрела (${Powers.Bolt}) обычно недоступна для Направителей, но, если кто-то придумает хороший Аспект, не подходящий для Взрыва (${Powers.Blast}) или Сокрушения (${Powers.Smite}), используйте его.`),
+                        ],
+                    },
+                    getDwarvenAvatarContent(),
+                ],
+            }
+        }
+
         return {
             stack: [
                 {
@@ -1453,6 +1520,7 @@ function getCharacterCreationContent() {
                 },
                 getArcaneMagicContent(),
                 getDivinePowerContent(),
+                getChannelingContent(),
             ],
             // pageBreak: 'after',
         };

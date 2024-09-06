@@ -453,7 +453,7 @@ const EdgesTranslations = Object.freeze({
     //#region Monsters edges
     [Edges.Aquatic]: undefined,
     [Edges.Armor]: undefined,
-    [Edges.Burrowing]: undefined,
+    [Edges.Burrowing]: 'Перемещение под землёй',
     [Edges.Construct]: undefined,
     [Edges.Elemental]: undefined,
     [Edges.Ethereal]: undefined,
