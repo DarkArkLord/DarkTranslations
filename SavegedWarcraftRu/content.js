@@ -1080,21 +1080,8 @@ function getCharacterCreationContent() {
         }
 
         function getDivinePowerContent() {
-            return {
-                stack: [
-                    {
-                        text: 'Божественная сила (Чудеса) (Divine Power (Miracles))',
-                        style: 'header3',
-                    },
-                    {
-                        ul: [
-                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Faith)} (${getFromDict(StatesTranslations, States.Spirit)})`),
-                            quickTextFormat(`**Начальные пункты силы**: 10`),
-                            quickTextFormat(`**Начальные силы**: 2`),
-                            quickTextFormat(`**Подтипы**: Внутренний Свет (The Inner Light) (Альянс (Alliance)), Внутренняя Тень (The Inner Shadow) (Альянс (Alliance)), Шаманизм (Shamanism) (Орки (Orcs), Таурены (Tauren)), Магия Природы (Nature Magic) (Дети Кенария (Children of Cenarius), Ночные Эльфы-Друиды (Night Elf Druids), Таурены-Друиды (Tauren Druids)), Элуна (Elune) (Ночные Эльфы (Night Elf)), Вуду (Voodoo) (Тролли Джунглей (Jungle Troll)), Король-Лич (Lich King) (любой (any))`),
-                            quickTextFormat(`**Защитник веры**: см. SW1 с. 108, SW2 с. 138. Кредо для каждого подтипа в Warcraft указано в отдельных записях ниже.`),
-                        ],
-                    },
+            function getInnerLightContent() {
+                return [
                     {
                         text: 'Внутренний Свет (The Inner Light)',
                         style: 'header4',
@@ -1134,7 +1121,27 @@ function getCharacterCreationContent() {
                             },
                         ],
                         columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
                     },
+                ];
+            }
+
+            return {
+                stack: [
+                    {
+                        text: 'Божественная сила (Чудеса) (Divine Power (Miracles))',
+                        style: 'header3',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Faith)} (${getFromDict(StatesTranslations, States.Spirit)})`),
+                            quickTextFormat(`**Начальные пункты силы**: 10`),
+                            quickTextFormat(`**Начальные силы**: 2`),
+                            quickTextFormat(`**Подтипы**: Внутренний Свет (The Inner Light) (Альянс (Alliance)), Внутренняя Тень (The Inner Shadow) (Альянс (Alliance)), Шаманизм (Shamanism) (Орки (Orcs), Таурены (Tauren)), Магия Природы (Nature Magic) (Дети Кенария (Children of Cenarius), Ночные Эльфы-Друиды (Night Elf Druids), Таурены-Друиды (Tauren Druids)), Элуна (Elune) (Ночные Эльфы (Night Elf)), Вуду (Voodoo) (Тролли Джунглей (Jungle Troll)), Король-Лич (Lich King) (любой (any))`),
+                            quickTextFormat(`**Защитник веры**: см. SW1 с. 108, SW2 с. 138. Кредо для каждого подтипа в Warcraft указано в отдельных записях ниже.`),
+                        ],
+                    },
+                    getInnerLightContent(),
                 ],
             }
         }
