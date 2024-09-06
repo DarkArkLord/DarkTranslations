@@ -1487,6 +1487,7 @@ function getCharacterCreationContent() {
                     ]),
                 ];
             }
+
             function getTaurenTotemWarriorContent() {
                 return [
                     {
@@ -1530,6 +1531,47 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getBlademasterContent() {
+                return [
+                    {
+                        text: 'Мастер клинка (Blademaster)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Требования**: ${getFromDict(SkillsTranslations, Skills.Fighting)} d10+, ${getFromDict(EdgesTranslations, Edges.TrademarkWeapon)}`),
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Focus)} (${getFromDict(StatesTranslations, States.Vigor)})`),
+                        ],
+                    },
+                    {
+                        text: 'Силы (Powers)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Стальной вихрь (Bladestorm))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(StatesTranslations, States.Agility)}, ${getFromDict(SkillsTranslations, Skills.Fighting)})`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Deflection)} (Иллюзия (Mirror Image))`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Invisibility)} (Стремительность (Wind Walk))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Смертельный удар (Critical Strike))`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1547,6 +1589,7 @@ function getCharacterCreationContent() {
                     },
                     getDwarvenAvatarContent(),
                     getTaurenTotemWarriorContent(),
+                    getBlademasterContent(),
                 ],
             }
         }

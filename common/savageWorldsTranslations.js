@@ -51,6 +51,7 @@ const Skills = Object.freeze({
     // Arcane Skills
     Spellcasting: 'Spellcasting',
     Faith: 'Faith',
+    Focus: 'Focus',
 });
 
 const SkillsTranslations = Object.freeze({
@@ -80,6 +81,7 @@ const SkillsTranslations = Object.freeze({
     // Arcane Skills
     [Skills.Spellcasting]: 'Колдовство',
     [Skills.Faith]: 'Вера',
+    [Skills.Focus]: 'Фокус',
 });
 
 const Hindrances = Object.freeze({
@@ -442,7 +444,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Thief]: undefined,
     [Edges.ToughAsNails]: undefined,
     [Edges.ImprovedToughAsNails]: undefined,
-    [Edges.TrademarkWeapon]: undefined,
+    [Edges.TrademarkWeapon]: 'Именное оружие',
     [Edges.ImprovedTrademarkWeapon]: undefined,
     [Edges.TwoFisted]: undefined,
     [Edges.WeaponMaster]: undefined,
