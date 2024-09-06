@@ -567,7 +567,7 @@ const PowersTranslations = Object.freeze({
     [Powers.Dispel]: 'Рассеивание',
     [Powers.Divination]: undefined,
     [Powers.DrainPowerPoints]: undefined,
-    [Powers.ElementalManipulation]: undefined,
+    [Powers.ElementalManipulation]: 'Управление элементами',
     [Powers.Entangle]: 'Путы',
     [Powers.EnvironmentalProtection]: 'Защита от окружающей среды',
     [Powers.Farsight]: undefined,

@@ -1170,6 +1170,56 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getShamanismContent() {
+                return [
+                    {
+                        text: 'Шаманизм (Shamanism)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Кредо**: Уважайте природу и чтите духов. Проводите ритуалы и испытания, чтобы почтить духов, которые вам ближе всего (включая духов природы, стихий и предков).`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Заклинания (Spells)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)}* (Щит молний (Lightning Shield))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BeastFriend)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast, '(Землетрясение (Earthquake))')}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt, '(Цепная молния (Chain Lightning) — использует дальность только для первой цели)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.ElementalManipulation)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.EtherealForm)}*`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}*`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}* (Поглощение землей (Engulfed in the earth))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}*: Духи животных (Animal Spirits)`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1187,6 +1237,7 @@ function getCharacterCreationContent() {
                     },
                     getInnerLightContent(),
                     getInnerShadowContent(),
+                    getShamanismContent(),
                 ],
             }
         }
