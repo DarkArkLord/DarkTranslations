@@ -52,6 +52,7 @@ const Skills = Object.freeze({
     Spellcasting: 'Spellcasting',
     Faith: 'Faith',
     Focus: 'Focus',
+    Geomancy: 'Geomancy',
 });
 
 const SkillsTranslations = Object.freeze({
@@ -82,6 +83,7 @@ const SkillsTranslations = Object.freeze({
     [Skills.Spellcasting]: 'Колдовство',
     [Skills.Faith]: 'Вера',
     [Skills.Focus]: 'Фокус',
+    [Skills.Geomancy]: 'Геомантия',
 });
 
 const Hindrances = Object.freeze({

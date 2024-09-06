@@ -1606,9 +1606,50 @@ function getCharacterCreationContent() {
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectArcana)} (Магия Демонов/Чернокнижников (Demonic/Warlock magic))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)} (тепло (heat))`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)}* (Жар Преисподней (Immolate))`),
-
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.ShapeChange)} (только для Легенд (${Ranks.Legendary}); Демоническая форма (Demonic form))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Одержимое демоном оружие)`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
+            function getPandarenBrewmasterContent() {
+                return [
+                    {
+                        text: 'Пандаренский пивовар (Pandaren Brewmasters)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Требования**:`),
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Geomancy)} (${getFromDict(StatesTranslations, States.Spirit)}). Это форма шаманской магии, которую пандарены практикуют через геомантию.`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.Champion)}, ${getFromDict(EdgesTranslations, Edges.HolyWarrior)}`),
+                        ],
+                    },
+                    {
+                        text: 'Силы (Powers)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(StatesTranslations, States.Strength)}, ${getFromDict(StatesTranslations, States.Spirit)}, ${getFromDict(StatesTranslations, States.Vigor)}, ${getFromDict(SkillsTranslations, Skills.Fighting)})`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Deflection)} (Пьяное Плетение (Drunken Weave))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burst)} (Пылающее Дыхание (Flaming Breath))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Пьяный Удар (Drunken Blow))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Stun)} (Одна цель - покрыть алкоголем (дает +2 к урону от огня))`),
                                 ],
                             },
                         ],
@@ -1637,6 +1678,7 @@ function getCharacterCreationContent() {
                     getTaurenTotemWarriorContent(),
                     getBlademasterContent(),
                     getDemonHunterContent(),
+                    getPandarenBrewmasterContent(),
                 ],
             }
         }
