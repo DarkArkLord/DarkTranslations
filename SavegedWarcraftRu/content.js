@@ -1125,7 +1125,7 @@ function getCharacterCreationContent() {
                     },
                     '\n',
                     getTipText([
-                        quickTextFormat(`В оригинале используется заклинание *"Heal"*. Такого заклинания нет в английской книге правил, так что они было заменено на "${getFromDict(PowersTranslations, Powers.Healing)}"`),
+                        quickTextFormat(`В оригинале используется заклинание *"Heal"*. Такого заклинания нет в английской книге правил, так что здесь и далее оно было заменено на "${getFromDict(PowersTranslations, Powers.Healing)}"`),
                     ]),
                 ];
             }
@@ -1362,7 +1362,7 @@ function getCharacterCreationContent() {
                     },
                     '\n',
                     getTipText([
-                        quickTextFormat(`В оригинале используется заклинание *"Detect/Obscure Arcana"*. Такого заклинания нет в английской книге правил, так что они было заменено на "${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}"`),
+                        quickTextFormat(`В оригинале используется заклинание *"Detect/Obscure Arcana"*. Такого заклинания нет в английской книге правил, так что здесь и далее оно было заменено на "${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}"`),
                     ]),
                 ];
             }
