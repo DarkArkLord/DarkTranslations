@@ -192,6 +192,13 @@ function getHorizontalLine(color, height = 2, margin = 5, styles = {}) {
     };
 }
 
+function getFromDict(dict, key, other) {
+    if (other?.length > 0) {
+        return `${dict[key]} (${key}) ${other}`;
+    }
+    return `${dict[key]} (${key})`;
+}
+
 const paragraphOffset = 20;
 
 const fonts = {
@@ -943,37 +950,37 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`${SettingPowersTranslations[SettingPowers.AntiMagicShell]} (${SettingPowers.AntiMagicShell}) (${PowersTranslations[Powers.Armor]} (${Powers.Armor}) против магии, +2/4 к сопротивлению заклинаниям)`),
-                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.ArmorOffensive]} (${SettingPowers.ArmorOffensive})* (Огненный щит (Fire Shield))`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Barrier]} (${Powers.Barrier})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Blast]} (${Powers.Blast}) (Огненный шар (Fireball))`),
-                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.ContinuousBlast]} (${SettingPowers.ContinuousBlast})* (Метель (Blizzard))`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Bolt]} (${Powers.Bolt})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.BoostLowerTrait]} (${Powers.BoostLowerTrait})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Burst]} (${Powers.Burst}) (Молния (Lightning), Мороз (Frost))`),
-                                    quickTextFormat(`${PowersTranslations[Powers.DetectConcealArcana]} (${Powers.DetectConcealArcana})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Deflection]} (${Powers.Deflection})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Dispel]} (${Powers.Dispel})`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.AntiMagicShell)} (${getFromDict(PowersTranslations, Powers.Armor)} против магии, +2/4 к сопротивлению заклинаниям)`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)}* (Огненный щит (Fire Shield))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Barrier)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Огненный шар (Fireball))`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ContinuousBlast)}* (Метель (Blizzard))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burst)} (Молния (Lightning), Мороз (Frost))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Deflection)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
                                 ],
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${PowersTranslations[Powers.Entangle]} (${Powers.Entangle})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.EnvironmentalProtection]} (${Powers.EnvironmentalProtection})`),
-                                    quickTextFormat(`${SettingPowersTranslations[SettingPowers.FarSight]} (${SettingPowers.FarSight})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Fly]} (${Powers.Fly})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Light]} (${Powers.Light})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Obscure]} (${Powers.Obscure})`),
-                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.ManaBurn]} (${SettingPowers.ManaBurn})* (${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}), высасывает 1d6 Пунктов Силы в дополнение к Ранам)`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Quickness]} (${Powers.Quickness})`),
-                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.Slow]} (${SettingPowers.Slow})*`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Smite]} (${Powers.Smite})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.SpeakLanguage]} (${Powers.SpeakLanguage})`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Speed]} (${Powers.Speed})`),
-                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.Summon]}: Элементали Воды (${SettingPowers.Summon}: Water Elementals)*`),
-                                    quickTextFormat(`${PowersTranslations[Powers.Telekinesis]} (${Powers.Telekinesis})`),
-                                    quickTextFormat(`*${PowersTranslations[Powers.Teleport]} (${Powers.Teleport})*`),
-                                    quickTextFormat(`*${SettingPowersTranslations[SettingPowers.TransformOther]} (${SettingPowers.TransformOther})*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Entangle)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Fly)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Light)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}* (${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}), высасывает 1d6 Пунктов Силы в дополнение к Ранам)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.SpeakLanguage)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Элементали Воды (Water Elementals)*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Telekinesis)}`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Teleport)}*`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.TransformOther)}*`),
                                 ],
                             },
                         ],
@@ -982,9 +989,9 @@ function getCharacterCreationContent() {
                     '\n',
                     getTipText([
                         quickTextFormat(`Выше написано, что новые заклинания будут выделяться курсивом, но раз на раз не приходится. Например, **Наступательная Броня** то выделяется, то нет, к тому-же пишется то как **Armor, Offensive**, то как **Offensive Armor**.`),
-                        quickTextFormat(`Иногда выделяются заклинания, которые отсутствовали в **Savage Worlds Revised**, но были добавлены в **Savage Worlds Delux**, например, **${PowersTranslations[Powers.Teleport]} (${Powers.Teleport})**. В версии конверсии от 28 марта 2004 она описывалась в списке новых Сил, а в версии от 29 марта 2005 встречается в списке модифицированных Сил. Описание же заклинания **${SettingPowersTranslations[SettingPowers.Paralyze]} (${SettingPowers.Paralyze})** было утеряно в версии от 29 марта 2005, хотя упоминание самого заклинания осталось.`),
-                        quickTextFormat(`Также встречаются новые заклинания с кратким описанием на основе других сил без выделания, например, **${SettingPowersTranslations[SettingPowers.ManaBurn]} (${SettingPowers.ManaBurn})**, **${SettingPowersTranslations[SettingPowers.AntiMagicShell]} (${SettingPowers.AntiMagicShell})**, **${SettingPowersTranslations[SettingPowers.DeathCoil]} (${SettingPowers.DeathCoil})** или **${SettingPowersTranslations[SettingPowers.DeathPact]} (${SettingPowers.DeathPact})**.`),
-                        quickTextFormat(`Каких либо комментариев по поводу стоимости или других параметров для них, конечно же, не предусмотрено. Например, **${SettingPowersTranslations[SettingPowers.DeathCoil]} (${SettingPowers.DeathCoil})** имеет короткое описание *"${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}) против живых, ${PowersTranslations[Powers.Healing]} (${Powers.Healing}) против нежити"*. ${PowersTranslations[Powers.Bolt]} стоит **1+** Пункт Силы и применяется на дистанции, ${PowersTranslations[Powers.Healing]} стоит **3** Пункта Силы и применяется касанием. И какие же характеристики у **Лика смерти**? Никто не знает.`),
+                        quickTextFormat(`Иногда выделяются заклинания, которые отсутствовали в **Savage Worlds Revised**, но были добавлены в **Savage Worlds Delux**, например, **${getFromDict(PowersTranslations, Powers.Teleport)}**. В версии конверсии от 28 марта 2004 она описывалась в списке новых Сил, а в версии от 29 марта 2005 встречается в списке модифицированных Сил. Описание же заклинания **${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}** было утеряно в версии от 29 марта 2005, хотя упоминание самого заклинания осталось.`),
+                        quickTextFormat(`Также встречаются новые заклинания с кратким описанием на основе других сил без выделания, например, **${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}**, **${getFromDict(SettingPowersTranslations, SettingPowers.AntiMagicShell)}**, **${getFromDict(SettingPowersTranslations, SettingPowers.DeathCoil)}** или **${getFromDict(SettingPowersTranslations, SettingPowers.DeathPact)}**.`),
+                        quickTextFormat(`Каких либо комментариев по поводу стоимости или других параметров для них, конечно же, не предусмотрено. Например, **${SettingPowersTranslations[SettingPowers.DeathCoil]} (${SettingPowers.DeathCoil})** имеет короткое описание *"${getFromDict(PowersTranslations, Powers.Bolt)} против живых, ${getFromDict(PowersTranslations, Powers.Healing)} против нежити"*. ${getFromDict(PowersTranslations, Powers.Bolt)} стоит **1+** Пункт Силы и применяется на дистанции, ${getFromDict(PowersTranslations, Powers.Healing)} стоит **3** Пункта Силы и применяется касанием. И какие же характеристики у **Лика смерти**? Никто не знает.`),
                         quickTextFormat(`**В рамках перевода оставим все эти вопросы на совести автора оригинала**.`),
                     ]),
                 ],
