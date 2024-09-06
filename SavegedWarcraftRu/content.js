@@ -1313,6 +1313,56 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getVoodooContent() {
+                return [
+                    {
+                        text: 'Вуду Тролля Джунглей (Jungle Troll Voodoo)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Кредо**: Умиротворяйте темных духов подношениями и ритуалами. Ритуальное жертвоприношение всегда приветствуется…`),
+                            quickTextFormat(`**Обереги (Wards)**: Маги Вуду могут установить заклинание в Обереге, ритуальном круге или знаке, который активирует заклинание при прикосновении. Заклинатель делает проверку Веры (${Skills.Faith}) при установке Оберегов и решает, сколько Пунктов Силы вложить в них (должно быть достаточно для однократного наложения заклинание). Пункты Силы, потраченные таким образом, восстанавливаются гораздо медленнее: **1** в день. После того, как Оберег разряжается (в первую цель, которая его коснулась), затраченные Пункты Силы восстанавливаются обычным образом. Маги Вуду могут указать ограничение на активацию Оберега (только люди, только союзники и т. д.)`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(SettingEdgesTranslations, SettingEdges.DarkRitual)}`),
+                        ],
+                    },
+                    {
+                        text: 'Заклинания (Spells)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bombardment)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana, '(Обнаружение Невидимого (Detect Invisible))')}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing, '(Исцеляющие Обереги (Healing Wards) активируются на 1 раунд позже, исцеляют только 1 Рану за раунд)')}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet, '(только Эмоции/Импульсы)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.TransformOther)}*`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                    '\n',
+                    getTipText([
+                        quickTextFormat(`В оригинале используется заклинание *"Detect/Obscure Arcana"*. Такого заклинания нет в английской книге правил, так что они было заменено на "${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}"`),
+                    ]),
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1333,6 +1383,7 @@ function getCharacterCreationContent() {
                     getShamanismContent(),
                     getNatureMagicContent(),
                     getEluneContent(),
+                    getVoodooContent(),
                 ],
             }
         }
