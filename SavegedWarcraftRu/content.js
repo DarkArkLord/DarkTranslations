@@ -1659,6 +1659,48 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getNightElfWardenContent() {
+                return [
+                    {
+                        text: 'Ночной эльф-хранитель (Night Elf Warden)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Требования**: раса - Ночной эльф, ${getFromDict(SkillsTranslations, Skills.Knowledge)} (магия (arcana)) d6+`),
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Faith)} (${getFromDict(StatesTranslations, States.Spirit)}). Хранители верят в себя и все силы, которым они служат.`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Силы (Powers)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(StatesTranslations, States.Agility)}, ${getFromDict(SkillsTranslations, Skills.Fighting)}, ${getFromDict(SkillsTranslations, Skills.Stealth)}, ${getFromDict(StatesTranslations, States.Strength)}, ${getFromDict(SkillsTranslations, Skills.Throwing)})`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Invisibility)} (Слияние с Тенью (Shadowmeld))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Аватар возмездия (Avatar of Vengeance) (${getFromDict(RanksTranslations, Ranks.Legendary)})`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Teleport)}*`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1679,6 +1721,7 @@ function getCharacterCreationContent() {
                     getBlademasterContent(),
                     getDemonHunterContent(),
                     getPandarenBrewmasterContent(),
+                    getNightElfWardenContent(),
                 ],
             }
         }
