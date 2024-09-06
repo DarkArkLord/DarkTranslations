@@ -201,7 +201,7 @@ function getFromDict(dict, key, other) {
     return `${dict[key]} (${key})`;
 }
 
-const paragraphOffset = 20;
+const paragraphOffset = 20; // leadingIndent
 
 const fonts = {
     Roboto: {
@@ -1367,6 +1367,57 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getUndeathContent() {
+                return [
+                    {
+                        text: 'Нежить (Undeath)',
+                        style: 'header4',
+                    },
+                    {
+                        text: 'Эта форма чуда происходит либо от договора с Королем-личом (Lich King), делающего вас Рыцарем Смерти (Death Knight), либо от использования силы нежити в качестве Воин Тьмы (Dark Warrior). Последнее требует, чтобы вы были нежитью и не подчинялись Королю-личу, из-за чего доступно только Отрекшимися (Forsaken).',
+                        leadingIndent: paragraphOffset,
+                        italics: true,
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Кредо (Рыцарь Смерти (Death Knight))**: Развратить и подчинить себе все живое, подчинить мир власти Короля-лича. Служите ему верой и правдой.`),
+                            quickTextFormat(`**Кредо (Воин Тьмы (Dark Warrior))**: Отомстить живым за то, что они не разделили вашу судьбу, и Плети за то, что она вырвала вас из могилы.`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Заклинания (Spells)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)}* (Морозная броня (Frost Armor) — замедляет (Slows) цель) (только для Рыцарей Смерти)`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.DeathCoil)} (${getFromDict(PowersTranslations, Powers.Bolt)} против живых, ${getFromDict(PowersTranslations, Powers.Healing)} против нежити)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait, '(только для нежити или себя)')}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Contact)}* (Король-лич)`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.DeathPact)} (${getFromDict(PowersTranslations, Powers.Healing)} себя; 2d6 урона (3d6 при подъеме) союзнику)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection, '(холод (cold))')}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}* (только для сущностей, заряженных смертью)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet, '(только для Воинов Тьмы)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Zombie)} (Воины Тьмы могут поднять только трупы тех, кого они убили с помощью Сокрушения (${Powers.Smite}))`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1388,6 +1439,7 @@ function getCharacterCreationContent() {
                     getNatureMagicContent(),
                     getEluneContent(),
                     getVoodooContent(),
+                    getUndeathContent(),
                 ],
             }
         }
