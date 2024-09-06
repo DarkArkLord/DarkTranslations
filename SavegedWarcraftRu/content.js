@@ -1811,6 +1811,104 @@ function getCharacterCreationContent() {
         };
     }
 
+    function getNewPowersContent() {
+        function getPowerContent(data) {
+            const trappings = data.trappings
+                ? [quickTextFormat(`**Аспекты**: ${data.trappings}`)]
+                : [];
+            return {
+                stack: [
+                    {
+                        text: data.title,
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Ранг**: ${data.rank}`),
+                            quickTextFormat(`**Пункты Силы**: ${data.powerPoints}`),
+                            quickTextFormat(`**Дистанция**: ${data.range}`),
+                            quickTextFormat(`**Длительность**: ${data.duration}`),
+                            ...trappings,
+                        ],
+                    },
+                    {
+                        stack: data.text,
+                        leadingIndent: paragraphOffset,
+                    },
+                ],
+            };
+        }
+
+        return {
+            stack: [
+                {
+                    text: 'Новые Силы (New Powers)',
+                    style: 'header2',
+                    pageBreak: 'before',
+                },
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive),
+                    rank: getFromDict(RanksTranslations, Ranks.Novice),
+                    powerPoints: '3',
+                    range: 'Касание',
+                    duration: '3 (1/раунд)',
+                    trappings: `Элементальные ауры (Elemental auras), шипастая броня (spiked armor), стена клинков (wall of blades)`,
+                    text: [
+                        quickTextFormat(`В дополнение к обычным эффектам силы *${getFromDict(PowersTranslations, Powers.Armor)}*, эта сила наносит **2d6** урона любому, кто атакует субъект силы в ближнем бою.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.BlastContinuous),
+                    rank: getFromDict(RanksTranslations, Ranks.Veteran),
+                    powerPoints: '4-8',
+                    range: '12/24/48',
+                    duration: '0 (2/раунд)',
+                    trappings: `Град (Hailstorms), землетрясения (earthquakes), огненные дожди (rains of fire), нашествия насекомых (plagues of insects)`,
+                    text: [
+                        quickTextFormat(`Это особая форма *Взрыва (${Powers.Blast})*, которая позволяет заклинателю поддерживать эффект *Взрыва (${Powers.Blast})* в течение нескольких раундов. Целевая область устанавливается при активации и не может быть перемещена. Базовая стоимость составляет **4** вместо **2**, а дополнительные эффекты *Взрыва (${Powers.Blast})* добавляются по обычной цене *Взрыва (${Powers.Blast})*.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Blight),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Novice)}+`,
+                    powerPoints: '3',
+                    range: 'Смекалка',
+                    duration: 'Постоянный',
+                    trappings: `Плесень (Mold), гниение (rotting), пятна (blemishes), темные пятна (dark spots), неприятные запахи (foul odors)`,
+                    text: [
+                        quickTextFormat(`Эта сила — метод распространения Плети (Scourge) и силы Короля-лича (Lich King). При применении к однородному запасу пищи она заражает эту пищу порождающей нежить Порчей (undead-spawning Blight). Если вместо этого применить ее к земле, она преобразует область, равную Шаблону среднего взрыва, в Проклятую землю (Blighted ground). Подчиненные Короля-лича могут Призывать (Summon) его темные крепости на Проклятой земле, а любые посевы, выращенные на этой земле, или животные, пасущиеся на ней, также будут носителями Плети.`),
+                        quickTextFormat(`Персонаж ранга ${getFromDict(RanksTranslations, Ranks.Heroic)}, который также обладает силой *${getFromDict(PowersTranslations, Powers.Zombie)}*, может использовать их вместе и заразить живое разумное существо Плетью. Заклинатель и его цель делают встречную проверку **Характера**. Если заклинатель преуспевает, цель становится Вурдалаком/Гулем (Ghoul). Дикие карты получают **+2** к сопротивлению этому эффекту.`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`В описании Порчи (${SettingPowers.Blight}) мне показалось странным упоминание Плети (Scourge), как болезнии в *"любые посевы, выращенные на этой земле, или животные, пасущиеся на ней, также будут **носителями Плети** (any crops grown in that ground or animals grazed on it will likewise be **carriers of the Scourge**)"* и *"**заражать** живое разумное существо **Плетью** (**infect** a living, sentient being **with the Scourge**)"*. Учитывая, что Плеть (Scourge) - это фракция нежити под командование Короля-лича, не совсем понятно, как ей можно заразить. Возможно, имелось ввиду заражение Порчей (Blight), либо **подчинение** Плети (и воле Короля-лича, соответственно).`),
+                ]),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Novice)}`,
+                    powerPoints: '4',
+                    range: 'Касание',
+                    duration: '3 (1/раунд)',
+                    trappings: `Потрескивающая молния (Crackling lightning), питье крови (blood drinking), пылающие глаза (flaming eyes), выпирающие мускулы (bulging muscles)`,
+                    text: [
+                        quickTextFormat(`Эта сила вызывает состояние, идентичное **Берсерку (${Edges.Berserk})** *(см. SW1 с. 34, SW2 с. 56)*, за исключением того, что бонусы составляют **+4** вместо **+2**.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Bombardment),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Legendary)}`,
+                    powerPoints: '8',
+                    range: 'Различный',
+                    duration: '0 (1/раунд)',
+                    text: [
+                        quickTextFormat(`Заклинатель этой могущественной силы призывает небеса поразить своих врагов. Каждый раунд все враги (определенные заклинателем) в пределах **Характера** заклинателя дюймов становятся целью горящего метеорита, который наносит **2d10** урона (цели могут сделать бросок **Ловкости**, чтобы получить **половину** урона, если они могут двигаться хотя бы на **1** дюйм). Заклинатель не может двигаться более чем на **1** дюйм, поддерживая это заклинание.`),
+                    ],
+                }),
+            ],
+            // pageBreak: 'after',
+        };
+    }
+
     return [
         {
             text: 'Создание персонажа (Character Creation)',
@@ -1820,6 +1918,7 @@ function getCharacterCreationContent() {
         getRacesContent(),
         getEdgesContent(),
         getArcaneBackgroundsContent(),
+        getNewPowersContent(),
     ];
 }
 
