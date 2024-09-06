@@ -194,10 +194,7 @@ function getHorizontalLine(color, height = 2, margin = 5, styles = {}) {
     };
 }
 
-function getFromDict(dict, key, other) {
-    if (other?.length > 0) {
-        return `${dict[key]} (${key}) ${other}`;
-    }
+function getFromDict(dict, key) {
     return `${dict[key]} (${key})`;
 }
 
@@ -986,17 +983,17 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast, '(Смерть и Разложение (Death and Decay), Тяжелое Оружие (Heavy Weapon))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Смерть и Разложение (Death and Decay), Тяжелое Оружие (Heavy Weapon))`),
                                     quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FrostNova)} (${getFromDict(PowersTranslations, Powers.Blast)}, направленный на существо, накладывает *${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}*)`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.LowerTrait, `(Калека (Cripple) — снижает Силу (${States.Strength}) и Драку (${Skills.Fighting}))`)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.LowerTrait)} (Калека (Cripple) — снижает Силу (${States.Strength}) и Драку (${Skills.Fighting}))`),
                                 ],
                             },
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)} (Морозная Броня (Frost Armor); *${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}* вместо урона)`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet, '(только нежить; длительность 1 час)')}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness, '(Нечестивое безумие (Unholy Frenzy); наносит 2d6 урона/раунд, но стоимость поддержания всего 1/раунд)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet)} (только нежить; длительность 1 час)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)} (Нечестивое безумие (Unholy Frenzy); наносит 2d6 урона/раунд, но стоимость поддержания всего 1/раунд)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Zombie)}`),
                                 ],
                             },
@@ -1101,8 +1098,8 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor, '(Божественный щит (Divine Shield))')}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt, '(Ослепляющий свет (Searing Light))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)} (Божественный щит (Divine Shield))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (Ослепляющий свет (Searing Light))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
@@ -1110,8 +1107,8 @@ function getCharacterCreationContent() {
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight, '(Святое зрение (Holy Vision))')}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing, '(Святой свет (Holy Light))')}`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)} (Святое зрение (Holy Vision))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)} (Святой свет (Holy Light))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.GreaterHealing)}`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.InnerFire)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Light)}`),
@@ -1151,17 +1148,17 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor, '(Божественный щит (Divine Shield))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)} (Божественный щит (Divine Shield))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)}`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt, '(Боль (Pain))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (Боль (Pain))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
                                 ],
                             },
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight, '(Нечестивое видение (Unholy Vision))')}`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)} (Нечестивое видение (Unholy Vision))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
@@ -1197,9 +1194,9 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)}* (Щит молний (Lightning Shield))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BeastFriend)}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast, '(Землетрясение (Earthquake))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Землетрясение (Earthquake))`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt, '(Цепная молния (Chain Lightning) — использует дальность только для первой цели)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (Цепная молния (Chain Lightning) — использует дальность только для первой цели)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}`),
                                 ],
@@ -1245,9 +1242,9 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive, '(Броня шипов (Armor of Thorns))')}`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)} (Броня шипов (Armor of Thorns))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Barrier)}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait, '(Волшебный Огонь (Faerie Fire) (Снижение Скрытности), Рев (Roar) (Усиление Драки))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)} (Волшебный Огонь (Faerie Fire) (Снижение Скрытности), Рев (Roar) (Усиление Драки))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burrow)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Deflection)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
@@ -1258,13 +1255,13 @@ function getCharacterCreationContent() {
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing, '(Благословение дождя (Rain’s Blessing), Покой (Tranquility) и т. д.)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)} (Благословение дождя (Rain’s Blessing), Покой (Tranquility) и т. д.)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.GreaterHealing)}`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}* (Только природные субстанции)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.ShapeChange)}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite, '(Улучшенное природное оружие (Enhanced natural weapons))')}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Stun, '(Смерч (Cyclone))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Улучшенное природное оружие (Enhanced natural weapons))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Stun)} (Смерч (Cyclone))`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}* (Древень (Treant), Дух животного (Animal Spirit))`),
                                 ],
                             },
@@ -1298,15 +1295,15 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BeastFriend)}`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bombardment)}* (Звездопад (Starfall))`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait, '(Аура меткости (Trueshot) – усиливает Стрельбу)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (Аура меткости (Trueshot) – усиливает Стрельбу)`),
                                 ],
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Invisibility, '(Слиться с тенями (Shadowblend), только ночью)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Invisibility)} (Слиться с тенями (Shadowblend), только ночью)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite, '(Огненные стрелы (Flaming Arrows))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Огненные стрелы (Flaming Arrows))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)}`),
                                 ],
                             },
@@ -1343,14 +1340,14 @@ function getCharacterCreationContent() {
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)}`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bombardment)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana, '(Обнаружение Невидимого (Detect Invisible))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana)} (Обнаружение Невидимого (Detect Invisible))`),
                                 ],
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing, '(Исцеляющие Обереги (Healing Wards) активируются на 1 раунд позже, исцеляют только 1 Рану за раунд)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)} (Исцеляющие Обереги (Healing Wards) активируются на 1 раунд позже, исцеляют только 1 Рану за раунд)`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet, '(только Эмоции/Импульсы)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet)} (только Эмоции/Импульсы)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)}`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.TransformOther)}*`),
@@ -1396,17 +1393,17 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)}* (Морозная броня (Frost Armor) — замедляет (Slows) цель) (только для Рыцарей Смерти)`),
                                     quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.DeathCoil)} (${getFromDict(PowersTranslations, Powers.Bolt)} против живых, ${getFromDict(PowersTranslations, Powers.Healing)} против нежити)`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait, '(только для нежити или себя)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (только для нежити или себя)`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Contact)}* (Король-лич)`),
                                 ],
                             },
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.DeathPact)} (${getFromDict(PowersTranslations, Powers.Healing)} себя; 2d6 урона (3d6 при подъеме) союзнику)`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection, '(холод (cold))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)} (холод (cold))`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}* (только для сущностей, заряженных смертью)`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet, '(только для Воинов Тьмы)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet)} (только для Воинов Тьмы)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Zombie)} (Воины Тьмы могут поднять только трупы тех, кого они убили с помощью Сокрушения (${Powers.Smite}))`),
                                 ],
