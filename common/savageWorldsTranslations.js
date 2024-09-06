@@ -568,7 +568,7 @@ const PowersTranslations = Object.freeze({
     [Powers.Entangle]: 'Путы',
     [Powers.EnvironmentalProtection]: 'Защита от окружающей среды',
     [Powers.Farsight]: undefined,
-    [Powers.Fear]: undefined,
+    [Powers.Fear]: 'Ужас',
     [Powers.Fly]: 'Полёт',
     [Powers.GreaterHealing]: 'Великое исцеление',
     [Powers.GrowthShrink]: undefined,

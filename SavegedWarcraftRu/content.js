@@ -1002,10 +1002,14 @@ function getCharacterCreationContent() {
                         alignment: 'center',
                     },
                     {
+                        ul: [
+                            quickTextFormat(`Все заклинания мага, кроме Элементаля Воды (Water Elemental) и связанных с Аспектом огня`),
+                        ],
+                    },
+                    {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`Все заклинания мага, кроме Элементаля Воды (Water Elemental) и связанных с Аспектом огня`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast, '(Смерть и Разложение (Death and Decay), Тяжелое Оружие (Heavy Weapon))')}`),
                                     quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FrostNova)} (${getFromDict(PowersTranslations, Powers.Blast)}, направленный на существо, накладывает *${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}*)`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
@@ -1018,6 +1022,36 @@ function getCharacterCreationContent() {
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet, '(только нежить; длительность 1 час)')}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness, '(Нечестивое безумие (Unholy Frenzy); наносит 2d6 урона/раунд, но стоимость поддержания всего 1/раунд)')}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Zombie)}`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                    },
+                    {
+                        text: 'Чернокнижник (Warlock)',
+                        style: 'header3',
+                        alignment: 'center',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`Все заклинания магов, кроме Элементаля Воды (Water Elemental). Аспекты, связанные со льдом, холодом и молнией, меняются на Аспекты, связанные с огнем. Огненные Аспекты чернокнижников всегда представляют собой зеленоватое пламя скверны.`),
+                        ],
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Doom)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Fear)}*`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Демоны (Demons)*`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Феникс (Phoenix)*`),
                                 ],
                             },
                         ],
