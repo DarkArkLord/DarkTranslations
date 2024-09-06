@@ -1271,6 +1271,48 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getEluneContent() {
+                return [
+                    {
+                        text: 'Элуна, Богиня Луны (Elune, Goddess of the Moon)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Кредо**: Защищайте и оберегайте народ ночных эльфов. Защищайте Мировое Древо Нордрассил. Почитайте Элуну в своем молчании и мужестве. Остерегайтесь тлетворного влияния Тайной Магии и демонов.`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Заклинания (Spells)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BeastFriend)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bombardment)}* (Звездопад (Starfall))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait, '(Аура меткости (Trueshot) – усиливает Стрельбу)')}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Invisibility, '(Слиться с тенями (Shadowblend), только ночью)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite, '(Огненные стрелы (Flaming Arrows))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)}`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1290,6 +1332,7 @@ function getCharacterCreationContent() {
                     getInnerShadowContent(),
                     getShamanismContent(),
                     getNatureMagicContent(),
+                    getEluneContent(),
                 ],
             }
         }
