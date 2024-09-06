@@ -941,7 +941,7 @@ function getCharacterCreationContent() {
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Fly)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Light)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}* (${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}), высасывает 1d6 Пунктов Силы в дополнение к Ранам)`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}* (${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}), истощает 1d6 Пунктов Силы в дополнение к Ранам)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
                                     quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
@@ -1572,6 +1572,52 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getDemonHunterContent() {
+                return [
+                    {
+                        text: 'Охотник на демонов (Demon Hunter)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Требования**: Это считается формой магии Чернокнижника, и персонаж должен взять изъян **${getFromDict(HindrancesTranslations, Hindrances.Bloodthirsty)}**. Персонаж также должен взять изъян **${getFromDict(HindrancesTranslations, Hindrances.BadEyes)} (мелкий)** (они засчитываются в обычный лимит изъянов, и персонаж получает за них очки). Персонаж жертвует своими глазами, чтобы связать демоническую силу, но пока у него остается хотя бы **1** Пункт Силы, у него есть мистическое зрение, которое их заменяет. Охотники на демонов должны взять ${getFromDict(PowersTranslations, Powers.Smite)} в качестве своей первой силы, поскольку их сила исходит от демонической сущности, вселенной в оружие.`),
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Spellcasting)} (${getFromDict(StatesTranslations, States.Smarts)}).`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Силы (Powers)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.AntiMagicShell)} (${getFromDict(PowersTranslations, Powers.Armor)} против магии, +2/4 к сопротивлению заклинаниям)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)} (Кожа Демона (Demon Skin))`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}; истощает 1d6 Пунктов Силы в дополнение к Ранам)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectArcana)} (Магия Демонов/Чернокнижников (Demonic/Warlock magic))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)} (тепло (heat))`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)}* (Жар Преисподней (Immolate))`),
+
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.ShapeChange)} (только для Легенд (${Ranks.Legendary}); Демоническая форма (Demonic form))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Одержимое демоном оружие)`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1590,6 +1636,7 @@ function getCharacterCreationContent() {
                     getDwarvenAvatarContent(),
                     getTaurenTotemWarriorContent(),
                     getBlademasterContent(),
+                    getDemonHunterContent(),
                 ],
             }
         }

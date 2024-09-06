@@ -134,7 +134,7 @@ const HindrancesTranslations = Object.freeze({
     [Hindrances.AllThumbs]: 'Кривые руки',
     [Hindrances.Anemic]: undefined,
     [Hindrances.Arrogant]: undefined,
-    [Hindrances.BadEyes]: undefined,
+    [Hindrances.BadEyes]: 'Плохое зрение',
     [Hindrances.BadLuck]: undefined,
     [Hindrances.BigMouth]: undefined,
     [Hindrances.Blind]: undefined,
