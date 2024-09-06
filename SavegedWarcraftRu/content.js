@@ -920,7 +920,7 @@ function getCharacterCreationContent() {
                     },
                     {
                         ul: [
-                            quickTextFormat(`**Навык**: ${SkillsTranslations[Skills.Spellcasting]} (${Skills.Spellcasting}) (${StatesTranslations[States.Smarts]} (${States.Smarts}))`),
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Spellcasting)} (${getFromDict(StatesTranslations, States.Smarts)})`),
                             quickTextFormat(`**Начальные пункты силы**: 10`),
                             quickTextFormat(`**Начальные силы**: 3`),
                             quickTextFormat(`**Подтипы**: Маги (Волшебники, Колдуны); Некроманты; Чернокнижники`),
@@ -939,13 +939,13 @@ function getCharacterCreationContent() {
                     },
                     {
                         text: 'Списки заклинаний (Spell Lists)',
-                        style: 'header3',
+                        style: 'header4',
                     },
                     quickTextFormat(`*Заклинания, выделенные курсивом, являются новыми в этой книге.*`),
                     'Для некоторых заклинаний Аспекты указаны в скобках. Если Аспекты не перечислены, используйте любые из тех, что кажутся подходящими.',
                     {
                         text: 'Маги (Mages)',
-                        style: 'header3',
+                        style: 'header4',
                         alignment: 'center',
                     },
                     {
@@ -998,7 +998,7 @@ function getCharacterCreationContent() {
                     ]),
                     {
                         text: 'Некромант (Necromancer)',
-                        style: 'header3',
+                        style: 'header4',
                         alignment: 'center',
                     },
                     {
@@ -1029,7 +1029,7 @@ function getCharacterCreationContent() {
                     },
                     {
                         text: 'Чернокнижник (Warlock)',
-                        style: 'header3',
+                        style: 'header4',
                         alignment: 'center',
                     },
                     {
@@ -1061,6 +1061,66 @@ function getCharacterCreationContent() {
             }
         }
 
+        function getDivinePowerContent() {
+            return {
+                stack: [
+                    {
+                        text: 'Божественная сила (Чудеса) (Divine Power (Miracles))',
+                        style: 'header3',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Faith)} (${getFromDict(StatesTranslations, States.Spirit)})`),
+                            quickTextFormat(`**Начальные пункты силы**: 10`),
+                            quickTextFormat(`**Начальные силы**: 2`),
+                            quickTextFormat(`**Подтипы**: Внутренний Свет (The Inner Light) (Альянс (Alliance)), Внутренняя Тень (The Inner Shadow) (Альянс (Alliance)), Шаманизм (Shamanism) (Орки (Orcs), Таурены (Tauren)), Магия Природы (Nature Magic) (Дети Кенария (Children of Cenarius), Ночные Эльфы-Друиды (Night Elf Druids), Таурены-Друиды (Tauren Druids)), Элуна (Elune) (Ночные Эльфы (Night Elf)), Вуду (Voodoo) (Тролли Джунглей (Jungle Troll)), Король-Лич (Lich King) (любой (any))`),
+                            quickTextFormat(`**Защитник веры**: см. SW1 с. 108, SW2 с. 138. Кредо для каждого подтипа в Warcraft указано в отдельных записях ниже.`),
+                        ],
+                    },
+                    {
+                        text: 'Внутренний Свет (The Inner Light)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Кредо**: Защищай и оберегай своих ближних. Уничтожай зло. Сей семена радости и довольства, сражайся с негативом, яростью и отчаянием.`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.HolyWarrior)}, ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Заклинания (Spells)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor, '(Божественный щит (Divine Shield))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt, '(Ослепляющий свет (Searing Light))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight, '(Святое зрение (Holy Vision))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing, '(Святой свет (Holy Light))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.GreaterHealing)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.InnerFire)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Light)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.SpeakLanguage)}`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                    },
+                ],
+            }
+        }
+
         return {
             stack: [
                 {
@@ -1069,6 +1129,7 @@ function getCharacterCreationContent() {
                     pageBreak: 'before',
                 },
                 getArcaneMagicContent(),
+                getDivinePowerContent(),
             ],
             // pageBreak: 'after',
         };

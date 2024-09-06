@@ -50,6 +50,7 @@ const Skills = Object.freeze({
     Tracking: 'Tracking',
     // Arcane Skills
     Spellcasting: 'Spellcasting',
+    Faith: 'Faith',
 });
 
 const SkillsTranslations = Object.freeze({
@@ -78,6 +79,7 @@ const SkillsTranslations = Object.freeze({
     [Skills.Tracking]: 'Выслеживание',
     // Arcane Skills
     [Skills.Spellcasting]: 'Колдовство',
+    [Skills.Faith]: 'Вера',
 });
 
 const Hindrances = Object.freeze({
@@ -356,7 +358,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Brawler]: undefined,
     [Edges.Bruiser]: undefined,
     [Edges.Brawny]: 'Бугай',
-    [Edges.Champion]: undefined,
+    [Edges.Champion]: 'Избранный',
     [Edges.Charismatic]: undefined,
     [Edges.CombatReflexes]: undefined,
     [Edges.Command]: 'Командный голос',
@@ -387,8 +389,9 @@ const EdgesTranslations = Object.freeze({
     [Edges.HarderToKill]: undefined,
     [Edges.Healer]: undefined,
     [Edges.HoldTheLine]: undefined,
-    [Edges.HolyWarrior]: undefined,
-    [Edges.UnholyWarrior]: undefined,
+    [Edges.HolyUnholyWarrior]: 'Воин света/тьмы',
+    [Edges.HolyWarrior]: 'Воин света',
+    [Edges.UnholyWarrior]: 'Воин тьмы',
     [Edges.ImprovisationalFighter]: undefined,
     [Edges.Inspire]: undefined,
     [Edges.Investigator]: undefined,
