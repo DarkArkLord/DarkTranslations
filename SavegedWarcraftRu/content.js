@@ -1220,6 +1220,57 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getNatureMagicContent() {
+                return [
+                    {
+                        text: 'Магия природы (Nature Magic)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Кредо**: Защищать природу, особенно священные рощи. Почитать духов природы, защищать от угроз со стороны Тайной Магии.`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.HolyWarrior)}, ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Заклинания (Spells)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive, '(Броня шипов (Armor of Thorns))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Barrier)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait, '(Волшебный Огонь (Faerie Fire) (Снижение Скрытности), Рев (Roar) (Усиление Драки))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burrow)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Deflection)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.ElementalManipulation)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Entangle)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing, '(Благословение дождя (Rain’s Blessing), Покой (Tranquility) и т. д.)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.GreaterHealing)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}* (Только природные субстанции)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.ShapeChange)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite, '(Улучшенное природное оружие (Enhanced natural weapons))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Stun, '(Смерч (Cyclone))')}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}* (Древень (Treant), Дух животного (Animal Spirit))`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1238,6 +1289,7 @@ function getCharacterCreationContent() {
                     getInnerLightContent(),
                     getInnerShadowContent(),
                     getShamanismContent(),
+                    getNatureMagicContent(),
                 ],
             }
         }
