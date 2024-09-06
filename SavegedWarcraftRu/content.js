@@ -1487,6 +1487,48 @@ function getCharacterCreationContent() {
                     ]),
                 ];
             }
+            function getTaurenTotemWarriorContent() {
+                return [
+                    {
+                        text: 'Тотемный Воин Тауренов (Tauren Totem-Warrior)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Требования**: раса - Таурен.`),
+                            quickTextFormat(`**Навык**: ${getFromDict(SkillsTranslations, Skills.Faith)} (${getFromDict(StatesTranslations, States.Spirit)}). Это форма шаманской магии.`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.Champion)}`),
+                        ],
+                    },
+                    {
+                        text: 'Силы (Powers)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Громовая поступь (War Stomp) — оглушает не-Дикие карты в дополнение к урону)`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(StatesTranslations, States.Strength)}, ${getFromDict(StatesTranslations, States.Spirit)}, ${getFromDict(StatesTranslations, States.Vigor)}, ${getFromDict(SkillsTranslations, Skills.Fighting)})`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burst)} (Волна Силы (Shockwave) — Оглушает (${Powers.Stun}) цели)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.GreaterHealing)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Тотемный удар (Totem Strike))`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
 
             return {
                 stack: [
@@ -1504,6 +1546,7 @@ function getCharacterCreationContent() {
                         ],
                     },
                     getDwarvenAvatarContent(),
+                    getTaurenTotemWarriorContent(),
                 ],
             }
         }
