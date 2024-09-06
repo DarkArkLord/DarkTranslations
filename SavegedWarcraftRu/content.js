@@ -223,7 +223,7 @@ const docDefinition = {
     pageOrientation: 'portrait',
     defaultStyle: {
         font: 'Roboto',
-        fontSize: 14,
+        fontSize: 12,
     },
     styles: {
         header1: { fontSize: 26, bold: true, alignment: 'center', margin: [0, 10, 0, 10] },
