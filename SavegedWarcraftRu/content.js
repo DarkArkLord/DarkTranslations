@@ -1123,6 +1123,10 @@ function getCharacterCreationContent() {
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
                     },
+                    '\n',
+                    getTipText([
+                        quickTextFormat(`В оригинале используется заклинание *"Heal"*. Такого заклинания нет в английской книге правил, так что они было заменено на "${getFromDict(PowersTranslations, Powers.Healing)}"`),
+                    ]),
                 ];
             }
 
