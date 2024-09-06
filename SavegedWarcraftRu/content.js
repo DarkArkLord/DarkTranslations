@@ -82,6 +82,7 @@ const SettingPowers = Object.freeze({
     AntiMagicShell: 'Anti-Magic Shell',
     ContinuousBlast: 'Continuous Blast',
     OffensiveArmor: 'Offensive Armor',
+    FrostNova: 'Frost Nova',
     DeathCoil: 'Death Coil',
     DeathPact: 'Death Pact',
     Paralyze: 'Paralyze',
@@ -109,6 +110,7 @@ const SettingPowersTranslations = Object.freeze({
     [SettingPowers.AntiMagicShell]: 'Доспех Антимагии',
     [SettingPowers.ContinuousBlast]: 'Продолжительный взрыв',
     [SettingPowers.OffensiveArmor]: 'Наступательная Броня',
+    [SettingPowers.FrostNova]: 'Кольцо льда',
     [SettingPowers.DeathCoil]: 'Лик смерти',
     [SettingPowers.DeathPact]: 'Смертельный союз',
     [SettingPowers.Paralyze]: 'Паралич',
@@ -994,6 +996,33 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Каких либо комментариев по поводу стоимости или других параметров для них, конечно же, не предусмотрено. Например, **${getFromDict(SettingPowersTranslations, SettingPowers.DeathCoil)}** имеет короткое описание *"${getFromDict(PowersTranslations, Powers.Bolt)} против живых, ${getFromDict(PowersTranslations, Powers.Healing)} против нежити"*. ${getFromDict(PowersTranslations, Powers.Bolt)} стоит **1+** Пункт Силы и применяется на дистанции, ${getFromDict(PowersTranslations, Powers.Healing)} стоит **3** Пункта Силы и применяется касанием. И какие же характеристики у **Лика смерти**? Никто не знает.`),
                         quickTextFormat(`**В рамках перевода оставим все эти вопросы на совести автора оригинала**.`),
                     ]),
+                    {
+                        text: 'Некромант (Necromancer)',
+                        style: 'header3',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`Все заклинания мага, кроме Элементаля Воды (Water Elemental) и связанных с Аспектом огня`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast, '(Смерть и Разложение (Death and Decay), Тяжелое Оружие (Heavy Weapon))')}`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FrostNova)} (${getFromDict(PowersTranslations, Powers.Blast)}, направленный на существо, накладывает *${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}*)`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.LowerTrait, `(Калека (Cripple) — снижает Силу (${States.Strength}) и Драку (${Skills.Fighting}))`)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)} (Морозная Броня (Frost Armor); *${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}* вместо урона)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet, '(только нежить; длительность 1 час)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness, '(Нечестивое безумие (Unholy Frenzy); наносит 2d6 урона/раунд, но стоимость поддержания всего 1/раунд)')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Zombie)}`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                    },
                 ],
             }
         }
