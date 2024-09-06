@@ -1126,6 +1126,50 @@ function getCharacterCreationContent() {
                 ];
             }
 
+            function getInnerShadowContent() {
+                return [
+                    {
+                        text: 'Внутренняя тень (The Inner Shadow)',
+                        style: 'header4',
+                    },
+                    {
+                        ul: [
+                            quickTextFormat(`**Кредо**: Сеять горе, ярость и отчаяние. Настраивать людей друг против друга. Препятствовать доброте и всему хорошему.`),
+                            quickTextFormat(`**Профессиональные черты**: нет`),
+                        ],
+                    },
+                    {
+                        text: 'Заклинания (Spells)',
+                        style: 'header4',
+                        alignment: 'center',
+                    },
+                    {
+                        columns: [
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor, '(Божественный щит (Divine Shield))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)}`),
+                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt, '(Боль (Pain))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
+                                ],
+                            },
+                            {
+                                ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
+                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight, '(Нечестивое видение (Unholy Vision))')}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
+                                ],
+                            },
+                        ],
+                        columnGap: 5,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ];
+            }
+
             return {
                 stack: [
                     {
@@ -1142,6 +1186,7 @@ function getCharacterCreationContent() {
                         ],
                     },
                     getInnerLightContent(),
+                    getInnerShadowContent(),
                 ],
             }
         }
