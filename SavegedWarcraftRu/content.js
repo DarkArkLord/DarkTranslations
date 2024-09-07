@@ -1813,6 +1813,9 @@ function getCharacterCreationContent() {
 
     function getNewPowersContent() {
         function getPowerContent(data) {
+            const requirements = data.requirements
+                ? [quickTextFormat(`**Требования**: ${data.requirements}`)]
+                : [];
             const trappings = data.trappings
                 ? [quickTextFormat(`**Аспекты**: ${data.trappings}`)]
                 : [];
@@ -1825,6 +1828,7 @@ function getCharacterCreationContent() {
                     {
                         ul: [
                             quickTextFormat(`**Ранг**: ${data.rank}`),
+                            ...requirements,
                             quickTextFormat(`**Пункты Силы**: ${data.powerPoints}`),
                             quickTextFormat(`**Дистанция**: ${data.range}`),
                             quickTextFormat(`**Длительность**: ${data.duration}`),
@@ -1902,6 +1906,80 @@ function getCharacterCreationContent() {
                     duration: '0 (1/раунд)',
                     text: [
                         quickTextFormat(`Заклинатель этой могущественной силы призывает небеса поразить своих врагов. Каждый раунд все враги (определенные заклинателем) в пределах **Характера** заклинателя дюймов становятся целью горящего метеорита, который наносит **2d10** урона (цели могут сделать бросок **Ловкости**, чтобы получить **половину** урона, если они могут двигаться хотя бы на **1** дюйм). Заклинатель не может двигаться более чем на **1** дюйм, поддерживая это заклинание.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Contact),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)} (Специальный)`,
+                    powerPoints: '4 (Специальный)',
+                    range: 'Смекалка * 5 или Специальный',
+                    duration: '1 минута (1/минута)',
+                    trappings: `Трансовые контакты (Trance contacts), гадальный бассейн (scrying pool), образы духов (spirit images)`,
+                    text: [
+                        quickTextFormat(`Персонаж может устанавливать дальний вербальный контакт со знакомым ему существом. Он может смутно видеть это существо и может нормально говорить в течение всего времени действия заклинания.`),
+                        quickTextFormat(`В качестве альтернативы персонаж может создать какой-либо жетон (token) и передать его существу. Нет ограничений на расстояние, на котором можно связаться с существом, у которого есть ваш жетон или чей жетон есть у персонажа. Носитель жетона, который не обладает этой силой (или фактически Мистическим даром (${Edges.ArcaneBackground})), может активировать жетон, чтобы попросить вас активировать эту силу. Если и заклинатель, и носитель жетона обладают этой силой, они могут вместе потратить Пункты Силы для оплаты этого заклинания.`),
+                        quickTextFormat(`Это заклинание можно изучить, когда персонаж еще ${getFromDict(RanksTranslations, Ranks.Novice)}, но в таком случае он может Контактировать (${SettingPowers.Contact}) только с теми, кто дал ему жетоны, и не может создавать жетоны сам.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Doom),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Legendary)}`,
+                    powerPoints: '8',
+                    range: 'Смекалка',
+                    duration: '5 (2/раунд)',
+                    text: [
+                        quickTextFormat(`Эта демоническая сила медленно уничтожает свою цель, после чего использует труп в качестве канала для призыва в Азерот мощного демона.`),
+                        quickTextFormat(`При применении цель получает **3d6** урона и должна делать проверку **Характера** против результата проверки **Колдовства (${Skills.Spellcasting})** пользователя каждый раз, когда хочет активировать Мистический дар (${Edges.ArcaneBackground}). Каждый последующий раунд цель получает еще **2d6** урона. Штрафы за раны (Wound) применяются к **Стойкости** при сопротивлении этому урону.`),
+                        quickTextFormat(`Если цель становится Недееспособной (Incapacitated) из-за этого урона, она делает бросок **Выносливости** против результата проверки **Колдовства**. Успех означает, что цель продолжает получать урон кумулятивно. Неудача (или падение до Смертельной Раны (Mortal Wound)) означает, что персонаж мгновенно умирает. **1d6** раундов спустя из трупа персонажа восстанет Привратник Ада/Страж Рока (Doom Guard), союзник заклинателя.`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`Не совсем понятно, зачем *"делать проверку Характера против результата проверки Колдовства пользователя каждый раз, когда хочет активировать Мистический дар (make a Spirit check against the user’s Spellcasting total each time they wish to activate an Arcane Background)"*. Что даст успех/провал этой проверки? Данных нет.`),
+                    quickTextFormat(`**Оставлено на усмотрение ведущего**.`),
+                ]),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.EtherealForm),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)}`,
+                    powerPoints: '4',
+                    range: 'Касание',
+                    duration: '3 (2/раунд)',
+                    trappings: `Светящаяся, туманная форма (Glowing, hazy form)`,
+                    text: [
+                        quickTextFormat(`Эта сила позволяет вам переходить в эфирность/мир духов (etherealness) и из нее. Пока вы эфирны, немагические атаки не могут вас поразить, вы фактически ничего не весите и можете проходить сквозь твердые объекты. Если вы решите стать материальным и атаковать, вы останетесь материальным на время действия текущей карты, и любой другой персонаж на той же карте может атаковать вас как обычно, хотя это не прекращает действие силы.`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`По поводу *"время действия текущей карты (duration of that card)"* и *"любой другой на той же карте (anyone else on the same card)"*. Карты в Savage Worlds исполюзуются (в том числе) для определения инициативы в бою. Вероятно, имеется ввиду, что персонажи с *такой-же* картой инициативы, как у применяющего заклинание, могут его атаковать, как обычно (если он вернулся в реальным мир, конечно). Судя по *"на той же карте (on the same card)"*, на персонажей с более высокой/низкой инициативой это не распространяется.`),
+                ]),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.FarSight),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)}`,
+                    powerPoints: '2+',
+                    range: 'Различный',
+                    duration: '1 минута (2/минуту)',
+                    trappings: `Светящиеся глаза (Glowing eyes), гадальный бассейн (scrying pool), образы духов (spirit images)`,
+                    text: [
+                        {
+                            text: [
+                                quickTextFormat(`Эта сила позволяет вам видеть дальше и шире, чем обычно. Вы можете видеть в пределах Шаблона среднего взрыва (Большого при подъеме). Вы можете перемещать центр "взрыва" со скоростью, равной вашему Магическому Навыку (Arcane Skill). Зоркость (${SettingPowers.FarSight}) имеет базовую дистанцию, равную `),
+                                {
+                                    text: 'Смекалке * 4',
+                                    bold: true,
+                                },
+                                quickTextFormat(`. Каждые **2** Пункта Силы удваивают эту дистанцию.`),
+                            ]
+                        },
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Inferno),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Legendary)}`,
+                    requirements: quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Демон (Demon)*`),
+                    powerPoints: '12',
+                    range: 'Смекалка * 3',
+                    duration: '1 минута (1/раунд)',
+                    text: [
+                        quickTextFormat(`Эта сила призывает могущественного демона - Инфернала/Огненного голема (Infernal). Демон падает с неба в окутанном зеленым огнем метеорите в указанное заклинателем место и наносит **3d6** урона шаром Пламени Скверны в шаблоне Большого взрыва. В следующем раунде демон нападает на ближайшую цель, будь то друг или враг. Призыватель может попытаться выбрать цель для Инфернала каждый раунд с помощью встречной проверки **Характера**. Если призыватель бросает змеиные глаза, Инфернал нападает на него. Демоны игнорируют этот эффект заклинани, их вообще не волнует, кто будет умирать.`),
                     ],
                 }),
             ],
