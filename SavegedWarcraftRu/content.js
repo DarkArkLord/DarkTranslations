@@ -2471,7 +2471,7 @@ function getBestiaryContent() {
                 quickTextFormat(`**Существо зла (Creature of Evil)**: Ядовитые пауки наполнены энергией нежити и считаются злыми для тех сил и способностей, которые обнаруживают или влияют на зло.`),
                 quickTextFormat(`**Быстрая регенерация (Fast Regeneration)**: Ядовитые пауки делают бросок Естественного Исцеления в конце каждого хода.`),
                 quickTextFormat(`**Чувство добра (Sense Good)**: Ядовитые пауки могут автоматически чувствовать присутствие любого существа с аурой сверхъестественной доброты (aura of supernatural goodness).`),
-                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} - 1**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} -1**`),
                 quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Poison)} -2**: Яд Ядовитого паука вызывает потерю как **Силы**, так и **Выносливость** со скоростью 1 за раунд.`),
             ],
         }),
