@@ -238,6 +238,7 @@ const docDefinition = {
     content: [
         getTitlePageContent(),
         getCharacterCreationContent(),
+        getBestiaryContent(),
     ],
 };
 
@@ -2314,6 +2315,25 @@ function getCharacterCreationContent() {
         getEdgesContent(),
         getArcaneBackgroundsContent(),
         getNewPowersContent(),
+    ];
+}
+
+function getBestiaryContent() {
+    //
+
+    return [
+        {
+            text: 'Бестиарий Warcraft (Bestiary of Warcraft)',
+            style: 'header1',
+            pageBreak: 'before',
+        },
+        {
+            stack: [
+                quickTextFormat(`Ниже представлен выбор "крипов" (creeps) и не связанных между собой существ из игры Warcraft. Нежить Плети (Undead Scourge) и Демоны Пылающего Легиона (Demons of the Burning Legion) находятся далее, в разделе Юниты (Units).`),
+                quickTextFormat(`Пожалуйста, обратите внимание, что я дал одно "базовое" существо для каждого типа существ, а затем представил основные отклонения. В **Warcraft** монстры часто значительно сильнее этих базовых характеристик. Не стесняйтесь корректировать их в большую сторону практически для каждого монстра, перечисленного здесь.`),
+            ],
+            leadingIndent: paragraphOffset,
+        }
     ];
 }
 
