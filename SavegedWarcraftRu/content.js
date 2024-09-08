@@ -2444,6 +2444,65 @@ function getBestiaryContent() {
                 quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +5**: Древние более 15 футов в высоту и широкие, как секвойя.`),
             ],
         }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Ядовитый паук (Bane Spider)',
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '6 (Ж)',
+                [States.Spirit]: '4',
+                [States.Strength]: '4',
+                [States.Vigor]: '6',
+            },
+            skills: {
+                [Skills.Climbing]: '10',
+                [Skills.Fighting]: '4',
+                [Skills.Guts]: '6',
+                [Skills.Notice]: '6',
+                [Skills.Stealth]: '10',
+            },
+            commonAttributes: {
+                [States.Pace]: '8',
+                [States.Parry]: '4',
+                [States.Toughness]: '4',
+            },
+            specialAbilities: [
+                quickTextFormat(`**Укус (Bite)**: Укус ядовитого паука наносит урон **Сила+1** и впрыскивает яд.`),
+                quickTextFormat(`**Существо зла (Creature of Evil)**: Ядовитые пауки наполнены энергией нежити и считаются злыми для тех сил и способностей, которые обнаруживают или влияют на зло.`),
+                quickTextFormat(`**Быстрая регенерация (Fast Regeneration)**: Ядовитые пауки делают бросок Естественного Исцеления в конце каждого хода.`),
+                quickTextFormat(`**Чувство добра (Sense Good)**: Ядовитые пауки могут автоматически чувствовать присутствие любого существа с аурой сверхъестественной доброты (aura of supernatural goodness).`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} - 1**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Poison)} -2**: Яд Ядовитого паука вызывает потерю как **Силы**, так и **Выносливость** со скоростью 1 за раунд.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Василиск (Basilisk)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '6 (Ж)',
+                [States.Spirit]: '6',
+                [States.Strength]: '10',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '6',
+                [Skills.Gaze]: '10',
+                [Skills.Guts]: '10',
+                [Skills.Notice]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '5',
+                [States.Toughness]: '13',
+            },
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +4**: Толстая шкура василиска усеяна живыми кристаллами.`),
+                quickTextFormat(`**Укус или Когти (Bite or Claws)**: **Сила+2**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Paralysis)}**: При успешной атаке Взглядом (${Skills.Gaze}) цель должна пройти проверку **Выносливости** или заснуть на **3d6** раундов.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +3**: Звери Кодо (Kodo beasts) имеют рост пять футов в холке, с телосложением, как у носорога.`),
+            ],
+        }),
     ];
 }
 

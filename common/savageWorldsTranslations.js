@@ -50,6 +50,7 @@ const Skills = Object.freeze({
     Tracking: 'Tracking',
     // Old skills
     Guts: 'Guts',
+    Gaze: 'Gaze',
     // Arcane Skills
     Spellcasting: 'Spellcasting',
     Faith: 'Faith',
@@ -84,6 +85,7 @@ const SkillsTranslations = Object.freeze({
     [Skills.Tracking]: 'Выслеживание',
     // Old skills
     [Skills.Guts]: 'Храбрость',
+    [Skills.Gaze]: 'Взгляд',
     // Arcane Skills
     [Skills.Spellcasting]: 'Колдовство',
     [Skills.Faith]: 'Вера',
@@ -477,8 +479,8 @@ const EdgesTranslations = Object.freeze({
     [Edges.Immunity]: undefined,
     [Edges.Invulnerability]: undefined,
     [Edges.LowLightVision]: 'Ночное зрение',
-    [Edges.Paralysis]: undefined,
-    [Edges.Poison]: undefined,
+    [Edges.Paralysis]: 'Паралич',
+    [Edges.Poison]: 'Яд',
     [Edges.Regeneration]: undefined,
     [Edges.Size]: 'Размер',
     [Edges.Small]: undefined,
