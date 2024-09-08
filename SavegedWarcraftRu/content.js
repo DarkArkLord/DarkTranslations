@@ -2319,7 +2319,86 @@ function getCharacterCreationContent() {
 }
 
 function getBestiaryContent() {
-    //
+    function getUnitContent(data) {
+        const title = data.isWildCard ? {
+            layout: {
+                hLineWidth: function (i, node) { return 0; },
+                vLineWidth: function (i, node) { return 0; },
+                paddingLeft: function (i, node) { return 0; },
+                paddingRight: function (i, node) { return 0; },
+                paddingTop: function (i, node) { return 0; },
+                paddingBottom: function (i, node) { return 0; },
+            },
+            table: {
+                body: [
+                    [
+                        {
+                            image: getImagePath('wild-card-star.png'),
+                            width: 24,
+                            margin: [0, 0, 5, 0],
+                            // alignment: 'center',
+                        },
+                        {
+                            text: data.title,
+                            style: 'header4',
+                        },
+                    ],
+                ]
+            }
+        } : {
+            text: data.title,
+            style: 'header4',
+        };
+
+        let attributes = [];
+        if (data.attributes) {
+            const attributesText = Object.keys(data.attributes ?? {})
+                .map(attr => `${StatesTranslations[attr]} d${data.attributes?.[attr]}`)
+                .join(', ');
+            attributes = [quickTextFormat(`**Атрибуты**: ${attributesText}`)];
+        }
+
+        let skills = [];
+        if (data.skills) {
+            const skillsText = Object.keys(data.skills ?? {})
+                .map(attr => `${SkillsTranslations[attr]} d${data.skills?.[attr]}`)
+                .join(', ');
+            skills = [quickTextFormat(`**Навыки**: ${skillsText}`)];
+        }
+
+        let commonAttributes = [];
+        if (data.commonAttributes) {
+            const commonAttributesList = [States.Pace, States.Parry, States.Toughness];
+            const commonAttributesText = commonAttributesList
+                .map(key => `**${StatesTranslations[key]}**: ${data.commonAttributes?.[key]}`)
+                .join('; ');
+            commonAttributes = quickTextFormat(commonAttributesText);
+        }
+
+        let specialAbilities = [];
+        if (data.specialAbilities?.length > 0) {
+            specialAbilities = [
+                { text: 'Особые способности', bold: true, },
+                { ul: data.specialAbilities, },
+            ];
+        }
+
+        const unitData = {};
+        if (data.offset) {
+            unitData.leadingIndent = data.offset;
+        }
+
+        return {
+            stack: [
+                title,
+                attributes,
+                skills,
+                commonAttributes,
+                specialAbilities,
+            ],
+            ...unitData,
+        };
+    }
 
     return [
         {
@@ -2333,7 +2412,38 @@ function getBestiaryContent() {
                 quickTextFormat(`Пожалуйста, обратите внимание, что я дал одно "базовое" существо для каждого типа существ, а затем представил основные отклонения. В **Warcraft** монстры часто значительно сильнее этих базовых характеристик. Не стесняйтесь корректировать их в большую сторону практически для каждого монстра, перечисленного здесь.`),
             ],
             leadingIndent: paragraphOffset,
-        }
+            margin: [0, 0, 0, 5],
+        },
+        getUnitContent({
+            isWildCard: true,
+            title: 'Древний (Ancient)',
+            attributes: {
+                [States.Agility]: '4',
+                [States.Smarts]: '10',
+                [States.Spirit]: '12',
+                [States.Strength]: '12+5',
+                [States.Vigor]: '12',
+            },
+            skills: {
+                [Skills.Faith]: '10',
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '12',
+                [Skills.Knowledge]: '10',
+                [Skills.Notice]: '10',
+            },
+            commonAttributes: {
+                [States.Pace]: '7',
+                [States.Parry]: '6',
+                [States.Toughness]: '15',
+            },
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +4**: Древние имеют кору древних и крепких деревьев в качестве своей шкуры.`),
+                quickTextFormat(`**Когти (Claws)**: Узловатые и заостренные пальцы Древних наносят урон **Сила+2** и считаются Тяжелым оружием.`),
+                quickTextFormat(`**Поглощение дерева (Consume Tree)**: Если Древний тратит Действие, чтобы поглотить дерево, он немедленно делает бросок Естественного Исцеления. Если Древний в Шоке (Shaken), он может сделать это вместо того, чтобы двигаться, если рядом есть дерево.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Hardy)}**: Когда Древний (Ancient) в Шоке (Shaken), он не получает ранений от ударов, вводящих его в Шок (Shaken) повторно.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +5**: Древние более 15 футов в высоту и широкие, как секвойя.`),
+            ],
+        }),
     ];
 }
 

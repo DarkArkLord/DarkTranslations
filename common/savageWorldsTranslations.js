@@ -48,6 +48,8 @@ const Skills = Object.freeze({
     Taunt: 'Taunt',
     Throwing: 'Throwing',
     Tracking: 'Tracking',
+    // Old skills
+    Guts: 'Guts',
     // Arcane Skills
     Spellcasting: 'Spellcasting',
     Faith: 'Faith',
@@ -80,6 +82,8 @@ const SkillsTranslations = Object.freeze({
     [Skills.Taunt]: 'Провокация',
     [Skills.Throwing]: 'Метание',
     [Skills.Tracking]: 'Выслеживание',
+    // Old skills
+    [Skills.Guts]: 'Храбрость',
     // Arcane Skills
     [Skills.Spellcasting]: 'Колдовство',
     [Skills.Faith]: 'Вера',
@@ -458,7 +462,7 @@ const EdgesTranslations = Object.freeze({
     //#endregion
     //#region Monsters edges
     [Edges.Aquatic]: undefined,
-    [Edges.Armor]: undefined,
+    [Edges.Armor]: 'Броня',
     [Edges.Burrowing]: 'Перемещение под землёй',
     [Edges.Construct]: undefined,
     [Edges.Elemental]: undefined,
@@ -467,7 +471,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Fearless]: undefined,
     [Edges.Flight]: undefined,
     [Edges.Gargantuan]: undefined,
-    [Edges.Hardy]: undefined,
+    [Edges.Hardy]: 'Крепкий',
     [Edges.Infection]: undefined,
     [Edges.Infravision]: undefined,
     [Edges.Immunity]: undefined,
@@ -476,7 +480,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Paralysis]: undefined,
     [Edges.Poison]: undefined,
     [Edges.Regeneration]: undefined,
-    [Edges.Size]: undefined,
+    [Edges.Size]: 'Размер',
     [Edges.Small]: undefined,
     [Edges.Large]: undefined,
     [Edges.Huge]: undefined,
