@@ -2136,6 +2136,99 @@ function getCharacterCreationContent() {
                         ]
                     }
                 },
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.TransformOther),
+                    rank: `Различный`,
+                    powerPoints: 'Различный',
+                    range: 'Смекалка',
+                    duration: '1 минута (1/минута)',
+                    trappings: `Проклятия (Curses), куклы вуду (voodoo dolls)`,
+                    text: [
+                        quickTextFormat(`Эта сила действует как **${getFromDict(PowersTranslations, Powers.ShapeChange)}**, только на другого персонажа. Это заклинание действует по-разному в зависимости от того, согласна ли цель принять эффект. Если цель добровольно принимает эффект, используйте таблицу для **Превращения (${Powers.ShapeChange})** (см. SW1 с. 117, SW2 с. 148), но требование к Рангу на единицу выше.`),
+                        quickTextFormat(`Однако, если цель не желает принимать эффект, требуется встречная проверка Колдовства (${Skills.Spellcasting}) против **Характера** цели, и используется следующая таблица (основанная на степени ослабления цели).`),
+                    ],
+                }),
+                '\n',
+                {
+                    table: {
+                        widths: ['auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Стоимость',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Ранг',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Тип животного',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '4',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Seasoned),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Менее опасно, но способно атаковать',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Veteran),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Безвредно, но такая же Стойкость',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Heroic),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Стойкость меньше и безвредное',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '7',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Legendary),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Легко раздавить (Стойкость 1)',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
                 '\n',
                 getTipText([
                     quickTextFormat(`В версии от 29 марта 2005 утеряно описание силы **${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}**. В рамказ перевода вставлю ее описание из версии от 28 марта 2004.`),
@@ -2146,13 +2239,17 @@ function getCharacterCreationContent() {
                         powerPoints: '2-6',
                         range: '6/12/24',
                         duration: '3 (1/раунд)',
-                        trappings: `Потрескивающая энергия, опутывающая листва, паутина`,
+                        trappings: `Потрескивающая энергия (Crackling energy), опутывающая листва (entangling foliage), паутина (spider webs)`,
                         text: [
                             quickTextFormat(`Этот эффект окружает цель каким-либо барьером или силой. Заклинатель делает проверку Магического Навыка (Arcane Skill) против **Ловкости** цели. В случае успеха цель обездвиживается и не может предпринимать какие-либо действия. Любое летающее существо, которое полагается на крылья, автоматически приземляется (урон от падения наносится как обычно). Парящие (Hovering) существа делают вторую проверку **Ловкости**, с **-2** за каждый подъем в броске Колдовства (${Skills.Spellcasting}). Неудача означает, что они тоже будут утянуты вниз.`),
                             quickTextFormat(`За **2** Пункта Силы это влияет на одну цель. За **4** Пункта Силы это влияет в области Шаблона малого взрыва, а за **6** Пунктов Силы это может повлиять в области Шаблона среднего взрыва.`),
                         ],
                     }),
                 ]),
+                {
+                    text: 'Модифицированные заклинания (Modified Spells)',
+                    style: 'header3',
+                },
             ],
             // pageBreak: 'after',
         };
