@@ -1813,12 +1813,25 @@ function getCharacterCreationContent() {
 
     function getNewPowersContent() {
         function getPowerContent(data) {
+            const rank = data.rank
+                ? [quickTextFormat(`**Ранг**: ${data.rank}`)]
+                : [];
             const requirements = data.requirements
                 ? [quickTextFormat(`**Требования**: ${data.requirements}`)]
+                : [];
+            const powerPoints = data.powerPoints
+                ? [quickTextFormat(`**Пункты Силы**: ${data.powerPoints}`)]
+                : [];
+            const range = data.range
+                ? [quickTextFormat(`**Дистанция**: ${data.range}`)]
+                : [];
+            const duration = data.duration
+                ? [quickTextFormat(`**Требования**: ${data.duration}`)]
                 : [];
             const trappings = data.trappings
                 ? [quickTextFormat(`**Аспекты**: ${data.trappings}`)]
                 : [];
+
             return {
                 stack: [
                     {
@@ -1827,11 +1840,11 @@ function getCharacterCreationContent() {
                     },
                     {
                         ul: [
-                            quickTextFormat(`**Ранг**: ${data.rank}`),
+                            ...rank,
                             ...requirements,
-                            quickTextFormat(`**Пункты Силы**: ${data.powerPoints}`),
-                            quickTextFormat(`**Дистанция**: ${data.range}`),
-                            quickTextFormat(`**Длительность**: ${data.duration}`),
+                            ...powerPoints,
+                            ...range,
+                            ...duration,
                             ...trappings,
                         ],
                     },
@@ -2250,6 +2263,39 @@ function getCharacterCreationContent() {
                     text: 'Модифицированные заклинания (Modified Spells)',
                     style: 'header3',
                 },
+                getPowerContent({
+                    title: getFromDict(PowersTranslations, Powers.GreaterHealing),
+                    text: [
+                        quickTextFormat(`Это заклинание способно оживлять персонажей из мертвых, если его произносит кто-то с Рангом ${getFromDict(RanksTranslations, Ranks.Veteran)} или выше. Однако не Дикие Карты должны сделать бросок **Характера** с **-2**, чтобы воскреснуть таким образом. Предполагается, что Дикие Карты обладают достаточной силой воли, чтобы вытащить себя из за Завесы Смерти (Veil of Death), если они того пожелают.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: `${getFromDict(PowersTranslations, Powers.Healing)} и ${getFromDict(PowersTranslations, Powers.GreaterHealing)}`,
+                    text: [
+                        quickTextFormat(`Диапазон этого заклинания — **Характер**.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(PowersTranslations, Powers.Teleport),
+                    text: [
+                        {
+                            text: [
+                                quickTextFormat(`Если у вас есть Круги Силы (Circle of Power) в точке отправления и точке назначения, диапазон увеличивается до **5** миль за каждые потраченные **3** Пункта Силы. Вы можете телепортировать до **10** фунтов`),
+                                ' * ',
+                                quickTextFormat(`ваш Магический Навык (Arcane Skill) в дополнительной массе — снаряжение, предметы, других людей — бесплатно. Каждые **10** фунтов`),
+                                ' * ',
+                                quickTextFormat(`ваш Магический Навык (Arcane Skill) сверх этого стоят дополнительный Пункт Силы. Персонаж также может телепортировать людей или предметы, не телепортируясь сам. Стоимость та же. Однако недобровольные цели могут сделать бросок **Характера**, чтобы сопротивляться.`),
+                            ],
+                        },
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(PowersTranslations, Powers.Zombie),
+                    text: [
+                        quickTextFormat(`Эта сила доступна на уровне ${getFromDict(RanksTranslations, Ranks.Seasoned)}, а не ${getFromDict(RanksTranslations, Ranks.Veteran)}.`),
+                        quickTextFormat(`На Ранге ${getFromDict(RanksTranslations, Ranks.Legendary)} заклинатель может вместо этого заплатить **6** Пунстов Силы за каждую поднятую нежить, чтобы временно поднять целевые существа с их предыдущими характеристиками и способностями, за исключением того, что они теперь Нежить. Это длится всего несколько минут вместо часов.`),
+                    ],
+                }),
             ],
             // pageBreak: 'after',
         };
