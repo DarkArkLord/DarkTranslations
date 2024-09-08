@@ -1982,6 +1982,177 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Эта сила призывает могущественного демона - Инфернала/Огненного голема (Infernal). Демон падает с неба в окутанном зеленым огнем метеорите в указанное заклинателем место и наносит **3d6** урона шаром Пламени Скверны в шаблоне Большого взрыва. В следующем раунде демон нападает на ближайшую цель, будь то друг или враг. Призыватель может попытаться выбрать цель для Инфернала каждый раунд с помощью встречной проверки **Характера**. Если призыватель бросает змеиные глаза, Инфернал нападает на него. Демоны игнорируют этот эффект заклинани, их вообще не волнует, кто будет умирать.`),
                     ],
                 }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.InnerFire),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Veteran)}`,
+                    powerPoints: '4',
+                    range: 'Смекалка',
+                    duration: '5 (2/раунд)',
+                    trappings: `Нимб белого света (Nimbus of white light)`,
+                    text: [
+                        quickTextFormat(`Это мощное заклинание увеличивает (boost) тип кубика Драки (${Skills.Fighting}) цели, а также дает ей **${getFromDict(PowersTranslations, Powers.Armor)}**.`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`Видимо, это **${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(SkillsTranslations, Skills.Fighting)})** и **${getFromDict(PowersTranslations, Powers.Armor)}** в одном заклинании.`),
+                ]),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Veteran)}`,
+                    powerPoints: '3',
+                    range: 'Касание',
+                    duration: '3 (1/раунд)',
+                    trappings: `Нечестивая аура вокруг оружия (Unholy aura around weapon), черные когти (black claws), пьющее кровь оружие (blood-drinking weapons)`,
+                    text: [
+                        quickTextFormat(`Это действует как **${getFromDict(PowersTranslations, Powers.Smite)}**. Помимо этого, каждый раз, когда персонаж наносит удар под действием Высасывания жизни (${SettingPowers.LifeDrain}), он делает немедленную проверку исцеления (Healing Check).`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Mend),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Novice)}`,
+                    powerPoints: 'Различный',
+                    range: 'Касание',
+                    duration: 'Мгновенно',
+                    trappings: `Мистическое свечение (Mystical glow), регенерация зданий (regenerating buildings)`,
+                    text: [
+                        quickTextFormat(`Заклинатели с этой силой могут Исцелять (Heal) неодушевленные предметы. Стоимость Пунктов Силы равна **половине** базовой Стойкости (Toughness) исцеляемого предмета.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Slow),
+                    rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)}`,
+                    powerPoints: '3',
+                    range: 'Смекалка',
+                    duration: '3 (1/раунд)',
+                    trappings: `Замешательство (Confusion), мешающие спутывания (interfering tangles), замедленное движение (slow motion)`,
+                    text: [
+                        quickTextFormat(`Заклинатель может замедлить врага. Цель этого заклинания должна сделать встречный бросок **Характера** против **Колдовства**. Если цель терпит неудачу, она замедляется, получая *одно действие каждые два раунда*. При подъеме цель также вынуждена сбросить любую карту выше **8** и взять другую. Вытягивание **Джокера** заканчиает действие заклинания.`),
+                    ],
+                }),
+                getPowerContent({
+                    title: getFromDict(SettingPowersTranslations, SettingPowers.Summon),
+                    rank: `Различный`,
+                    powerPoints: 'Различный',
+                    range: '2',
+                    duration: '5 (1/раунд)',
+                    trappings: `Чародейские круги (Arcane circles), трещины в земле (cracks in the ground), вспышки молний (lightning flashes), появляющиеся духи (appearing spirits)`,
+                    text: [
+                        quickTextFormat(`Позволяет заклинателю призвать существо, которое поможет ему в бою или иной деятельности. Этой силой заклинатель может призвать только определенное существо. Чтобы призвать других существ, силу необходимо взять снова. Существо рассматривается как союзник во всех отношениях.`),
+                        quickTextFormat(`Если заклинатель решает призвать существо слабее, чем он способен, он может призвать дополнительное существо этого типа за каждый Ранг, на который он выше минимально необходимого Ранга для призыва этого существа. Это повышает стоимость силы до максимального Ранга заклинателя.`),
+                    ],
+                }),
+                '\n',
+                {
+                    table: {
+                        widths: ['auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Стоимость',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Ранг',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Пример типа существа',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '3',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Novice),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Сова-наблюдатель (Sight Owl), Око Килрогга (Eye of Kilrogg)',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '4',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Seasoned),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Два Волка (wolves) или Древня/Энта (treants), Гончая Скверны (Fel hound)',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Veteran),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Два Лютоволка (dire wolves), Страж Скверны (Fel Guard), Элементаль воды (Water Elemental)',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Heroic),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Два Теневых Волка (Shadow Wolves), Привратник Ада/Страж Рока (Doomguard)',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '7',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: getFromDict(RanksTranslations, Ranks.Legendary),
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Владыка преисподней (Pit Lord), Феникс (Phoenix)',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
+                '\n',
+                getTipText([
+                    quickTextFormat(`В версии от 29 марта 2005 утеряно описание силы **${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}**. В рамказ перевода вставлю ее описание из версии от 28 марта 2004.`),
+                    getHorizontalLine('white', 2),
+                    getPowerContent({
+                        title: getFromDict(SettingPowersTranslations, SettingPowers.Paralyze),
+                        rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)}`,
+                        powerPoints: '2-6',
+                        range: '6/12/24',
+                        duration: '3 (1/раунд)',
+                        trappings: `Потрескивающая энергия, опутывающая листва, паутина`,
+                        text: [
+                            quickTextFormat(`Этот эффект окружает цель каким-либо барьером или силой. Заклинатель делает проверку Магического Навыка (Arcane Skill) против **Ловкости** цели. В случае успеха цель обездвиживается и не может предпринимать какие-либо действия. Любое летающее существо, которое полагается на крылья, автоматически приземляется (урон от падения наносится как обычно). Парящие (Hovering) существа делают вторую проверку **Ловкости**, с **-2** за каждый подъем в броске Колдовства (${Skills.Spellcasting}). Неудача означает, что они тоже будут утянуты вниз.`),
+                            quickTextFormat(`За **2** Пункта Силы это влияет на одну цель. За **4** Пункта Силы это влияет в области Шаблона малого взрыва, а за **6** Пунктов Силы это может повлиять в области Шаблона среднего взрыва.`),
+                        ],
+                    }),
+                ]),
             ],
             // pageBreak: 'after',
         };
