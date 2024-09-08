@@ -2503,6 +2503,10 @@ function getBestiaryContent() {
                 quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +3**: Звери Кодо (Kodo beasts) имеют рост пять футов в холке, с телосложением, как у носорога.`),
             ],
         }),
+        getTipText([
+            quickTextFormat(`*Звери Кодо (Kodo beasts)* в описании **Размера (${Edges.Size})** Василиска (Basilisk) - не моя опечатка, так написано в оригинале.`),
+            quickTextFormat(`**В рамках перевода оставлено как есть.**`),
+        ]),
     ];
 }
 
