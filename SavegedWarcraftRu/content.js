@@ -2665,6 +2665,35 @@ function getBestiaryContent() {
             ],
             offset: paragraphOffset,
         }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Бронзовый дракон (Bronze Dragon)',
+            notSpecialAbilities: [
+                quickTextFormat(`**Тип дыхания (Breath Weapon)**: Расплавленный песок и старение (Проверка **Выносливости** с **+2** или потерять изъян **${getFromDict(HindrancesTranslations, Hindrances.Young)}**/получить изъян **${getFromDict(HindrancesTranslations, Hindrances.Elderly)}**. Если уже есть изъян **${getFromDict(HindrancesTranslations, Hindrances.Elderly)}** - цели умирают)`),
+                quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 10/20; Силы: 2/3 из списка: *${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*, *${getFromDict(PowersTranslations, Powers.Deflection)}*, *${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}*, *${getFromDict(PowersTranslations, Powers.Obscure)}*, *${getFromDict(PowersTranslations, Powers.Puppet)}*, *${getFromDict(PowersTranslations, Powers.Smite)}*`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Зеленый дракон (Green Dragon)',
+            notSpecialAbilities: [
+                quickTextFormat(`**Тип дыхания (Breath Weapon)**: Кислота и сон (Проверка **Выносливости** или сон на **3d6** раундов)`),
+                quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 20/30; Силы: 3/4 из списка: *${getFromDict(PowersTranslations, Powers.Deflection)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*, *${getFromDict(PowersTranslations, Powers.Obscure)}*, *${getFromDict(PowersTranslations, Powers.Puppet)}*, *${getFromDict(PowersTranslations, Powers.Stun)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.EtherealForm)}*`),
+                quickTextFormat(`**Эфирный (Ethereal)**: Как хранители Изумрудного Сна (Emerald Dream), зеленые драконы могут становиться эфирными (ethereal) по своему желанию. Будучи эфирными, они могут соскользнуть (slip sideways) в Изумрудный Сон.`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Красный дракон (Red Dragon)',
+            notSpecialAbilities: [
+                quickTextFormat(`**Тип дыхания (Breath Weapon)**: Поток огня. Пламя красного дракона обновляет и восстанавливает природу в пораженной области.`),
+                quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 10/25; Силы: 2/4 из списка: *${getFromDict(PowersTranslations, Powers.Armor)}*, *${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*, *${getFromDict(PowersTranslations, Powers.Dispel)}*, *${getFromDict(PowersTranslations, Powers.Healing)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*, *${getFromDict(PowersTranslations, Powers.Puppet)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.Summon)} (Животные (Animals))*`),
+                quickTextFormat(`**Иммунитет (Immunity)**: Красные драконы невосприимчивы к огню.`),
+            ],
+            offset: paragraphOffset,
+        }),
     ];
 }
 

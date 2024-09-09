@@ -183,7 +183,7 @@ const HindrancesTranslations = Object.freeze({
     [Hindrances.Vow]: undefined,
     [Hindrances.Wanted]: undefined,
     [Hindrances.Yellow]: undefined,
-    [Hindrances.Young]: undefined,
+    [Hindrances.Young]: 'Юность',
 });
 
 const Ranks = Object.freeze({
