@@ -2698,6 +2698,182 @@ function getBestiaryContent() {
             ],
             offset: paragraphOffset,
         }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Драконид (Dragonspawn)',
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '6',
+                [States.Spirit]: '8',
+                [States.Strength]: '8',
+                [States.Vigor]: '10',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '12',
+                [Skills.Notice]: '6',
+                [Skills.Throwing]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '7',
+                [States.Parry]: '6',
+                [States.Toughness]: '13 (11)',
+            },
+            equipment: [
+                `Чешуйчатая броня (+2)`,
+                `Длинный меч (Сила+3)`,
+                `Метательные копья (Сила+2, 4/8/12)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +2**: У Драконида толстая кожистая шкура.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fearless)}**: У Драконида иммунитет к Страху, создаваемому драконами.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: У Драконида иммунитет к стихийному типу дыхания их хозяина-дракона.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: У Драконида нижняя часть тела похожа на ящерицу; в целом они размером с ломовую лошадь.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Волшебный дракон/Лесной дракончик (Faerie Dragon)',
+            attributes: {
+                [States.Agility]: '10',
+                [States.Smarts]: '6',
+                [States.Spirit]: '8',
+                [States.Strength]: '6',
+                [States.Vigor]: '12+1',
+            },
+            skills: {
+                [Skills.Fighting]: '6',
+                [Skills.Guts]: '12',
+                [Skills.Notice]: '10',
+                [Skills.Shooting]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '5',
+                [States.Toughness]: '9 (модифицированная)',
+            },
+            specialAbilities: [
+                quickTextFormat(`**Пункты Силы**: 15`),
+                quickTextFormat(`**Шипы (Barbs)**: **Сила+2**, 5/10/20`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Flight)}**: Волшебные драконы имеют скорость полета 16 дюймов и скорость набора высоты 10 дюймов.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Волшебные драконы охраняют Изумрудный Сон от магии и, таким образом, невосприимчивы ко всем магическим эффектам.`),
+                quickTextFormat(`**Фазовый сдвиг (Phase Shift)**: Волшебные драконы могут потратить **2** Пункта Силы, чтобы перейти в Изумрудный Сон. Они исчезают на 1 минуту (1/минуту), а затем возвращаются в мир смертных в том же месте.`),
+                quickTextFormat(`**Вспышка маны (Mana Flare)**: потратив **4** Пункта Силы, Волшебные драконы могут создать вокруг себя ауру "негативной маны" (aura of "negative mana"). Все заклинатели в пределах половины **Характера** от дракона получают **1d6** урона за каждые **2** потраченные маны. Этот эффект длится 10 минут (2/минуту).`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Фурболг (Furbolg)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '4',
+                [States.Spirit]: '6',
+                [States.Strength]: '12',
+                [States.Vigor]: '10',
+            },
+            skills: {
+                [Skills.Fighting]: '6',
+                [Skills.Guts]: '8',
+                [Skills.Notice]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '7',
+                [States.Parry]: '5',
+                [States.Toughness]: '10',
+            },
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +1**: У фурболгов толстая шкура.`),
+                quickTextFormat(`**Когти (Claws)**: **Сила+2**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Фурболги ростом 8 футов.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Оскверненный фурболг (Furbolg, corrupted)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '4',
+                [States.Spirit]: '6',
+                [States.Strength]: '12+2',
+                [States.Vigor]: '10',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '10',
+                [Skills.Notice]: '4',
+            },
+            commonAttributes: {
+                [States.Pace]: '7',
+                [States.Parry]: '6',
+                [States.Toughness]: '10',
+            },
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +1**: У фурболгов толстая шкура.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Berserk)}**`),
+                quickTextFormat(`**Когти/Укус (Claws/Bite)**: **Сила+2**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Frenzy)}**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Фурболги ростом 8 футов.`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Призрак (Ghost)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '6',
+                [States.Spirit]: '10',
+                [States.Strength]: '6',
+                [States.Vigor]: '6',
+            },
+            skills: {
+                [Skills.Fighting]: '6',
+                [Skills.Intimidation]: '12+2',
+                [Skills.Notice]: '12',
+                [Skills.Stealth]: '12',
+                [Skills.Taunt]: '10',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '5',
+                [States.Toughness]: '5',
+            },
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Ethereal)}**: Призраки нематериальны и невидимы, когда хотят. Они не могут наносить физический вред.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fear)} (-2)**`),
+                quickTextFormat(`**Высасывание жизни (Life Drain)**: Успешная проверка Запугивания (Intimidation) против цели заставляет ее страдать от уровня истощения (level of exhaustion), поскольку призраки питаются отрицательными эмоциями. Эффект Страха (Fear) недостаточно сфокусирован, однако призрак может Запугать (Intimidate) противника, пораженного его Страхом (Fear), чтобы Высосать из него Жизнь (Life Drain).`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Гнолл (Gnoll)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '4',
+                [States.Spirit]: '6',
+                [States.Strength]: '6',
+                [States.Vigor]: '6',
+            },
+            skills: {
+                [Skills.Fighting]: '6',
+                [Skills.Guts]: '6',
+                [Skills.Notice]: '6',
+                [Skills.Shooting]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '5',
+                [States.Toughness]: '8',
+            },
+            equipment: [
+                `Цеп (d6+2, игнорирует щиты)`,
+                `Толстые шкуры (+1)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +1**: У Гноллов прочная шкура и густые спутанные волосы.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +1**: Гноллы ростом не выше людей, но у них масса тела на уровне орков и сгорбленная походка.`),
+            ],
+        }),
     ];
 }
 
