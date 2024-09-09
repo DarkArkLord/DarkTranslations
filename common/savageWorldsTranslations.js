@@ -596,7 +596,7 @@ const PowersTranslations = Object.freeze({
     [Powers.LightObscure]: 'Свет/Тьма',
     [Powers.Light]: 'Свет',
     [Powers.Obscure]: 'Тьма',
-    [Powers.MindReading]: undefined,
+    [Powers.MindReading]: 'Чтение мыслей',
     [Powers.Pummel]: undefined,
     [Powers.Puppet]: 'Кукла',
     [Powers.Quickness]: 'Проворство',

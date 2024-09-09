@@ -2387,19 +2387,25 @@ function getBestiaryContent() {
             specialAbilities.push({ ul: data.specialAbilities, });
         }
 
+        const notSpecialAbilities = [];
+        if (data.notSpecialAbilities?.length > 0) {
+            notSpecialAbilities.push({ ul: data.notSpecialAbilities, });
+        }
+
         const unitData = {};
         if (data.offset) {
-            unitData.leadingIndent = data.offset;
+            unitData.margin = [data.offset, 0, 0, 0];
         }
 
         return {
             stack: [
                 title,
-                attributes,
-                skills,
-                commonAttributes,
-                equipment,
-                specialAbilities,
+                ...attributes,
+                ...skills,
+                ...commonAttributes,
+                ...equipment,
+                ...specialAbilities,
+                ...notSpecialAbilities,
             ],
             ...unitData,
         };
@@ -2627,6 +2633,37 @@ function getBestiaryContent() {
             specialAbilities: [
                 quickTextFormat(`**Ненависть к оркам (Orc Hatred)**: Дренеи получают **+2** ко всем броскам в бою против орков.`),
             ],
+        }),
+        getUnitContent({
+            isWildCard: true,
+            title: 'Драконы (Dragons)',
+        }),
+        {
+            stack: [
+                `Молодые драконы используют характеристики Дрейков (Drakes) (см. SW1 с. 142, SW2 с. 181), за исключением того, что у них есть Полет (Flight) (16 дюймов, Подъем 6 дюймов) и сознание (sentience). Старшие драконы используют характеристики Дракона (Dragon) (см. SW1 с. 142, SW2 с. 181).`,
+                `У всех драконов есть Мистический дар (Магия Дракона (Dragon Magic)); это форма Магии Природы (Nature Magic). Существует пять различных типов (Стай (Flights)) Драконов. Каждая имеет свой тип дыхания (все имеют одинаковую статистику) и особенности магического таланта.`,
+            ],
+            leadingIndent: paragraphOffset,
+        },
+        getUnitContent({
+            isWildCard: false,
+            title: 'Черный дракон (Black Dragon)',
+            notSpecialAbilities: [
+                quickTextFormat(`**Тип дыхания (Breath Weapon)**: Сгустки магмы (Gouts of magma).`),
+                quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 10/20; Силы: 2/3 из списка: *${getFromDict(PowersTranslations, Powers.Barrier)} (стена пламени (wall of flame))*, *${getFromDict(PowersTranslations, Powers.Blast)} (огненный шар (fireball))*, *${getFromDict(PowersTranslations, Powers.Bolt)} (огонь (fire))*, *${getFromDict(PowersTranslations, Powers.LowerTrait)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*, *${getFromDict(PowersTranslations, Powers.Puppet)}*`),
+                quickTextFormat(`**Иммунитет (Immunity)**: Черные драконы невосприимчивы к огню.`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Синий дракон (Blue Dragon)',
+            notSpecialAbilities: [
+                quickTextFormat(`**Тип дыхания (Breath Weapon)**: Мороз (Frost)`),
+                quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 20/30; Силы: 3/4 из списка: *${getFromDict(PowersTranslations, Powers.Barrier)}*, *${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*, *${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*`),
+                quickTextFormat(`**Иммунитет (Immunity)**: Черные драконы невосприимчивы к холоду.`),
+            ],
+            offset: paragraphOffset,
         }),
     ];
 }
