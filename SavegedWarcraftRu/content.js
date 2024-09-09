@@ -2665,6 +2665,10 @@ function getBestiaryContent() {
             ],
             offset: paragraphOffset,
         }),
+        getTipText([
+            quickTextFormat(`*Черные драконы* в описании **Иммунитет (Immunity)** *Синего дракона (Blue Dragon)* - не моя опечатка, так написано в оригинале.`),
+            quickTextFormat(`**В рамках перевода оставлено как есть.**`),
+        ]),
         getUnitContent({
             isWildCard: false,
             title: 'Бронзовый дракон (Bronze Dragon)',
