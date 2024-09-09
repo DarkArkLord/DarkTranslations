@@ -2350,37 +2350,41 @@ function getBestiaryContent() {
             style: 'header4',
         };
 
-        let attributes = [];
+        const attributes = [];
         if (data.attributes) {
             const attributesText = Object.keys(data.attributes ?? {})
                 .map(attr => `${StatesTranslations[attr]} d${data.attributes?.[attr]}`)
                 .join(', ');
-            attributes = [quickTextFormat(`**Атрибуты**: ${attributesText}`)];
+            attributes.push(quickTextFormat(`**Атрибуты**: ${attributesText}`));
         }
 
-        let skills = [];
+        const skills = [];
         if (data.skills) {
             const skillsText = Object.keys(data.skills ?? {})
                 .map(attr => `${SkillsTranslations[attr]} d${data.skills?.[attr]}`)
                 .join(', ');
-            skills = [quickTextFormat(`**Навыки**: ${skillsText}`)];
+            skills.push(quickTextFormat(`**Навыки**: ${skillsText}`));
         }
 
-        let commonAttributes = [];
+        const commonAttributes = [];
         if (data.commonAttributes) {
             const commonAttributesList = [States.Pace, States.Parry, States.Toughness];
             const commonAttributesText = commonAttributesList
                 .map(key => `**${StatesTranslations[key]}**: ${data.commonAttributes?.[key]}`)
                 .join('; ');
-            commonAttributes = quickTextFormat(commonAttributesText);
+            commonAttributes.push(quickTextFormat(commonAttributesText));
         }
 
-        let specialAbilities = [];
+        const equipment = [];
+        if (data.equipment?.length > 0) {
+            const equipmentText = data.equipment.join(', ');
+            equipment.push(quickTextFormat(`**Снаряжение**: ${equipmentText}`));
+        }
+
+        const specialAbilities = [];
         if (data.specialAbilities?.length > 0) {
-            specialAbilities = [
-                { text: 'Особые способности', bold: true, },
-                { ul: data.specialAbilities, },
-            ];
+            specialAbilities.push({ text: 'Особые способности', bold: true, });
+            specialAbilities.push({ ul: data.specialAbilities, });
         }
 
         const unitData = {};
@@ -2394,6 +2398,7 @@ function getBestiaryContent() {
                 attributes,
                 skills,
                 commonAttributes,
+                equipment,
                 specialAbilities,
             ],
             ...unitData,
@@ -2507,6 +2512,122 @@ function getBestiaryContent() {
             quickTextFormat(`*Звери Кодо (Kodo beasts)* в описании **Размера (${Edges.Size})** Василиска (Basilisk) - не моя опечатка, так написано в оригинале.`),
             quickTextFormat(`**В рамках перевода оставлено как есть.**`),
         ]),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Болотный зверь (Bog Beast)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '6',
+                [States.Spirit]: '6',
+                [States.Strength]: '12',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '6',
+                [Skills.Guts]: '8',
+                [Skills.Notice]: '6',
+                [Skills.Stealth]: '10 (+4 на болоте)',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '6',
+                [States.Toughness]: '10',
+            },
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +2**: Шкура болотного зверя сделана из крепких корней и дерна.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Sweep)}**: Болотный зверь может атаковать все соседние цели со штрафом **-2**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Болотные звери имеют рост от 7 до 8 футов.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Кентавр (Centaur)',
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '4',
+                [States.Spirit]: '6',
+                [States.Strength]: '10',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '8',
+                [Skills.Notice]: '6',
+                [Skills.Stealth]: '4',
+                [Skills.Throwing]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '8',
+                [States.Parry]: '5',
+                [States.Toughness]: '8',
+            },
+            equipment: [
+                `Большой топор (d10+4, ББ 1, Двуручное)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.FleetFooted)}**:  Кентавры бросают d10 при беге вместо d6.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.LowLightVision)}**:  Кентавр игнорирует штрафы от тусклого и темного освещения.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**:  Кентавры выше 7 футов ростом и весят более 1000 фунтов.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Химера (Chimaera)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '8',
+                [States.Spirit]: '8',
+                [States.Strength]: '12',
+                [States.Vigor]: '10',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '12',
+                [Skills.Notice]: '10',
+                [Skills.Survival]: '10',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '6',
+                [States.Toughness]: '14',
+            },
+            specialAbilities: [
+                quickTextFormat(`**Кислотное дыхание (Acid Breath)**: Химера может выдыхать конус кислоты, нанося 2d10 урона и предотвращая Быструю Регенерацию (Fast Regeneration).`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +3**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Flight)}**: Химера может летать на высоте 16 дюймов со скоростью набора высоты 6 дюймов.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Hardy)}**: Когда Химера (Chimaera) в Шоке (Shaken), она не получает ранений от ударов, вводящих ее в Шок (Shaken) повторно.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Large)}**: Все атакующие получают бонус **+2** к атаке по Химере.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +4**`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Дренеи (Draenei)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '6',
+                [States.Spirit]: '6',
+                [States.Strength]: '6',
+                [States.Vigor]: '6',
+            },
+            skills: {
+                [Skills.Fighting]: '4',
+                [Skills.Guts]: '4',
+                [Skills.Notice]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '4',
+                [States.Toughness]: '6',
+            },
+            equipment: [
+                `Кожаная броня (+1)`,
+                `Длинный меч (Сила+3)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**Ненависть к оркам (Orc Hatred)**: Дренеи получают **+2** ко всем броскам в бою против орков.`),
+            ],
+        }),
     ];
 }
 
