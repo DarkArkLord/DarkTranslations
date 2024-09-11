@@ -3096,6 +3096,74 @@ function getBestiaryContent() {
                 quickTextFormat(`**Проглотить целиком (Swallow Whole)**: Кодо может сделать проверку Захвата (Grappling check), чтобы проглотить противника. В случае успеха противник считается схваченным и автоматически получает 2d6 урона за раунд, пока не будет съеден или вырезан из желудка кодо.`),
             ],
         }),
+        getUnitContent({
+            isWildCard: true,
+            title: 'Магнатавр (Magnataur)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '6',
+                [States.Spirit]: '8',
+                [States.Strength]: '12+6',
+                [States.Vigor]: '12',
+            },
+            skills: {
+                [Skills.Fighting]: '10',
+                [Skills.Guts]: '10',
+                [Skills.Notice]: '6',
+                [Skills.Stealth]: '6',
+                [Skills.Tracking]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '10',
+                [States.Parry]: '7',
+                [States.Toughness]: '15',
+            },
+            equipment: [
+                `Массивная алебарда (Сила+3, Досягаемость 1, если оружие двуручное, магнатавр может держать его одной рукой)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +2**: Густой, спутанный мех магнатавра и прочная шкура поглощпют атаки тупым оружием.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Hardy)}**: Когда Магнатавр (Magnataur) в Шоке (Shaken), он не получает ранений от ударов, вводящих ее в Шок (Shaken) повторно.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Huge)}**: Все попытки ударить магнатавра имеют **+4**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ImprovedArcaneResistance)}**: Магнатавры сопротивляются заклинаниям, наложенным на них, с **+4** и имеют **4** очка брони против повреждающих заклинаний.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ImprovedFrenzy)}**: Магнатавр может совершить две атаки за одно действие без штрафа.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +7**`),
+                quickTextFormat(`**Растоптать (Trample)**: Если Магнатавр переместится хотя бы на **6** дюймов, он может провести затоптать тех, кто находится перед ним. Все на его пути должны сделать бросок на **Ловкость** или будут сбиты с ног и получат урон **Сила+4**.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Горный великан (Mountain Giant)',
+            attributes: {
+                [States.Agility]: '4',
+                [States.Smarts]: '4',
+                [States.Spirit]: '10',
+                [States.Strength]: '12+9',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '10',
+                [Skills.Notice]: '4',
+                [Skills.Taunt]: '12',
+            },
+            commonAttributes: {
+                [States.Pace]: '7',
+                [States.Parry]: '6',
+                [States.Toughness]: '16',
+            },
+            equipment: [
+                `нет`,
+                `иногда Ствол дерева (Сила+2, Досягаемость 2, Тяжелое оружие)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +6**: Шкуры горных великанов сделаны из камня.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Hardy)}**: Когда Горный великан (Mountain Giant) в Шоке (Shaken), он не получает ранений от ударов, вводящих ее в Шок (Shaken) повторно.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Huge)}**: Все попытки ударить горного великана имеют +4.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Sweep)}**: Горные великаны могут размахивать своими огромными руками и атаковать всех соседних противников.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +8**`),
+            ],
+        }),
     ];
 }
 
