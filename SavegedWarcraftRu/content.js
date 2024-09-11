@@ -125,6 +125,10 @@ function getImagePath(path) {
 }
 
 function quickTextFormat(text, options = {}) {
+    if (!text.includes('*')) {
+        return { ...options, text };
+    }
+
     // Splin input text by '*'
     const temp = text.split('*').flatMap(p => [p, '*']).filter(p => p.length > 0);
     temp.pop();
@@ -2344,6 +2348,11 @@ function getBestiaryContent() {
             style: 'header4',
         };
 
+        const afterTitleText = [];
+        if (data.afterTitleText) {
+            afterTitleText.push(quickTextFormat(data.afterTitleText, { leadingIndent: paragraphOffset, }));
+        }
+
         const attributes = [];
         if (data.attributes) {
             const attributesText = Object.keys(data.attributes ?? {})
@@ -2394,6 +2403,7 @@ function getBestiaryContent() {
         return {
             stack: [
                 title,
+                ...afterTitleText,
                 ...attributes,
                 ...skills,
                 ...commonAttributes,
@@ -2866,6 +2876,224 @@ function getBestiaryContent() {
             specialAbilities: [
                 quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +1**: У Гноллов прочная шкура и густые спутанные волосы.`),
                 quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +1**: Гноллы ростом не выше людей, но у них масса тела на уровне орков и сгорбленная походка.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Гнолл, Убийца (Gnoll, Assassin)',
+            afterTitleText: `Некоторые гноллы избегают лобовой жестокости своих сородичей в пользу скрытности, коварства и дальних атак.`,
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '6',
+                [States.Spirit]: '4',
+                [States.Strength]: '6',
+                [States.Vigor]: '6',
+            },
+            skills: {
+                [Skills.Fighting]: '4',
+                [Skills.Guts]: '4',
+                [Skills.Notice]: '6',
+                [Skills.Shooting]: '8',
+                [Skills.Stealth]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '4',
+                [States.Toughness]: '8',
+            },
+            equipment: [
+                `Толстые шкуры (+1)`,
+                `Короткий лук (2d6, 12/2/48)`,
+                `Отравленные стрелы (-2, -2 штраф к проверкам Выносливости)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +1**: У Гноллов прочная шкура и густые спутанные волосы.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +1**: Гноллы ростом не выше людей, но у них масса тела на уровне орков и сгорбленная походка.`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Гнолл, Надзиратель (Gnoll, Warden)',
+            afterTitleText: `Надзиратели — духовные наставники и заклинатели общества гноллов.`,
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '6',
+                [States.Spirit]: '6',
+                [States.Strength]: '6',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '4',
+                [Skills.Guts]: '8',
+                [Skills.Notice]: '8',
+                [Skills.Spellcasting]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '4',
+                [States.Toughness]: '8',
+            },
+            equipment: [
+                `Цеп (d6+2, игнорирует щиты)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)}**: Надзиратели гноллов обладают Мистическим даром (${Edges.ArcaneBackground}) (Тайная магия (Arcane Magic)). У них **10** Пунктов Силы, и они могут использовать заклинания ${getFromDict(PowersTranslations, Powers.Bolt)}, ${getFromDict(PowersTranslations, Powers.Dispel)} и ${getFromDict(PowersTranslations, Powers.Smite)}.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +1**: У Гноллов прочная шкура и густые спутанные волосы.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +1**: Гноллы ростом не выше людей, но у них масса тела на уровне орков и сгорбленная походка.`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Голем (Golem)',
+            attributes: {
+                [States.Agility]: '4',
+                [States.Smarts]: '6 (Ж)',
+                [States.Spirit]: '6',
+                [States.Strength]: '12+2',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '5',
+                [States.Parry]: '6',
+                [States.Toughness]: '13',
+            },
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +4**: "Кожа" големов сделана из камня или металла.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Construct)}**: Големы имеют +2 к восстановлению после Шока (Shaken), невосприимчивы к болезням, ядам и штрафам за ранения, а также получают половину урона от колющего оружия.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fearless)}**: Големы невосприимчивы к эффектам страха.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Large)}**: Все атаки на голема существами обычного размера получают бонус +2.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +3**: Большинство големов имеют рост более 9 футов и сделаны из цельного камня или металла.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Грифон (Gryphon)',
+            attributes: {
+                [States.Agility]: '10',
+                [States.Smarts]: '4',
+                [States.Spirit]: '8',
+                [States.Strength]: '12',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '8',
+                [Skills.Notice]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '6',
+                [States.Toughness]: '8',
+            },
+            specialAbilities: [
+                quickTextFormat(`**Клюв/Когти (Beak/Claws)**: **Сила+2**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Flight)}**: Скорость полета грифонов составляет 12 дюймов, а скорость набора высоты — 4 дюйма.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Грифоны больше льва.`),
+                quickTextFormat(`**Пикирование (Swoop)**: Если грифон переместится не менее чем на 6 дюймов по прямой перед атакой, он совершит атаку когтями с +4 к попаданию и урону`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Гарпия (Harpy)',
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '6',
+                [States.Spirit]: '6',
+                [States.Strength]: '6',
+                [States.Vigor]: '6',
+            },
+            skills: {
+                [Skills.Fighting]: '6',
+                [Skills.Guts]: '6',
+                [Skills.Taunt]: '8',
+                [Skills.Throwing]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '6',
+                [States.Toughness]: '8',
+            },
+            equipment: [
+                `Дротики (Сила+2, 4/8/16)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**Когти (Talons)**: **Сила+1**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Flight)}**: Гарпии летают со скоростью 8 дюймов, скорость набора высоты 3 дюйма.`),
+                quickTextFormat(`**"Бомбы" из ночной грязи (Nightsoil "Bombs")**: Пройдите проверку **Выносливости** или получите уровень Усталости (Fatigue) от тошноты, если оказались в пределах 2 дюймов. При прямом попадании необходимо пройти Тест Воли (Test of Wills) (**Выносливость** против **d6+2**).`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Гарпия-ведьма (Harpy Witch)',
+            afterTitleText: `Как указано выше, плюс ${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная магия); ${getFromDict(SkillsTranslations, Skills.Spellcasting)} d8, Пункты Силы: 15, Заклинания: *${getFromDict(PowersTranslations, Powers.LowerTrait)} (Проклятие (Curse) / Волшебный огонь (Faerie Fire))*, *${getFromDict(PowersTranslations, Powers.Stun)} (Циклон (Cyclone))*, *${getFromDict(PowersTranslations, Powers.Deflection)}*.`,
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Гиппогриф (Hippogryph)',
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '6',
+                [States.Spirit]: '8',
+                [States.Strength]: '12',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '8',
+                [Skills.Faith]: '6',
+                [Skills.Notice]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '7',
+                [States.Parry]: '6',
+                [States.Toughness]: '8',
+            },
+            specialAbilities: [
+                quickTextFormat(`**Когти (Talons)**: **Сила+1**; **Рога (Antlers)**: **Сила+3**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Flight)}**: Скорость полета гиппогрифов составляет 12 дюймов, а скорость набора высоты — 6 дюймов.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: У гиппогрифов тела больших оленей с широким размахом крыльев.`),
+                quickTextFormat(`**Пикирование (Swoop)**: Если гиппогриф переместится не менее чем на 6 дюймов по прямой перед атакой, он совершит атаку когтями с +4 к попаданию и урону.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Кобольд (Kobold)',
+            afterTitleText: `Как гоблины Savage Worlds (см. SW1 с. 142, SW2 с. 179)`,
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Зверь Кодо (Kodo Beast)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '6 (Ж)',
+                [States.Spirit]: '8',
+                [States.Strength]: '12+5',
+                [States.Vigor]: '12',
+            },
+            skills: {
+                [Skills.Fighting]: '4',
+                [Skills.Guts]: '8',
+                [Skills.Intimidation]: '4',
+                [Skills.Notice]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '7',
+                [States.Parry]: '6',
+                [States.Toughness]: '8',
+            },
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +3**: У кодо шкура как у носорога.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Hardy)}**: Когда Зверь Кодо (Kodo Beast) в Шоке (Shaken), он не получает ранений от ударов, вводящих ее в Шок (Shaken) повторно.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Large)}**: Любой, кто атакует кодо, получает +2 к попаданию.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +5**: Кодо имеют форму носорога, но размером с индийского слона.`),
+                quickTextFormat(`**Проглотить целиком (Swallow Whole)**: Кодо может сделать проверку Захвата (Grappling check), чтобы проглотить противника. В случае успеха противник считается схваченным и автоматически получает 2d6 урона за раунд, пока не будет съеден или вырезан из желудка кодо.`),
             ],
         }),
     ];
