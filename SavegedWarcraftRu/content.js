@@ -2429,6 +2429,10 @@ function getBestiaryContent() {
             leadingIndent: paragraphOffset,
             margin: [0, 0, 0, 5],
         },
+        getTipText([
+            quickTextFormat(`Заранее хочу предупредить - иногда значения вторичных характеристик не равны значениям, полученным путем вычисляений согласно правилам Savage Worlds. Эти цифры взяты из оригинального документа, так что это не мои опечатки, а оплошности оригинального автора.`),
+            quickTextFormat(`**В рамках перевода все цифры оставлены как есть.**`),
+        ]),
         getUnitContent({
             isWildCard: true,
             title: 'Древний (Ancient)',
@@ -3163,6 +3167,286 @@ function getBestiaryContent() {
                 quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Sweep)}**: Горные великаны могут размахивать своими огромными руками и атаковать всех соседних противников.`),
                 quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +8**`),
             ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Мурлок (Murloc)',
+            attributes: {
+                [States.Agility]: '6',
+                [States.Smarts]: '4',
+                [States.Spirit]: '6',
+                [States.Strength]: '6',
+                [States.Vigor]: '6',
+            },
+            skills: {
+                [Skills.Fighting]: '6',
+                [Skills.Guts]: '4',
+                [Skills.Notice]: '6',
+                [Skills.Swimming]: '8',
+                [Skills.Throwing]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '5 (8 в воде)',
+                [States.Parry]: '6',
+                [States.Toughness]: '5',
+            },
+            equipment: [
+                `Трезубец (d6+2, 3/6/12, Парирование +1, Досягаемость 1)`,
+                `Сеть (может опутывать противников)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**Амфибии (Amphibious)**: Мурлоки могут дышать как в воде. Их Шаг в воде равен их показателю Плавания (${Skills.Swimming}).`),
+                quickTextFormat(`**Когти (Claws)**: **d6+2**.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Шаман-мурлок (Murloc Shaman)',
+            afterTitleText: `Как указано выше, плюс ${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Шаман (Shaman)); Пункты Силы: 10, Заклинания: ${getFromDict(PowersTranslations, Powers.Bolt)}, плюс ${getFromDict(PowersTranslations, Powers.Armor)}, ${getFromDict(PowersTranslations, Powers.BoostTrait)}, ${getFromDict(PowersTranslations, Powers.Healing)} или ${getFromDict(PowersTranslations, Powers.Smite)}.`,
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Мурлок-мутант (Murloc, Mutant)',
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '4',
+                [States.Spirit]: '8',
+                [States.Strength]: '8',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '8',
+                [Skills.Notice]: '6',
+                [Skills.Swimming]: '10',
+                [Skills.Throwing]: '6',
+            },
+            commonAttributes: {
+                [States.Pace]: '5 (10 в воде)',
+                [States.Parry]: '7',
+                [States.Toughness]: '6',
+            },
+            equipment: [
+                `Трезубец (d6+2, 3/6/12, Парирование +1, Досягаемость 1)`,
+                `Сеть (может опутывать противников)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**Амфибии (Amphibious)**: Мурлоки могут дышать как в воде. Их Шаг в воде равен их показателю Плавания (${Skills.Swimming}).`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +1**: У мутантных мурлоков толстая, резиновая шкура.`),
+                quickTextFormat(`**Когти (Claws)**: **d6+2**.`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Нага, Воин (Naga, Warrior)',
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '4',
+                [States.Spirit]: '8',
+                [States.Strength]: '8',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '10',
+                [Skills.Notice]: '6',
+                [Skills.Swimming]: '12',
+            },
+            commonAttributes: {
+                [States.Pace]: '7',
+                [States.Parry]: '6',
+                [States.Toughness]: '10 (7)',
+            },
+            equipment: [
+                `Трезубец (Сила+2, 36/12)`,
+                `Скимитар (Сила+3)`,
+                `Броня (+1)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Armor)} +2**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Aquatic)}**: Нага может дышать под водой и двигаться под водой со скоростью, равной ее Плаванию (${Skills.Swimming}).`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +1**`),
+                quickTextFormat(`**Медленная регенерация (Slow Regeneration)**: При погружении в воду нага делает бросок на Исцеление (Healing roll) каждый день.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: true,
+            title: 'Нага, Морская Ведьма (Naga, Sea Witch)',
+            attributes: {
+                [States.Agility]: '8',
+                [States.Smarts]: '8',
+                [States.Spirit]: '8',
+                [States.Strength]: '4',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Fighting]: '4',
+                [Skills.Guts]: '10',
+                [Skills.Notice]: '10',
+                [Skills.Shooting]: '8',
+                [Skills.Spellcasting]: '8',
+                [Skills.Swimming]: '12',
+            },
+            commonAttributes: {
+                [States.Pace]: '6',
+                [States.Parry]: '4',
+                [States.Toughness]: '10 (7)',
+            },
+            equipment: [
+                `Лук (2d6, 15/30/60)`,
+                `Броня (+1)`,
+            ],
+            specialAbilities: [
+                [
+                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))**: ${getFromDict(EdgesTranslations, Edges.Wizard)}, ${getFromDict(SettingEdgesTranslations, SettingEdges.Warlock)} (предпочитает заклинания воды, льда и молнии, призывает морских элементалей)`),
+                    {
+                        ul: [
+                            quickTextFormat(`**Пункты Силы**: 20`),
+                            quickTextFormat(`**Силы**: *${getFromDict(PowersTranslations, Powers.Bolt)}*, *${getFromDict(PowersTranslations, Powers.Burst)} (Конус молний (lightning cone))*,  *${getFromDict(PowersTranslations, Powers.Smite)} (ледяная стрела — замедляет (frost arrow – does slow))*`),
+                        ],
+                    }
+                ],
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Aquatic)}**: Нага может дышать под водой и двигаться под водой со скоростью, равной ее Плаванию (${Skills.Swimming}).`),
+                quickTextFormat(`**Медленная регенерация (Slow Regeneration)**: При погружении в воду нага делает бросок на Исцеление (Healing roll) каждый день.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Неруб, Солдат (Nerubian, Soldier)',
+            attributes: {
+                [States.Agility]: '10',
+                [States.Smarts]: '6',
+                [States.Spirit]: '8',
+                [States.Strength]: '8',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Climbing]: '12',
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '10',
+                [Skills.Intimidation]: '8',
+                [Skills.Stealth]: '6',
+                [Skills.Throwing]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '8',
+                [States.Parry]: '6',
+                [States.Toughness]: '10 (8)',
+            },
+            equipment: [
+                `Копья (Сила+2, 3/6/12)`,
+                `Хитиновая броня (+2)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**Когти (Claws)**: **Сила+1**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fearless)}**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(SettingPowersTranslations, SettingPowers.Blight)} не действуют на нерубов.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Нерубы — пауки-кентавры человеческого роста.`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Неруб, Провидец (Nerubian, Seer)',
+            attributes: {
+                [States.Agility]: '10',
+                [States.Smarts]: '6',
+                [States.Spirit]: '8',
+                [States.Strength]: '8',
+                [States.Vigor]: '8',
+            },
+            skills: {
+                [Skills.Climbing]: '12',
+                [Skills.Fighting]: '8',
+                [Skills.Guts]: '10',
+                [Skills.Intimidation]: '8',
+                [Skills.Spellcasting]: '8',
+                [Skills.Stealth]: '6',
+                [Skills.Throwing]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '8',
+                [States.Parry]: '6',
+                [States.Toughness]: '10 (8)',
+            },
+            equipment: [
+                `Копья (Сила+2, 3/6/12)`,
+                `Хитиновая броня (+2)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Некромантия (Necromancy))**: Пункты Силы – 15; Заклинания: *${getFromDict(PowersTranslations, Powers.Zombie)}*, *${getFromDict(PowersTranslations, Powers.Dispel)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.ContinuousBlast)} (Рой падальщиков (carrion swarm))*`),
+                quickTextFormat(`**Когти (Claws)**: **Сила+1**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fearless)}**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(SettingPowersTranslations, SettingPowers.Blight)} не действуют на нерубов.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Нерубы — пауки-кентавры человеческого роста.`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Неруб, Прядильщик Сетей (Nerubian, Webspinner)',
+            attributes: {
+                [States.Agility]: '10',
+                [States.Smarts]: '6',
+                [States.Spirit]: '8',
+                [States.Strength]: '8',
+                [States.Vigor]: '6',
+            },
+            skills: {
+                [Skills.Climbing]: '12',
+                [Skills.Fighting]: '6',
+                [Skills.Guts]: '10',
+                [Skills.Intimidation]: '8',
+                [Skills.Stealth]: '6',
+                [Skills.Throwing]: '8',
+                [Skills.Webbing]: '8',
+            },
+            commonAttributes: {
+                [States.Pace]: '8',
+                [States.Parry]: '6',
+                [States.Toughness]: '7',
+            },
+            equipment: [
+                `Копья (Сила+2, 3/6/12)`,
+            ],
+            specialAbilities: [
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Прядильщик Сетей (Webspinner))**: Пункты Силы – 20; Техники: *${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}*, *${getFromDict(PowersTranslations, Powers.Barrier)}*, *${getFromDict(PowersTranslations, Powers.Fly)} (Сбрасывание паутины (web-drop))*`),
+                quickTextFormat(`**Когти (Claws)**: **Сила+1**.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fearless)}**`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(SettingPowersTranslations, SettingPowers.Blight)} не действуют на нерубов.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Нерубы — пауки-кентавры человеческого роста.`),
+            ],
+            offset: paragraphOffset,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Огр (Ogre)',
+            afterTitleText: `См. SW1 с. 145, SW2 с. 186`,
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Огр-Маг (Ogre-Mage)',
+            afterTitleText: `Как Огр, за исключением следующего:`,
+            attributes: {
+                [States.Smarts]: '6',
+                [States.Spirit]: '8',
+            },
+            skills: {
+                [Skills.Spellcasting]: '8',
+            },
+            specialAbilities: [
+                [
+                    quickTextFormat(`**Тайная магия (Arcane Magic)**: ${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная магия (Arcane Magic)), ${getFromDict(EdgesTranslations, Edges.SoulDrain)}, ${getFromDict(SettingEdgesTranslations, SettingEdges.Warlock)}`),
+                    {
+                        ul: [
+                            quickTextFormat(`**Пункты Силы**: 20`),
+                            quickTextFormat(`**Заклинания**: *${getFromDict(PowersTranslations, Powers.Smite)}*, 2-3 *Призыва (${SettingPowers.Summon})*, *${getFromDict(PowersTranslations, Powers.Blast)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}* и *${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)} (Огненный щит (fire shield))*`),
+                        ],
+                    },
+                ],
+            ],
+            offset: paragraphOffset,
         }),
     ];
 }

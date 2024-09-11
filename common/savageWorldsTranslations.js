@@ -51,6 +51,7 @@ const Skills = Object.freeze({
     // Old skills
     Guts: 'Guts',
     Gaze: 'Gaze',
+    Webbing: 'Webbing',
     // Arcane Skills
     Spellcasting: 'Spellcasting',
     Faith: 'Faith',
@@ -85,7 +86,8 @@ const SkillsTranslations = Object.freeze({
     [Skills.Tracking]: 'Выслеживание',
     // Old skills
     [Skills.Guts]: 'Храбрость',
-    [Skills.Gaze]: 'Взгляд',
+    [Skills.Gaze]: 'Взгляд (Gaze)',
+    [Skills.Webbing]: 'Паутина (Webbing)',
     // Arcane Skills
     [Skills.Spellcasting]: 'Колдовство',
     [Skills.Faith]: 'Вера',
@@ -463,7 +465,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Woodsman]: undefined,
     //#endregion
     //#region Monsters edges
-    [Edges.Aquatic]: undefined,
+    [Edges.Aquatic]: 'Водный',
     [Edges.Armor]: 'Броня',
     [Edges.Burrowing]: 'Перемещение под землёй',
     [Edges.Construct]: 'Механизм/голем',
