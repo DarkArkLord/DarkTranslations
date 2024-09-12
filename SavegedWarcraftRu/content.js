@@ -3773,6 +3773,52 @@ function getBestiaryContent() {
         ];
     }
 
+    function getBurningLegionContent() {
+        return [
+            {
+                text: 'Пылающий Легион (The Burning Legion)',
+                style: 'header2',
+            },
+            {
+                stack: [
+                    quickTextFormat(`Демоны Пылающего Легиона во вселенной **Warcraft** являются силой сами по себе. Здесь перечислены основные типы демонов, с которыми могут столкнуться как храбрецы, так и глупцы.`),
+                    quickTextFormat(`Обратите внимание, что многие из этих демонов могут быть *Призваны (Summoned)*. Призванные демоны не считаются Дикими Картами – они просто не прилагают особых усилий, чтобы служить какому-то жалкому смертному.`),
+                ],
+                leadingIndent: paragraphOffset,
+                margin: [0, 0, 0, 5],
+            },
+            getUnitContent({
+                isWildCard: false,
+                title: 'Гончая Скверны (Fel Hound)',
+                attributes: {
+                    [States.Agility]: '8',
+                    [States.Smarts]: '4',
+                    [States.Spirit]: '8',
+                    [States.Strength]: '12',
+                    [States.Vigor]: '10',
+                },
+                skills: {
+                    [Skills.Fighting]: '8',
+                    [Skills.Intimidation]: '12',
+                    [Skills.Notice]: '8',
+                    [Skills.Spellcasting]: '8',
+                    [Skills.Tracking]: '10',
+                },
+                commonAttributes: {
+                    [States.Pace]: '10',
+                    [States.Parry]: '6',
+                    [States.Toughness]: '11',
+                },
+                specialAbilities: [
+                    quickTextFormat(`${getFromDict(EdgesTranslations, Edges.LowLightVision)}, ${getFromDict(EdgesTranslations, Edges.Fear)}, ${getFromDict(EdgesTranslations, Edges.Armor)} +2, ${getFromDict(EdgesTranslations, Edges.Size)} +2`),
+                    quickTextFormat(`**${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}**:  По желанию Гончие Скверны могут выпустить *Стрелу Сжигания Маны (Mana Burn Bolt)*.`),
+                    quickTextFormat(`**Чувство магии (Smell Magic)**: Гончие Скверны всегда *обнаруживают магию (detect arcana)* при выслеживании (tracking).`),
+                    quickTextFormat(`**Наскок (Pounce)**: Гончие Скверны могут перемещаться на 1d6 дюймов и атаковать с +4 к атаке и урону.`),
+                ],
+            }),
+        ];
+    }
+
     return [
         {
             text: 'Бестиарий Warcraft (Bestiary of Warcraft)',
@@ -3780,6 +3826,7 @@ function getBestiaryContent() {
             pageBreak: 'before',
         },
         getCreepsContent(),
+        getBurningLegionContent(),
     ];
 }
 
