@@ -469,7 +469,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Armor]: 'Броня',
     [Edges.Burrowing]: 'Перемещение под землёй',
     [Edges.Construct]: 'Механизм/голем',
-    [Edges.Elemental]: undefined,
+    [Edges.Elemental]: 'Элементаль',
     [Edges.Ethereal]: 'Бесплотный',
     [Edges.Fear]: 'Ужас',
     [Edges.Fearless]: 'Бесстрашный',
