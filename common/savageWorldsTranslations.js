@@ -355,7 +355,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Ace]: undefined,
     [Edges.Acrobat]: undefined,
     [Edges.Adept]: undefined,
-    [Edges.Alertness]: undefined,
+    [Edges.Alertness]: 'Бдительность',
     [Edges.Ambidextrous]: 'Амбидекстр',
     [Edges.ArcaneBackground]: 'Мистический дар',
     [Edges.ArcaneResistance]: `Защита от сверхъестестественного`,

@@ -4189,6 +4189,100 @@ function getUnitsBuildingsGearContent() {
         ];
     }
 
+    function getUnitContent(data) {
+        const title = {
+            text: [
+                {
+                    text: data.title,
+                    style: 'header4',
+                },
+                ' ',
+                {
+                    text: `[${data.points}]`,
+                    color: 'red',
+                }
+            ],
+        };
+
+        return [
+            title,
+            {
+                stack: data.lines,
+                margin: [paragraphOffset, 0, 0, 0],
+            },
+        ];
+    }
+
+    function getUnitAttributesContent(data) {
+        const attributesText = Object.keys(data ?? {})
+            .map(attr => `${StatesTranslations[attr]} d${data?.[attr]}`)
+            .join(', ');
+        return quickTextFormat(`**Атрибуты**: ${attributesText}`);
+    }
+
+    function getUnitSkillsContent(data) {
+        const skillsText = Object.keys(data ?? {})
+            .map(attr => `${SkillsTranslations[attr]} d${data?.[attr]}`)
+            .join(', ');
+        return quickTextFormat(`**Навыки**: ${skillsText}`);
+    }
+
+    function getUnitCommonAttributesContent(data) {
+        const commonAttributesList = [States.Pace, States.Parry, States.Toughness];
+        const commonAttributesText = commonAttributesList
+            .map(key => `**${StatesTranslations[key]}**: ${data?.[key]}`)
+            .join('; ');
+        return quickTextFormat(commonAttributesText);
+    }
+
+    function getAllianceContent() {
+        return [
+            {
+                text: 'Альянс (The Alliance)',
+                style: 'header2',
+                pageBreak: 'before',
+            },
+            {
+                text: 'Юниты (Units)',
+                style: 'header3',
+                pageBreak: 'before',
+            },
+            getUnitContent({
+                title: 'Ополченец (Militia)',
+                points: '26',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Guts]: '4',
+                        [Skills.Knowledge]: '6 (фермерство, инженерия, шахтерство)',
+                        [Skills.Notice]: '4',
+                        [Skills.Repair]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '7 (5)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Топор (Сила+2)`,
+                        `Кольчужный хауберк (+2)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Развитие**: ${getFromDict(EdgesTranslations, Edges.Alertness)}. Ополченцы не являются профессиональными солдатами, поэтому повышают уровень только при выпадении 6.`),
+                ],
+            }),
+            getTipText([
+                quickTextFormat(`Без понятия, какой уровень они там повышают.`),
+            ]),
+        ];
+    }
+
     return [
         {
             text: 'Юниты, Здания и Снаряжение (Units, Buildings and Gear)',
@@ -4196,6 +4290,7 @@ function getUnitsBuildingsGearContent() {
             pageBreak: 'before',
         },
         getTitleContent(),
+        getAllianceContent(),
     ];
 }
 
