@@ -159,11 +159,17 @@ function quickTextFormat(text, options = {}) {
         } else if (cur == '***') {
             flags.bolditalics = !flags.bolditalics;
         } else {
-            parts.push({
-                text: cur,
-                bold: flags.bolditalics || flags.bold,
-                italics: flags.bolditalics || flags.italics,
-            });
+            const data = { text: cur, };
+
+            if (flags.bolditalics || flags.bold) {
+                data.bold = true;
+            }
+
+            if (flags.bolditalics || flags.italics) {
+                data.italics = true;
+            }
+
+            parts.push(data);
         }
     }
 
@@ -4279,6 +4285,271 @@ function getUnitsBuildingsGearContent() {
             }),
             getTipText([
                 quickTextFormat(`Без понятия, какой уровень они там повышают.`),
+            ]),
+            getUnitContent({
+                title: 'Пехотинец (Foot Soldier)',
+                points: '32',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Guts]: '6',
+                        [Skills.Notice]: '4',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '7 (5)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Палаш (Сила+3)`,
+                        `Кольчужный хауберк (+2)`,
+                        `Каплевидный щит (+2 Парирование, +2 Стойкость против дальнего боя)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Развитие**: ${getFromDict(EdgesTranslations, Edges.Block)}, ${getFromDict(SettingEdgesTranslations, SettingEdges.Defend)}, ${getFromDict(EdgesTranslations, Edges.ImprovedBlock)}, ${getFromDict(SettingEdgesTranslations, SettingEdges.ImprovedDefend)}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Фворф-Стрелок (Dwarven Rifleman)',
+                points: '35',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '6',
+                        [Skills.Notice]: '6',
+                        [Skills.Shooting]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '5',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '7 (6)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Мушкет (2d8, 10/20/40, 2 Действия на перезарядку)`,
+                        `Штык (Сила+2, приделано к Мушкету)`,
+                        `Кожаный доспех (+1)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Развитие**: ${getFromDict(SettingEdgesTranslations, SettingEdges.Musketeer)}, ${getFromDict(EdgesTranslations, Edges.Marksman)}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Высший эльф лучник (High Elven Archer)',
+                points: '37',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '6',
+                        [Skills.Notice]: '6',
+                        [Skills.Shooting]: '6',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`),
+                    quickTextFormat(`**Черты/Способности**: ${getFromDict(EdgesTranslations, Edges.LowLightVision)}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '6 (5)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Длинный лук (2d6, 12/24/48)`,
+                        `Короткий меч (Сила+2)`,
+                        `Кожаная броня (+1)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(EdgesTranslations, Edges.Marksman),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.TwoArrowsNocked),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.HailOfArrows),
+                    ].join(', ')}`),
+                    {
+                        text: quickTextFormat(`**Рэнджер (Ranger)**: ${[
+                            `${SkillsTranslations[Skills.Stealth]} d4`,
+                            `${SkillsTranslations[Skills.Survival]} d8`,
+                            `${SkillsTranslations[Skills.Tracking]} d8`,
+                            getFromDict(EdgesTranslations, Edges.Woodsman),
+                        ].join(', ')}`),
+                        italics: true,
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
+            getUnitContent({
+                title: 'Рыцарь (Knight)',
+                points: '45 + 48 (лошадь) = 93',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '4',
+                        [Skills.Riding]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '9 (6)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Палаш (Сила+3)`,
+                        `Копье (Сила+4, ББ 1, Досягаемость 2)`,
+                        `Латный доспех (+3)`,
+                        `Средний щит (+1 Парирование, +1 Стойкость против дальнего боя)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`***Лошадь боевая (Warhorse)***: см. SW1 с. 144, SW2 с. 184, с кольчужным доспехом (+2 к туловищу и 50% к голове)`),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(EdgesTranslations, Edges.Sweep),
+                        getFromDict(EdgesTranslations, Edges.FirstStrike),
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Наездник на дракондоре, высший или кровавый эльф (Dragonhawk Rider, High or Blood Elf)',
+                points: '49 + 58 (дракондор) = 107',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '8',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '6',
+                        [Skills.Riding]: '6',
+                        [Skills.Spellcasting]: '6',
+                        [Skills.Shooting]: '6',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${getFromDict(HindrancesTranslations, Hindrances.Cautious)} или ${getFromDict(HindrancesTranslations, Hindrances.Vengeful)} (мелкий)`),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.LowLightVision),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                        getFromDict(EdgesTranslations, Edges.SteadyHands),
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная Магия (Arcane Magic))`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Тайная Магия (Arcane Magic)**: ***Пункты Силы***: 15; ***Заклинания***: *${[
+                        getFromDict(PowersTranslations, Powers.Obscure),
+                        getFromDict(SettingPowersTranslations, SettingPowers.Paralyze),
+                    ].join('*, *')}*`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '6 (5)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Длинный лук (2d6, 12/24/48)`,
+                        `Короткий меч (Сила+2)`,
+                        `Кожаная броня (+1)`,
+                    ].join(', ')}`),
+                    [
+                        quickTextFormat(`***Дракондор***:`),
+                        {
+                            stack: [
+                                getUnitAttributesContent({
+                                    [States.Agility]: '10',
+                                    [States.Smarts]: '4 (Ж)',
+                                    [States.Spirit]: '6',
+                                    [States.Strength]: '8',
+                                    [States.Vigor]: '6',
+                                }),
+                                getUnitSkillsContent({
+                                    [Skills.Fighting]: '6',
+                                    [Skills.Guts]: '6',
+                                    [Skills.Notice]: '6',
+                                }),
+                                quickTextFormat(`**Черты/Способности**: ${[
+                                    `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                                    `Когти (Claws) (Сила+2)`,
+                                    `Клюв (Beak) (Сила+1)`,
+                                    `${getFromDict(EdgesTranslations, Edges.Flight)} (16 дюймов, 6 дюймов Подъем)`,
+                                    `${getFromDict(EdgesTranslations, Edges.Armor)} +2`,
+                                ].join(', ')}`),
+                                getUnitCommonAttributesContent({
+                                    [States.Pace]: '6',
+                                    [States.Parry]: '5',
+                                    [States.Toughness]: '9',
+                                }),
+                            ],
+                            margin: [paragraphOffset, 0, 0, 0],
+                        },
+                    ],
+                    quickTextFormat(`**Развитие**: ${[
+                        `${getFromDict(SettingEdgesTranslations, SettingEdges.StrafingRun)}`,
+                        `${getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot)}`,
+                        `(если Эльф Крови) ${getFromDict(SettingEdgesTranslations, SettingEdges.Warlock)}`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Наездник на грифоне, дворф (Gryphon Rider, Dwarf)',
+                points: '47 + 60 (грифон) = 107',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Notice]: '4',
+                        [Skills.Riding]: '6',
+                        [Skills.Throwing]: '8',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${getFromDict(HindrancesTranslations, Hindrances.Outsider)} (Дворф Дикого Молота (Wildhammer Dwarf))`),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.LowLightVision),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                        getFromDict(EdgesTranslations, Edges.SteadyHands),
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '5',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '7 (6)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Метательные молоты (Сила+2, 3/6/12)`,
+                        `Кожаная броня (+1)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`***Грифон (Gryphon)***: в **Бестиарии Warcraft**. Кожаная броня (+1 к туловищу/50% к голове)`),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(EdgesTranslations, Edges.BeastBond),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.StrafingRun),
+                        `Быстрый бросок (Rapid Throw)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getTipText([
+                quickTextFormat(`Черты **Быстрый бросок (Rapid Throw)** нет ни в книгах Savage Worlds, ни в этой конверсии. Вероятно, черта работает аналогично **Быстрому выстрелу (Rapid Shot)**.`),
             ]),
         ];
     }
