@@ -4837,15 +4837,169 @@ function getUnitsBuildingsGearContent() {
                             ],
                             [
                                 {
-                                    text: 'aaaaaaaa',
+                                    text: 'Крестьянин/Ополченец',
                                     alignment: 'center',
                                 },
                                 {
-                                    text: `666/666`,
+                                    text: `75/0`,
                                     alignment: 'center',
                                 },
                                 {
-                                    text: '666/666/666',
+                                    text: '1/0/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Пехотинец',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `135/0`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Рыцарь',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `245/60`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4/0/4',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Дворф-Стрелок',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `205/30`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3/0/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Высший эльф лучник',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `175/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/1/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Наездник на грифоне',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `400/40`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5/0/4',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Наездник на дракондоре',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `325/30`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4/0/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Маг',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `210/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Жрец Света',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `190/10`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Дворфийский Мортирный расчет',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `240/50`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5/1/4',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Летающая Машина',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `100/40`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3/1/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Осадная машина',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `260/60`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '7/2/6',
                                     alignment: 'center',
                                 },
                             ],
