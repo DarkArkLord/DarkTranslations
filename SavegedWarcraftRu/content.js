@@ -5030,18 +5030,261 @@ function getUnitsBuildingsGearContent() {
                             ],
                             [
                                 {
-                                    text: 'aaaaaaaaa',
+                                    text: 'Ратуша',
                                 },
                                 {
-                                    text: `6666/6666`,
+                                    text: `385/185`,
                                     alignment: 'center',
                                 },
                                 {
-                                    text: `6666`,
+                                    text: `18`,
                                     alignment: 'center',
                                 },
                                 {
-                                    text: '666/666/666',
+                                    text: '1/0/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Крепость',
+                                    italics: true,
+                                },
+                                {
+                                    text: `320/210`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `14`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Замок',
+                                    italics: true,
+                                },
+                                {
+                                    text: `360/210`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `14`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/0/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Казармы',
+                                },
+                                {
+                                    text: `160/60`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ферма',
+                                },
+                                {
+                                    text: `80/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `3.5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/0/-8',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Лесопилка',
+                                },
+                                {
+                                    text: `220/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Кузница',
+                                },
+                                {
+                                    text: `140/50`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `7`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Мастерская',
+                                },
+                                {
+                                    text: `140/140`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `7`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/2/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Чародейское святилище/Храм Истины',
+                                },
+                                {
+                                    text: `150/140`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `7`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/1/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Башня грифонов',
+                                },
+                                {
+                                    text: `140/150`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `12`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Стена (секция в 1 дюйм)',
+                                },
+                                {
+                                    text: `40/10`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Башня',
+                                },
+                                {
+                                    text: `50/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `3`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Сторожевая башня (включает 2 арбалета)',
+                                    italics: true,
+                                },
+                                {
+                                    text: `50/50`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/2/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Орудийная башня (включает 1 пушку)',
+                                    italics: true,
+                                },
+                                {
+                                    text: `150/80`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `8`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/2/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Магическая башня (включает 20 Пунктов Силы для Стрелы (Bolt))',
+                                    italics: true,
+                                },
+                                {
+                                    text: `50/50`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4/1/2',
                                     alignment: 'center',
                                 },
                             ],
