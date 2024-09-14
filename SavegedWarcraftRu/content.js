@@ -4688,6 +4688,127 @@ function getUnitsBuildingsGearContent() {
                     ].join(', ')}`),
                 ],
             }),
+            getUnitContent({
+                title: 'Дворфийский Мортирный расчет/Орудийный расчет (Mortar Crew, Dwarven)',
+                points: '78',
+                lines: [
+                    quickTextFormat(`*Дворфийский Мортирный расчет состоит из двух обученных дворфов и одного миномета.*`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '4',
+                        [Skills.Repair]: '6',
+                        [Skills.Shooting]: '6',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.LowLightVision),
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '5',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '7 (6)',
+                    }),
+                    quickTextFormat(`**Персональное снаряжение**: ${[
+                        `Короткий меч (Сила+2)`,
+                        `Кожаная броня (+1)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`***Мортира (Mortar)***: 3d6 в Шаблоне Малого Взрыва, 30/60/90, Тяжелое Оружие, 2 Действия на перезарядку, неподвижна во время стрельбы.`),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(SettingEdgesTranslations, SettingEdges.Artillerist),
+                        getFromDict(EdgesTranslations, Edges.Marksman),
+                    ].join(', ')}`),
+                ],
+            }),
+            getTipText([
+                quickTextFormat(`Отсутствие значения у Характера - не моя опечатка, а ошибка оригинального документа.`),
+            ]),
+            getUnitContent({
+                title: 'Летающая Машина/Вертолет (Flying Machine)',
+                points: '75',
+                lines: [
+                    quickTextFormat(`*Летающая Машина включает в себя пилота-дворфа, который получает от своего транспортного средства лишь половину защиты.*`),
+                    quickTextFormat(`**Скорость/Ускорение/Подъем**: 12/3/4; **Стойкость**: 8 (5)`),
+                    quickTextFormat(`**Способности**: ${getFromDict(EdgesTranslations, Edges.Flight)}`),
+                    quickTextFormat(`**Вращающаяся винтовка (Rotating Rifle)**: урон 2d8, 10/20/40, 6 выстрелов, перезарядка занимает 2 действия/выстрел.`),
+                    quickTextFormat(`***Бомбы (Bombs)***: *Можно прикрепить устройство типа мортиры за 30 золота и 20 дерева. Дальность 2/4/8, поскольку бомбы в основном сбрасываются, а не запускаются.*`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Guts]: '6',
+                        [Skills.Notice]: '8',
+                        [Skills.Piloting]: '8',
+                        [Skills.Repair]: '6',
+                        [Skills.Shooting]: '6',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.LowLightVision),
+                        getFromDict(EdgesTranslations, Edges.Ace),
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '5',
+                        [States.Parry]: '2',
+                        [States.Toughness]: '6',
+                    }),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(SettingEdgesTranslations, SettingEdges.Musketeer),
+                        getFromDict(EdgesTranslations, Edges.SteadyHands),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot),
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Осадная машина/Самоходная мортира (Siege Engine)',
+                points: '77',
+                lines: [
+                    quickTextFormat(`*В состав Осадной машины входят три дворфа-оператора/стрелка.*`),
+                    quickTextFormat(`**Скорость/Ускорение**: 6/2; **Стойкость**: 18 (10)`),
+                    quickTextFormat(`**Способности**: ${[
+                        `Тяжёлая броня (Heavy Armor)`,
+                        `Гусеничный (Tracked)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Пушка (Cannon)**: Особое (см. SW1 с. 53, SW2 с. 77-78), 10/20/40, Тяжелое оружие, 3 действия для перезарядки (2 стрелка)`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Driving]: '6',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '6',
+                        [Skills.Repair]: '6',
+                        [Skills.Shooting]: '8',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.LowLightVision),
+                        `${getFromDict(EdgesTranslations, Edges.Ace)} (Водитель)`,
+                        getFromDict(SettingEdgesTranslations, SettingEdges.Artillerist),
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '5',
+                        [States.Parry]: '2',
+                        [States.Toughness]: '6',
+                    }),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(EdgesTranslations, Edges.Marksman),
+                        getFromDict(EdgesTranslations, Edges.SteadyHands),
+                    ].join(', ')}`),
+                ],
+            }),
         ];
     }
 

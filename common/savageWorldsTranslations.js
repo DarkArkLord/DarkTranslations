@@ -352,7 +352,7 @@ const Edges = Object.freeze({
 
 const EdgesTranslations = Object.freeze({
     //#region Base edges
-    [Edges.Ace]: undefined,
+    [Edges.Ace]: 'Ас',
     [Edges.Acrobat]: undefined,
     [Edges.Adept]: undefined,
     [Edges.Alertness]: 'Бдительность',
