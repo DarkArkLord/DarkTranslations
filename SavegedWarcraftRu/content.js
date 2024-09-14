@@ -102,7 +102,7 @@ const SettingPowersTranslations = Object.freeze({
     [SettingPowers.InnerFire]: 'Внутренний огонь',
     [SettingPowers.LifeDrain]: 'Высасывание жизни',
     [SettingPowers.Mend]: 'Починка',
-    [SettingPowers.Slow]: 'Медлительность',
+    [SettingPowers.Slow]: 'Замедление',
     [SettingPowers.Summon]: 'Призыв',
     [SettingPowers.TransformOther]: 'Преобразование другого',
     // ???
@@ -4551,6 +4551,143 @@ function getUnitsBuildingsGearContent() {
             getTipText([
                 quickTextFormat(`Черты **Быстрый бросок (Rapid Throw)** нет ни в книгах Savage Worlds, ни в этой конверсии. Вероятно, черта работает аналогично **Быстрому выстрелу (Rapid Shot)**.`),
             ]),
+            getUnitContent({
+                title: 'Маг (Mage)',
+                points: '35',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '8',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '4',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '8',
+                        [Skills.Knowledge]: '8 (Аркана (Arcana))',
+                        [Skills.Notice]: '8',
+                        [Skills.Spellcasting]: '8',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная Магия (Arcane Magic))`,
+                        getFromDict(EdgesTranslations, Edges.Wizard),
+                    ].join(', ')}`),
+                    quickTextFormat(`**Тайная Магия**: ***Пункты Силы***: 15; ***Заклинания***: *${[,
+                        getFromDict(PowersTranslations, Powers.Bolt),
+                        getFromDict(PowersTranslations, Powers.Barrier),
+                        getFromDict(PowersTranslations, Powers.Slow),
+                    ].join('*, *')}*`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '5',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Боевой посох (Сила+2, +1 Парирование)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Развитие**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Invisibility)}*`,
+                        `*${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Blast)}*`,
+                        `*${getFromDict(SettingPowersTranslations, SettingPowers.TransformOther)}*`,
+                        getFromDict(EdgesTranslations, Edges.RapidRecharge),
+                        getFromDict(EdgesTranslations, Edges.PowerPoints),
+                    ].join(', ')}`),
+
+                    quickTextFormat(`**Эльфийская Волшебница (Elven Sorceress)**: добавьте Изъяны: ${[
+                        `Зависимость от Тайной магии (Arcane Addiction)`,
+                        getFromDict(HindrancesTranslations, Hindrances.Cautious),
+                    ].join(', ')}. ${StatesTranslations[States.Agility]} d8.`, { margin: [paragraphOffset, 0, 0, 0] }),
+                ],
+            }),
+            getUnitContent({
+                title: 'Жрец Света (Priest of the Light)',
+                points: '37',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '4',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Faith]: '8',
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '6',
+                        [Skills.Healing]: '8',
+                        [Skills.Knowledge]: '8 (Религия (Religion))',
+                        [Skills.Notice]: '6',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Внутренний Свет (Inner Light))`,
+                        getFromDict(SettingEdgesTranslations, SettingEdges.Priest),
+                    ].join(', ')}`),
+                    quickTextFormat(`**Чудеса**: ***Пункты Силы***: 15; ***Заклинания***: ${[,
+                        `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '5',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Боевой посох (Сила+2, +1 Парирование)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Развитие**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                        `*${getFromDict(SettingPowersTranslations, SettingPowers.InnerFire)}*`,
+                        getFromDict(EdgesTranslations, Edges.RapidRecharge),
+                        getFromDict(EdgesTranslations, Edges.PowerPoints),
+                        getFromDict(EdgesTranslations, Edges.Healer),
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Разрушитель заклинаний/Ведьмак, Кровавый эльф (Spellbreaker, Blood Elf)',
+                points: '48',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '8',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Guts]: '8',
+                        [Skills.Knowledge]: '8 (Аркана (Arcana))',
+                        [Skills.Notice]: '8',
+                        [Skills.Spellcasting]: '6',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${getFromDict(HindrancesTranslations, Hindrances.Vengeful)} (мелкий)`),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная Магия (Arcane Magic))`,
+                        getFromDict(EdgesTranslations, Edges.Wizard),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.SpellBreaker),
+                        getFromDict(EdgesTranslations, Edges.Block),
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '7 (5)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Двойной меч (Сила+3, Парирование +1)`,
+                        `Средний щит (+1 Парирование, +1 Стойкость против дальнего боя)`,
+                        `Кольчужный хауберк (+2)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(SettingEdgesTranslations, SettingEdges.CaptureSpell),
+                        getFromDict(SettingEdgesTranslations, SettingEdges.DrainSpell),
+                        `${getFromDict(EdgesTranslations, Edges.Florentine)} (используется с двойным мечом)`,
+                    ].join(', ')}`),
+                ],
+            }),
         ];
     }
 
