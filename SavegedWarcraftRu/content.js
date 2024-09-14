@@ -4311,7 +4311,7 @@ function getUnitsBuildingsGearContent() {
                     ],
                 }),
                 getUnitContent({
-                    title: 'Фворф-Стрелок (Dwarven Rifleman)',
+                    title: 'Дворф-Стрелок (Dwarven Rifleman)',
                     points: '35',
                     lines: [
                         getUnitAttributesContent({
