@@ -4816,13 +4816,12 @@ function getUnitsBuildingsGearContent() {
                 },
                 {
                     table: {
-                        widths: ['*', '*', '*'],
+                        widths: ['auto', 'auto', 'auto'],
                         body: [
                             [
                                 {
                                     text: 'Юниты',
-                                    bold: true,
-                                    alignment: 'center',
+                                    style: 'header4'
                                 },
                                 {
                                     text: 'Стоимость найма\n(золото/дерево)',
@@ -4838,7 +4837,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Крестьянин/Ополченец',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `75/0`,
@@ -4852,7 +4850,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Пехотинец',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `135/0`,
@@ -4866,7 +4863,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Рыцарь',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `245/60`,
@@ -4880,7 +4876,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Дворф-Стрелок',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `205/30`,
@@ -4894,7 +4889,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Высший эльф лучник',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `175/20`,
@@ -4908,7 +4902,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Наездник на грифоне',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `400/40`,
@@ -4922,7 +4915,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Наездник на дракондоре',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `325/30`,
@@ -4936,7 +4928,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Маг',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `210/20`,
@@ -4950,7 +4941,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Жрец Света',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `190/10`,
@@ -4964,7 +4954,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Дворфийский Мортирный расчет',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `240/50`,
@@ -4978,7 +4967,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Летающая Машина',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `100/40`,
@@ -4992,7 +4980,6 @@ function getUnitsBuildingsGearContent() {
                             [
                                 {
                                     text: 'Осадная машина',
-                                    alignment: 'center',
                                 },
                                 {
                                     text: `260/60`,
@@ -5000,6 +4987,61 @@ function getUnitsBuildingsGearContent() {
                                 },
                                 {
                                     text: '7/2/6',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
+                '\n',
+                {
+                    table: {
+                        widths: ['*', 'auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: [
+                                        {
+                                            text: 'Здания',
+                                            style: 'header4'
+                                        },
+                                        '\n',
+                                        {
+                                            text: 'Курсивом обозначена стоимость улучшения',
+                                            italics: true,
+                                        }
+                                    ],
+                                },
+                                {
+                                    text: 'Стоимость\n(золото/дерево)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Время строительства\n(дни)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Содержание\n(золото/дерево/еда)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'aaaaaaaaa',
+                                },
+                                {
+                                    text: `6666/6666`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6666`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '666/666/666',
                                     alignment: 'center',
                                 },
                             ],
