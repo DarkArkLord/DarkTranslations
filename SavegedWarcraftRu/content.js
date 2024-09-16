@@ -6273,10 +6273,100 @@ function getUnitsBuildingsGearContent() {
                 getTipText([
                     quickTextFormat(`Вероятно, имеется ввиду **Grunt**.`),
                 ]),
+                getUnitContent({
+                    title: 'Тролль Охотник за головами (Troll Headhunter)',
+                    points: '37',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '8',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '6',
+                            [Skills.Intimidation]: '6',
+                            [Skills.Notice]: '4',
+                            [Skills.Stealth]: '4',
+                            [Skills.Throwing]: '6',
+                            [Skills.Tracking]: '6',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `+1 ${getFromDict(EdgesTranslations, Edges.Size)}`,
+                            `Быстрая регенерация (Fast Regeneration)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Изъяны**: ${[
+                            getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '7',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Копья (Сила+2, 3/6/12)`,
+                            `+1 Досягаемость`,
+                            `+1 Парирование`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.Marksman),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot),
+                            getFromDict(EdgesTranslations, Edges.Woodsman),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Берсерк (Berserker)**: ${[
+                            `${SkillsTranslations[Skills.Fighting]} d6`,
+                            getFromDict(EdgesTranslations, Edges.Berserk),
+                            getFromDict(EdgesTranslations, Edges.Frenzy),
+                        ].join(', ')}`, { margin: [paragraphOffset, 0, 0, 0], italics: true, }),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Таурен-воин (Tauren Warrior)',
+                    points: '48',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '4',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '12',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '8',
+                            [Skills.Guts]: '8',
+                            [Skills.Intimidation]: '6',
+                            [Skills.Notice]: '4',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `+3 ${getFromDict(EdgesTranslations, Edges.Size)}`,
+                            `Рога (Horns) (Сила+2)`,
+                            `Рывок (Charge)`
+                        ].join(', ')}`),
+                        quickTextFormat(`**Изъяны**: ${[
+                            getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
+                            getFromDict(EdgesTranslations, Edges.Large),
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '6',
+                            [States.Toughness]: '10 (9)',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Тотемная дубинка (Сила+3, ББ 2 против жесткой брони)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.Sweep),
+                            getFromDict(EdgesTranslations, Edges.Berserk),
+                            getFromDict(EdgesTranslations, Edges.CombatReflexes),
+                        ].join(', ')}`),
+                    ],
+                }),
             ];
         }
 
-        function getHordeConsts() {
+        function getHordeCosts() {
             return [];
         }
 
@@ -6287,7 +6377,7 @@ function getUnitsBuildingsGearContent() {
                 pageBreak: 'before',
             },
             getHordeUnitsContent(),
-            getHordeConsts(),
+            getHordeCosts(),
         ];
     }
 
