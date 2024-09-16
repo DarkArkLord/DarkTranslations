@@ -6191,6 +6191,106 @@ function getUnitsBuildingsGearContent() {
         ];
     }
 
+    function getHordeContent() {
+        function getHordeUnitsContent() {
+            return [
+                {
+                    text: 'Юниты (Units)',
+                    style: 'header3',
+                },
+                getUnitContent({
+                    title: 'Рабы (Peons)',
+                    points: '27',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '4',
+                            [States.Strength]: '8',
+                            [States.Vigor]: '6',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Guts]: '6',
+                            [Skills.Knowledge]: '4 (Фермерство, Инженеринг, Шахтерство)',
+                            [Skills.Notice]: '4',
+                            [Skills.Repair]: '6',
+                            [Skills.Throwing]: '6',
+                        }),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '3',
+                            [States.Toughness]: '6',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Brawny)
+                        ].join(', ')}`),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Инструменты (Сила+2 для топора или кирки)`,
+                            `Копья (Сила+2, 3/6/12, +1 Парирование, +1 Досягаемость)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.Alertness),
+                            getFromDict(EdgesTranslations, Edges.Dodge),
+                        ].join(', ')}. Пеоны не являются профессиональными солдатами, поэтому их уровень повышается только при выпадении 6.`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Бугай (Gruny)',
+                    points: '34',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '8',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '6',
+                            [Skills.Guts]: '6',
+                            [Skills.Intimidation]: '4',
+                            [Skills.Notice]: '4',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Brawny)
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '9 (7)',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Боевой топор (Сила+3)`,
+                            `Кольчужный хауберк (+2)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.Berserk),
+                            getFromDict(EdgesTranslations, Edges.CombatReflexes),
+                            getFromDict(EdgesTranslations, Edges.Frenzy),
+                        ].join(', ')}`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`Вероятно, имеется ввиду **Grunt**.`),
+                ]),
+            ];
+        }
+
+        function getHordeConsts() {
+            return [];
+        }
+
+        return [
+            {
+                text: 'Орда (The The Horde)',
+                style: 'header2',
+                pageBreak: 'before',
+            },
+            getHordeUnitsContent(),
+            getHordeConsts(),
+        ];
+    }
+
     return [
         {
             text: 'Юниты, Здания и Снаряжение (Units, Buildings and Gear)',
@@ -6199,6 +6299,7 @@ function getUnitsBuildingsGearContent() {
         },
         getTitleContent(),
         getAllianceContent(),
+        getHordeContent(),
     ];
 }
 
