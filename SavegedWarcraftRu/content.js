@@ -5291,6 +5291,892 @@ function getUnitsBuildingsGearContent() {
                         ]
                     }
                 },
+                {
+                    text: 'Снаряжение',
+                    style: 'header3',
+                    pageBreak: 'before',
+                },
+                {
+                    table: {
+                        widths: ['*', 'auto', 'auto', 50, 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Улучшения оружия ближнего боя',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Бонус снаряжения',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Модификатор веса',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Тонкое мастерство',
+                                },
+                                {
+                                    text: `+1 урон`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `х1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+10/+3',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из мифрила',
+                                },
+                                {
+                                    text: `+2 урона`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `х0.8`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+25/+15',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из адамантина',
+                                },
+                                {
+                                    text: `+2 урона, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `х2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+50/+40',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
+                '\n',
+                {
+                    table: {
+                        widths: ['*', 'auto', 'auto', 50, 'auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Дистанционное оружие',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Дистанция',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Урон',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Вес',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Мин. Сила',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Длинный лук',
+                                },
+                                {
+                                    text: '12/24/48',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Эльфийский длинный лук',
+                                    italics: true,
+                                },
+                                {
+                                    text: '15/30/60',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5/5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Требует Стрельбу d8+',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Пистолет',
+                                },
+                                {
+                                    text: '5/10/20',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Перезарядка 2 Действия',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Нарезной пистолет',
+                                    italics: true,
+                                },
+                                {
+                                    text: '10/20/40',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `10/5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Перезарядка 2 Действия',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Мушкет',
+                                },
+                                {
+                                    text: '10/20/40',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d8`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '12',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Перезарядка 2 Действия',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Длинная винтовка',
+                                    italics: true,
+                                },
+                                {
+                                    text: '15/30/60',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d8`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `15/10`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '15',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'ББ 1; Перезарядка 2 Действия',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Башенный арбалет',
+                                },
+                                {
+                                    text: '30/60/120',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `20/15`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '18',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Перезарядка 1 Действие',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Башенная пушка',
+                                },
+                                {
+                                    text: '20/40/80',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `3d6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `--`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '60',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Перезарядка 2 Действия, см. SW1 с. 53, SW2 с. 78',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
+                {
+                    ul: [
+                        quickTextFormat(`*Урон от всех видов оружия дальнего боя изменяется за счет улучшения боеприпасов.*`),
+                    ],
+                },
+                {
+                    table: {
+                        widths: ['*', 'auto', 75, 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Улучшения Стрел/Болтов',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Бонус снаряжения',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Поддержание\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Тонкое мастерство',
+                                },
+                                {
+                                    text: `+1 урон`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+20/+30',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из мифрила',
+                                },
+                                {
+                                    text: `+2 урона`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+140/+140',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+1/+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из адамантина',
+                                },
+                                {
+                                    text: `+2 урона, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+250/+250',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+2/+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
+                '\n',
+                {
+                    table: {
+                        widths: ['*', 'auto', 75, 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Улучшения огнестрельного оружия',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Бонус снаряжения',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Поддержание\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Избыточный заряд',
+                                },
+                                {
+                                    text: `+1 урон`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+60/+30',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Очищенный порох',
+                                },
+                                {
+                                    text: `+2 урона`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+200/+150',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+1/+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Пропитанный порох',
+                                },
+                                {
+                                    text: `+2 урона, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+400/+400',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+2/+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
+                {
+                    ul: [
+                        quickTextFormat(`*Модернизация боеприпасов включает в себя все боеприпасы для юнита.*`),
+                    ],
+                },
+                {
+                    pageBreak: 'before',
+                    table: {
+                        widths: ['*', 'auto', 'auto', 50, 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Легкая броня',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Броня',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Зоны',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Вес',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Кожаная броня',
+                                },
+                                {
+                                    text: `+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2/1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Кожа с заклепками',
+                                },
+                                {
+                                    text: `+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `10/10`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `15`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Усиленная кожа',
+                                },
+                                {
+                                    text: `+3`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `15/15`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Драконья кожа',
+                                },
+                                {
+                                    text: `+4`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `25/25`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
+                '\n',
+                {
+                    table: {
+                        widths: ['*', 'auto', 'auto', 50, 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Тяжелая броня',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Броня',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Зоны',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Вес',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Кольчужный хауберк',
+                                },
+                                {
+                                    text: `+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5/2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'В комплект входит легкий шлем или капюшон.',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Латный доспех',
+                                },
+                                {
+                                    text: `+3`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, голова',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `15/10`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `40`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Прочные латы',
+                                },
+                                {
+                                    text: `+4`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, голова',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `30/25`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `40`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Мифриловые латы',
+                                },
+                                {
+                                    text: `+5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, голова',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `45/50`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `30`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Адамантиновые латы',
+                                },
+                                {
+                                    text: `+5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, голова',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `90/100`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `60`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Уменьшает ББ на 1',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    }
+                },
             ];
         }
 
