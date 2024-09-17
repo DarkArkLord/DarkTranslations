@@ -6363,6 +6363,120 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                     ],
                 }),
+                getUnitContent({
+                    title: 'Наездник (Raider)',
+                    points: '52 + 37 (лютоволк) = 89',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '8',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '8',
+                            [Skills.Guts]: '8',
+                            [Skills.Intimidation]: '6',
+                            [Skills.Notice]: '4',
+                            [Skills.Riding]: '6',
+                            [Skills.Throwing]: '4',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Brawny),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Berserk),
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '6',
+                            [States.Toughness]: '9 (7)',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Боевой клинок (Warblade) (Сила+3)`,
+                            `Кольчужный хауберк (+2)`,
+                            `*Сеть*`,
+                        ].join(', ')}`),
+                        [
+                            quickTextFormat(`***Лютоволк***:`),
+                            {
+                                stack: [
+                                    getUnitAttributesContent({
+                                        [States.Agility]: '8',
+                                        [States.Smarts]: '4 (Ж)',
+                                        [States.Spirit]: '6',
+                                        [States.Strength]: '8',
+                                        [States.Vigor]: '8',
+                                    }),
+                                    getUnitSkillsContent({
+                                        [Skills.Fighting]: '8',
+                                        [Skills.Guts]: '8',
+                                        [Skills.Intimidation]: '6',
+                                        [Skills.Notice]: '6',
+                                    }),
+                                    quickTextFormat(`**Черты/Способности**: ${[
+                                        `${getFromDict(EdgesTranslations, Edges.Size)} +1`,
+                                        `Укус (Bite) (Сила+2)`,
+                                        `Вцепиться в горло/инстинкт хищника (Go For the Throat) (см. SW1 с. 144, SW2 с. 171)`,
+                                        `${getFromDict(EdgesTranslations, Edges.FleetFooted)}`,
+                                    ].join(', ')}`),
+                                    getUnitCommonAttributesContent({
+                                        [States.Pace]: '10',
+                                        [States.Parry]: '6',
+                                        [States.Toughness]: '7',
+                                    }),
+                                ],
+                                margin: [paragraphOffset, 0, 0, 0],
+                            },
+                        ],
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.CombatReflexes),
+                            getFromDict(EdgesTranslations, Edges.Sweep),
+                        ].join(', ')}`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`**Вцепиться в горло/инстинкт хищника**: волки инстинктивно пытаются вцепиться в самые уязвимые области тела своих противников. В случае подъёма при атаке волк поражает наименее защищённую область тела врага.`),
+                ]),
+                getUnitContent({
+                    title: 'Наездник на кодо (Kodo Rider)',
+                    points: '39 + 60 (Зверь кодо) = 99',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '8',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '6',
+                            [Skills.Guts]: '8',
+                            [Skills.Intimidation]: '8',
+                            [Skills.Notice]: '4',
+                            [Skills.Riding]: '6',
+                            [Skills.Taunt]: '6',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Brawny),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Inspire),
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '7',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Боевые барабаны (требуются для Воодушевления (${Edges.Inspire}))`,
+                            `Барабанные палочки (Сила+1, Парирование -1)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Зверь кодо**: см. в Бестиарии Warcraft, плюс ${SkillsTranslations[Skills.Fighting]} d8`, { italics: true }),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.Fervor),
+                        ].join(', ')}`),
+                    ],
+                }),
             ];
         }
 

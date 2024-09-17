@@ -407,7 +407,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.HolyWarrior]: 'Воин света',
     [Edges.UnholyWarrior]: 'Воин тьмы',
     [Edges.ImprovisationalFighter]: undefined,
-    [Edges.Inspire]: undefined,
+    [Edges.Inspire]: 'Воодушевление',
     [Edges.Investigator]: undefined,
     [Edges.JackOfAllTrades]: undefined,
     [Edges.KillerInstinct]: undefined,
