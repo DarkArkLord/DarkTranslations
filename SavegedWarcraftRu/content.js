@@ -4812,7 +4812,6 @@ function getUnitsBuildingsGearContent() {
                 {
                     text: 'Стоимость и содержание (Costs and Upkeeps)',
                     style: 'header3',
-                    pageBreak: 'before',
                 },
                 {
                     table: {
@@ -5294,7 +5293,6 @@ function getUnitsBuildingsGearContent() {
                 {
                     text: 'Снаряжение',
                     style: 'header3',
-                    pageBreak: 'before',
                 },
                 {
                     table: {
@@ -5774,6 +5772,7 @@ function getUnitsBuildingsGearContent() {
                 },
                 '\n',
                 {
+                    pageBreak: 'before',
                     table: {
                         widths: ['*', 'auto', 75, 'auto', 'auto'],
                         body: [
@@ -5875,7 +5874,6 @@ function getUnitsBuildingsGearContent() {
                     ],
                 },
                 {
-                    pageBreak: 'before',
                     table: {
                         widths: ['*', 'auto', 'auto', 50, 'auto', 'auto'],
                         body: [
