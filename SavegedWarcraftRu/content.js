@@ -6518,6 +6518,265 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                     ],
                 }),
+                getUnitContent({
+                    title: 'Тролль наездник на летучей мыши (Troll Batrider)',
+                    points: '44 + 46 (гигантская летучая мышь) = 90',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '8',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Guts]: '10',
+                            [Skills.Notice]: '6',
+                            [Skills.Riding]: '6',
+                            [Skills.Stealth]: '6',
+                            [Skills.Throwing]: '8',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `${getFromDict(EdgesTranslations, Edges.Size)} +1`,
+                            `Быстрая регенерация (Fast Regeneration)`,
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.SteadyHands),
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '2',
+                            [States.Toughness]: '7',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Нестабильные зелья (2d6+2, Малый взрыв, 3/6/12)`,
+                        ].join(', ')}`),
+                        [
+                            quickTextFormat(`***Гигантская летучая мышь***:`),
+                            {
+                                stack: [
+                                    getUnitAttributesContent({
+                                        [States.Agility]: '8',
+                                        [States.Smarts]: '8 (Ж)',
+                                        [States.Spirit]: '6',
+                                        [States.Strength]: '8',
+                                        [States.Vigor]: '6',
+                                    }),
+                                    getUnitSkillsContent({
+                                        [Skills.Fighting]: '4',
+                                        [Skills.Notice]: '8',
+                                        [Skills.Tracking]: '6',
+                                    }),
+                                    quickTextFormat(`**Черты/Способности**: ${[
+                                        `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                                        `${getFromDict(EdgesTranslations, Edges.Flight)} (12 дюймов, Подъем 6 дюймов)`,
+                                        `Сонар (Sonar)`,
+                                    ].join(', ')}`),
+                                    getUnitCommonAttributesContent({
+                                        [States.Pace]: '2',
+                                        [States.Parry]: '4',
+                                        [States.Toughness]: '7',
+                                    }),
+                                ],
+                                margin: [paragraphOffset, 0, 0, 0],
+                            },
+                        ],
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.BeastBond),
+                            getFromDict(EdgesTranslations, Edges.CombatReflexes),
+                        ].join(', ')}`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`Никаких пояснений по поводу **Сонара (Sonar)** не прилагается.`),
+                ]),
+                getUnitContent({
+                    title: 'Шаман (Shaman)',
+                    points: '47',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Faith]: '8',
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '8',
+                            [Skills.Intimidation]: '6',
+                            [Skills.Knowledge]: '6 (Природа)',
+                            [Skills.Notice]: '6',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Brawny),
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Шаман (Shaman))`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Шаманизм**: ***Пункты Силы***: 15; ***Заклинания***: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '4',
+                            [States.Toughness]: '8 (7)',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Когти (Сила+1)`,
+                            `Замаскированная броня (+1)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}*`,
+                            getFromDict(EdgesTranslations, Edges.RapidRecharge),
+                            getFromDict(EdgesTranslations, Edges.PowerPoints),
+                        ].join(', ')}`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Тролль Чумной Доктор (Troll Witch Doctor)',
+                    points: '43',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '6',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Faith]: '8',
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '6',
+                            [Skills.Healing]: '4',
+                            [Skills.Notice]: '6',
+                            [Skills.Tracking]: '4',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `${getFromDict(EdgesTranslations, Edges.Size)} +1`,
+                            `Быстрая регенерация (Fast Regeneration)`,
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Вуду (Voodoo))`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Вуду**: ***Пункты Силы***: 15; ***Заклинания***: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '6',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Боевой посох (Сила+2, +1 Парирование)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Quickness)}*`,
+                            getFromDict(SettingEdgesTranslations, SettingEdges.DarkRitual),
+                            getFromDict(EdgesTranslations, Edges.PowerPoints),
+                            `Алхимик (Alchemist)`,
+                        ].join(', ')}`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`Никаких пояснений по поводу **Алхимика (Alchemist)** не прилагается.`),
+                ]),
+                getUnitContent({
+                    title: 'Таурен Духовный странник/Служитель Предков (Tauren Spirit Walker)',
+                    points: '53',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '4',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '10',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Faith]: '8',
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '8',
+                            [Skills.Intimidation]: '6',
+                            [Skills.Knowledge]: '6 (Природа)',
+                            [Skills.Notice]: '6',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `+3 ${getFromDict(EdgesTranslations, Edges.Size)}`,
+                            `Рога (Horns) (Сила+2)`,
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Шаман (Shaman))`,
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Shaman),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Изъяны**: ${[
+                            getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
+                            getFromDict(EdgesTranslations, Edges.Large),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Шаманизм**: ***Пункты Силы***: 15; ***Заклинания***: ${[
+                            `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.EtherealForm)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '4',
+                            [States.Toughness]: '9',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Топор (Сила+2)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.GreaterHealing)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}*`,
+                            getFromDict(EdgesTranslations, Edges.RapidRecharge),
+                            getFromDict(EdgesTranslations, Edges.PowerPoints),
+                        ].join(', ')}`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Разрушитель/Катапульта (Demolisher)',
+                    points: '100',
+                    lines: [
+                        quickTextFormat(`*Разрушитель сопровождают 3 Раба и один Стрелок.*`),
+                        quickTextFormat(`**Скорость/Ускорение**: 4/2; **Стойкость**: 12 (6)`),
+                        quickTextFormat(`**Пушка**: 3d8+1, Средний Взрыв, 40/80/160. 2 Действия на перезарядку`),
+                        quickTextFormat(`***Стрелок***`),
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '8',
+                            [Skills.Notice]: '4',
+                            [Skills.Repair]: '6',
+                            [Skills.Shooting]: '8',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Brawny),
+                            getFromDict(EdgesTranslations, Edges.SteadyHands),
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '4',
+                            [States.Toughness]: '7',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Топор (Сила+2)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.Marksman),
+                        ].join(', ')}`),
+                    ],
+                }),
             ];
         }
 
