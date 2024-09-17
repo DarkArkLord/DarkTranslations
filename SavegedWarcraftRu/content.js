@@ -6779,7 +6779,13 @@ function getUnitsBuildingsGearContent() {
         }
 
         function getHordeCosts() {
-            return [];
+            return [
+                {
+                    text: 'Стоимость и содержание (Costs and Upkeeps)',
+                    style: 'header3',
+                    pageBreak: 'before',
+                },
+            ];
         }
 
         return [
