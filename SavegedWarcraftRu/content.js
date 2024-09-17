@@ -6477,6 +6477,47 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                     ],
                 }),
+                getUnitContent({
+                    title: 'Наездник на виверне (Wyvern Rider)',
+                    points: '39 + 72 (виврена) = 111',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '8',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '8',
+                            [Skills.Intimidation]: '6',
+                            [Skills.Notice]: '6',
+                            [Skills.Riding]: '6',
+                            [Skills.Throwing]: '8',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Brawny),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.SteadyHands),
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '8 (7)',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Копья (Сила+2, 3/6/12, +1 Парирование, +1 Досягаемость)`,
+                            `Кожаная броня (+1)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`***Виверна***: см. в Бестиарии Warcraft`),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.BeastBond),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.StrafingRun),
+                            `Быстрый бросок (Rapid Throw)`,
+                        ].join(', ')}`),
+                    ],
+                }),
             ];
         }
 
