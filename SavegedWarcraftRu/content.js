@@ -7236,6 +7236,287 @@ function getUnitsBuildingsGearContent() {
                     },
                     alignment: 'left',
                 },
+                {
+                    text: 'Снаряжение',
+                    style: 'header3',
+                },
+                {
+                    table: { // Улучшения оружия ближнего боя
+                        widths: ['*', 'auto', 'auto', 50, 'auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Новое оружие',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Дистанция',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Урон',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Вес',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Мин. Сила',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Боевой клинок (Warblade)',
+                                },
+                                {
+                                    text: `Ближний бой`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `Сила+4`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '12',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd8',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Сеть',
+                                },
+                                {
+                                    text: `3/6/12`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `Нет`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '25 серебряных',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Запутывает (захват на основе Ловкости)',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Тотемная дубинка',
+                                },
+                                {
+                                    text: `Ближний бой`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `Сила+3`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '20',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd10',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'как Кувалда (ББ 2 против жёсткой брони, Защита – 1, Двуручное)',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Джавелин',
+                                    italics: true,
+                                },
+                                {
+                                    text: `5/10/15`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `Сила+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Метательное копье',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Башенный арбалет',
+                                },
+                                {
+                                    text: `30/60/120`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '20/15',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '18',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1 Действие на перезарядку',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Нестабильные зелья',
+                                },
+                                {
+                                    text: `3/6/12`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '20/10',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Малый Взрыв, Тяжелое Оружие',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Зелья Жидкого Огня',
+                                },
+                                {
+                                    text: `3/6/12`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '60/20',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Малый Взрыв, Тяжелое Оружие, поджигает легковоспламеняющиеся вещества',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Яд Виверны',
+                                },
+                                {
+                                    text: `Особый`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `как Кураре`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '20/20',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Для копий; требуются виверны',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
             ];
         }
 
