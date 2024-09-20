@@ -7241,7 +7241,7 @@ function getUnitsBuildingsGearContent() {
                     style: 'header3',
                 },
                 {
-                    table: { // Улучшения оружия ближнего боя
+                    table: { // Новое оружие
                         widths: ['*', 'auto', 'auto', 50, 'auto', 'auto', 'auto'],
                         body: [
                             [
