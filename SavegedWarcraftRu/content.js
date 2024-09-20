@@ -5346,7 +5346,7 @@ function getUnitsBuildingsGearContent() {
                             ],
                             [
                                 {
-                                    text: 'Тонкое мастерство',
+                                    text: 'Высокое качество',
                                 },
                                 {
                                     text: `+1 урон`,
@@ -5728,7 +5728,7 @@ function getUnitsBuildingsGearContent() {
                             ],
                             [
                                 {
-                                    text: 'Тонкое мастерство',
+                                    text: 'Высокое качество',
                                 },
                                 {
                                     text: `+1 урон`,
@@ -7510,6 +7510,319 @@ function getUnitsBuildingsGearContent() {
                                 },
                                 {
                                     text: 'Для копий; требуются виверны',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+                {
+                    ul: [
+                        quickTextFormat(`*Урон от всех видов оружия дальнего боя изменяется за счет улучшения боеприпасов.*`),
+                    ],
+                },
+                {
+                    table: { // Улучшения оружия ближнего боя
+                        widths: ['*', 'auto', 50, 'auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Улучшения оружия ближнего боя',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Бонус снаряжения',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Содержание\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Модификатор веса',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Высокое качество',
+                                },
+                                {
+                                    text: `+1 урон`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+3/+2',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `--`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `х1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из тория',
+                                },
+                                {
+                                    text: `+1 урона, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+30/+10',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `--`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `х2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из арканита',
+                                },
+                                {
+                                    text: `+2 урона, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+60/+15',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `--`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `х2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+                {
+                    table: { // Улучшения копий
+                        widths: ['*', 'auto', 'auto', 50, 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Улучшения копий',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Бонус снаряжения',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Содержание\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Высокое качество',
+                                },
+                                {
+                                    text: `+1 урон`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+20/+10',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из тория',
+                                },
+                                {
+                                    text: `+1 урона, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+60/+20',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+2/+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из арканита',
+                                },
+                                {
+                                    text: `+2 урона, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+100/+30',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+3/+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+                {
+                    table: { // Снаряды для Разрушителя
+                        widths: ['*', 'auto', 'auto', 50, 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Снаряды для Разрушителя',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Бонус снаряжения',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Содержание\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Осколочный снаряд',
+                                },
+                                {
+                                    text: `+2 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '60/5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ториевая шрапнель',
+                                },
+                                {
+                                    text: `+4 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '100/15',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+3/+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ковка из арканита',
+                                },
+                                {
+                                    text: `+2 урона, +4 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '200/20',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `+5/+3`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
                                     alignment: 'center',
                                 },
                             ],
