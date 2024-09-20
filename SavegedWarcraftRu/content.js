@@ -6811,6 +6811,431 @@ function getUnitsBuildingsGearContent() {
                     style: 'header3',
                     pageBreak: 'before',
                 },
+                {
+                    table: { // Юниты
+                        widths: ['auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Юниты',
+                                    style: 'header4'
+                                },
+                                {
+                                    text: 'Стоимость найма\n(золото/дерево)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Содержание\n(золото/дерево/еда)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Раб',
+                                },
+                                {
+                                    text: `75/0`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/0/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Бугай',
+                                },
+                                {
+                                    text: `200/0`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3/0/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Тролль Охотник за головами',
+                                },
+                                {
+                                    text: `135/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/1/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Таурен-воин',
+                                },
+                                {
+                                    text: `280/80`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3/2/5',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Наездник',
+                                },
+                                {
+                                    text: `180/40`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3/0/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Наездник на кодо',
+                                },
+                                {
+                                    text: `255/60`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3/0/4',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Наездник на виверне',
+                                },
+                                {
+                                    text: `265/40`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5/0/4',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Тролль наездник на летучей мыши',
+                                },
+                                {
+                                    text: `160/40`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4/1/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Шаман',
+                                },
+                                {
+                                    text: `130/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Чумной Доктор',
+                                },
+                                {
+                                    text: `145/25`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Духовный странник/Служитель Предков',
+                                },
+                                {
+                                    text: `195/35`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3/1/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Разрушитель/Катапульта',
+                                },
+                                {
+                                    text: `220/50`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5/2/4',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+                '\n',
+                {
+                    table: { // Здания
+                        widths: ['*', 'auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: [
+                                        {
+                                            text: 'Здания',
+                                            style: 'header4'
+                                        },
+                                        '\n',
+                                        {
+                                            text: 'Курсивом обозначена стоимость улучшения',
+                                            italics: true,
+                                        }
+                                    ],
+                                },
+                                {
+                                    text: 'Стоимость\n(золото/дерево)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Время строительства\n(дни)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Содержание\n(золото/дерево/еда)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Дом Вождей',
+                                },
+                                {
+                                    text: `385/185`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `15`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/0/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Крепость Вождей',
+                                    italics: true,
+                                },
+                                {
+                                    text: `315/190`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `14`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Дворец Вождей',
+                                    italics: true,
+                                },
+                                {
+                                    text: `325/190`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `14`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/0/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Казармы',
+                                },
+                                {
+                                    text: `180/50`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Логово орков',
+                                },
+                                {
+                                    text: `160/40`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/-8',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Лесопилка',
+                                },
+                                {
+                                    text: `205/0`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `7`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Зверинец',
+                                },
+                                {
+                                    text: `145/140`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Обитель Духов',
+                                },
+                                {
+                                    text: `150/150`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `7`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Тотем минотавра/Тотем тауренов',
+                                },
+                                {
+                                    text: `135/155`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `7`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/2/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Сторожевая башня',
+                                },
+                                {
+                                    text: `110/80`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Стена (секция в 1 дюйм)',
+                                },
+                                {
+                                    text: `20/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Шипованная защита (секция 1 дюйм)',
+                                },
+                                {
+                                    text: `20/15`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `3`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
             ];
         }
 
