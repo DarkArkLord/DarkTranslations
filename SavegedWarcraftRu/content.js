@@ -231,6 +231,7 @@ const docDefinition = {
     defaultStyle: {
         font: 'Roboto',
         fontSize: 12,
+        alignment: 'justify',
     },
     styles: {
         header1: { fontSize: 26, bold: true, alignment: 'center', margin: [0, 10, 0, 10] },
@@ -940,11 +941,11 @@ function getCharacterCreationContent() {
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Deflection)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Entangle)}`),
                                 ],
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Entangle)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
                                     quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Fly)}`),
@@ -964,6 +965,7 @@ function getCharacterCreationContent() {
                             },
                         ],
                         columnGap: 5,
+                        alignment: 'left',
                     },
                     '\n',
                     getTipText([
@@ -1008,6 +1010,7 @@ function getCharacterCreationContent() {
                             },
                         ],
                         columnGap: 5,
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1043,6 +1046,7 @@ function getCharacterCreationContent() {
                             },
                         ],
                         columnGap: 5,
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1131,6 +1135,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                     '\n',
                     getTipText([
@@ -1179,6 +1184,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1229,6 +1235,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1280,6 +1287,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1322,6 +1330,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1368,6 +1377,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                     '\n',
                     getTipText([
@@ -1423,6 +1433,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1492,6 +1503,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                     '\n',
                     getTipText([
@@ -1539,6 +1551,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1580,6 +1593,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1625,6 +1639,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1667,6 +1682,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1696,11 +1712,11 @@ function getCharacterCreationContent() {
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(StatesTranslations, States.Agility)}, ${getFromDict(SkillsTranslations, Skills.Fighting)}, ${getFromDict(SkillsTranslations, Skills.Stealth)}, ${getFromDict(StatesTranslations, States.Strength)}, ${getFromDict(SkillsTranslations, Skills.Throwing)})`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Invisibility)} (Слияние с Тенью (Shadowmeld))`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
                                 ],
                             },
                             {
                                 ul: [
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
                                     quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Аватар возмездия (Avatar of Vengeance) (${getFromDict(RanksTranslations, Ranks.Legendary)})`),
                                     quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Teleport)}*`),
@@ -1709,6 +1725,7 @@ function getCharacterCreationContent() {
                         ],
                         columnGap: 5,
                         margin: [paragraphOffset, 0, 0, 0],
+                        alignment: 'left',
                     },
                 ];
             }
@@ -1791,6 +1808,7 @@ function getCharacterCreationContent() {
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)} (Колеса (Wheels), Гусеницы (Treads))`),
                             quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Часовые гоблины (Clockwerk Goblins) (взрывается, нанося 2d6 урона (Малый взрыв) по окончании действия; поддержание "перепрезывает" гоблинов, но не поддерживает их существование)*`),
                         ],
+                        alignment: 'left',
                     },
                     '\n',
                     getTipText([
@@ -4990,7 +5008,8 @@ function getUnitsBuildingsGearContent() {
                                 },
                             ],
                         ]
-                    }
+                    },
+                    alignment: 'left',
                 },
                 '\n',
                 {
@@ -5288,7 +5307,8 @@ function getUnitsBuildingsGearContent() {
                                 },
                             ],
                         ]
-                    }
+                    },
+                    alignment: 'left',
                 },
                 {
                     text: 'Снаряжение',
@@ -5388,7 +5408,8 @@ function getUnitsBuildingsGearContent() {
                                 },
                             ],
                         ]
-                    }
+                    },
+                    alignment: 'left',
                 },
                 '\n',
                 {
@@ -5667,7 +5688,8 @@ function getUnitsBuildingsGearContent() {
                                 },
                             ],
                         ]
-                    }
+                    },
+                    alignment: 'left',
                 },
                 {
                     ul: [
@@ -5768,7 +5790,8 @@ function getUnitsBuildingsGearContent() {
                                 },
                             ],
                         ]
-                    }
+                    },
+                    alignment: 'left',
                 },
                 '\n',
                 {
@@ -5866,7 +5889,8 @@ function getUnitsBuildingsGearContent() {
                                 },
                             ],
                         ]
-                    }
+                    },
+                    alignment: 'left',
                 },
                 {
                     ul: [
@@ -6009,7 +6033,8 @@ function getUnitsBuildingsGearContent() {
                                 },
                             ],
                         ]
-                    }
+                    },
+                    alignment: 'left',
                 },
                 '\n',
                 {
@@ -6173,7 +6198,8 @@ function getUnitsBuildingsGearContent() {
                                 },
                             ],
                         ]
-                    }
+                    },
+                    alignment: 'left',
                 },
             ];
         }
