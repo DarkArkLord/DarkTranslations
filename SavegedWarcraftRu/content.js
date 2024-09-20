@@ -7239,6 +7239,7 @@ function getUnitsBuildingsGearContent() {
                 {
                     text: 'Снаряжение',
                     style: 'header3',
+                    pageBreak: 'before',
                 },
                 {
                     table: { // Новое оружие
@@ -7823,6 +7824,176 @@ function getUnitsBuildingsGearContent() {
                                 },
                                 {
                                     text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                    pageBreak: 'before',
+                },
+                {
+                    ul: [
+                        quickTextFormat(`*Модернизация боеприпасов включает в себя все боеприпасы для юнита.*`),
+                    ],
+                },
+                {
+                    table: { // Броня
+                        widths: ['*', 'auto', 'auto', 50, 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Броня',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Броня',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Зоны',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Вес',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Броня из шкур/Кожаная броня',
+                                },
+                                {
+                                    text: `+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2/1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `10 фунтов`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Кольчужный хауберк',
+                                },
+                                {
+                                    text: `+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5/2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `25 фунтов`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'В комплект входит полушлем',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Тяжелый кольчужный хауберк',
+                                },
+                                {
+                                    text: `+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5/2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `25 фунтов`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'В комплект входит полушлем, -1 ББ',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Ториевая кольчуга',
+                                },
+                                {
+                                    text: `+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5/2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `25 фунтов`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'В комплект входит полушлем, -2 ББ',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Арканитовая кольчуга',
+                                },
+                                {
+                                    text: `+3`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5/2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `25 фунтов`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'В комплект входит полушлем, -2 ББ',
                                     alignment: 'center',
                                 },
                             ],
