@@ -4832,7 +4832,7 @@ function getUnitsBuildingsGearContent() {
                     style: 'header3',
                 },
                 {
-                    table: {
+                    table: { // Юниты
                         widths: ['auto', 'auto', 'auto'],
                         body: [
                             [
@@ -5013,7 +5013,7 @@ function getUnitsBuildingsGearContent() {
                 },
                 '\n',
                 {
-                    table: {
+                    table: { // Здания
                         widths: ['*', 'auto', 'auto', 'auto'],
                         body: [
                             [
@@ -5315,7 +5315,7 @@ function getUnitsBuildingsGearContent() {
                     style: 'header3',
                 },
                 {
-                    table: {
+                    table: { // Улучшения оружия ближнего боя
                         widths: ['*', 'auto', 'auto', 50, 'auto'],
                         body: [
                             [
@@ -5413,7 +5413,7 @@ function getUnitsBuildingsGearContent() {
                 },
                 '\n',
                 {
-                    table: {
+                    table: { // Дистанционное оружие
                         widths: ['*', 'auto', 'auto', 50, 'auto', 'auto', 'auto'],
                         body: [
                             [
@@ -5697,7 +5697,7 @@ function getUnitsBuildingsGearContent() {
                     ],
                 },
                 {
-                    table: {
+                    table: { // Улучшения Стрел/Болтов
                         widths: ['*', 'auto', 75, 'auto', 'auto'],
                         body: [
                             [
@@ -5796,7 +5796,7 @@ function getUnitsBuildingsGearContent() {
                 '\n',
                 {
                     pageBreak: 'before',
-                    table: {
+                    table: { // Улучшения огнестрельного оружия
                         widths: ['*', 'auto', 75, 'auto', 'auto'],
                         body: [
                             [
@@ -5898,7 +5898,7 @@ function getUnitsBuildingsGearContent() {
                     ],
                 },
                 {
-                    table: {
+                    table: { // Легкая броня
                         widths: ['*', 'auto', 'auto', 50, 'auto', 'auto'],
                         body: [
                             [
@@ -6038,7 +6038,7 @@ function getUnitsBuildingsGearContent() {
                 },
                 '\n',
                 {
-                    table: {
+                    table: { // Тяжелая броня
                         widths: ['*', 'auto', 'auto', 50, 'auto', 'auto'],
                         body: [
                             [
