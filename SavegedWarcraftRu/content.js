@@ -6648,7 +6648,7 @@ function getUnitsBuildingsGearContent() {
                         }),
                         quickTextFormat(`**Снаряжение**: ${[
                             `Когти (Сила+1)`,
-                            `Замаскированная броня (+1)`,
+                            `Броня из шкур (+1)`,
                         ].join(', ')}`),
                         quickTextFormat(`**Развитие**: ${[
                             `*${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)}*`,
