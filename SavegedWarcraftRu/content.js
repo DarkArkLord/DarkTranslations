@@ -8408,6 +8408,393 @@ function getUnitsBuildingsGearContent() {
             ];
         }
 
+        function getSentinelsCostsContent() {
+            return [
+                {
+                    text: 'Стоимость и содержание (Costs and Upkeeps)',
+                    style: 'header3',
+                },
+                {
+                    table: { // Юниты
+                        widths: ['auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Юниты',
+                                    style: 'header4'
+                                },
+                                {
+                                    text: 'Стоимость найма\n(золото/дерево)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Содержание\n(золото/дерево/еда)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Светлячок',
+                                },
+                                {
+                                    text: `60/0`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/0/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Лучник',
+                                },
+                                {
+                                    text: `130/10`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Охотница',
+                                },
+                                {
+                                    text: `195/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Дриада',
+                                },
+                                {
+                                    text: `145/60`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Другид-медведь',
+                                },
+                                {
+                                    text: `255/80`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/0/4',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Друид-ворон',
+                                },
+                                {
+                                    text: `135/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Химера',
+                                },
+                                {
+                                    text: `330/70`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/2/5',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Волшебный дракон/Лесной дракончик',
+                                },
+                                {
+                                    text: `155/25`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/0/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Гиппогриф',
+                                },
+                                {
+                                    text: `160/20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/2',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Горный великан',
+                                },
+                                {
+                                    text: `425/100`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/3/7',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Метатель глеф/Баллиста',
+                                },
+                                {
+                                    text: `210/65`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2/2/3',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+                '\n',
+                {
+                    table: { // Здания
+                        widths: ['*', 'auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: [
+                                        {
+                                            text: 'Здания',
+                                            style: 'header4'
+                                        },
+                                        '\n',
+                                        {
+                                            text: 'Курсивом обозначена стоимость улучшения',
+                                            italics: true,
+                                        }
+                                    ],
+                                },
+                                {
+                                    text: 'Стоимость\n(золото/дерево)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Время строительства\n(дни)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Содержание\n(золото/дерево/еда)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Древо Жизни',
+                                },
+                                {
+                                    text: `340/185`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `11`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Древо Долголетия',
+                                    italics: true,
+                                },
+                                {
+                                    text: `320/180`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `14`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: '- Древо Вечности',
+                                    italics: true,
+                                },
+                                {
+                                    text: `330/200`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `14`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/2/0',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Древо Войны',
+                                },
+                                {
+                                    text: `150/60`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Древо Мудрости',
+                                },
+                                {
+                                    text: `155/145`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `7`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Древо Ветров',
+                                },
+                                {
+                                    text: `150/140`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Сторожевое Древо',
+                                },
+                                {
+                                    text: `135/80`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '0/1/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Лунный колодец',
+                                },
+                                {
+                                    text: `180/50`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/0/-8',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Охотничий зал',
+                                },
+                                {
+                                    text: `210/100`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/2/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Гнезда химер',
+                                },
+                                {
+                                    text: `140/190`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `8`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/3/1',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+            ];
+        }
+
         return [
             {
                 text: 'Стражи (The Sentinels)',
@@ -8415,6 +8802,7 @@ function getUnitsBuildingsGearContent() {
                 pageBreak: 'before',
             },
             getSentinelsUnitsContent(),
+            getSentinelsCostsContent(),
         ];
     }
 
