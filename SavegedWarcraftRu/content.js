@@ -4228,13 +4228,16 @@ function getUnitsBuildingsGearContent() {
             ],
         };
 
-        return [
-            title,
-            {
-                stack: data.lines,
-                margin: [paragraphOffset, 0, 0, 0],
-            },
-        ];
+        return {
+            stack: [
+                title,
+                {
+                    stack: data.lines,
+                    margin: [paragraphOffset, 0, 0, 0],
+                },
+            ],
+            alignment: 'left',
+        };
     }
 
     function getUnitAttributesContent(data) {
@@ -8006,12 +8009,176 @@ function getUnitsBuildingsGearContent() {
 
         return [
             {
-                text: 'Орда (The The Horde)',
+                text: 'Орда (The Horde)',
                 style: 'header2',
                 pageBreak: 'before',
             },
             getHordeUnitsContent(),
             getHordeCosts(),
+        ];
+    }
+
+    function getSentinelsContent() {
+        function getSentinelsUnitsContent() {
+            return [
+                {
+                    text: 'Юниты (Units)',
+                    style: 'header3',
+                },
+                getUnitContent({
+                    title: 'Светлячок (Wisp)',
+                    points: '26',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '6',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Faith]: '6',
+                            [Skills.Guts]: '4',
+                            [Skills.Notice]: '6',
+                            [Skills.Repair]: '6',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `Связь с деревом (Bond with Tree) (+2 к проверкам Ремонта построек Ночных Эльфов)`,
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия природы (Nature Magic))`,
+                        ].join(', ')}`),
+                        quickTextFormat(`***Пункты Силы***: 10, ***Силы***: ${[
+                            `${getFromDict(SettingPowersTranslations, SettingPowers.Mend)} (Обновление (Renew): работает на Древних (Ancients))`,
+                            `${getFromDict(PowersTranslations, Powers.Dispel)} (Большой взрыв, уничтожает Светлячка (Wisp))`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '2',
+                            [States.Toughness]: '5',
+                        }),
+                        quickTextFormat(`**Развитие**: ${[
+                            `Нет`,
+                        ].join(', ')}`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Лучник (Archer)',
+                    points: '38',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '8',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '6',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '6',
+                            [Skills.Notice]: '6',
+                            [Skills.Shooting]: '6',
+                            [Skills.Stealth]: '6 (+4)',
+                        }),
+                        quickTextFormat(`**Изъяны**: ${[
+                            getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.LowLightVision),
+                            `Слияние с Тенью (Shadowmeld)`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '4',
+                            [States.Toughness]: '6 (5)',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Длинный лук (2d6, 12/24/48)`,
+                            `Короткий меч (Сила+2)`,
+                            `Кожаная броня (+1)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.Marksman),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.TwoArrowsNocked),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.HailOfArrows),
+                        ].join(', ')}`),
+                        quickTextFormat(`***Ренджер (Ranger)***: ${[
+                            `*${SkillsTranslations[Skills.Stealth]} d4*`,
+                            `*${SkillsTranslations[Skills.Survival]} d8*`,
+                            `*${SkillsTranslations[Skills.Tracking]} d8*`,
+                            `*${getFromDict(EdgesTranslations, Edges.Woodsman)}*`,
+                        ].join(', ')}`, { margin: [paragraphOffset, 0, 0, 0] }),
+                        {
+                            text: [
+                                quickTextFormat(`***Наездник на Гипогрифе (Hippogryph Rider)***: ${[
+                                    `*${SkillsTranslations[Skills.Riding]} d6*`,
+                                    `*${getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry)}*`,
+                                    `*${getFromDict(EdgesTranslations, Edges.SteadyHands)}*`,
+                                ].join(', ')}`),
+                                {
+                                    text: ` [42]`,
+                                    color: 'red',
+                                }
+                            ],
+                            margin: [paragraphOffset, 0, 0, 0],
+                        },
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Охотница (Huntress)',
+                    points: '46 + 51 (Пантера) = 97',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '8',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '8',
+                            [States.Vigor]: '6',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '6',
+                            [Skills.Guts]: '8',
+                            [Skills.Notice]: '6',
+                            [Skills.Riding]: '6',
+                            [Skills.Stealth]: '6 (+4)',
+                            [Skills.Throwing]: '8',
+                            [Skills.Intimidation]: '6',
+                        }),
+                        quickTextFormat(`**Изъяны**: ${[
+                            getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.LowLightVision),
+                            `Слияние с Тенью (Shadowmeld)`,
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.SteadyHands),
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '7 (5)',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Лунная глефа (Moonglaive) (Сила+2, 3/6/12)`,
+                            `Кольчужная рубашка (+2)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`***Ночной саблезуб-Пантера (Nightsabre Panther)***: см. в Бестиарии Warcraft`),
+                        quickTextFormat(`**Развитие**: ${[
+                            `${getFromDict(EdgesTranslations, Edges.BeastMaster)} (сова-часовой)`,
+                            getFromDict(EdgesTranslations, Edges.CombatReflexes),
+                            `Рикошет (Ricochet) (${getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot)})`,
+                        ].join(', ')}`),
+                    ],
+                }),
+            ];
+        }
+
+        return [
+            {
+                text: 'Стражи (The Sentinels)',
+                style: 'header2',
+                pageBreak: 'before',
+            },
+            getSentinelsUnitsContent(),
         ];
     }
 
@@ -8024,6 +8191,7 @@ function getUnitsBuildingsGearContent() {
         getTitleContent(),
         getAllianceContent(),
         getHordeContent(),
+        getSentinelsContent(),
     ];
 }
 
