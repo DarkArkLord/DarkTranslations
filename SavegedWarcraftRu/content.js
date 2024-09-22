@@ -8046,7 +8046,7 @@ function getUnitsBuildingsGearContent() {
                             `Связь с деревом (Bond with Tree) (+2 к проверкам Ремонта построек Ночных Эльфов)`,
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия природы (Nature Magic))`,
                         ].join(', ')}`),
-                        quickTextFormat(`***Пункты Силы***: 10, ***Силы***: ${[
+                        quickTextFormat(`***Пункты Силы***: 10; ***Силы***: ${[
                             `${getFromDict(SettingPowersTranslations, SettingPowers.Mend)} (Обновление (Renew): работает на Древних (Ancients))`,
                             `${getFromDict(PowersTranslations, Powers.Dispel)} (Большой взрыв, уничтожает Светлячка (Wisp))`,
                         ].join(', ')}`),
@@ -8166,6 +8166,242 @@ function getUnitsBuildingsGearContent() {
                             `${getFromDict(EdgesTranslations, Edges.BeastMaster)} (сова-часовой)`,
                             getFromDict(EdgesTranslations, Edges.CombatReflexes),
                             `Рикошет (Ricochet) (${getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot)})`,
+                        ].join(', ')}`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Дриада (Dryad)',
+                    points: '48',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '8',
+                            [States.Smarts]: '4',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '10',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Faith]: '6',
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '8',
+                            [Skills.Knowledge]: '6 (Природа)',
+                            [Skills.Notice]: '6',
+                            [Skills.Survival]: '8',
+                            [Skills.Throwing]: '8',
+                        }),
+                        quickTextFormat(`**Изъяны**: ${[
+                            getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия природы (Nature Magic))`,
+                            getFromDict(EdgesTranslations, Edges.Champion),
+                            getFromDict(EdgesTranslations, Edges.ArcaneResistance),
+                        ].join(', ')}`),
+                        quickTextFormat(`***Пункты Силы***: 15; ***Заклинания***: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Smite)}*`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '7',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '7',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Копье (Сила+2, 3/6/12, +1 Досягаемость, +1 Парирование)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            getFromDict(EdgesTranslations, Edges.Marksman),
+                            getFromDict(EdgesTranslations, Edges.ImprovedArcaneResistance),
+                            `Быстрый бросок (Rapid Throw)`,
+                        ].join(', ')}`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Другид-медведь (Druid of the Claw)',
+                    points: '45',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '4',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '8',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Faith]: '8',
+                            [Skills.Fighting]: '8',
+                            [Skills.Guts]: '8',
+                            [Skills.Healing]: '6',
+                            [Skills.Knowledge]: '8 (Природа)',
+                            [Skills.Notice]: '6',
+                            [Skills.Survival]: '6',
+                        }),
+                        quickTextFormat(`**Изъяны**: ${[
+                            getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.LowLightVision),
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия природы (Nature Magic))`,
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Druid),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.NaturesFury),
+                            getFromDict(EdgesTranslations, Edges.Brawny),
+                        ].join(', ')}`),
+                        quickTextFormat(`***Пункты Силы***: 15; ***Заклинания***: ${[
+                            `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Smite)}*`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '6',
+                            [States.Toughness]: '8 (7)',
+                        }),
+                        quickTextFormat(`**Естественное оружие**: ${[
+                            `Когти (Сила+1)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Броня из шкур (+1)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.ShapeChange)}*`,
+                            getFromDict(EdgesTranslations, Edges.RapidRecharge),
+                            getFromDict(EdgesTranslations, Edges.PowerPoints),
+                            getFromDict(EdgesTranslations, Edges.NaturalLeader),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.SpellAura),
+                            getFromDict(EdgesTranslations, Edges.Berserk),
+                        ].join(', ')}`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Друид-ворон (Druid of the Talon)',
+                    points: '40',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '8',
+                            [States.Smarts]: '8',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '6',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Faith]: '8',
+                            [Skills.Fighting]: '6',
+                            [Skills.Guts]: '6',
+                            [Skills.Knowledge]: '8 (Природа)',
+                            [Skills.Notice]: '8',
+                            [Skills.Survival]: '6',
+                            [Skills.Tracking]: '6',
+                        }),
+                        quickTextFormat(`**Изъяны**: ${[
+                            getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.LowLightVision),
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия природы (Nature Magic))`,
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Druid),
+                            getFromDict(EdgesTranslations, Edges.Dodge),
+                        ].join(', ')}`),
+                        quickTextFormat(`***Пункты Силы***: 15; ***Заклинания***: ${[
+                            `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                        ].join(', ')}`),
+                        quickTextFormat(`***Форма Штормового Ворона (Storm Crow Form)***`),
+                        {
+                            stack: [
+                                getUnitAttributesContent({
+                                    [States.Agility]: '10',
+                                    [States.Strength]: '6',
+                                    [States.Vigor]: '8',
+                                }),
+                                quickTextFormat(`**Черты/Способности**: ${[
+                                    `${getFromDict(EdgesTranslations, Edges.Flight)} (10 дюймов, Подъем 6 дюймов)`,
+                                    `Когти/Клюв (Claws/Beak) (Сила+1)`,
+                                    getFromDict(EdgesTranslations, Edges.LowLightVision),
+                                ].join(', ')}`),
+                                getUnitCommonAttributesContent({
+                                    [States.Pace]: '2',
+                                    [States.Parry]: '5',
+                                    [States.Toughness]: '6',
+                                }),
+                            ],
+                            margin: [paragraphOffset, 0, 0, 0],
+                        },
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '6',
+                            [States.Toughness]: '6',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Боевой посох (Сила+2, +1 Досягаемость, +1 Парирование)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Stun)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.ShapeChange)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}*`,
+                            getFromDict(EdgesTranslations, Edges.RapidRecharge),
+                            getFromDict(EdgesTranslations, Edges.PowerPoints),
+                            getFromDict(EdgesTranslations, Edges.ImprovedDodge),
+                            getFromDict(EdgesTranslations, Edges.Command),
+                        ].join(', ')}`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Химера (Chimaera)',
+                    points: '92',
+                    lines: [
+                        quickTextFormat(`*см. Бестиарий Warcraft, плюс ${SkillsTranslations[Skills.Intimidation]} d10*.`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Волшебный дракон/Лесной дракончик (Faerie Dragon)',
+                    points: '92',
+                    lines: [
+                        quickTextFormat(`*см. Бестиарий Warcraft*.`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Гиппогриф (Hippogryph)',
+                    points: '64',
+                    lines: [
+                        quickTextFormat(`*см. Бестиарий Warcraft*.`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Наездник на Гиппогрифе (Hippogryph Rider)',
+                    points: '106',
+                    lines: [
+                        quickTextFormat(`*Гиппогриф (Hippogryph) плюс тренированный Лучник (Archer)*.`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Горный великан (Mountain Giant)',
+                    points: '93',
+                    lines: [
+                        quickTextFormat(`*см. Бестиарий Warcraft*.`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Метатель глеф/Баллиста (Glaive Thrower)',
+                    points: '77',
+                    lines: [
+                        quickTextFormat(`*Метатель Глеф включает двух специально обученных Светлячков (Wisps), которые оживляют транспортное средство.*`),
+                        quickTextFormat(`**Скорость/Ускорение**: 6/2; **Стойкость**: 14 (6)`),
+                        quickTextFormat(`**Осадная глефа (Seige Glaive)**: 2d8, ББ 2; 30/60/120`),
+                        getUnitAttributesContent({
+                            [States.Agility]: 'N/A',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '8',
+                            [States.Strength]: 'N/A',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Guts]: '8',
+                            [Skills.Notice]: '6',
+                            [Skills.Repair]: '6',
+                            [Skills.Shooting]: '8',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Marksman),
                         ].join(', ')}`),
                     ],
                 }),
