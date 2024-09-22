@@ -8792,6 +8792,483 @@ function getUnitsBuildingsGearContent() {
                     },
                     alignment: 'left',
                 },
+                {
+                    text: 'Снаряжение',
+                    style: 'header3',
+                },
+                {
+                    table: { // Базовое оружие
+                        widths: ['*', 'auto', 'auto', 50, 'auto', 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Базовое оружие',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Дистанция',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Урон',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Вес',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Мин. Сила',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Длинный лук',
+                                },
+                                {
+                                    text: `12/24/48`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '4',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Эльфийский длинный дук',
+                                    italics: true,
+                                },
+                                {
+                                    text: `15/30/60`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d6`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5/5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Требуется Стрельба d8+',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Лунная глефа',
+                                },
+                                {
+                                    text: `3/6/12`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `Сила+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Ближний и дальний бой',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Метательная глефа',
+                                    italics: true,
+                                },
+                                {
+                                    text: `5/10/15`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `Сила+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '20/7',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '2',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '--',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Ближний и дальний бой',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Джавелин',
+                                    italics: true,
+                                },
+                                {
+                                    text: `5/10/15`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `Сила+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '1/1',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '3',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'd6',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Метательное копье',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Осадная глефа головорубка (Vorpal Siege Glaive)',
+                                },
+                                {
+                                    text: `30/60/120`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2d8`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '100/20',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'N/A',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'N/A',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Пробивает как пушка (см. SW1 с. 53, SW2 с. 78)',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+                '\n',
+                {
+                    table: { // Улучшения оружия
+                        widths: ['*', 'auto', 50, 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Улучшения оружия',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Бонус снаряжения',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Благословенное оружие',
+                                },
+                                {
+                                    text: `+1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+10/+2',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Благословение Луны/Сила Природы',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Зачарованное оружие',
+                                },
+                                {
+                                    text: `+1 урон, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+20/+5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Зачарование Луны/Мощь Природы',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Укрепленное оружие',
+                                },
+                                {
+                                    text: `+2 урон, +1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+40/+7',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Месть Луны/Месть Природы',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+                '\n',
+                {
+                    table: { // Базовая броня
+                        widths: ['*', 'auto', 'auto', 50, 'auto', 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Базовая броня',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Броня',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Зоны',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Вес',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Броня из шкур/Кожаная броня',
+                                },
+                                {
+                                    text: `+1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `2/1`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Кольчужный хауберк',
+                                },
+                                {
+                                    text: `+2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Торс, руки, ноги, 50% головы',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `5/2`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: `20`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'В комплект входит легкий шлем или капюшон.',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
+                '\n',
+                {
+                    table: { // Улучшения брони
+                        widths: ['*', 'auto', 50, 'auto'],
+                        body: [
+                            [
+                                {
+                                    text: 'Улучшения брони',
+                                    style: 'header4',
+                                },
+                                {
+                                    text: 'Бонус снаряжения',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Цена\n(З/Д)',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Примечания',
+                                    bold: true,
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Благословенная броня',
+                                },
+                                {
+                                    text: `-1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+10/+5',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Благословение Луны/Сила Природы',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Зачарованная броня',
+                                },
+                                {
+                                    text: `+1 броня, -1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+15/+7',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Зачарование Луны/Мощь Природы',
+                                    alignment: 'center',
+                                },
+                            ],
+                            [
+                                {
+                                    text: 'Укрепленная броня',
+                                },
+                                {
+                                    text: `+2 брони, -1 ББ`,
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: '+30/+10',
+                                    alignment: 'center',
+                                },
+                                {
+                                    text: 'Защита Луны/Стойкость Природы',
+                                    alignment: 'center',
+                                },
+                            ],
+                        ]
+                    },
+                    alignment: 'left',
+                },
             ];
         }
 
