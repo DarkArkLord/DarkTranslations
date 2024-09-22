@@ -9283,6 +9283,151 @@ function getUnitsBuildingsGearContent() {
         ];
     }
 
+    function getUndeadScourgeContent() {
+        function getUndeadScourgeUnitsContent() {
+            return [
+                {
+                    text: 'Юниты (Units)',
+                    style: 'header3',
+                },
+                getUnitContent({
+                    title: 'Аколит/Послушник (Acolyte)',
+                    points: '27',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '4',
+                            [States.Vigor]: '4',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Faith]: '6',
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '6',
+                            ['???']: '4',
+                            [Skills.Notice]: '4',
+                        }),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '4',
+                        }),
+                        quickTextFormat(`**Изъяны**: ${[
+                            `${getFromDict(HindrancesTranslations, Hindrances.Delusional)} (Вера в Культ Смерти)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Чудеса - Нежить (Miracles – Undeath))`,
+                        ].join(', ')}`),
+                        quickTextFormat(`***Нежить***: **Пункты Силы**: 10; **Силы**: ${[
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Blight)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Contact)}*`,
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}*`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Посох (Сила+2, +1 Парирование)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: Приносится в жертву на алтаре и превращается в Тень (Shade)`),
+                    ],
+                }),
+                getTipText([
+                    quickTextFormat(`По поводу *undefned* - я не знаю, что это должно быть. В оригинале буквально: *Guts d6, d4, Notice d4*. Возможно, подразумевается *Знание*, но это не точно.`),
+                ]),
+                getUnitContent({
+                    title: 'Некромант (Necromancer)',
+                    points: '40',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '8',
+                            [States.Spirit]: '6',
+                            [States.Strength]: '4',
+                            [States.Vigor]: '6',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '10',
+                            [Skills.Intimidation]: '8',
+                            [Skills.Knowledge]: '8 (Магия)',
+                            [Skills.Notice]: '6',
+                            [Skills.Spellcasting]: '8',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
+                            getFromDict(EdgesTranslations, Edges.Wizard),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Necromancer),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Некромантия**: ***Пункты Силы***: 10; ***Заклинания***: ${[
+                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Blight)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Zombie)}*`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '5',
+                        }),
+                        quickTextFormat(`**Снаряжение**: ${[
+                            `Посох (Сила+2, +1 Парирование)`,
+                        ].join(', ')}`),
+                        quickTextFormat(`**Развитие**: ${[
+                            `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Quickness)}*`,
+                            getFromDict(EdgesTranslations, Edges.RapidRecharge),
+                            getFromDict(EdgesTranslations, Edges.PowerPoints),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.DarkRitual),
+                            getFromDict(SettingEdgesTranslations, SettingEdges.CreateUndead),
+                        ].join(', ')}`),
+                    ],
+                }),
+                getUnitContent({
+                    title: 'Тень (Shade)',
+                    points: '30',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '6',
+                            [States.Smarts]: '6',
+                            [States.Spirit]: '8',
+                            [States.Strength]: '0',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Fighting]: '4',
+                            [Skills.Guts]: '10',
+                            [Skills.Notice]: '8',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Undead),
+                            `${getFromDict(EdgesTranslations, Edges.Ethereal)} (не может повлиять на физические объекты)`,
+                            `Обнаружить невидимость (Detect Invisibility)`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '5',
+                            [States.Toughness]: '8',
+                        }),
+                    ],
+                }),
+            ];
+        }
+
+        function getUndeadScourgeCostsContent() {
+            return [
+                //
+            ];
+        }
+
+        return [
+            {
+                text: 'Плеть Нежити (The Undead Scourge)',
+                style: 'header2',
+                pageBreak: 'before',
+            },
+            getUndeadScourgeUnitsContent(),
+            getUndeadScourgeCostsContent(),
+        ];
+    }
+
     return [
         {
             text: 'Юниты, Здания и Снаряжение (Units, Buildings and Gear)',
@@ -9293,6 +9438,7 @@ function getUnitsBuildingsGearContent() {
         getAllianceContent(),
         getHordeContent(),
         getSentinelsContent(),
+        getUndeadScourgeContent(),
     ];
 }
 

@@ -490,7 +490,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Huge]: 'Огромный',
     [Edges.Strength]: undefined,
     [Edges.Stun]: undefined,
-    [Edges.Undead]: undefined,
+    [Edges.Undead]: 'Нежить',
     [Edges.WallWalker]: undefined,
     [Edges.Weakness]: undefined,
     //#endregion
