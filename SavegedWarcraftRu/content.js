@@ -1,120 +1,4 @@
-const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('../common/savageWorldsTranslations');
-
-const SettingEdges = Object.freeze({
-    Defend: 'Defend',
-    ImprovedDefend: 'Improved Defend',
-    RapidShot: 'Rapid Shot',
-    ImprovedRapidShot: 'Improved Rapid Shot',
-    StrafingRun: 'Strafing Run',
-    TwoArrowsNocked: 'Two Arrows Nocked',
-    HailOfArrows: 'Hail of Arrows',
-    ArcaneUndead: 'Arcane Undead',
-    BrillianceAura: 'Brilliance Aura',
-    CaptureSpell: 'Capture Spell',
-    ImprovedCaptureSpell: 'Improved Capture Spell',
-    CreateUndead: 'Create Undead',
-    DarkRitual: 'Dark Ritual',
-    DrainSpell: 'Drain Spell',
-    MagicalBeastForm: 'Magical Beast Form',
-    SpellAura: 'Spell Aura',
-    Artillerist: 'Artillerist',
-    Cavalry: 'Cavalry',
-    DruidPriestShaman: 'Druid/Priest/Shaman',
-    Druid: 'Druid',
-    Priest: 'Priest',
-    Shaman: 'Shaman',
-    Musketeer: 'Musketeer',
-    Necromancer: 'Necromancer',
-    SpellBreaker: 'Spell Breaker',
-    Warlock: 'Warlock',
-    NaturesFury: 'Nature’s Fury',
-});
-
-const SettingEdgesTranslations = Object.freeze({
-    [SettingEdges.Defend]: 'Оборона',
-    [SettingEdges.ImprovedDefend]: 'Улучшенная Оборона',
-    [SettingEdges.RapidShot]: 'Быстрый выстрел',
-    [SettingEdges.ImprovedRapidShot]: 'Улучшенный быстрый выстрел',
-    [SettingEdges.StrafingRun]: 'Бреющий полет',
-    [SettingEdges.TwoArrowsNocked]: 'Две стрелы на тетиве',
-    [SettingEdges.HailOfArrows]: 'Град стрел',
-    [SettingEdges.ArcaneUndead]: 'Магическая нежить',
-    [SettingEdges.BrillianceAura]: 'Аура великолепия',
-    [SettingEdges.CaptureSpell]: 'Захват заклинания',
-    [SettingEdges.ImprovedCaptureSpell]: 'Улучшенный захват заклинания',
-    [SettingEdges.CreateUndead]: 'Создание нежити',
-    [SettingEdges.DarkRitual]: 'Темный ритуал',
-    [SettingEdges.DrainSpell]: 'Истощение заклинания',
-    [SettingEdges.MagicalBeastForm]: 'Форма магического зверя',
-    [SettingEdges.SpellAura]: 'Аура заклинания',
-    [SettingEdges.Artillerist]: 'Артиллерист',
-    [SettingEdges.Cavalry]: 'Кавалерия',
-    [SettingEdges.DruidPriestShaman]: 'Друид/Жрец/Шаман',
-    [SettingEdges.Druid]: 'Друид',
-    [SettingEdges.Priest]: 'Жрец',
-    [SettingEdges.Shaman]: 'Шаман',
-    [SettingEdges.Musketeer]: 'Мушкетер',
-    [SettingEdges.Necromancer]: 'Некромант',
-    [SettingEdges.SpellBreaker]: 'Разрушитель заклинаний',
-    [SettingEdges.Warlock]: 'Чернокнижник',
-    [SettingEdges.NaturesFury]: 'Ярость природы',
-});
-
-const SettingPowers = Object.freeze({
-    ArmorOffensive: 'Armor, Offensive',
-    BlastContinuous: 'Blast, Continuous',
-    Blight: 'Blight',
-    Bloodlust: 'Bloodlust',
-    Bombardment: 'Bombardment',
-    Contact: 'Contact',
-    Doom: 'Doom',
-    EtherealForm: 'Ethereal Form',
-    FarSight: 'Far Sight',
-    Inferno: 'Inferno',
-    InnerFire: 'Inner Fire',
-    LifeDrain: 'Life Drain',
-    Mend: 'Mend',
-    Slow: 'Slow',
-    Summon: 'Summon',
-    TransformOther: 'Transform Other',
-    // ???
-    ManaBurn: 'Mana Burn',
-    AntiMagicShell: 'Anti-Magic Shell',
-    ContinuousBlast: 'Continuous Blast',
-    OffensiveArmor: 'Offensive Armor',
-    FrostNova: 'Frost Nova',
-    DeathCoil: 'Death Coil',
-    DeathPact: 'Death Pact',
-    Paralyze: 'Paralyze',
-});
-
-const SettingPowersTranslations = Object.freeze({
-    [SettingPowers.ArmorOffensive]: 'Наступательная Броня',
-    [SettingPowers.BlastContinuous]: 'Продолжительный взрыв',
-    [SettingPowers.Blight]: 'Порча',
-    [SettingPowers.Bloodlust]: 'Жажда крови',
-    [SettingPowers.Bombardment]: 'Бомбардировка',
-    [SettingPowers.Contact]: 'Контакт',
-    [SettingPowers.Doom]: 'Рок',
-    [SettingPowers.EtherealForm]: 'Эфирная форма',
-    [SettingPowers.FarSight]: 'Зоркость',
-    [SettingPowers.Inferno]: 'Инферно',
-    [SettingPowers.InnerFire]: 'Внутренний огонь',
-    [SettingPowers.LifeDrain]: 'Высасывание жизни',
-    [SettingPowers.Mend]: 'Починка',
-    [SettingPowers.Slow]: 'Замедление',
-    [SettingPowers.Summon]: 'Призыв',
-    [SettingPowers.TransformOther]: 'Преобразование другого',
-    // ???
-    [SettingPowers.ManaBurn]: 'Сжигание маны',
-    [SettingPowers.AntiMagicShell]: 'Доспех Антимагии',
-    [SettingPowers.ContinuousBlast]: 'Продолжительный взрыв',
-    [SettingPowers.OffensiveArmor]: 'Наступательная Броня',
-    [SettingPowers.FrostNova]: 'Кольцо льда',
-    [SettingPowers.DeathCoil]: 'Лик смерти',
-    [SettingPowers.DeathPact]: 'Смертельный союз',
-    [SettingPowers.Paralyze]: 'Паралич',
-});
+const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('./settingTranslations');
 
 function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
@@ -581,7 +465,7 @@ function getCharacterCreationContent() {
                 ...styles,
                 stack: [
                     {
-                        text: `${SettingEdgesTranslations[name]} (${name})`,
+                        text: `${EdgesTranslations[name]} (${name})`,
                         style: 'header4',
                     },
                     {
@@ -615,7 +499,7 @@ function getCharacterCreationContent() {
         function getCombatEdgesContent() {
             return [
                 { text: 'Боевые черты (Combat Edges)', style: 'header3', },
-                createEdgeElement(SettingEdges.Defend,
+                createEdgeElement(Edges.Defend,
                     [
                         `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
                         `${EdgesTranslations[Edges.Block]} (${Edges.Block})`,
@@ -624,10 +508,10 @@ function getCharacterCreationContent() {
                         quickTextFormat('Вы научились мастерски пользоваться щитом. Теперь вы можете добавлять бонус **Брони** и **Защиты** от щита против всех атак, независимо от направления, с которого они наносятся. Ваш **Шаг** снижается до **2** при использовании этой черты.'),
                     ]
                 ),
-                createEdgeElement(SettingEdges.ImprovedDefend,
+                createEdgeElement(Edges.ImprovedDefend,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${SettingEdgesTranslations[SettingEdges.Defend]} (${SettingEdges.Defend})`,
+                        `${EdgesTranslations[Edges.Defend]} (${Edges.Defend})`,
                     ],
                     [
                         quickTextFormat(`Ваше мастерство владения щитом возросло до такой степени, что вы можете подготовиться даже к ракетному обстрелу и защитить себя. Вы можете добавить бонус **Защиты** от Блока (${Edges.Block}) и Блока+ (${Edges.ImprovedBlock}) к бонусу **Стойкости** вашего щита. Ваш **Шаг** снижается до **2** при использовании этой черты.`),
@@ -636,7 +520,7 @@ function getCharacterCreationContent() {
                         margin: [paragraphOffset, 0, 0, 0],
                     }
                 ),
-                createEdgeElement(SettingEdges.RapidShot,
+                createEdgeElement(Edges.RapidShot,
                     [
                         `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
                         `Стрельба (${Skills.Shooting}) (или Метание (${Skills.Throwing})) d10+`,
@@ -645,10 +529,10 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Быстрый лучник может быстро стрелять, жертвуя точностью ради скорости. Персонаж может совершать дополнительную атаку Стрельбой (${Skills.Shooting}) или Метанием (${Skills.Throwing}) каждый раунд со штрафом **-2**. Оба выстрела должны быть сделаны одновременно, поэтому **Дикие Карты** бросают **два кубика Стрельбы и один Дикий кубик**.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.ImprovedRapidShot,
+                createEdgeElement(Edges.ImprovedRapidShot,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${SettingEdgesTranslations[SettingEdges.RapidShot]} (${SettingEdges.RapidShot})`,
+                        `${EdgesTranslations[Edges.RapidShot]} (${Edges.RapidShot})`,
                     ],
                     [
                         quickTextFormat(`То же, что и выше, но персонаж может игнорировать штраф **-2** для **Быстрого выстрела**.`),
@@ -657,10 +541,10 @@ function getCharacterCreationContent() {
                         margin: [paragraphOffset, 0, 0, 0],
                     }
                 ),
-                createEdgeElement(SettingEdges.StrafingRun,
+                createEdgeElement(Edges.StrafingRun,
                     [
                         `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
-                        `${SettingEdgesTranslations[SettingEdges.Cavalry]} (${SettingEdges.Cavalry})`,
+                        `${EdgesTranslations[Edges.Cavalry]} (${Edges.Cavalry})`,
                         `${EdgesTranslations[Edges.SteadyHands]} (${Edges.SteadyHands})`,
                         'Летающее ездовое животное (flying mount)',
                     ],
@@ -668,7 +552,7 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Вы можете в полной мере воспользоваться способностью летающего ездового животного пролетать мимо противника. Когда ваше ездовое животное проходит в пределах **2 дюймов** от цели (включая атаку налетом (Swoop)), вы получаете **+2** к атаке и урону по этой цели.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.TwoArrowsNocked,
+                createEdgeElement(Edges.TwoArrowsNocked,
                     [
                         `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
                         `${StatesTranslations[States.Agility]} (${States.Agility}) d8+`,
@@ -678,12 +562,12 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Вы можете использовать **Двойной выстрел (double-tap)** (см. SW1 с. 77, SW2 с. 73) с луком, ибо вы можете стрелять двумя стрелами одновременно или научились выхватывать стрелы почти мгновенно.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.HailOfArrows,
+                createEdgeElement(Edges.HailOfArrows,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
                         `${StatesTranslations[States.Agility]} (${States.Agility}) d10+`,
                         `${SkillsTranslations[Skills.Shooting]} (${Skills.Shooting}) d12+`,
-                        `${SettingEdgesTranslations[SettingEdges.TwoArrowsNocked]} (${SettingEdges.TwoArrowsNocked})`,
+                        `${EdgesTranslations[Edges.TwoArrowsNocked]} (${Edges.TwoArrowsNocked})`,
                     ],
                     [
                         quickTextFormat(`Вы так быстро натягиваете тетиву, что можете послать град из полудюжины (шести) стрел в группу противников, жертвуя любым намеком на точность. Это действует как **Огонь на подавление (Suppressive Fire)** (см. SW1 с. 74, SW2 с. 94).`),
@@ -698,17 +582,17 @@ function getCharacterCreationContent() {
         function getPowerEdgesContent() {
             return [
                 { text: 'Сверхъестественные черты (Power Edges)', style: 'header3', },
-                createEdgeElement(SettingEdges.ArcaneUndead,
+                createEdgeElement(Edges.ArcaneUndead,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${SettingEdgesTranslations[SettingEdges.Necromancer]} (${SettingEdges.Necromancer})`,
+                        `${EdgesTranslations[Edges.Necromancer]} (${Edges.Necromancer})`,
                         `${PowersTranslations[Powers.Zombie]} (${Powers.Zombie})`,
                     ],
                     [
                         quickTextFormat(`Ваше мастерство владения энергией нежити возросло до такой степени, что вы можете передавать часть своей магической мощи вызываемой нежити. Используя силу **${PowersTranslations[Powers.Zombie]} (${Powers.Zombie})**, вы можете потратить дополнительный Пункт Силы, чтобы создать Скелета-Мага. Это скелет с Колдовством (${Skills.Spellcasting}) **d6**, **10** Пунктами Силы и способностью использовать Силу **${PowersTranslations[Powers.Bolt]} (${Powers.Bolt})**.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.BrillianceAura,
+                createEdgeElement(Edges.BrillianceAura,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
                         `${EdgesTranslations[Edges.Command]} (${Edges.Command})`,
@@ -719,10 +603,10 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Заклинатель может помогать группе персонажей с Мистическим даром (${Edges.ArcaneBackground}) в восстановлении их магической энергии. Этот персонаж может делиться преимуществом черты **${EdgesTranslations[Edges.RapidRecharge]} (${Edges.RapidRecharge})** с заклинателями, в количестве равном его типу кубика **Характера**. Все затронутые заклинатели должны иметь возможность провести один час в совместной медитации, чтобы эта черта возымела эффект.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.CaptureSpell,
+                createEdgeElement(Edges.CaptureSpell,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${SettingEdgesTranslations[SettingEdges.SpellBreaker]} (${SettingEdges.SpellBreaker})`,
+                        `${EdgesTranslations[Edges.SpellBreaker]} (${Edges.SpellBreaker})`,
                     ],
                     [
                         quickTextFormat(`Вы можете "поймать" заклинание, направленное на вас, и перенаправить его. Примените **${PowersTranslations[Powers.Dispel]} (${Powers.Dispel})** в ответ на заклинание Тайной Магии другого мага. Если вы сделаете подъём во встречной проверке, вы можете "поймать" заклинание. В следующем раунде вы можете переиспользовать "пойманное" заклинание бесплатно. Однако, если вы не можете применить "пойманное" заклинание, вы получаете штраф **-2** к броску Колдовства (${Skills.Spellcasting}) (иные Аспекты допустимы). Параметры и Аспекты заклинания остаются такими-же, какими их заявил оригинальный заклинатель. Однако вы получаете дополнительные эффекты за подъёмы, если получите их в своей проверке Колдовства (${Skills.Spellcasting}).`),
@@ -747,10 +631,10 @@ function getCharacterCreationContent() {
                     quickTextFormat(`По поводу фразы *"Если "ловец" проваливает проверку, Призыв немедленно заканчивается (If the caster fails, the Summon ends immediately)"*. "The caster" переведено как "ловец", чтобы было понятнее, чей провал заканчивает призыв. Провал "ловца" заканчивает призыв, ибо подчинить призванное существо не удалось и применяется стандартный эффект **Рассеивания (${Powers.Dispel})**.`),
                     quickTextFormat(`По причине отсутствия уточнений на этот счет, для того, чтобы "поймать" атакующее заклинание, маг должен быть *наготове* и прервать действие оппонента согласно правилам по прерыванию (см. SW1 с. 69, SW2 с. 17), как указано в описании **Рассеивания (${Powers.Dispel})**.`),
                 ]),
-                createEdgeElement(SettingEdges.ImprovedCaptureSpell,
+                createEdgeElement(Edges.ImprovedCaptureSpell,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${SettingEdgesTranslations[SettingEdges.CaptureSpell]} (${SettingEdges.CaptureSpell})`,
+                        `${EdgesTranslations[Edges.CaptureSpell]} (${Edges.CaptureSpell})`,
                     ],
                     [
                         quickTextFormat(`То же, что и выше, только теперь вам не нужно делать подъем (достаточно успеха) для захвата заклинания, и вы не получаете штраф **-2** за использование заклинания, которое вы не можете применить.`),
@@ -759,48 +643,48 @@ function getCharacterCreationContent() {
                         margin: [paragraphOffset, 0, 0, 0],
                     }
                 ),
-                createEdgeElement(SettingEdges.CreateUndead,
+                createEdgeElement(Edges.CreateUndead,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${SettingEdgesTranslations[SettingEdges.Necromancer]} (${SettingEdges.Necromancer})`,
+                        `${EdgesTranslations[Edges.Necromancer]} (${Edges.Necromancer})`,
                         `${PowersTranslations[Powers.Zombie]} (${Powers.Zombie}) и ${PowersTranslations[Powers.Puppet]} (${Powers.Puppet})`,
                     ],
                     [
                         quickTextFormat(`Вы изучили нечестивые ритуалы для создания более великих и постоянных форм нежити. В долгом (минимум 4 часа) ритуале вы можете оживить труп, чтобы создать мощную, постоянную нежить. Нежить, которую вы создаете, находится под вашим контролем и будет следовать вашим приказам. Создание *Тени (Shade)* стоит **3** Пункта Силы и требует добровольной жертвы, создание *Могильного Дьявола (Могильщик, Crypt Fiend)* стоит **5** Пунктов Силы и нерубский труп, создание *Мерзости (Мясник, Abomination)* стоит **5** Пунктов Силы и не менее 5 гуманоидных трупов, а создание *Ледяного Змея (Frost Wyrm)* для некроманта ранга Героя (${Ranks.Heroic}) стоит **9** Пунктов Силы и останки дракона.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.DarkRitual,
+                createEdgeElement(Edges.DarkRitual,
                     [
                         `${RanksTranslations[Ranks.Heroic]} (${Ranks.Heroic})`,
                         `${EdgesTranslations[Edges.SoulDrain]} (${Edges.SoulDrain})`,
-                        `и ${SettingEdgesTranslations[SettingEdges.Necromancer]} (${SettingEdges.Necromancer})`,
-                        `${SettingEdgesTranslations[SettingEdges.Warlock]} (${SettingEdges.Warlock}) или ${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Тролль Вуду (Troll Voodoo))`,
+                        `и ${EdgesTranslations[Edges.Necromancer]} (${Edges.Necromancer})`,
+                        `${EdgesTranslations[Edges.Warlock]} (${Edges.Warlock}) или ${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Тролль Вуду (Troll Voodoo))`,
                     ],
                     [
                         quickTextFormat(`Принося в жертву живое и разумное существо в 15-минутном ритуале, персонаж получает **1d6** временных Пунктов Силы, благодаря чему может превысить свой обычный максимум. Если заклинатель делает подъем, количество Пунктов Силы увеличивается до **2d6**. Наконец, принесение в жертву Дикой Карты удваивает количество полученных Очков Силы.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.DrainSpell,
+                createEdgeElement(Edges.DrainSpell,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
-                        `${SettingEdgesTranslations[SettingEdges.SpellBreaker]} (${SettingEdges.SpellBreaker})`,
+                        `${EdgesTranslations[Edges.SpellBreaker]} (${Edges.SpellBreaker})`,
                     ],
                     [
                         quickTextFormat(`Вы можете поглощать энергию заклинаний. Когда вы **Рассеиваете (${Powers.Dispel})** заклинание Тайной Магии *в процессе накладывания*, если вы получаете подъем во встречной проверке, вы можете добавить стоимость заклинания к своему собственному запасу Пунктов Силы, даже превысив свой обычный максимум. Однако в таком случае черта **${EdgesTranslations[Edges.Wizard]} (${Edges.Wizard})** не может снизить стоимость **Рассеивания (${Powers.Dispel})** ниже единицы.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.MagicalBeastForm,
+                createEdgeElement(Edges.MagicalBeastForm,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
                         `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Магия природы (Nature Magic))`,
-                        `${SettingEdgesTranslations[SettingEdges.Druid]} (${SettingEdges.Druid})`,
+                        `${EdgesTranslations[Edges.Druid]} (${Edges.Druid})`,
                         `${PowersTranslations[Powers.ShapeChange]} (${Powers.ShapeChange})`,
                     ],
                     [
                         quickTextFormat(`Вы можете творить другие заклинания, будучи превращенным в животное. Выберите одну форму животного: находясь в этой форме, вы творите заклинания как обычно, хотя вы все равно получаете штраф за поддержание **Превращения (${Powers.ShapeChange})**.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.SpellAura,
+                createEdgeElement(Edges.SpellAura,
                     [
                         `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
                         `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground})`,
@@ -808,7 +692,7 @@ function getCharacterCreationContent() {
                         `Магический навык (Arcane Skill) d10+`,
                     ],
                     [
-                        quickTextFormat(`За **2** Пункта Силы вы можете расширить полезное заклинание (beneficial spell), чтобы оно повлияло на всех союзных персонажей в пределах **Шаблона малого взрыва** с центром на заклинателе. За **4** Пункта Силы вы можете расширить его до **Шаблона среднего взрыва**, а за **6** Пунктов Силы — до **Большого взрыва**. Заклинатель делает проверку Магического Навыка (Arcane Skill) как обычно, и эффекты идентичны для всех целей. После того, как заклинание было произнесено, цели заклинания должны оставаться в пределах количества дюймов, равного **Магическому Атрибуту (Arcane Attribute)** заклинателя, иначе эффекты заклинания будут потеряны. По истечении срока действия поддержание **Ауры заклинания (${SettingEdges.SpellAura})** стоит **вдвое** больше обычного, хотя заклинатель может вместо этого выбрать поддержание заклинания только на одном человеке за обычную стоимость.`),
+                        quickTextFormat(`За **2** Пункта Силы вы можете расширить полезное заклинание (beneficial spell), чтобы оно повлияло на всех союзных персонажей в пределах **Шаблона малого взрыва** с центром на заклинателе. За **4** Пункта Силы вы можете расширить его до **Шаблона среднего взрыва**, а за **6** Пунктов Силы — до **Большого взрыва**. Заклинатель делает проверку Магического Навыка (Arcane Skill) как обычно, и эффекты идентичны для всех целей. После того, как заклинание было произнесено, цели заклинания должны оставаться в пределах количества дюймов, равного **Магическому Атрибуту (Arcane Attribute)** заклинателя, иначе эффекты заклинания будут потеряны. По истечении срока действия поддержание **Ауры заклинания (${Edges.SpellAura})** стоит **вдвое** больше обычного, хотя заклинатель может вместо этого выбрать поддержание заклинания только на одном человеке за обычную стоимость.`),
                     ],
                 ),
             ];
@@ -817,7 +701,7 @@ function getCharacterCreationContent() {
         function getProfessionalEdgesContent() {
             return [
                 { text: 'Профессиональные черты (Professional Edges)', style: 'header3', },
-                createEdgeElement(SettingEdges.Artillerist,
+                createEdgeElement(Edges.Artillerist,
                     [
                         `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
                         `${SkillsTranslations[Skills.Shooting]} (${Skills.Shooting}) d8+`,
@@ -827,7 +711,7 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Вы обучены использованию большого порохового оружия и искусны в его использовании. Время перезарядки пушек, мортир и т.п. сокращается для вас на одно Действие. Вы не можете перемещать такое оружие во время перезарядки.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.Cavalry,
+                createEdgeElement(Edges.Cavalry,
                     [
                         `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
                         `${SkillsTranslations[Skills.Riding]} (${Skills.Riding}) d6+`,
@@ -836,13 +720,13 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Вы обучены верховому бою. Вы получаете **+2** ко всем проверкам **Верховой езды (${Skills.Riding})** и можете тратить Фишки, чтобы поглощать урон, нанесенный вашему скакуну. Кроме того, ваша **Верховая езда (${Skills.Riding})** считается на один тип кубика выше при определении низшего из ваших **Драки (${Skills.Fighting})** и **Верховой езды (${Skills.Riding})** во время верхового боя.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.DruidPriestShaman,
+                createEdgeElement(Edges.DruidPriestShaman,
                     [],
                     [
                         quickTextFormat(`Многие традиции Азерота превратили магию в точное искусство. Это идентично черте **${EdgesTranslations[Edges.Wizard]} (${Edges.Wizard})**, за исключением того, что оно применяется к различным **Мистическим дарам (${Edges.ArcaneBackground}) (Чудеса (Miracles))**, а требования к навыкам Знаний (${Skills.Knowledge}) различаются. Друиды и шаманы изучают Природу (Nature), Жрецы Света и Жрицы Луны изучают Религию (Religion). Однако из-за долгого изгнания шаманизма из орочьих племен шаманы орков должны иметь изъян **${HindrancesTranslations[Hindrances.Elderly]} (${Hindrances.Elderly})**, чтобы взять эту черту.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.Musketeer,
+                createEdgeElement(Edges.Musketeer,
                     [
                         `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
                         `${SkillsTranslations[Skills.Shooting]} (${Skills.Shooting}) d8+`,
@@ -852,30 +736,30 @@ function getCharacterCreationContent() {
                         quickTextFormat(`Вы привыкли использовать огнестрельное оружие с черным порохом и можете быстро перезаряжаться. Вы можете перезарядить огнестрельное оружие одним действием. Вы можете ходить во время перезарядки, но не бежать. Это преимущество применимо только к ручному огнестрельному оружию, а не к пушкам, мортирам и т.п.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.Necromancer,
+                createEdgeElement(Edges.Necromancer,
                     [
                         `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Тайная Магия (Arcane Magic))`,
                     ],
                     [
-                        quickTextFormat(`Вы проникли в тайны нежити. Вы получаете доступ к заклинаниям из списка Некроманта (${SettingEdges.Necromancer}). Вы также получаете **+2** ко всем проверкам на управление или взаимодействие с нежитью (включая использование Сил **${PowersTranslations[Powers.Zombie]} (${Powers.Zombie})** и **${PowersTranslations[Powers.Puppet]} (${Powers.Puppet})** на нежити) и можете использовать черту **${EdgesTranslations[Edges.Command]} (${Edges.Command})** на безмозглой нежити (обычно невозможно).`),
+                        quickTextFormat(`Вы проникли в тайны нежити. Вы получаете доступ к заклинаниям из списка Некроманта (${Edges.Necromancer}). Вы также получаете **+2** ко всем проверкам на управление или взаимодействие с нежитью (включая использование Сил **${PowersTranslations[Powers.Zombie]} (${Powers.Zombie})** и **${PowersTranslations[Powers.Puppet]} (${Powers.Puppet})** на нежити) и можете использовать черту **${EdgesTranslations[Edges.Command]} (${Edges.Command})** на безмозглой нежити (обычно невозможно).`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.SpellBreaker,
+                createEdgeElement(Edges.SpellBreaker,
                     [
                         `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
                         `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Магия (Magic))`,
-                        `${PowersTranslations[Powers.Dispel]} (${Powers.Dispel}) и ${SettingPowersTranslations[SettingPowers.ManaBurn]} (${SettingPowers.ManaBurn})`,
+                        `${PowersTranslations[Powers.Dispel]} (${Powers.Dispel}) и ${PowersTranslations[Powers.ManaBurn]} (${Powers.ManaBurn})`,
                     ],
                     [
-                        quickTextFormat(`Вы изучили нюансы потока магической энергии. Вы получаете **+2** к своему броску Колдовства (${Skills.Spellcasting}), когда используете **${PowersTranslations[Powers.Dispel]} (${Powers.Dispel})** или **${SettingPowersTranslations[SettingPowers.ManaBurn]} (${SettingPowers.ManaBurn})**, и вы получаете **+1** к любому встречному броску на сопротивление эффектам заклинаний.`),
+                        quickTextFormat(`Вы изучили нюансы потока магической энергии. Вы получаете **+2** к своему броску Колдовства (${Skills.Spellcasting}), когда используете **${PowersTranslations[Powers.Dispel]} (${Powers.Dispel})** или **${PowersTranslations[Powers.ManaBurn]} (${Powers.ManaBurn})**, и вы получаете **+1** к любому встречному броску на сопротивление эффектам заклинаний.`),
                     ],
                 ),
-                createEdgeElement(SettingEdges.Warlock,
+                createEdgeElement(Edges.Warlock,
                     [
                         `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Тайная Магия (Arcane Magic))`,
                     ],
                     [
-                        quickTextFormat(`Вы раскрыли запретные силы демонов и Круговерти Пустоты. Вы получаете доступ к списку заклинаний Чернокнижника (${SettingEdges.Warlock}), получаете бонус в **5** Пунктов Силы и иммунитет к Зависимости от Тайной Магии (Arcane Magic Addiction). Однако вы автоматически страдаете от изъяна **${HindrancesTranslations[Hindrances.Bloodthirsty]} (${Hindrances.Bloodthirsty})**. Если у вас уже есть этот изъян, вы получаете либо **${HindrancesTranslations[Hindrances.Delusional]} (${Hindrances.Delusional})**, либо **${HindrancesTranslations[Hindrances.Vengeful]} (${Hindrances.Vengeful})**.`),
+                        quickTextFormat(`Вы раскрыли запретные силы демонов и Круговерти Пустоты. Вы получаете доступ к списку заклинаний Чернокнижника (${Edges.Warlock}), получаете бонус в **5** Пунктов Силы и иммунитет к Зависимости от Тайной Магии (Arcane Magic Addiction). Однако вы автоматически страдаете от изъяна **${HindrancesTranslations[Hindrances.Bloodthirsty]} (${Hindrances.Bloodthirsty})**. Если у вас уже есть этот изъян, вы получаете либо **${HindrancesTranslations[Hindrances.Delusional]} (${Hindrances.Delusional})**, либо **${HindrancesTranslations[Hindrances.Vengeful]} (${Hindrances.Vengeful})**.`),
                     ],
                 ),
                 getTipText([
@@ -887,7 +771,7 @@ function getCharacterCreationContent() {
         function getWeirdEdgesContent() {
             return [
                 { text: 'Потусторонние черты (Weird Edges)', style: 'header3', },
-                createEdgeElement(SettingEdges.NaturesFury,
+                createEdgeElement(Edges.NaturesFury,
                     [
                         `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
                         `${EdgesTranslations[Edges.ArcaneBackground]} (${Edges.ArcaneBackground}) (Магия природы (Nature Magic))`,
@@ -930,11 +814,11 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.AntiMagicShell)} (${getFromDict(PowersTranslations, Powers.Armor)} против магии, +2/4 к сопротивлению заклинаниям)`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)}* (Огненный щит (Fire Shield))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.AntiMagicShell)} (${getFromDict(PowersTranslations, Powers.Armor)} против магии, +2/4 к сопротивлению заклинаниям)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.ArmorOffensive)}* (Огненный щит (Fire Shield))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Barrier)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Огненный шар (Fireball))`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ContinuousBlast)}* (Метель (Blizzard))`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.ContinuousBlast)}* (Метель (Blizzard))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burst)} (Молния (Lightning), Мороз (Frost))`),
@@ -947,20 +831,20 @@ function getCharacterCreationContent() {
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.FarSight)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Fly)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Light)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}* (${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}), истощает 1d6 Пунктов Силы в дополнение к Ранам)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.ManaBurn)}* (${PowersTranslations[Powers.Bolt]} (${Powers.Bolt}), истощает 1d6 Пунктов Силы в дополнение к Ранам)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Slow)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.SpeakLanguage)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Элементали Воды (Water Elementals)*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Summon)}: Элементали Воды (Water Elementals)*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Telekinesis)}`),
                                     quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Teleport)}*`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.TransformOther)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.TransformOther)}*`),
                                 ],
                             },
                         ],
@@ -970,9 +854,9 @@ function getCharacterCreationContent() {
                     '\n',
                     getTipText([
                         quickTextFormat(`Выше написано, что новые заклинания будут выделяться курсивом, но раз на раз не приходится. Например, **Наступательная Броня** то выделяется, то нет, к тому-же пишется то как **Armor, Offensive**, то как **Offensive Armor**.`),
-                        quickTextFormat(`Иногда выделяются заклинания, которые отсутствовали в **Savage Worlds Revised**, но были добавлены в **Savage Worlds Delux**, например, **${getFromDict(PowersTranslations, Powers.Teleport)}**. В версии конверсии от 28 марта 2004 она описывалась в списке новых Сил, а в версии от 29 марта 2005 встречается в списке модифицированных Сил. Описание же заклинания **${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}** было утеряно в версии от 29 марта 2005, хотя упоминание самого заклинания осталось.`),
-                        quickTextFormat(`Также встречаются новые заклинания с кратким описанием на основе других сил без выделания, например, **${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}**, **${getFromDict(SettingPowersTranslations, SettingPowers.AntiMagicShell)}**, **${getFromDict(SettingPowersTranslations, SettingPowers.DeathCoil)}** или **${getFromDict(SettingPowersTranslations, SettingPowers.DeathPact)}**.`),
-                        quickTextFormat(`Каких либо комментариев по поводу стоимости или других параметров для них, конечно же, не предусмотрено. Например, **${getFromDict(SettingPowersTranslations, SettingPowers.DeathCoil)}** имеет короткое описание *"${getFromDict(PowersTranslations, Powers.Bolt)} против живых, ${getFromDict(PowersTranslations, Powers.Healing)} против нежити"*. ${getFromDict(PowersTranslations, Powers.Bolt)} стоит **1+** Пункт Силы и применяется на дистанции, ${getFromDict(PowersTranslations, Powers.Healing)} стоит **3** Пункта Силы и применяется касанием. И какие же характеристики у **Лика смерти**? Никто не знает.`),
+                        quickTextFormat(`Иногда выделяются заклинания, которые отсутствовали в **Savage Worlds Revised**, но были добавлены в **Savage Worlds Delux**, например, **${getFromDict(PowersTranslations, Powers.Teleport)}**. В версии конверсии от 28 марта 2004 она описывалась в списке новых Сил, а в версии от 29 марта 2005 встречается в списке модифицированных Сил. Описание же заклинания **${getFromDict(PowersTranslations, Powers.Paralyze)}** было утеряно в версии от 29 марта 2005, хотя упоминание самого заклинания осталось.`),
+                        quickTextFormat(`Также встречаются новые заклинания с кратким описанием на основе других сил без выделания, например, **${getFromDict(PowersTranslations, Powers.ManaBurn)}**, **${getFromDict(PowersTranslations, Powers.AntiMagicShell)}**, **${getFromDict(PowersTranslations, Powers.DeathCoil)}** или **${getFromDict(PowersTranslations, Powers.DeathPact)}**.`),
+                        quickTextFormat(`Каких либо комментариев по поводу стоимости или других параметров для них, конечно же, не предусмотрено. Например, **${getFromDict(PowersTranslations, Powers.DeathCoil)}** имеет короткое описание *"${getFromDict(PowersTranslations, Powers.Bolt)} против живых, ${getFromDict(PowersTranslations, Powers.Healing)} против нежити"*. ${getFromDict(PowersTranslations, Powers.Bolt)} стоит **1+** Пункт Силы и применяется на дистанции, ${getFromDict(PowersTranslations, Powers.Healing)} стоит **3** Пункта Силы и применяется касанием. И какие же характеристики у **Лика смерти**? Никто не знает.`),
                         quickTextFormat(`**В рамках перевода оставим все эти вопросы на совести автора оригинала**.`),
                     ]),
                 ];
@@ -995,14 +879,14 @@ function getCharacterCreationContent() {
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Смерть и Разложение (Death and Decay), Тяжелое Оружие (Heavy Weapon))`),
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FrostNova)} (${getFromDict(PowersTranslations, Powers.Blast)}, направленный на существо, накладывает *${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}*)`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.FrostNova)} (${getFromDict(PowersTranslations, Powers.Blast)}, направленный на существо, накладывает *${getFromDict(PowersTranslations, Powers.Slow)}*)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.LifeDrain)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.LowerTrait)} (Калека (Cripple) — снижает Силу (${States.Strength}) и Драку (${Skills.Fighting}))`),
                                 ],
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)} (Морозная Броня (Frost Armor); *${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}* вместо урона)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.OffensiveArmor)} (Морозная Броня (Frost Armor); *${getFromDict(PowersTranslations, Powers.Slow)}* вместо урона)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet)} (только нежить; длительность 1 час)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)} (Нечестивое безумие (Unholy Frenzy); наносит 2d6 урона/раунд, но стоимость поддержания всего 1/раунд)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Zombie)}`),
@@ -1031,17 +915,17 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Doom)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Bloodlust)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Doom)}*`),
                                     quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Fear)}*`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.LifeDrain)}*`),
                                 ],
                             },
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Демоны (Demons)*`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Феникс (Phoenix)*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Summon)}: Демоны (Demons)*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Summon)}: Феникс (Phoenix)*`),
                                 ],
                             },
                         ],
@@ -1069,7 +953,7 @@ function getCharacterCreationContent() {
                                     stack: [
                                         quickTextFormat(`Если персонаж проваливает проверку **Характера**, он получает изъян **${HindrancesTranslations[Hindrances.Habit]} (${Hindrances.Habit}) (мелкий)**. Он начнет выполнять мирские задачи, используя Тайную Магию (не требует броска). В дополнение к штрафу **Харизмы**, он все время считается потратившим **1** Пункт Силы из-за затраченной на эти задачи энергии.`),
                                         quickTextFormat(`Если заклинатель проваливает проверку **Характера** второй раз или бросает Змеиные Глаза (snake-eyes), он получает **${HindrancesTranslations[Hindrances.Habit]} (${Hindrances.Habit}) (крупный)**. Чтобы удовлетворить зависимость, он выполняет практически все мирские задачи с помощью магии, тратя на это этого **2** Пункта Силы. Кроме того, он должен произносить свое самое сильное заклинание по крайней мере один раз каждые 24 часа, по самой высокой стоимости Пунктов Силы. Он продолжает страдать от штрафа **Харизмы** изъяна **${HindrancesTranslations[Hindrances.Habit]} (${Hindrances.Habit}) (мелкий)**.`),
-                                        quickTextFormat(`Если заклинатель проваливает третью проверку зависимости, он автоматически получает черту **${SettingEdgesTranslations[SettingEdges.Warlock]} (${SettingEdges.Warlock})** и один из изъянов: **${HindrancesTranslations[Hindrances.Delusional]} (${Hindrances.Delusional}) (крупный)**, **${HindrancesTranslations[Hindrances.Overconfident]} (${Hindrances.Overconfident})** или **${HindrancesTranslations[Hindrances.Vengeful]} (${Hindrances.Vengeful}) (крупный)**. Он также имеет **-2** к сопротивлению любым попыткам **Убеждения (${Skills.Persuasion})** или заклинанию **${PowersTranslations[Powers.Puppet]} (${Powers.Puppet})** от демонов.`),
+                                        quickTextFormat(`Если заклинатель проваливает третью проверку зависимости, он автоматически получает черту **${EdgesTranslations[Edges.Warlock]} (${Edges.Warlock})** и один из изъянов: **${HindrancesTranslations[Hindrances.Delusional]} (${Hindrances.Delusional}) (крупный)**, **${HindrancesTranslations[Hindrances.Overconfident]} (${Hindrances.Overconfident})** или **${HindrancesTranslations[Hindrances.Vengeful]} (${Hindrances.Vengeful}) (крупный)**. Он также имеет **-2** к сопротивлению любым попыткам **Убеждения (${Skills.Persuasion})** или заклинанию **${PowersTranslations[Powers.Puppet]} (${Powers.Puppet})** от демонов.`),
                                     ],
                                     leadingIndent: paragraphOffset,
                                 },
@@ -1123,10 +1007,10 @@ function getCharacterCreationContent() {
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)} (Святое зрение (Holy Vision))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.FarSight)} (Святое зрение (Holy Vision))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)} (Святой свет (Holy Light))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.GreaterHealing)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.InnerFire)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.InnerFire)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Light)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.SpeakLanguage)}`),
@@ -1167,7 +1051,7 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)} (Божественный щит (Divine Shield))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Bloodlust)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (Боль (Pain))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
                                 ],
@@ -1175,7 +1059,7 @@ function getCharacterCreationContent() {
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)} (Нечестивое видение (Unholy Vision))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.FarSight)} (Нечестивое видение (Unholy Vision))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
@@ -1210,10 +1094,10 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)}* (Щит молний (Lightning Shield))`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.ArmorOffensive)}* (Щит молний (Lightning Shield))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BeastFriend)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Землетрясение (Earthquake))`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Bloodlust)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (Цепная молния (Chain Lightning) — использует дальность только для первой цели)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}`),
@@ -1224,12 +1108,12 @@ function getCharacterCreationContent() {
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Dispel)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.ElementalManipulation)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.EtherealForm)}*`),
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}*`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}* (Поглощение землей (Engulfed in the earth))`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.EtherealForm)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.FarSight)}`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Mend)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Paralyze)}* (Поглощение землей (Engulfed in the earth))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}*: Духи животных (Animal Spirits)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Summon)}*: Духи животных (Animal Spirits)`),
                                 ],
                             },
                         ],
@@ -1261,7 +1145,7 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)} (Броня шипов (Armor of Thorns))`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.ArmorOffensive)} (Броня шипов (Armor of Thorns))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Barrier)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)} (Волшебный Огонь (Faerie Fire) (Снижение Скрытности), Рев (Roar) (Усиление Драки))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burrow)}`),
@@ -1276,12 +1160,12 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)} (Благословение дождя (Rain’s Blessing), Покой (Tranquility) и т. д.)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.GreaterHealing)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}* (Только природные субстанции)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Mend)}* (Только природные субстанции)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.ShapeChange)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Улучшенное природное оружие (Enhanced natural weapons))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Stun)} (Смерч (Cyclone))`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}* (Древень (Treant), Дух животного (Animal Spirit))`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Summon)}* (Древень (Treant), Дух животного (Animal Spirit))`),
                                 ],
                             },
                         ],
@@ -1314,7 +1198,7 @@ function getCharacterCreationContent() {
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BeastFriend)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bombardment)}* (Звездопад (Starfall))`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Bombardment)}* (Звездопад (Starfall))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (Аура меткости (Trueshot) – усиливает Стрельбу)`),
                                 ],
                             },
@@ -1345,7 +1229,7 @@ function getCharacterCreationContent() {
                         ul: [
                             quickTextFormat(`**Кредо**: Умиротворяйте темных духов подношениями и ритуалами. Ритуальное жертвоприношение всегда приветствуется…`),
                             quickTextFormat(`**Обереги (Wards)**: Маги Вуду могут установить заклинание в Обереге, ритуальном круге или знаке, который активирует заклинание при прикосновении. Заклинатель делает проверку Веры (${Skills.Faith}) при установке Оберегов и решает, сколько Пунктов Силы вложить в них (должно быть достаточно для однократного наложения заклинание). Пункты Силы, потраченные таким образом, восстанавливаются гораздо медленнее: **1** в день. После того, как Оберег разряжается (в первую цель, которая его коснулась), затраченные Пункты Силы восстанавливаются обычным образом. Маги Вуду могут указать ограничение на активацию Оберега (только люди, только союзники и т. д.)`),
-                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(SettingEdgesTranslations, SettingEdges.DarkRitual)}`),
+                            quickTextFormat(`**Профессиональные черты**: ${getFromDict(EdgesTranslations, Edges.DarkRitual)}`),
                         ],
                     },
                     {
@@ -1359,7 +1243,7 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bombardment)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Bombardment)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectConcealArcana)} (Обнаружение Невидимого (Detect Invisible))`),
                                 ],
@@ -1367,11 +1251,11 @@ function getCharacterCreationContent() {
                             {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Healing)} (Исцеляющие Обереги (Healing Wards) активируются на 1 раунд позже, исцеляют только 1 Рану за раунд)`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.LifeDrain)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet)} (только Эмоции/Импульсы)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)}`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.TransformOther)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.TransformOther)}*`),
                                 ],
                             },
                         ],
@@ -1413,18 +1297,18 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive)}* (Морозная броня (Frost Armor) — замедляет (Slows) цель) (только для Рыцарей Смерти)`),
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.DeathCoil)} (${getFromDict(PowersTranslations, Powers.Bolt)} против живых, ${getFromDict(PowersTranslations, Powers.Healing)} против нежити)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.ArmorOffensive)}* (Морозная броня (Frost Armor) — замедляет (Slows) цель) (только для Рыцарей Смерти)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DeathCoil)} (${getFromDict(PowersTranslations, Powers.Bolt)} против живых, ${getFromDict(PowersTranslations, Powers.Healing)} против нежити)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (только для нежити или себя)`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Contact)}* (Король-лич)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Contact)}* (Король-лич)`),
                                 ],
                             },
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.DeathPact)} (${getFromDict(PowersTranslations, Powers.Healing)} себя; 2d6 урона (3d6 при подъеме) союзнику)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.DeathPact)} (${getFromDict(PowersTranslations, Powers.Healing)} себя; 2d6 урона (3d6 при подъеме) союзнику)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)} (холод (cold))`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain)}*`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}* (только для сущностей, заряженных смертью)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.LifeDrain)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Mend)}* (только для сущностей, заряженных смертью)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Puppet)} (только для Воинов Тьмы)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Zombie)} (Воины Тьмы могут поднять только трупы тех, кого они убили с помощью Сокрушения (${Powers.Smite}))`),
@@ -1536,7 +1420,7 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Громовая поступь (War Stomp) — оглушает не-Дикие карты в дополнение к урону)`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Bloodlust)}*`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(StatesTranslations, States.Strength)}, ${getFromDict(StatesTranslations, States.Spirit)}, ${getFromDict(StatesTranslations, States.Vigor)}, ${getFromDict(SkillsTranslations, Skills.Fighting)})`),
                                 ],
                             },
@@ -1620,10 +1504,10 @@ function getCharacterCreationContent() {
                         columns: [
                             {
                                 ul: [
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.AntiMagicShell)} (${getFromDict(PowersTranslations, Powers.Armor)} против магии, +2/4 к сопротивлению заклинаниям)`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.AntiMagicShell)} (${getFromDict(PowersTranslations, Powers.Armor)} против магии, +2/4 к сопротивлению заклинаниям)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Armor)} (Кожа Демона (Demon Skin))`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`),
-                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}; истощает 1d6 Пунктов Силы в дополнение к Ранам)`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Bloodlust)}*`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (${getFromDict(PowersTranslations, Powers.ManaBurn)}; истощает 1d6 Пунктов Силы в дополнение к Ранам)`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostTrait)}`),
                                 ],
                             },
@@ -1631,7 +1515,7 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.DetectArcana)} (Магия Демонов/Чернокнижников (Demonic/Warlock magic))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)} (тепло (heat))`),
-                                    quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)}* (Жар Преисподней (Immolate))`),
+                                    quickTextFormat(`*${getFromDict(PowersTranslations, Powers.OffensiveArmor)}* (Жар Преисподней (Immolate))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.ShapeChange)} (только для Легенд (${Ranks.Legendary}); Демоническая форма (Demonic form))`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Одержимое демоном оружие)`),
                                 ],
@@ -1718,7 +1602,7 @@ function getCharacterCreationContent() {
                                 ul: [
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Quickness)}`),
                                     quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)}`),
-                                    quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Аватар возмездия (Avatar of Vengeance) (${getFromDict(RanksTranslations, Ranks.Legendary)})`),
+                                    quickTextFormat(`${getFromDict(PowersTranslations, Powers.Summon)}: Аватар возмездия (Avatar of Vengeance) (${getFromDict(RanksTranslations, Ranks.Legendary)})`),
                                     quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Teleport)}*`),
                                 ],
                             },
@@ -1794,19 +1678,19 @@ function getCharacterCreationContent() {
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Barrier)} (спонтанно возводящийся (spontaneously erecting); сталь (steel))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Blast)} (Ракеты (Rockets))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bolt)} (Ракеты (Rockets))`),
-                            quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.Bombardment)} (Ракетный залп (Rocket Volley))`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.Bombardment)} (Ракетный залп (Rocket Volley))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.BoostLowerTrait)} (Механические помощники (Mechanical assists))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Burst)} (Огнемет (Flamethrower))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Entangle)}`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.EnvironmentalProtection)}`),
-                            quickTextFormat(`${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)} (Телескопы (Telescopes) — должна быть линия видимости)`),
+                            quickTextFormat(`${getFromDict(PowersTranslations, Powers.FarSight)} (Телескопы (Telescopes) — должна быть линия видимости)`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Fly)} (Орнитоптеры (Ornithopters), Воздушные шары (Balloons))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Light)}`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Obscure)} (Дымовое облако (Smoke cloud))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.ShapeChange)} (${getFromDict(RanksTranslations, Ranks.Legendary)}, Механогоблин (Mechano-goblin))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Smite)} (Перегрузка (Overpower); только техническое оружие (tech. weapons only))`),
                             quickTextFormat(`${getFromDict(PowersTranslations, Powers.Speed)} (Колеса (Wheels), Гусеницы (Treads))`),
-                            quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Часовые гоблины (Clockwerk Goblins) (взрывается, нанося 2d6 урона (Малый взрыв) по окончании действия; поддержание "перепрезывает" гоблинов, но не поддерживает их существование)*`),
+                            quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Summon)}: Часовые гоблины (Clockwerk Goblins) (взрывается, нанося 2d6 урона (Малый взрыв) по окончании действия; поддержание "перепрезывает" гоблинов, но не поддерживает их существование)*`),
                         ],
                         alignment: 'left',
                     },
@@ -1814,7 +1698,7 @@ function getCharacterCreationContent() {
                     getTipText([
                         quickTextFormat(`По поводу Часовых Гоблинов.`),
                         quickTextFormat(`В оригнале фраза выглядит следующим образом: *"explode for 2d6 damage (Small Burst) when duration over; maintenance "re-spawns" goblins, but does not maintain their existence"*.`),
-                        quickTextFormat(`*"Re-spawns"* можно перевести как *"Возрождает"*, но, вероятно, имеется ввиду не это, так что был выбран вариант *"Перепрезывает"*. Другими словами, через **5** раундов стандартной длительности **Призыва (${SettingPowers.Summon})** призванные гоблины в любом случае взрываются, а при поддержании заклинания *"призываются"* новые. Имеют ли *"призванные поддержанием"* гоблины длительность в **5** раундов, в **1** или пока заклинание поддерживается - не понятно.`),
+                        quickTextFormat(`*"Re-spawns"* можно перевести как *"Возрождает"*, но, вероятно, имеется ввиду не это, так что был выбран вариант *"Перепрезывает"*. Другими словами, через **5** раундов стандартной длительности **Призыва (${Powers.Summon})** призванные гоблины в любом случае взрываются, а при поддержании заклинания *"призываются"* новые. Имеют ли *"призванные поддержанием"* гоблины длительность в **5** раундов, в **1** или пока заклинание поддерживается - не понятно.`),
                         quickTextFormat(`**В рамках перевода оставим этот вопрос на совести автора оригинала**.`),
                         quickTextFormat(`По поводу вида списка заклинаний - это не моя инициатива. В оригинале у автора все предыдущие списки даны в две колонки, а тут одиночным списком.`),
                     ]),
@@ -1891,7 +1775,7 @@ function getCharacterCreationContent() {
                     pageBreak: 'before',
                 },
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.ArmorOffensive),
+                    title: getFromDict(PowersTranslations, Powers.ArmorOffensive),
                     rank: getFromDict(RanksTranslations, Ranks.Novice),
                     powerPoints: '3',
                     range: 'Касание',
@@ -1902,7 +1786,7 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.BlastContinuous),
+                    title: getFromDict(PowersTranslations, Powers.BlastContinuous),
                     rank: getFromDict(RanksTranslations, Ranks.Veteran),
                     powerPoints: '4-8',
                     range: '12/24/48',
@@ -1913,7 +1797,7 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Blight),
+                    title: getFromDict(PowersTranslations, Powers.Blight),
                     rank: `${getFromDict(RanksTranslations, Ranks.Novice)}+`,
                     powerPoints: '3',
                     range: 'Смекалка',
@@ -1925,10 +1809,10 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getTipText([
-                    quickTextFormat(`В описании Порчи (${SettingPowers.Blight}) мне показалось странным упоминание Плети (Scourge), как болезнии в *"любые посевы, выращенные на этой земле, или животные, пасущиеся на ней, также будут **носителями Плети** (any crops grown in that ground or animals grazed on it will likewise be **carriers of the Scourge**)"* и *"**заражать** живое разумное существо **Плетью** (**infect** a living, sentient being **with the Scourge**)"*. Учитывая, что Плеть (Scourge) - это фракция нежити под командование Короля-лича, не совсем понятно, как ей можно заразить. Возможно, имелось ввиду заражение Порчей (Blight), либо **подчинение** Плети (и воле Короля-лича, соответственно).`),
+                    quickTextFormat(`В описании Порчи (${Powers.Blight}) мне показалось странным упоминание Плети (Scourge), как болезнии в *"любые посевы, выращенные на этой земле, или животные, пасущиеся на ней, также будут **носителями Плети** (any crops grown in that ground or animals grazed on it will likewise be **carriers of the Scourge**)"* и *"**заражать** живое разумное существо **Плетью** (**infect** a living, sentient being **with the Scourge**)"*. Учитывая, что Плеть (Scourge) - это фракция нежити под командование Короля-лича, не совсем понятно, как ей можно заразить. Возможно, имелось ввиду заражение Порчей (Blight), либо **подчинение** Плети (и воле Короля-лича, соответственно).`),
                 ]),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust),
+                    title: getFromDict(PowersTranslations, Powers.Bloodlust),
                     rank: `${getFromDict(RanksTranslations, Ranks.Novice)}`,
                     powerPoints: '4',
                     range: 'Касание',
@@ -1939,7 +1823,7 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Bombardment),
+                    title: getFromDict(PowersTranslations, Powers.Bombardment),
                     rank: `${getFromDict(RanksTranslations, Ranks.Legendary)}`,
                     powerPoints: '8',
                     range: 'Различный',
@@ -1949,7 +1833,7 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Contact),
+                    title: getFromDict(PowersTranslations, Powers.Contact),
                     rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)} (Специальный)`,
                     powerPoints: '4 (Специальный)',
                     range: 'Смекалка * 5 или Специальный',
@@ -1958,11 +1842,11 @@ function getCharacterCreationContent() {
                     text: [
                         quickTextFormat(`Персонаж может устанавливать дальний вербальный контакт со знакомым ему существом. Он может смутно видеть это существо и может нормально говорить в течение всего времени действия заклинания.`),
                         quickTextFormat(`В качестве альтернативы персонаж может создать какой-либо жетон (token) и передать его существу. Нет ограничений на расстояние, на котором можно связаться с существом, у которого есть ваш жетон или чей жетон есть у персонажа. Носитель жетона, который не обладает этой силой (или фактически Мистическим даром (${Edges.ArcaneBackground})), может активировать жетон, чтобы попросить вас активировать эту силу. Если и заклинатель, и носитель жетона обладают этой силой, они могут вместе потратить Пункты Силы для оплаты этого заклинания.`),
-                        quickTextFormat(`Это заклинание можно изучить, когда персонаж еще ${getFromDict(RanksTranslations, Ranks.Novice)}, но в таком случае он может Контактировать (${SettingPowers.Contact}) только с теми, кто дал ему жетоны, и не может создавать жетоны сам.`),
+                        quickTextFormat(`Это заклинание можно изучить, когда персонаж еще ${getFromDict(RanksTranslations, Ranks.Novice)}, но в таком случае он может Контактировать (${Powers.Contact}) только с теми, кто дал ему жетоны, и не может создавать жетоны сам.`),
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Doom),
+                    title: getFromDict(PowersTranslations, Powers.Doom),
                     rank: `${getFromDict(RanksTranslations, Ranks.Legendary)}`,
                     powerPoints: '8',
                     range: 'Смекалка',
@@ -1978,7 +1862,7 @@ function getCharacterCreationContent() {
                     quickTextFormat(`**Оставлено на усмотрение ведущего**.`),
                 ]),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.EtherealForm),
+                    title: getFromDict(PowersTranslations, Powers.EtherealForm),
                     rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)}`,
                     powerPoints: '4',
                     range: 'Касание',
@@ -1992,7 +1876,7 @@ function getCharacterCreationContent() {
                     quickTextFormat(`По поводу *"время действия текущей карты (duration of that card)"* и *"любой другой на той же карте (anyone else on the same card)"*. Карты в Savage Worlds исполюзуются (в том числе) для определения инициативы в бою. Вероятно, имеется ввиду, что персонажи с *такой-же* картой инициативы, как у применяющего заклинание, могут его атаковать, как обычно (если он вернулся в реальным мир, конечно). Судя по *"на той же карте (on the same card)"*, на персонажей с более высокой/низкой инициативой это не распространяется.`),
                 ]),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.FarSight),
+                    title: getFromDict(PowersTranslations, Powers.FarSight),
                     rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)}`,
                     powerPoints: '2+',
                     range: 'Различный',
@@ -2001,7 +1885,7 @@ function getCharacterCreationContent() {
                     text: [
                         {
                             text: [
-                                quickTextFormat(`Эта сила позволяет вам видеть дальше и шире, чем обычно. Вы можете видеть в пределах Шаблона среднего взрыва (Большого при подъеме). Вы можете перемещать центр "взрыва" со скоростью, равной вашему Магическому Навыку (Arcane Skill). Зоркость (${SettingPowers.FarSight}) имеет базовую дистанцию, равную `),
+                                quickTextFormat(`Эта сила позволяет вам видеть дальше и шире, чем обычно. Вы можете видеть в пределах Шаблона среднего взрыва (Большого при подъеме). Вы можете перемещать центр "взрыва" со скоростью, равной вашему Магическому Навыку (Arcane Skill). Зоркость (${Powers.FarSight}) имеет базовую дистанцию, равную `),
                                 {
                                     text: 'Смекалке * 4',
                                     bold: true,
@@ -2012,9 +1896,9 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Inferno),
+                    title: getFromDict(PowersTranslations, Powers.Inferno),
                     rank: `${getFromDict(RanksTranslations, Ranks.Legendary)}`,
-                    requirements: quickTextFormat(`*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}: Демон (Demon)*`),
+                    requirements: quickTextFormat(`*${getFromDict(PowersTranslations, Powers.Summon)}: Демон (Demon)*`),
                     powerPoints: '12',
                     range: 'Смекалка * 3',
                     duration: '1 минута (1/раунд)',
@@ -2023,7 +1907,7 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.InnerFire),
+                    title: getFromDict(PowersTranslations, Powers.InnerFire),
                     rank: `${getFromDict(RanksTranslations, Ranks.Veteran)}`,
                     powerPoints: '4',
                     range: 'Смекалка',
@@ -2037,18 +1921,18 @@ function getCharacterCreationContent() {
                     quickTextFormat(`Видимо, это **${getFromDict(PowersTranslations, Powers.BoostTrait)} (${getFromDict(SkillsTranslations, Skills.Fighting)})** и **${getFromDict(PowersTranslations, Powers.Armor)}** в одном заклинании.`),
                 ]),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.LifeDrain),
+                    title: getFromDict(PowersTranslations, Powers.LifeDrain),
                     rank: `${getFromDict(RanksTranslations, Ranks.Veteran)}`,
                     powerPoints: '3',
                     range: 'Касание',
                     duration: '3 (1/раунд)',
                     trappings: `Нечестивая аура вокруг оружия (Unholy aura around weapon), черные когти (black claws), пьющее кровь оружие (blood-drinking weapons)`,
                     text: [
-                        quickTextFormat(`Это действует как **${getFromDict(PowersTranslations, Powers.Smite)}**. Помимо этого, каждый раз, когда персонаж наносит удар под действием Высасывания жизни (${SettingPowers.LifeDrain}), он делает немедленную проверку исцеления (Healing Check).`),
+                        quickTextFormat(`Это действует как **${getFromDict(PowersTranslations, Powers.Smite)}**. Помимо этого, каждый раз, когда персонаж наносит удар под действием Высасывания жизни (${Powers.LifeDrain}), он делает немедленную проверку исцеления (Healing Check).`),
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Mend),
+                    title: getFromDict(PowersTranslations, Powers.Mend),
                     rank: `${getFromDict(RanksTranslations, Ranks.Novice)}`,
                     powerPoints: 'Различный',
                     range: 'Касание',
@@ -2059,7 +1943,7 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Slow),
+                    title: getFromDict(PowersTranslations, Powers.Slow),
                     rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)}`,
                     powerPoints: '3',
                     range: 'Смекалка',
@@ -2070,7 +1954,7 @@ function getCharacterCreationContent() {
                     ],
                 }),
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.Summon),
+                    title: getFromDict(PowersTranslations, Powers.Summon),
                     rank: `Различный`,
                     powerPoints: 'Различный',
                     range: '2',
@@ -2177,7 +2061,7 @@ function getCharacterCreationContent() {
                     }
                 },
                 getPowerContent({
-                    title: getFromDict(SettingPowersTranslations, SettingPowers.TransformOther),
+                    title: getFromDict(PowersTranslations, Powers.TransformOther),
                     rank: `Различный`,
                     powerPoints: 'Различный',
                     range: 'Смекалка',
@@ -2271,10 +2155,10 @@ function getCharacterCreationContent() {
                 },
                 '\n',
                 getTipText([
-                    quickTextFormat(`В версии от 29 марта 2005 утеряно описание силы **${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}**. В рамказ перевода вставлю ее описание из версии от 28 марта 2004.`),
+                    quickTextFormat(`В версии от 29 марта 2005 утеряно описание силы **${getFromDict(PowersTranslations, Powers.Paralyze)}**. В рамказ перевода вставлю ее описание из версии от 28 марта 2004.`),
                     getHorizontalLine('white', 2),
                     getPowerContent({
-                        title: getFromDict(SettingPowersTranslations, SettingPowers.Paralyze),
+                        title: getFromDict(PowersTranslations, Powers.Paralyze),
                         rank: `${getFromDict(RanksTranslations, Ranks.Seasoned)}`,
                         powerPoints: '2-6',
                         range: '6/12/24',
@@ -2689,7 +2573,7 @@ function getBestiaryContent() {
                 title: 'Синий дракон (Blue Dragon)',
                 notSpecialAbilities: [
                     quickTextFormat(`**Тип дыхания (Breath Weapon)**: Мороз (Frost)`),
-                    quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 20/30; Силы: 3/4 из списка: *${getFromDict(PowersTranslations, Powers.Barrier)}*, *${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*, *${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*`),
+                    quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 20/30; Силы: 3/4 из списка: *${getFromDict(PowersTranslations, Powers.Barrier)}*, *${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*, *${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}*, *${getFromDict(PowersTranslations, Powers.FarSight)}*, *${getFromDict(PowersTranslations, Powers.ManaBurn)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*`),
                     quickTextFormat(`**Иммунитет (Immunity)**: Черные драконы невосприимчивы к холоду.`),
                 ],
                 offset: paragraphOffset,
@@ -2712,7 +2596,7 @@ function getBestiaryContent() {
                 title: 'Зеленый дракон (Green Dragon)',
                 notSpecialAbilities: [
                     quickTextFormat(`**Тип дыхания (Breath Weapon)**: Кислота и сон (Проверка **Выносливости** или сон на **3d6** раундов)`),
-                    quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 20/30; Силы: 3/4 из списка: *${getFromDict(PowersTranslations, Powers.Deflection)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*, *${getFromDict(PowersTranslations, Powers.Obscure)}*, *${getFromDict(PowersTranslations, Powers.Puppet)}*, *${getFromDict(PowersTranslations, Powers.Stun)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.EtherealForm)}*`),
+                    quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 20/30; Силы: 3/4 из списка: *${getFromDict(PowersTranslations, Powers.Deflection)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*, *${getFromDict(PowersTranslations, Powers.Obscure)}*, *${getFromDict(PowersTranslations, Powers.Puppet)}*, *${getFromDict(PowersTranslations, Powers.Stun)}*, *${getFromDict(PowersTranslations, Powers.EtherealForm)}*`),
                     quickTextFormat(`**Эфирный (Ethereal)**: Как хранители Изумрудного Сна (Emerald Dream), зеленые драконы могут становиться эфирными (ethereal) по своему желанию. Будучи эфирными, они могут соскользнуть (slip sideways) в Изумрудный Сон.`),
                 ],
                 offset: paragraphOffset,
@@ -2722,7 +2606,7 @@ function getBestiaryContent() {
                 title: 'Красный дракон (Red Dragon)',
                 notSpecialAbilities: [
                     quickTextFormat(`**Тип дыхания (Breath Weapon)**: Поток огня. Пламя красного дракона обновляет и восстанавливает природу в пораженной области.`),
-                    quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 10/25; Силы: 2/4 из списка: *${getFromDict(PowersTranslations, Powers.Armor)}*, *${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*, *${getFromDict(PowersTranslations, Powers.Dispel)}*, *${getFromDict(PowersTranslations, Powers.Healing)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*, *${getFromDict(PowersTranslations, Powers.Puppet)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.Summon)} (Животные (Animals))*`),
+                    quickTextFormat(`**Магия дракона (Dragon Magic)**: Пункты Силы 10/25; Силы: 2/4 из списка: *${getFromDict(PowersTranslations, Powers.Armor)}*, *${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*, *${getFromDict(PowersTranslations, Powers.Dispel)}*, *${getFromDict(PowersTranslations, Powers.Healing)}*, *${getFromDict(PowersTranslations, Powers.MindReading)}*, *${getFromDict(PowersTranslations, Powers.Puppet)}*, *${getFromDict(PowersTranslations, Powers.Summon)} (Животные (Animals))*`),
                     quickTextFormat(`**Иммунитет (Immunity)**: Красные драконы невосприимчивы к огню.`),
                 ],
                 offset: paragraphOffset,
@@ -3321,7 +3205,7 @@ function getBestiaryContent() {
                 ],
                 specialAbilities: [
                     [
-                        quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))**: ${getFromDict(EdgesTranslations, Edges.Wizard)}, ${getFromDict(SettingEdgesTranslations, SettingEdges.Warlock)} (предпочитает заклинания воды, льда и молнии, призывает морских элементалей)`),
+                        quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))**: ${getFromDict(EdgesTranslations, Edges.Wizard)}, ${getFromDict(EdgesTranslations, Edges.Warlock)} (предпочитает заклинания воды, льда и молнии, призывает морских элементалей)`),
                         {
                             ul: [
                                 quickTextFormat(`**Пункты Силы**: 20`),
@@ -3363,7 +3247,7 @@ function getBestiaryContent() {
                 specialAbilities: [
                     quickTextFormat(`**Когти (Claws)**: **Сила+1**.`),
                     quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fearless)}**`),
-                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(SettingPowersTranslations, SettingPowers.Blight)} не действуют на нерубов.`),
+                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(PowersTranslations, Powers.Blight)} не действуют на нерубов.`),
                     quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Нерубы — пауки-кентавры человеческого роста.`),
                 ],
             }),
@@ -3396,10 +3280,10 @@ function getBestiaryContent() {
                     `Хитиновая броня (+2)`,
                 ],
                 specialAbilities: [
-                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Некромантия (Necromancy))**: Пункты Силы – 15; Заклинания: *${getFromDict(PowersTranslations, Powers.Zombie)}*, *${getFromDict(PowersTranslations, Powers.Dispel)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.ContinuousBlast)} (Рой падальщиков (carrion swarm))*`),
+                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Некромантия (Necromancy))**: Пункты Силы – 15; Заклинания: *${getFromDict(PowersTranslations, Powers.Zombie)}*, *${getFromDict(PowersTranslations, Powers.Dispel)}*, *${getFromDict(PowersTranslations, Powers.ContinuousBlast)} (Рой падальщиков (carrion swarm))*`),
                     quickTextFormat(`**Когти (Claws)**: **Сила+1**.`),
                     quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fearless)}**`),
-                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(SettingPowersTranslations, SettingPowers.Blight)} не действуют на нерубов.`),
+                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(PowersTranslations, Powers.Blight)} не действуют на нерубов.`),
                     quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Нерубы — пауки-кентавры человеческого роста.`),
                 ],
                 offset: paragraphOffset,
@@ -3432,10 +3316,10 @@ function getBestiaryContent() {
                     `Копья (Сила+2, 3/6/12)`,
                 ],
                 specialAbilities: [
-                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Прядильщик Сетей (Webspinner))**: Пункты Силы – 20; Техники: *${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}*, *${getFromDict(PowersTranslations, Powers.Barrier)}*, *${getFromDict(PowersTranslations, Powers.Fly)} (Сбрасывание паутины (web-drop))*`),
+                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Прядильщик Сетей (Webspinner))**: Пункты Силы – 20; Техники: *${getFromDict(PowersTranslations, Powers.Paralyze)}*, *${getFromDict(PowersTranslations, Powers.Barrier)}*, *${getFromDict(PowersTranslations, Powers.Fly)} (Сбрасывание паутины (web-drop))*`),
                     quickTextFormat(`**Когти (Claws)**: **Сила+1**.`),
                     quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Fearless)}**`),
-                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(SettingPowersTranslations, SettingPowers.Blight)} не действуют на нерубов.`),
+                    quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Immunity)}**: Магия контроля разума (Mind-controlling magic) и ${getFromDict(PowersTranslations, Powers.Blight)} не действуют на нерубов.`),
                     quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Size)} +2**: Нерубы — пауки-кентавры человеческого роста.`),
                 ],
                 offset: paragraphOffset,
@@ -3458,11 +3342,11 @@ function getBestiaryContent() {
                 },
                 specialAbilities: [
                     [
-                        quickTextFormat(`**Тайная магия (Arcane Magic)**: ${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная магия (Arcane Magic)), ${getFromDict(EdgesTranslations, Edges.SoulDrain)}, ${getFromDict(SettingEdgesTranslations, SettingEdges.Warlock)}`),
+                        quickTextFormat(`**Тайная магия (Arcane Magic)**: ${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная магия (Arcane Magic)), ${getFromDict(EdgesTranslations, Edges.SoulDrain)}, ${getFromDict(EdgesTranslations, Edges.Warlock)}`),
                         {
                             ul: [
                                 quickTextFormat(`**Пункты Силы**: 20`),
-                                quickTextFormat(`**Заклинания**: *${getFromDict(PowersTranslations, Powers.Smite)}*, 2-3 *Призыва (${SettingPowers.Summon})*, *${getFromDict(PowersTranslations, Powers.Blast)}*, *${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}* и *${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)} (Огненный щит (fire shield))*`),
+                                quickTextFormat(`**Заклинания**: *${getFromDict(PowersTranslations, Powers.Smite)}*, 2-3 *Призыва (${Powers.Summon})*, *${getFromDict(PowersTranslations, Powers.Blast)}*, *${getFromDict(PowersTranslations, Powers.Bloodlust)}* и *${getFromDict(PowersTranslations, Powers.OffensiveArmor)} (Огненный щит (fire shield))*`),
                             ],
                         },
                     ],
@@ -3559,7 +3443,7 @@ function getBestiaryContent() {
                 ],
                 specialAbilities: [
                     [
-                        quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))**: ${getFromDict(SettingEdgesTranslations, SettingEdges.Warlock)}`),
+                        quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))**: ${getFromDict(EdgesTranslations, Edges.Warlock)}`),
                         {
                             ul: [
                                 quickTextFormat(`**Пункты Силы**: 15`),
@@ -3657,8 +3541,8 @@ function getBestiaryContent() {
                 specialAbilities: [
                     quickTextFormat(`**Слизь (Ooze) (как ${getFromDict(EdgesTranslations, Edges.Construct)})**: +2 к восстановлению после Шока, иммунитет к прицельным выстрелам, яду и болезням. Получают половину урона от колющего оружия.`),
                     quickTextFormat(`**Слепое чувство (Blindsense)**: Илистые Чудовища чувствуют добычу по запаху, вибрации и теплу. Они не получают штрафов в темноте, но могут быть сбиты с толку "ослеплением (blinding)" других чувств.`),
-                    quickTextFormat(`***Метание (Fling)***: *Некоторые Илистые Чудовища могут метать слизь как атаку с **Силой+1** с дальностью 3/6/12 и силой ${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}.*`),
-                    quickTextFormat(`**Яд замедления (Slow Poison)**: Если цель атаки Илистого Чудовища проваливает проверку Выносливости со штрафом -2, она замедляется (как при использовании Силы ${getFromDict(SettingPowersTranslations, SettingPowers.Slow)}).`),
+                    quickTextFormat(`***Метание (Fling)***: *Некоторые Илистые Чудовища могут метать слизь как атаку с **Силой+1** с дальностью 3/6/12 и силой ${getFromDict(PowersTranslations, Powers.Slow)}.*`),
+                    quickTextFormat(`**Яд замедления (Slow Poison)**: Если цель атаки Илистого Чудовища проваливает проверку Выносливости со штрафом -2, она замедляется (как при использовании Силы ${getFromDict(PowersTranslations, Powers.Slow)}).`),
                 ],
             }),
             getUnitContent({
@@ -3836,7 +3720,7 @@ function getBestiaryContent() {
                 },
                 specialAbilities: [
                     quickTextFormat(`${getFromDict(EdgesTranslations, Edges.LowLightVision)}, ${getFromDict(EdgesTranslations, Edges.Fear)}, ${getFromDict(EdgesTranslations, Edges.Armor)} +2, ${getFromDict(EdgesTranslations, Edges.Size)} +2`),
-                    quickTextFormat(`**${getFromDict(SettingPowersTranslations, SettingPowers.ManaBurn)}**:  По желанию Гончие Скверны могут выпустить *Стрелу Сжигания Маны (Mana Burn Bolt)*.`),
+                    quickTextFormat(`**${getFromDict(PowersTranslations, Powers.ManaBurn)}**:  По желанию Гончие Скверны могут выпустить *Стрелу Сжигания Маны (Mana Burn Bolt)*.`),
                     quickTextFormat(`**Чувство магии (Smell Magic)**: Гончие Скверны всегда *обнаруживают магию (detect arcana)* при выслеживании (tracking).`),
                     quickTextFormat(`**Наскок (Pounce)**: Гончие Скверны могут перемещаться на 1d6 дюймов и атаковать с +4 к атаке и урону.`),
                 ],
@@ -3929,7 +3813,7 @@ function getBestiaryContent() {
                         `*${getFromDict(PowersTranslations, Powers.Blast)}*`,
                         `*${getFromDict(PowersTranslations, Powers.LowerTrait)}*`,
                         `*${getFromDict(PowersTranslations, Powers.Obscure)}*`,
-                        `*${getFromDict(SettingPowersTranslations, SettingPowers.ContinuousBlast)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.ContinuousBlast)}*`,
                         `*${getFromDict(PowersTranslations, Powers.Smite)}*`,
                     ].join(', ')}`),
                 ],
@@ -3981,9 +3865,9 @@ function getBestiaryContent() {
                     quickTextFormat(`***Магия демонов (Demon Magic)*** - **Пункты Силы**: 20; **Силы**: ${[
                         `*${getFromDict(PowersTranslations, Powers.Armor)}*`,
                         `*${getFromDict(PowersTranslations, Powers.Blast)}*`,
-                        `*${getFromDict(SettingPowersTranslations, SettingPowers.Doom)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Doom)}*`,
                         `*${getFromDict(PowersTranslations, Powers.Smite)}*`,
-                        `*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Summon)}*`,
                     ].join(', ')}`),
                 ],
             }),
@@ -4055,9 +3939,9 @@ function getBestiaryContent() {
                         `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия демонов (Demon Magic))`,
                         `${getFromDict(EdgesTranslations, Edges.Wizard)}`,
                         `${getFromDict(EdgesTranslations, Edges.SoulDrain)}`,
-                        `${getFromDict(SettingEdgesTranslations, SettingEdges.DarkRitual)}`,
+                        `${getFromDict(EdgesTranslations, Edges.DarkRitual)}`,
                         `Украсть магию (Steal Magic)`,
-                        `${getFromDict(SettingEdgesTranslations, SettingEdges.SpellAura)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SpellAura)}`,
                     ].join(', ')}`),
                     [
                         `${getFromDict(EdgesTranslations, Edges.Size)} +6`,
@@ -4328,7 +4212,7 @@ function getUnitsBuildingsGearContent() {
                             `Кольчужный хауберк (+2)`,
                             `Каплевидный щит (+2 Парирование, +2 Стойкость против дальнего боя)`,
                         ].join(', ')}`),
-                        quickTextFormat(`**Развитие**: ${getFromDict(EdgesTranslations, Edges.Block)}, ${getFromDict(SettingEdgesTranslations, SettingEdges.Defend)}, ${getFromDict(EdgesTranslations, Edges.ImprovedBlock)}, ${getFromDict(SettingEdgesTranslations, SettingEdges.ImprovedDefend)}`),
+                        quickTextFormat(`**Развитие**: ${getFromDict(EdgesTranslations, Edges.Block)}, ${getFromDict(EdgesTranslations, Edges.Defend)}, ${getFromDict(EdgesTranslations, Edges.ImprovedBlock)}, ${getFromDict(EdgesTranslations, Edges.ImprovedDefend)}`),
                     ],
                 }),
                 getUnitContent({
@@ -4358,7 +4242,7 @@ function getUnitsBuildingsGearContent() {
                             `Штык (Сила+2, приделано к Мушкету)`,
                             `Кожаный доспех (+1)`,
                         ].join(', ')}`),
-                        quickTextFormat(`**Развитие**: ${getFromDict(SettingEdgesTranslations, SettingEdges.Musketeer)}, ${getFromDict(EdgesTranslations, Edges.Marksman)}`),
+                        quickTextFormat(`**Развитие**: ${getFromDict(EdgesTranslations, Edges.Musketeer)}, ${getFromDict(EdgesTranslations, Edges.Marksman)}`),
                     ],
                 }),
                 getUnitContent({
@@ -4392,9 +4276,9 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                         quickTextFormat(`**Развитие**: ${[
                             getFromDict(EdgesTranslations, Edges.Marksman),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.TwoArrowsNocked),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.HailOfArrows),
+                            getFromDict(EdgesTranslations, Edges.RapidShot),
+                            getFromDict(EdgesTranslations, Edges.TwoArrowsNocked),
+                            getFromDict(EdgesTranslations, Edges.HailOfArrows),
                         ].join(', ')}`),
                         {
                             text: quickTextFormat(`**Рэнджер (Ranger)**: ${[
@@ -4465,13 +4349,13 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Изъяны**: ${getFromDict(HindrancesTranslations, Hindrances.Cautious)} или ${getFromDict(HindrancesTranslations, Hindrances.Vengeful)} (мелкий)`),
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.LowLightVision),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Cavalry),
                             getFromDict(EdgesTranslations, Edges.SteadyHands),
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная Магия (Arcane Magic))`,
                         ].join(', ')}`),
                         quickTextFormat(`**Тайная Магия (Arcane Magic)**: ***Пункты Силы***: 15; ***Заклинания***: *${[
                             getFromDict(PowersTranslations, Powers.Obscure),
-                            getFromDict(SettingPowersTranslations, SettingPowers.Paralyze),
+                            getFromDict(PowersTranslations, Powers.Paralyze),
                         ].join('*, *')}*`),
                         getUnitCommonAttributesContent({
                             [States.Pace]: '6',
@@ -4516,9 +4400,9 @@ function getUnitsBuildingsGearContent() {
                             },
                         ],
                         quickTextFormat(`**Развитие**: ${[
-                            `${getFromDict(SettingEdgesTranslations, SettingEdges.StrafingRun)}`,
-                            `${getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot)}`,
-                            `(если Эльф Крови) ${getFromDict(SettingEdgesTranslations, SettingEdges.Warlock)}`,
+                            `${getFromDict(EdgesTranslations, Edges.StrafingRun)}`,
+                            `${getFromDict(EdgesTranslations, Edges.RapidShot)}`,
+                            `(если Эльф Крови) ${getFromDict(EdgesTranslations, Edges.Warlock)}`,
                         ].join(', ')}`),
                     ],
                 }),
@@ -4544,7 +4428,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Изъяны**: ${getFromDict(HindrancesTranslations, Hindrances.Outsider)} (Дворф Дикого Молота (Wildhammer Dwarf))`),
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.LowLightVision),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Cavalry),
                             getFromDict(EdgesTranslations, Edges.SteadyHands),
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -4559,7 +4443,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`***Грифон (Gryphon)***: в **Бестиарии Warcraft**. Кожаная броня (+1 к туловищу/50% к голове)`),
                         quickTextFormat(`**Развитие**: ${[
                             getFromDict(EdgesTranslations, Edges.BeastBond),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.StrafingRun),
+                            getFromDict(EdgesTranslations, Edges.StrafingRun),
                             `Быстрый бросок (Rapid Throw)`,
                         ].join(', ')}`),
                     ],
@@ -4604,9 +4488,9 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                         quickTextFormat(`**Развитие**: ${[
                             `*${getFromDict(PowersTranslations, Powers.Invisibility)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.OffensiveArmor)}*`,
                             `*${getFromDict(PowersTranslations, Powers.Blast)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.TransformOther)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.TransformOther)}*`,
                             getFromDict(EdgesTranslations, Edges.RapidRecharge),
                             getFromDict(EdgesTranslations, Edges.PowerPoints),
                         ].join(', ')}`),
@@ -4638,7 +4522,7 @@ function getUnitsBuildingsGearContent() {
                         }),
                         quickTextFormat(`**Черты/Способности**: ${[
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Внутренний Свет (Inner Light))`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Priest),
+                            getFromDict(EdgesTranslations, Edges.Priest),
                         ].join(', ')}`),
                         quickTextFormat(`**Чудеса**: ***Пункты Силы***: 15; ***Заклинания***: ${[,
                             `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
@@ -4655,7 +4539,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Развитие**: ${[
                             `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
                             `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.InnerFire)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.InnerFire)}*`,
                             getFromDict(EdgesTranslations, Edges.RapidRecharge),
                             getFromDict(EdgesTranslations, Edges.PowerPoints),
                             getFromDict(EdgesTranslations, Edges.Healer),
@@ -4684,7 +4568,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Черты/Способности**: ${[
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная Магия (Arcane Magic))`,
                             getFromDict(EdgesTranslations, Edges.Wizard),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.SpellBreaker),
+                            getFromDict(EdgesTranslations, Edges.SpellBreaker),
                             getFromDict(EdgesTranslations, Edges.Block),
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -4698,8 +4582,8 @@ function getUnitsBuildingsGearContent() {
                             `Кольчужный хауберк (+2)`,
                         ].join(', ')}`),
                         quickTextFormat(`**Развитие**: ${[
-                            getFromDict(SettingEdgesTranslations, SettingEdges.CaptureSpell),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.DrainSpell),
+                            getFromDict(EdgesTranslations, Edges.CaptureSpell),
+                            getFromDict(EdgesTranslations, Edges.DrainSpell),
                             `${getFromDict(EdgesTranslations, Edges.Florentine)} (используется с двойным мечом)`,
                         ].join(', ')}`),
                     ],
@@ -4737,7 +4621,7 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                         quickTextFormat(`***Мортира (Mortar)***: 3d6 в Шаблоне Малого Взрыва, 30/60/90, Тяжелое Оружие, 2 Действия на перезарядку, неподвижна во время стрельбы.`),
                         quickTextFormat(`**Развитие**: ${[
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Artillerist),
+                            getFromDict(EdgesTranslations, Edges.Artillerist),
                             getFromDict(EdgesTranslations, Edges.Marksman),
                         ].join(', ')}`),
                     ],
@@ -4778,9 +4662,9 @@ function getUnitsBuildingsGearContent() {
                             [States.Toughness]: '6',
                         }),
                         quickTextFormat(`**Развитие**: ${[
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Musketeer),
+                            getFromDict(EdgesTranslations, Edges.Musketeer),
                             getFromDict(EdgesTranslations, Edges.SteadyHands),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot),
+                            getFromDict(EdgesTranslations, Edges.RapidShot),
                         ].join(', ')}`),
                     ],
                 }),
@@ -4812,7 +4696,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.LowLightVision),
                             `${getFromDict(EdgesTranslations, Edges.Ace)} (Водитель)`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Artillerist),
+                            getFromDict(EdgesTranslations, Edges.Artillerist),
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
                             [States.Pace]: '5',
@@ -6339,7 +6223,7 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                         quickTextFormat(`**Развитие**: ${[
                             getFromDict(EdgesTranslations, Edges.Marksman),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot),
+                            getFromDict(EdgesTranslations, Edges.RapidShot),
                             getFromDict(EdgesTranslations, Edges.Woodsman),
                         ].join(', ')}`),
                         quickTextFormat(`**Берсерк (Berserker)**: ${[
@@ -6411,7 +6295,7 @@ function getUnitsBuildingsGearContent() {
                         }),
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.Brawny),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Cavalry),
                             getFromDict(EdgesTranslations, Edges.Berserk),
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -6486,7 +6370,7 @@ function getUnitsBuildingsGearContent() {
                         }),
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.Brawny),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Cavalry),
                             getFromDict(EdgesTranslations, Edges.Inspire),
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -6525,7 +6409,7 @@ function getUnitsBuildingsGearContent() {
                         }),
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.Brawny),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Cavalry),
                             getFromDict(EdgesTranslations, Edges.SteadyHands),
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -6540,7 +6424,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`***Виверна***: см. в Бестиарии Warcraft`),
                         quickTextFormat(`**Развитие**: ${[
                             getFromDict(EdgesTranslations, Edges.BeastBond),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.StrafingRun),
+                            getFromDict(EdgesTranslations, Edges.StrafingRun),
                             `Быстрый бросок (Rapid Throw)`,
                         ].join(', ')}`),
                     ],
@@ -6566,7 +6450,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Черты/Способности**: ${[
                             `${getFromDict(EdgesTranslations, Edges.Size)} +1`,
                             `Быстрая регенерация (Fast Regeneration)`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Cavalry),
                             getFromDict(EdgesTranslations, Edges.SteadyHands),
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -6654,10 +6538,10 @@ function getUnitsBuildingsGearContent() {
                             `Броня из шкур (+1)`,
                         ].join(', ')}`),
                         quickTextFormat(`**Развитие**: ${[
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.OffensiveArmor)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Bloodlust)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Summon)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.OffensiveArmor)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Bloodlust)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.FarSight)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Summon)}*`,
                             getFromDict(EdgesTranslations, Edges.RapidRecharge),
                             getFromDict(EdgesTranslations, Edges.PowerPoints),
                         ].join(', ')}`),
@@ -6702,9 +6586,9 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                         quickTextFormat(`**Развитие**: ${[
                             `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Paralyze)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Paralyze)}*`,
                             `*${getFromDict(PowersTranslations, Powers.Quickness)}*`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.DarkRitual),
+                            getFromDict(EdgesTranslations, Edges.DarkRitual),
                             getFromDict(EdgesTranslations, Edges.PowerPoints),
                             `Алхимик (Alchemist)`,
                         ].join(', ')}`),
@@ -6736,7 +6620,7 @@ function getUnitsBuildingsGearContent() {
                             `+3 ${getFromDict(EdgesTranslations, Edges.Size)}`,
                             `Рога (Horns) (Сила+2)`,
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Шаман (Shaman))`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Shaman),
+                            getFromDict(EdgesTranslations, Edges.Shaman),
                         ].join(', ')}`),
                         quickTextFormat(`**Изъяны**: ${[
                             getFromDict(HindrancesTranslations, Hindrances.AllThumbs),
@@ -6744,7 +6628,7 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                         quickTextFormat(`**Шаманизм**: ***Пункты Силы***: 15; ***Заклинания***: ${[
                             `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.EtherealForm)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.EtherealForm)}*`,
                             `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -6759,7 +6643,7 @@ function getUnitsBuildingsGearContent() {
                             `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
                             `*${getFromDict(PowersTranslations, Powers.GreaterHealing)}*`,
                             `*${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.FarSight)}*`,
                             getFromDict(EdgesTranslations, Edges.RapidRecharge),
                             getFromDict(EdgesTranslations, Edges.PowerPoints),
                         ].join(', ')}`),
@@ -8047,7 +7931,7 @@ function getUnitsBuildingsGearContent() {
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия природы (Nature Magic))`,
                         ].join(', ')}`),
                         quickTextFormat(`***Пункты Силы***: 10; ***Силы***: ${[
-                            `${getFromDict(SettingPowersTranslations, SettingPowers.Mend)} (Обновление (Renew): работает на Древних (Ancients))`,
+                            `${getFromDict(PowersTranslations, Powers.Mend)} (Обновление (Renew): работает на Древних (Ancients))`,
                             `${getFromDict(PowersTranslations, Powers.Dispel)} (Большой взрыв, уничтожает Светлячка (Wisp))`,
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -8097,9 +7981,9 @@ function getUnitsBuildingsGearContent() {
                         ].join(', ')}`),
                         quickTextFormat(`**Развитие**: ${[
                             getFromDict(EdgesTranslations, Edges.Marksman),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.TwoArrowsNocked),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.HailOfArrows),
+                            getFromDict(EdgesTranslations, Edges.RapidShot),
+                            getFromDict(EdgesTranslations, Edges.TwoArrowsNocked),
+                            getFromDict(EdgesTranslations, Edges.HailOfArrows),
                         ].join(', ')}`),
                         quickTextFormat(`***Ренджер (Ranger)***: ${[
                             `*${SkillsTranslations[Skills.Stealth]} d4*`,
@@ -8111,7 +7995,7 @@ function getUnitsBuildingsGearContent() {
                             text: [
                                 quickTextFormat(`***Наездник на Гипогрифе (Hippogryph Rider)***: ${[
                                     `*${SkillsTranslations[Skills.Riding]} d6*`,
-                                    `*${getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry)}*`,
+                                    `*${getFromDict(EdgesTranslations, Edges.Cavalry)}*`,
                                     `*${getFromDict(EdgesTranslations, Edges.SteadyHands)}*`,
                                 ].join(', ')}`),
                                 {
@@ -8149,7 +8033,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.LowLightVision),
                             `Слияние с Тенью (Shadowmeld)`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Cavalry),
+                            getFromDict(EdgesTranslations, Edges.Cavalry),
                             getFromDict(EdgesTranslations, Edges.SteadyHands),
                         ].join(', ')}`),
                         getUnitCommonAttributesContent({
@@ -8165,7 +8049,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Развитие**: ${[
                             `${getFromDict(EdgesTranslations, Edges.BeastMaster)} (сова-часовой)`,
                             getFromDict(EdgesTranslations, Edges.CombatReflexes),
-                            `Рикошет (Ricochet) (${getFromDict(SettingEdgesTranslations, SettingEdges.RapidShot)})`,
+                            `Рикошет (Ricochet) (${getFromDict(EdgesTranslations, Edges.RapidShot)})`,
                         ].join(', ')}`),
                     ],
                 }),
@@ -8242,8 +8126,8 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.LowLightVision),
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия природы (Nature Magic))`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Druid),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.NaturesFury),
+                            getFromDict(EdgesTranslations, Edges.Druid),
+                            getFromDict(EdgesTranslations, Edges.NaturesFury),
                             getFromDict(EdgesTranslations, Edges.Brawny),
                         ].join(', ')}`),
                         quickTextFormat(`***Пункты Силы***: 15; ***Заклинания***: ${[
@@ -8267,7 +8151,7 @@ function getUnitsBuildingsGearContent() {
                             getFromDict(EdgesTranslations, Edges.RapidRecharge),
                             getFromDict(EdgesTranslations, Edges.PowerPoints),
                             getFromDict(EdgesTranslations, Edges.NaturalLeader),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.SpellAura),
+                            getFromDict(EdgesTranslations, Edges.SpellAura),
                             getFromDict(EdgesTranslations, Edges.Berserk),
                         ].join(', ')}`),
                     ],
@@ -8298,7 +8182,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Черты/Способности**: ${[
                             getFromDict(EdgesTranslations, Edges.LowLightVision),
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия природы (Nature Magic))`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Druid),
+                            getFromDict(EdgesTranslations, Edges.Druid),
                             getFromDict(EdgesTranslations, Edges.Dodge),
                         ].join(', ')}`),
                         quickTextFormat(`***Пункты Силы***: 15; ***Заклинания***: ${[
@@ -8337,7 +8221,7 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Развитие**: ${[
                             `*${getFromDict(PowersTranslations, Powers.Stun)}*`,
                             `*${getFromDict(PowersTranslations, Powers.ShapeChange)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.FarSight)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.FarSight)}*`,
                             getFromDict(EdgesTranslations, Edges.RapidRecharge),
                             getFromDict(EdgesTranslations, Edges.PowerPoints),
                             getFromDict(EdgesTranslations, Edges.ImprovedDodge),
@@ -9320,9 +9204,9 @@ function getUnitsBuildingsGearContent() {
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Чудеса - Нежить (Miracles – Undeath))`,
                         ].join(', ')}`),
                         quickTextFormat(`***Нежить***: **Пункты Силы**: 10; **Силы**: ${[
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Blight)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Contact)}*`,
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Mend)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Blight)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Contact)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Mend)}*`,
                         ].join(', ')}`),
                         quickTextFormat(`**Снаряжение**: ${[
                             `Посох (Сила+2, +1 Парирование)`,
@@ -9355,10 +9239,10 @@ function getUnitsBuildingsGearContent() {
                         quickTextFormat(`**Черты/Способности**: ${[
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
                             getFromDict(EdgesTranslations, Edges.Wizard),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Necromancer),
+                            getFromDict(EdgesTranslations, Edges.Necromancer),
                         ].join(', ')}`),
                         quickTextFormat(`**Некромантия**: ***Пункты Силы***: 10; ***Заклинания***: ${[
-                            `*${getFromDict(SettingPowersTranslations, SettingPowers.Blight)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Blight)}*`,
                             `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
                             `*${getFromDict(PowersTranslations, Powers.Zombie)}*`,
                         ].join(', ')}`),
@@ -9375,8 +9259,8 @@ function getUnitsBuildingsGearContent() {
                             `*${getFromDict(PowersTranslations, Powers.Quickness)}*`,
                             getFromDict(EdgesTranslations, Edges.RapidRecharge),
                             getFromDict(EdgesTranslations, Edges.PowerPoints),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.DarkRitual),
-                            getFromDict(SettingEdgesTranslations, SettingEdges.CreateUndead),
+                            getFromDict(EdgesTranslations, Edges.DarkRitual),
+                            getFromDict(EdgesTranslations, Edges.CreateUndead),
                         ].join(', ')}`),
                     ],
                 }),
@@ -9429,7 +9313,7 @@ function getUnitsBuildingsGearContent() {
                             getFromDict(EdgesTranslations, Edges.Ethereal),
                             getFromDict(EdgesTranslations, Edges.Fear),
                             `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
-                            getFromDict(SettingEdgesTranslations, SettingEdges.Necromancer),
+                            getFromDict(EdgesTranslations, Edges.Necromancer),
                         ].join(', ')}`),
                         quickTextFormat(`**Некромантия**: ***Пункты Силы***: 20; ***Заклинания***: ${[
                             `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
