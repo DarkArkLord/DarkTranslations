@@ -1496,7 +1496,7 @@ function getBurningLegionContent() {
             specialAbilities: [
                 quickTextFormat(`${getFromDict(EdgesTranslations, Edges.LowLightVision)}, ${getFromDict(EdgesTranslations, Edges.Fear)}, ${getFromDict(EdgesTranslations, Edges.Armor)} +2, ${getFromDict(EdgesTranslations, Edges.Size)} +2`),
                 quickTextFormat(`**${getFromDict(PowersTranslations, Powers.ManaBurn)}**:  По желанию Гончие Скверны могут выпустить *Стрелу Сжигания Маны (Mana Burn Bolt)*.`),
-                quickTextFormat(`**Чувство магии (Smell Magic)**: Гончие Скверны всегда *обнаруживают магию (detect arcana)* при выслеживании (tracking).`),
+                quickTextFormat(`**Чувство магии (Smell Magic)**: Гончие Скверны всегда *обнаруживают магию (detect arcana)* при Выслеживании (${Skills.Tracking}).`),
                 quickTextFormat(`**Наскок (Pounce)**: Гончие Скверны могут перемещаться на 1d6 дюймов и атаковать с +4 к атаке и урону.`),
             ],
         }),
@@ -1539,7 +1539,7 @@ function getBurningLegionContent() {
         }),
         getUnitContent({
             isWildCard: true,
-            title: 'Привратник Ада/Страж Рока (Doom Guard)',
+            title: 'Страж Рока/Привратник Ада (Doom Guard)',
             attributes: {
                 [States.Agility]: '6',
                 [States.Smarts]: '8',

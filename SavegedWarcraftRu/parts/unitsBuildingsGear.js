@@ -5761,7 +5761,9 @@ function getUndeadScourgeContent() {
                 },
                 alignment: 'left',
             },
-            '\n',
+            getTipText([
+                quickTextFormat(`Поганище/Мерзость/Мясника не я пропустил - в оригинальном документе его в этой таблице нет.`),
+            ]),
             {
                 table: { // Здания
                     widths: ['*', 'auto', 'auto', 'auto'],
