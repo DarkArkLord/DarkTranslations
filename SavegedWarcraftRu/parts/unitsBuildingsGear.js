@@ -5761,6 +5761,253 @@ function getUndeadScourgeContent() {
                 },
                 alignment: 'left',
             },
+            '\n',
+            {
+                table: { // Здания
+                    widths: ['*', 'auto', 'auto', 'auto'],
+                    body: [
+                        [
+                            {
+                                text: [
+                                    {
+                                        text: 'Здания',
+                                        style: 'header4'
+                                    },
+                                    '\n',
+                                    {
+                                        text: 'Курсивом обозначена стоимость улучшения',
+                                        italics: true,
+                                    }
+                                ],
+                            },
+                            {
+                                text: 'Стоимость\n(золото/дерево)',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Время строительства\n(дни)',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Содержание\n(золото/дерево/еда)',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Некрополь',
+                            },
+                            {
+                                text: `255`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `12`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0/0/1',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: '- Чертоги Мертвых',
+                                italics: true,
+                            },
+                            {
+                                text: `320/210`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `14`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '1/1/2',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: '- Темная Цитадель',
+                                italics: true,
+                            },
+                            {
+                                text: `325/230`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `14`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '2/2/3',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Склеп',
+                            },
+                            {
+                                text: `200/50`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `6`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0/1/0',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Зиккурат',
+                            },
+                            {
+                                text: `150/50`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `5`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '1/1/-8',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: '- Башня Духов',
+                                italics: true,
+                            },
+                            {
+                                text: `145/40`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `3`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '1/2/1',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: '- Башня Неруба',
+                                italics: true,
+                            },
+                            {
+                                text: `100/20`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `3`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '1/1/2',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Кладбище',
+                            },
+                            {
+                                text: `215/0`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `8`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Бойня',
+                            },
+                            {
+                                text: `140/135`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `6`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0/1/1',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Храм Проклятых',
+                            },
+                            {
+                                text: `155/140`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `6`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '2/0/0',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Жертвенник',
+                            },
+                            {
+                                text: `75/150`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `5`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Костяной завод',
+                            },
+                            {
+                                text: `175/200`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: `8`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '2/0/0',
+                                alignment: 'center',
+                            },
+                        ],
+                    ]
+                },
+                alignment: 'left',
+            },
         ];
     }
 
