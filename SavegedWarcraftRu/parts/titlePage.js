@@ -60,7 +60,7 @@ module.exports = function getTitlePageContent() {
             margin: [0, 15, 0, 0],
         },
         {
-            text: 'Перевод ?? ?? 2024, версия 0.2',
+            text: 'Перевод 24 сентября 2024, версия 0.2',
             alignment: 'center',
             bold: true,
             // pageBreak: 'after',
