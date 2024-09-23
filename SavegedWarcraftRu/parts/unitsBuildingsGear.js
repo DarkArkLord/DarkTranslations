@@ -6008,6 +6008,124 @@ function getUndeadScourgeContent() {
                 },
                 alignment: 'left',
             },
+            '\n',
+            {
+                table: { // Улучшения атаки / Улучшения защиты
+                    widths: ['*', 'auto', 50, '*', 'auto', 50],
+                    body: [
+                        [
+                            {
+                                text: 'Улучшения атаки',
+                                style: 'header4'
+                            },
+                            {
+                                text: 'Бонус',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Цена\n(З/Д)',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Улучшения защиты',
+                                style: 'header4'
+                            },
+                            {
+                                text: 'Бонус',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Цена\n(З/Д)',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Меньшее',
+                            },
+                            {
+                                text: `+1 урон`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '+10/+2',
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Меньшее',
+                            },
+                            {
+                                text: `+1 урон`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '+10/+2',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Большее',
+                            },
+                            {
+                                text: `+2 урон`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '+20/+5',
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Большее',
+                            },
+                            {
+                                text: `+2 урон`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '+15/+5',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Легендарное',
+                            },
+                            {
+                                text: `+3 урон`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '+40/+10',
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Легендарное',
+                            },
+                            {
+                                text: `+3 урон`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '+30/+10',
+                                alignment: 'center',
+                            },
+                        ],
+                    ]
+                },
+                alignment: 'left',
+            },
+            '\n',
+            quickTextFormat(`*Улучшения бывают двух видов: "Нечестивая сила" - чары, усиливающие Нежить, и "Чудовищная мощь" - похожие чары для не-Нежити.*`),
+            '\n',
+            getTipText([
+                quickTextFormat(`Бонус к урону для улучшений защиты - не моя идея, а ошибка, пришедшая прямиком из оригинала.`),
+                quickTextFormat(`**В рамках перевода оставлено как есть**.`),
+            ]),
         ];
     }
 
