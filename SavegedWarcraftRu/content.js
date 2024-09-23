@@ -9481,6 +9481,41 @@ function getUnitsBuildingsGearContent() {
         getHordeContent(),
         getSentinelsContent(),
         getUndeadScourgeContent(),
+
+
+        getUnitContent({
+            title: 'aaaaaaa (aaaaaaaaa)',
+            points: '12345',
+            lines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '4',
+                    [States.Smarts]: '10',
+                    [States.Spirit]: '12',
+                    [States.Strength]: '12',
+                    [States.Vigor]: '12',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Fighting]: '10',
+                }),
+                quickTextFormat(`**Изъяны**: ${[
+                    getFromDict(HindrancesTranslations, Hindrances.Cautious),
+                ].join(', ')}`),
+                quickTextFormat(`**Черты/Способности**: ${[
+                    getFromDict(EdgesTranslations, Edges.LowLightVision),
+                ].join(', ')}`),
+                getUnitCommonAttributesContent({
+                    [States.Pace]: '7',
+                    [States.Parry]: '6',
+                    [States.Toughness]: '15',
+                }),
+                quickTextFormat(`**Снаряжение**: ${[
+                    `aaaaaa`,
+                ].join(', ')}`),
+                quickTextFormat(`**Развитие**: ${[
+                    getFromDict(EdgesTranslations, Edges.Armor),
+                ].join(', ')}`),
+            ],
+        }),
     ];
 }
 
