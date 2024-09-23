@@ -5602,7 +5602,165 @@ function getUndeadScourgeContent() {
 
     function getUndeadScourgeCostsContent() {
         return [
-            //
+            {
+                text: 'Стоимость и содержание (Costs and Upkeeps)',
+                style: 'header3',
+            },
+            {
+                table: { // Юниты
+                    widths: ['auto', 'auto', 'auto'],
+                    body: [
+                        [
+                            {
+                                text: 'Юниты',
+                                style: 'header4'
+                            },
+                            {
+                                text: 'Стоимость найма\n(золото/дерево)',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                            {
+                                text: 'Содержание\n(золото/дерево/еда)',
+                                bold: true,
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Аколит/Послушник (Тень)',
+                            },
+                            {
+                                text: `75/0`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '1/0/1',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Некромант',
+                            },
+                            {
+                                text: `145/20`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '5/0/2',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Банши',
+                            },
+                            {
+                                text: `155/30`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '4/0/2',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Гуль/Вурдалак',
+                            },
+                            {
+                                text: `120/0`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0/0/2',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Могильный Дьявол/Могильщик',
+                            },
+                            {
+                                text: `215/40`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '1/0/3',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Ледяной змей',
+                            },
+                            {
+                                text: `385/120`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '3/1/7',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Горгулья',
+                            },
+                            {
+                                text: `185/30`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0/1/2',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Обсидиановая статуя',
+                            },
+                            {
+                                text: `200/35`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0/3/3',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Обсидиановый разрушитель/Сфинкс',
+                                italics: true,
+                            },
+                            {
+                                text: `--`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '0/3/5',
+                                alignment: 'center',
+                            },
+                        ],
+                        [
+                            {
+                                text: 'Труповозка',
+                            },
+                            {
+                                text: `230/50`,
+                                alignment: 'center',
+                            },
+                            {
+                                text: '2/3/3',
+                                alignment: 'center',
+                            },
+                        ],
+                    ]
+                },
+                alignment: 'left',
+            },
         ];
     }
 
