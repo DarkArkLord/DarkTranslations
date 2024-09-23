@@ -9408,6 +9408,48 @@ function getUnitsBuildingsGearContent() {
                         }),
                     ],
                 }),
+                getUnitContent({
+                    title: 'Банши (Banshee)',
+                    points: '53',
+                    lines: [
+                        getUnitAttributesContent({
+                            [States.Agility]: '8',
+                            [States.Smarts]: '8',
+                            [States.Spirit]: '10',
+                            [States.Strength]: '4',
+                            [States.Vigor]: '8',
+                        }),
+                        getUnitSkillsContent({
+                            [Skills.Guts]: '10',
+                            [Skills.Notice]: '8',
+                            [Skills.Spellcasting]: '10',
+                        }),
+                        quickTextFormat(`**Черты/Способности**: ${[
+                            getFromDict(EdgesTranslations, Edges.Undead),
+                            getFromDict(EdgesTranslations, Edges.Ethereal),
+                            getFromDict(EdgesTranslations, Edges.Fear),
+                            `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
+                            getFromDict(SettingEdgesTranslations, SettingEdges.Necromancer),
+                        ].join(', ')}`),
+                        quickTextFormat(`**Некромантия**: ***Пункты Силы***: 20; ***Заклинания***: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Burst)} (Звук (Sound))*`,
+                            `*${getFromDict(PowersTranslations, Powers.LowerTrait)}*`,
+                        ].join(', ')}`),
+                        getUnitCommonAttributesContent({
+                            [States.Pace]: '6',
+                            [States.Parry]: '2',
+                            [States.Toughness]: '8',
+                        }),
+                        quickTextFormat(`**Развитие**: ${[
+                            `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                            `*${getFromDict(PowersTranslations, Powers.Puppet)} (Одержимость (Possession))*`,
+                            getFromDict(EdgesTranslations, Edges.PowerPoints),
+                            getFromDict(EdgesTranslations, Edges.SoulDrain),
+                            getFromDict(EdgesTranslations, Edges.Wizard),
+                        ].join(', ')}`),
+                    ],
+                }),
             ];
         }
 
