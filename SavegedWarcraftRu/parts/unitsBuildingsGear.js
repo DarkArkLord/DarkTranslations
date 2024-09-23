@@ -5585,7 +5585,7 @@ function getUndeadScourgeContent() {
                 title: 'Труповозка (Meat Wagon)',
                 points: '37',
                 lines: [
-                    quickTextFormat(`*Труповозка обслуживается 3 специально обученными Аколитами/Послушниками (Acolyte).*`),
+                    quickTextFormat(`*Труповозки обслуживаются 3 специально обученными Аколитами/Послушниками (Acolyte).*`),
                     quickTextFormat(`**Скорость/Ускорение**: 4/1; **Стойкость**: 12 (6)`),
                     quickTextFormat(`**Трупная катапульта (Corpse Catapult)**: Урон 2d4, Дистанция 20/40/80, 3 Действия на перезарядку`),
                     quickTextFormat(`**Аколиты/Послушники (Acolytes)**`),
