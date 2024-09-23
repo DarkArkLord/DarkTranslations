@@ -5312,6 +5312,291 @@ function getUndeadScourgeContent() {
                     ].join(', ')}`),
                 ],
             }),
+            getUnitContent({
+                title: 'Скелет-воин (Skeleton Warrior)',
+                points: '30',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '4',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '10',
+                        [Skills.Intimidation]: '10',
+                        [Skills.Notice]: '10',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.Undead),
+                        getFromDict(EdgesTranslations, Edges.Fearless),
+                        `Когти (Claws) (Сила+1)`,
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '9 (7)',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Меч (Сила+3)`,
+                        `Гнилая кольчуга (+2)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Гуль/Вурдалак (Ghoul)',
+                points: '33',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Notice]: '4',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.Undead),
+                        `Когти/Укус (Claws/Bite) (Сила+2)`,
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '8',
+                    }),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(EdgesTranslations, Edges.Frenzy),
+                        getFromDict(EdgesTranslations, Edges.FleetFooted),
+                        `${getFromDict(EdgesTranslations, Edges.Regeneration)} (Каннибализм (Cannibalize) - проверка Исцеления при поедании трупа)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Могильный Дьявол/Могильщик (Crypt Fiend)',
+                points: '51',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Climbing]: '10',
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '10',
+                        [Skills.Intimidation]: '8',
+                        [Skills.Stealth]: '6',
+                        [Skills.Throwing]: '6',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.Undead),
+                        getFromDict(EdgesTranslations, Edges.Fearless),
+                        `Когти (Claws) (Сила+1)`,
+                        `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '8',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '10',
+                    }),
+                    quickTextFormat(`**Развитие**: ${[
+                        `Паутина (Web) (создать сеть из паутины)`,
+                        `${getFromDict(EdgesTranslations, Edges.Burrowing)} (0, +8 к Скрытности)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Поганище/Мерзость/Мясник (Abomination)',
+                points: '59',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '4',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '12+2',
+                        [States.Vigor]: '12',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Intimidation]: '10',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.Undead),
+                        `${getFromDict(EdgesTranslations, Edges.Size)} +4`,
+                        getFromDict(EdgesTranslations, Edges.Large),
+                        getFromDict(EdgesTranslations, Edges.Fearless),
+                        getFromDict(EdgesTranslations, Edges.ImprovedFrenzy),
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '14',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Тесак (Сила+3)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Развитие**: ${[
+                        getFromDict(EdgesTranslations, Edges.Berserk),
+                        `Облако болезни (Disease Cloud) (-2; снижает Силу и Выносливость на 1 кубик на 2d6 дней)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Ледяной змей (Frost Wyrm)',
+                points: '88',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '8 (Ж)',
+                        [States.Spirit]: '10',
+                        [States.Strength]: '12+4',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '10',
+                        [Skills.Intimidation]: '12',
+                        [Skills.Fighting]: '6',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        getFromDict(EdgesTranslations, Edges.Undead),
+                        `${getFromDict(EdgesTranslations, Edges.Fear)} (-2)`,
+                        getFromDict(EdgesTranslations, Edges.Fearless),
+                        `Когти/Укус (Claws/Bite) (Сила+3)`,
+                        `Ледяное дыхание (Frost Breath) (как ${getFromDict(PowersTranslations, Powers.Burst)} холода)`,
+                        `${getFromDict(EdgesTranslations, Edges.Size)} +5`,
+                        getFromDict(EdgesTranslations, Edges.Frenzy),
+                        getFromDict(EdgesTranslations, Edges.Large),
+                        `${getFromDict(EdgesTranslations, Edges.Flight)} (10 дюймов, Подъем 4 дюйма)`,
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '4',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '15',
+                    }),
+                ],
+            }),
+            getUnitContent({
+                title: 'Горгулья (Gargoyle)',
+                points: '59',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '10',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Throwing]: '6',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Size)} +1`,
+                        `${getFromDict(EdgesTranslations, Edges.Armor)} +3`,
+                        `${getFromDict(EdgesTranslations, Edges.Flight)} (8 дюймов, Подъем 4 дюйма)`,
+                        `Когти (Claws) (Сила+2)`,
+                        `Каменная форма (Stone Form) (${[
+                            `Неподвижный (Immobile)`,
+                            `Быстрая регенерация (Fast Regeneration)`,
+                            `+4 ${getFromDict(EdgesTranslations, Edges.Armor)}`,
+                        ].join(', ')})`,
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '11',
+                    }),
+                ],
+            }),
+            getUnitContent({
+                title: 'Обсидиановый разрушитель/Сфинкс (Obsidian Destroyer)',
+                points: '82',
+                lines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '12',
+                        [States.Vigor]: '10',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Intimidation]: '10',
+                        [Skills.Spellcasting]: '8',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Flight)} (10 дюймов, Подъем 4 дюйма)`,
+                        `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                        `${getFromDict(EdgesTranslations, Edges.Armor)} +4`,
+                        `Когти (Claws) (Сила+2)`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
+                        getFromDict(EdgesTranslations, Edges.SpellBreaker),
+                        `Высасывание Магии (Drain Magic)`,
+                        getFromDict(EdgesTranslations, Edges.Construct),
+                        getFromDict(EdgesTranslations, Edges.Fearless),
+                    ].join(', ')}`),
+                    quickTextFormat(`**Темная магия (Dark Magic)**: ***Пункты Силы***: 5; ***Заклинания***: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                    ].join(', ')}`),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '13',
+                    }),
+                    quickTextFormat(`**Развитие**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Blast)} (Сфера Небытия (Orb of Annihilation))*`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getTipText([
+                quickTextFormat(`Никаких пояснений по поводу **Высасывания Магии (Drain Magic)** не прилагается.`),
+            ]),
+            getUnitContent({
+                title: 'Обсидиановая статуя (Obsidian Statue)',
+                points: '47',
+                lines: [
+                    quickTextFormat(`**Скорость/Ускорение**: 4/1; **Стойкость**: 18 (14)`),
+                    getUnitSkillsContent({
+                        [Skills.Spellcasting]: '8',
+                    }),
+                    quickTextFormat(`**Черты/Способности**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
+                        getFromDict(EdgesTranslations, Edges.Command),
+                        getFromDict(EdgesTranslations, Edges.HoldTheLine),
+                    ].join(', ')}`),
+                    quickTextFormat(`**Темная магия (Dark Magic)**: ***Пункты Силы***: 20; ***Заклинания***: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                        `*Восстановление Маны (Restore Mana) (передача в соотношении 1 к 1)*`,
+                        `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getUnitContent({
+                title: 'Труповозка (Meat Wagon)',
+                points: '37',
+                lines: [
+                    quickTextFormat(`*Труповозка обслуживается 3 специально обученными Аколитами/Послушниками (Acolyte).*`),
+                    quickTextFormat(`**Скорость/Ускорение**: 4/1; **Стойкость**: 12 (6)`),
+                    quickTextFormat(`**Трупная катапульта (Corpse Catapult)**: Урон 2d4, Дистанция 20/40/80, 3 Действия на перезарядку`),
+                    quickTextFormat(`**Аколиты/Послушники (Acolytes)**`),
+                    getUnitSkillsContent({
+                        [Skills.Shooting]: '4',
+                    }),
+                    quickTextFormat(`**Развитие**: ${[
+                        `Облако болезни (Disease Cloud) (-2; снижает Силу и Выносливость на 1 кубик на 2d6 дней)`,
+                    ].join(', ')}`),
+                ],
+            }),
         ];
     }
 
@@ -5344,40 +5629,5 @@ module.exports = function getUnitsBuildingsGearContent() {
         getHordeContent(),
         getSentinelsContent(),
         getUndeadScourgeContent(),
-
-
-        getUnitContent({
-            title: 'aaaaaaa (aaaaaaaaa)',
-            points: '12345',
-            lines: [
-                getUnitAttributesContent({
-                    [States.Agility]: '4',
-                    [States.Smarts]: '10',
-                    [States.Spirit]: '12',
-                    [States.Strength]: '12',
-                    [States.Vigor]: '12',
-                }),
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '10',
-                }),
-                quickTextFormat(`**Изъяны**: ${[
-                    getFromDict(HindrancesTranslations, Hindrances.Cautious),
-                ].join(', ')}`),
-                quickTextFormat(`**Черты/Способности**: ${[
-                    getFromDict(EdgesTranslations, Edges.LowLightVision),
-                ].join(', ')}`),
-                getUnitCommonAttributesContent({
-                    [States.Pace]: '7',
-                    [States.Parry]: '6',
-                    [States.Toughness]: '15',
-                }),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `aaaaaa`,
-                ].join(', ')}`),
-                quickTextFormat(`**Развитие**: ${[
-                    getFromDict(EdgesTranslations, Edges.Armor),
-                ].join(', ')}`),
-            ],
-        }),
     ];
 };
