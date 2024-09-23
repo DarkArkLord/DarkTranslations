@@ -1,7 +1,5 @@
 const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('../common/savageWorldsTranslations');
 
-
-
 const SettingEdges = Object.freeze({
     Defend: 'Defend',
     ImprovedDefend: 'Improved Defend',
