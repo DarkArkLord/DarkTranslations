@@ -1462,6 +1462,8 @@ function getBurningLegionContent() {
         {
             text: 'Пылающий Легион (The Burning Legion)',
             style: 'header2',
+            tocItem: true,
+            tocMargin: [paragraphOffset, 0, 0, 0],
         },
         {
             stack: [
@@ -1792,6 +1794,8 @@ module.exports = function getBestiaryContent() {
             text: 'Бестиарий Warcraft (Bestiary of Warcraft)',
             style: 'header1',
             pageBreak: 'before',
+            tocItem: true,
+            tocStyle: { bold: true, fontSize: 16, },
         },
         getCreepsContent(),
         getBurningLegionContent(),

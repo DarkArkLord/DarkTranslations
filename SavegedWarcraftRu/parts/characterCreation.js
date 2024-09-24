@@ -57,7 +57,7 @@ function getRacesContent() {
         }
 
         return [
-            { text: 'Альянс (The Alliance)', style: 'header3', },
+            { text: 'Альянс (The Alliance)', style: 'header3', tocItem: true, tocMargin: [paragraphOffset * 2, 0, 0, 0], },
             {
                 ul: [
                     getHumansRaceContent(),
@@ -107,7 +107,7 @@ function getRacesContent() {
         }
 
         return [
-            { text: 'Орда (The Horde)', style: 'header3', },
+            { text: 'Орда (The Horde)', style: 'header3', tocItem: true, tocMargin: [paragraphOffset * 2, 0, 0, 0], },
             {
                 ul: [
                     getOrksRaceContent(),
@@ -151,7 +151,7 @@ function getRacesContent() {
         }
 
         return [
-            { text: 'Стражи (The Sentinels)', style: 'header3', },
+            { text: 'Стражи (The Sentinels)', style: 'header3', tocItem: true, tocMargin: [paragraphOffset * 2, 0, 0, 0], },
             {
                 ul: [
                     getNightElvesRaceContent(),
@@ -226,7 +226,7 @@ function getRacesContent() {
         }
 
         return [
-            { text: 'Нейтральные расы (Neutral Races)', style: 'header3', },
+            { text: 'Нейтральные расы (Neutral Races)', style: 'header3', tocItem: true, tocMargin: [paragraphOffset * 2, 0, 0, 0], },
             {
                 ul: [
                     getGoblinsRaceContent(),
@@ -243,6 +243,8 @@ function getRacesContent() {
             {
                 text: 'Расы (Races)',
                 style: 'header2',
+                tocItem: true,
+                tocMargin: [paragraphOffset, 0, 0, 0],
             },
             getAllianceRacesContent(),
             getHordeRacesContent(),
@@ -292,7 +294,7 @@ function getEdgesContent() {
 
     function getCombatEdgesContent() {
         return [
-            { text: 'Боевые черты (Combat Edges)', style: 'header3', },
+            { text: 'Боевые черты (Combat Edges)', style: 'header3', tocItem: true, tocMargin: [paragraphOffset * 2, 0, 0, 0], },
             createEdgeElement(Edges.Defend,
                 [
                     `${RanksTranslations[Ranks.Seasoned]} (${Ranks.Seasoned})`,
@@ -375,7 +377,7 @@ function getEdgesContent() {
 
     function getPowerEdgesContent() {
         return [
-            { text: 'Сверхъестественные черты (Power Edges)', style: 'header3', },
+            { text: 'Сверхъестественные черты (Power Edges)', style: 'header3', tocItem: true, tocMargin: [paragraphOffset * 2, 0, 0, 0], },
             createEdgeElement(Edges.ArcaneUndead,
                 [
                     `${RanksTranslations[Ranks.Veteran]} (${Ranks.Veteran})`,
@@ -494,7 +496,7 @@ function getEdgesContent() {
 
     function getProfessionalEdgesContent() {
         return [
-            { text: 'Профессиональные черты (Professional Edges)', style: 'header3', },
+            { text: 'Профессиональные черты (Professional Edges)', style: 'header3', tocItem: true, tocMargin: [paragraphOffset * 2, 0, 0, 0], },
             createEdgeElement(Edges.Artillerist,
                 [
                     `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
@@ -564,7 +566,7 @@ function getEdgesContent() {
 
     function getWeirdEdgesContent() {
         return [
-            { text: 'Потусторонние черты (Weird Edges)', style: 'header3', },
+            { text: 'Потусторонние черты (Weird Edges)', style: 'header3', tocItem: true, tocMargin: [paragraphOffset * 2, 0, 0, 0], },
             createEdgeElement(Edges.NaturesFury,
                 [
                     `${RanksTranslations[Ranks.Novice]} (${Ranks.Novice})`,
@@ -585,6 +587,8 @@ function getEdgesContent() {
                 text: 'Новые Черты (New Edges)',
                 style: 'header2',
                 pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [paragraphOffset, 0, 0, 0],
             },
             getCombatEdgesContent(),
             getPowerEdgesContent(),
@@ -603,6 +607,9 @@ function getArcaneBackgroundsContent() {
                     text: 'Маги (Mages)',
                     style: 'header4',
                     alignment: 'center',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     columns: [
@@ -662,6 +669,9 @@ function getArcaneBackgroundsContent() {
                     text: 'Некромант (Necromancer)',
                     style: 'header4',
                     alignment: 'center',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -699,6 +709,9 @@ function getArcaneBackgroundsContent() {
                     text: 'Чернокнижник (Warlock)',
                     style: 'header4',
                     alignment: 'center',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -734,6 +747,8 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Тайная магия (Arcane Magic)',
                     style: 'header3',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 3, 0, 0, 0],
                 },
                 {
                     ul: [
@@ -776,6 +791,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Внутренний Свет (The Inner Light)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -827,6 +845,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Внутренняя тень (The Inner Shadow)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -872,6 +893,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Шаманизм (Shamanism)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -923,6 +947,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Магия природы (Nature Magic)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -975,6 +1002,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Элуна, Богиня Луны (Elune, Goddess of the Moon)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -1018,6 +1048,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Вуду Тролля Джунглей (Jungle Troll Voodoo)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -1069,6 +1102,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Нежить (Undeath)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     text: 'Эта форма чуда происходит либо от договора с Королем-личом (Lich King), делающего вас Рыцарем Смерти (Death Knight), либо от использования силы нежити в качестве Воин Тьмы (Dark Warrior). Последнее требует, чтобы вы были нежитью и не подчинялись Королю-личу, из-за чего доступно только Отрекшимися (Forsaken).',
@@ -1121,6 +1157,8 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Божественная сила (Чудеса) (Divine Power (Miracles))',
                     style: 'header3',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 3, 0, 0, 0],
                 },
                 {
                     ul: [
@@ -1148,6 +1186,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Дворфийский Аватар (Dwarven Avatar)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -1195,6 +1236,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Тотемный Воин Тауренов (Tauren Totem-Warrior)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -1239,6 +1283,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Мастер клинка (Blademaster)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -1281,6 +1328,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Охотник на демонов (Demon Hunter)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -1327,6 +1377,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Пандаренский пивовар (Pandaren Brewmasters)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -1370,6 +1423,9 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Ночной эльф-хранитель (Night Elf Warden)',
                     style: 'header4',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 4, 0, 0, 0],
+                    tocStyle: { italics: true, },
                 },
                 {
                     ul: [
@@ -1413,6 +1469,8 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Направление (Новое - Сродни Суперсилам) (Channeling (New - Akin to Superpowers))',
                     style: 'header3',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 3, 0, 0, 0],
                 },
                 {
                     ul: [
@@ -1439,6 +1497,8 @@ function getArcaneBackgroundsContent() {
                 {
                     text: 'Мастерение (Основано на Безумной науке) (Tinkering (Based on Weird Science))',
                     style: 'header3',
+                    tocItem: true,
+                    tocMargin: [paragraphOffset * 3, 0, 0, 0],
                 },
                 {
                     ul: [
@@ -1506,6 +1566,8 @@ function getArcaneBackgroundsContent() {
                 text: 'Мистические дары (Arcane Backgrounds)',
                 style: 'header2',
                 pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [paragraphOffset * 2, 0, 0, 0],
             },
             getArcaneMagicContent(),
             getDivinePowerContent(),
@@ -1567,6 +1629,8 @@ function getNewPowersContent() {
                 text: 'Новые Силы (New Powers)',
                 style: 'header2',
                 pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [paragraphOffset, 0, 0, 0],
             },
             getPowerContent({
                 title: getFromDict(PowersTranslations, Powers.ArmorOffensive),
@@ -1967,6 +2031,8 @@ function getNewPowersContent() {
             {
                 text: 'Модифицированные заклинания (Modified Spells)',
                 style: 'header3',
+                tocItem: true,
+                tocMargin: [paragraphOffset * 2, 0, 0, 0],
             },
             getPowerContent({
                 title: getFromDict(PowersTranslations, Powers.GreaterHealing),
@@ -2012,6 +2078,8 @@ module.exports = function getCharacterCreationContent() {
             text: 'Создание персонажа (Character Creation)',
             style: 'header1',
             pageBreak: 'before',
+            tocItem: true,
+            tocStyle: { bold: true, fontSize: 16, },
         },
         getRacesContent(),
         getEdgesContent(),

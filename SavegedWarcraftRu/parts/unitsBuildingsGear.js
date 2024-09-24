@@ -695,6 +695,8 @@ function getAllianceContent() {
             {
                 text: 'Стоимость и содержание (Costs and Upkeeps)',
                 style: 'header3',
+                tocItem: true,
+                tocMargin: [paragraphOffset * 2, 0, 0, 0],
             },
             {
                 table: { // Юниты
@@ -2074,6 +2076,8 @@ function getAllianceContent() {
             text: 'Альянс (The Alliance)',
             style: 'header2',
             pageBreak: 'before',
+            tocItem: true,
+            tocMargin: [paragraphOffset, 0, 0, 0],
         },
         getAllianceUnitsContent(),
         getAllianceCosts(),
@@ -2675,6 +2679,8 @@ function getHordeContent() {
                 text: 'Стоимость и содержание (Costs and Upkeeps)',
                 style: 'header3',
                 pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [paragraphOffset * 2, 0, 0, 0],
             },
             {
                 table: { // Юниты
@@ -3874,6 +3880,8 @@ function getHordeContent() {
             text: 'Орда (The Horde)',
             style: 'header2',
             pageBreak: 'before',
+            tocItem: true,
+            tocMargin: [paragraphOffset, 0, 0, 0],
         },
         getHordeUnitsContent(),
         getHordeCosts(),
@@ -4275,6 +4283,8 @@ function getSentinelsContent() {
             {
                 text: 'Стоимость и содержание (Costs and Upkeeps)',
                 style: 'header3',
+                tocItem: true,
+                tocMargin: [paragraphOffset * 2, 0, 0, 0],
             },
             {
                 table: { // Юниты
@@ -5139,6 +5149,8 @@ function getSentinelsContent() {
             text: 'Стражи (The Sentinels)',
             style: 'header2',
             pageBreak: 'before',
+            tocItem: true,
+            tocMargin: [paragraphOffset, 0, 0, 0],
         },
         getSentinelsUnitsContent(),
         getSentinelsCostsContent(),
@@ -5605,6 +5617,8 @@ function getUndeadScourgeContent() {
             {
                 text: 'Стоимость и содержание (Costs and Upkeeps)',
                 style: 'header3',
+                tocItem: true,
+                tocMargin: [paragraphOffset * 2, 0, 0, 0],
             },
             {
                 table: { // Юниты
@@ -6136,6 +6150,8 @@ function getUndeadScourgeContent() {
             text: 'Плеть Нежити (The Undead Scourge)',
             style: 'header2',
             pageBreak: 'before',
+            tocItem: true,
+            tocMargin: [paragraphOffset, 0, 0, 0],
         },
         getUndeadScourgeUnitsContent(),
         getUndeadScourgeCostsContent(),
@@ -6148,6 +6164,8 @@ module.exports = function getUnitsBuildingsGearContent() {
             text: 'Юниты, Здания и Снаряжение (Units, Buildings and Gear)',
             style: 'header1',
             pageBreak: 'before',
+            tocItem: true,
+            tocStyle: { bold: true, fontSize: 16, },
         },
         getTitleContent(),
         getAllianceContent(),

@@ -44,6 +44,12 @@ const docDefinition = {
     },
     content: [
         getTitlePageContent(),
+        {
+            toc: {
+                title: { text: 'Содержание', style: 'header1' }
+            },
+            pageBreak: 'before',
+        },
         getCharacterCreationContent(),
         getBestiaryContent(),
         getUnitsBuildingsGearContent(),
