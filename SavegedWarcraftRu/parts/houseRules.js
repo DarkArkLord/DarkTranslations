@@ -1,5 +1,5 @@
 const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('../settingTranslations');
-const { paragraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('../commonFunctions');
+const { paragraphOffset, tocParagraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('../commonFunctions');
 
 module.exports = function getHouseRulesContent() {
     return [
@@ -17,7 +17,7 @@ module.exports = function getHouseRulesContent() {
                     text: 'Телесные раны (Flesh Wounds)',
                     style: 'header4',
                     tocItem: true,
-                    tocMargin: [paragraphOffset, 0, 0, 0],
+                    tocMargin: [tocParagraphOffset, 0, 0, 0],
                 },
                 quickTextFormat(`*Это правило имитирует быструю игру в Warcraft, в которой нужно продолжать наносить удары, даже если вас бьют.*`, { leadingIndent: paragraphOffset, }),
                 quickTextFormat(`Вместо того, чтобы получить Шок (Shaken) после удара в бою, персонажи получают Телесную рану (Flesh Wound). Персонаж с Телесной раной (Flesh Wound), который получает еще одну Телесную рану (Flesh Wound), получает вместо этого Ранение (Wound), но в остальном Телесные раны (Flesh Wounds) не имеют никакого эффекта. С другой стороны, они исчезают только при медицинском лечении какого-либо рода (три раунда и успешная проверка Исцеления (Healing check) или магические средства исцеления).`, { leadingIndent: paragraphOffset, }),
@@ -37,7 +37,7 @@ module.exports = function getHouseRulesContent() {
                     text: 'Сосредоточенный огонь (Focused Fire)',
                     style: 'header4',
                     tocItem: true,
-                    tocMargin: [paragraphOffset, 0, 0, 0],
+                    tocMargin: [tocParagraphOffset, 0, 0, 0],
                 },
                 quickTextFormat(`*Это правило имитирует тактику сосредоточенного огня из компьютерной игры.*`, { leadingIndent: paragraphOffset, }),
                 quickTextFormat(`Если все члены отряда имеют черту ${getFromDict(EdgesTranslations, Edges.Marksman)}, они могут отказаться от бонуса черты ${getFromDict(EdgesTranslations, Edges.Marksman)}, чтобы сфокусировать огонь (Focus Fire) на одной цели. Они получают бонус Объединения сил (Ganging Up) для дистанционных атак против этой цели в этом раунде.`, { leadingIndent: paragraphOffset, }),
@@ -45,7 +45,7 @@ module.exports = function getHouseRulesContent() {
                     text: 'Выбор войск (Select Troops)',
                     style: 'header4',
                     tocItem: true,
-                    tocMargin: [paragraphOffset, 0, 0, 0],
+                    tocMargin: [tocParagraphOffset, 0, 0, 0],
                 },
                 quickTextFormat(`*Это правило ничего не добавляет к колориту Warcraft, но это забавное дополнение к любой игре, где командование регулярными войсками является обычным явлением. Это немного замедляет ход событий, но только когда у вас есть время на дополнительные детали.*`, { leadingIndent: paragraphOffset, }),
                 quickTextFormat(`Персонажи с Лидерскими Чертами (Leadership Edges) получают небольшое преимущество при наборе войск, поскольку они знают, что ищут. Когда у персонажа есть возможность выбирать, какие войска он будет возглавлять, он может отсеять некоторые из худших "проблемных случаев". При составлении случайных союзников игрок может сместить бросок вверх или вниз на 1 очко за каждую Лидерскую Черту, которой он обладает.`, { leadingIndent: paragraphOffset, }),

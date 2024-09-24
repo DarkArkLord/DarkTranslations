@@ -1,5 +1,5 @@
 const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('../settingTranslations');
-const { paragraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('../commonFunctions');
+const { paragraphOffset, tocParagraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('../commonFunctions');
 
 function getTitleContent() {
     return [
@@ -696,7 +696,7 @@ function getAllianceContent() {
                 text: 'Стоимость и содержание (Costs and Upkeeps)',
                 style: 'header3',
                 tocItem: true,
-                tocMargin: [paragraphOffset * 2, 0, 0, 0],
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
             },
             {
                 table: { // Юниты
@@ -2077,7 +2077,7 @@ function getAllianceContent() {
             style: 'header2',
             pageBreak: 'before',
             tocItem: true,
-            tocMargin: [paragraphOffset, 0, 0, 0],
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
         },
         getAllianceUnitsContent(),
         getAllianceCosts(),
@@ -2680,7 +2680,7 @@ function getHordeContent() {
                 style: 'header3',
                 pageBreak: 'before',
                 tocItem: true,
-                tocMargin: [paragraphOffset * 2, 0, 0, 0],
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
             },
             {
                 table: { // Юниты
@@ -3881,7 +3881,7 @@ function getHordeContent() {
             style: 'header2',
             pageBreak: 'before',
             tocItem: true,
-            tocMargin: [paragraphOffset, 0, 0, 0],
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
         },
         getHordeUnitsContent(),
         getHordeCosts(),
@@ -4284,7 +4284,7 @@ function getSentinelsContent() {
                 text: 'Стоимость и содержание (Costs and Upkeeps)',
                 style: 'header3',
                 tocItem: true,
-                tocMargin: [paragraphOffset * 2, 0, 0, 0],
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
             },
             {
                 table: { // Юниты
@@ -5150,7 +5150,7 @@ function getSentinelsContent() {
             style: 'header2',
             pageBreak: 'before',
             tocItem: true,
-            tocMargin: [paragraphOffset, 0, 0, 0],
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
         },
         getSentinelsUnitsContent(),
         getSentinelsCostsContent(),
@@ -5618,7 +5618,7 @@ function getUndeadScourgeContent() {
                 text: 'Стоимость и содержание (Costs and Upkeeps)',
                 style: 'header3',
                 tocItem: true,
-                tocMargin: [paragraphOffset * 2, 0, 0, 0],
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
             },
             {
                 table: { // Юниты
@@ -6151,7 +6151,7 @@ function getUndeadScourgeContent() {
             style: 'header2',
             pageBreak: 'before',
             tocItem: true,
-            tocMargin: [paragraphOffset, 0, 0, 0],
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
         },
         getUndeadScourgeUnitsContent(),
         getUndeadScourgeCostsContent(),

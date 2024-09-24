@@ -1,4 +1,5 @@
 const paragraphOffset = 20; // leadingIndent
+const tocParagraphOffset = paragraphOffset / 2;
 
 function getFontPath(path) {
     return `${__dirname}/fonts/${path}`;
@@ -95,6 +96,7 @@ function getFromDict(dict, key) {
 
 module.exports = {
     paragraphOffset,
+    tocParagraphOffset,
     getFontPath,
     getImagePath,
     quickTextFormat,

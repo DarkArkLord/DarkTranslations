@@ -1,5 +1,5 @@
 const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('./settingTranslations');
-const { paragraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('./commonFunctions');
+const { paragraphOffset, tocParagraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('./commonFunctions');
 const getTitlePageContent = require('./parts/titlePage');
 const getCharacterCreationContent = require('./parts/characterCreation');
 const getBestiaryContent = require('./parts/bestiary');

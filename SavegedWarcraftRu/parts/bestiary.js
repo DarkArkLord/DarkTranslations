@@ -1,5 +1,5 @@
 const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('../settingTranslations');
-const { paragraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('../commonFunctions');
+const { paragraphOffset, tocParagraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('../commonFunctions');
 
 function getUnitContent(data) {
     const title = data.isWildCard ? {
@@ -1463,7 +1463,7 @@ function getBurningLegionContent() {
             text: 'Пылающий Легион (The Burning Legion)',
             style: 'header2',
             tocItem: true,
-            tocMargin: [paragraphOffset, 0, 0, 0],
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
         },
         {
             stack: [
