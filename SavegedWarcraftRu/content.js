@@ -5,6 +5,7 @@ const getCharacterCreationContent = require('./parts/characterCreation');
 const getBestiaryContent = require('./parts/bestiary');
 const getUnitsBuildingsGearContent = require('./parts/unitsBuildingsGear');
 const getHouseRulesContent = require('./parts/houseRules');
+const getAdventureContent = require('./parts/adventure');
 
 const fonts = {
     Roboto: {
@@ -54,6 +55,7 @@ const docDefinition = {
         getBestiaryContent(),
         getUnitsBuildingsGearContent(),
         getHouseRulesContent(),
+        getAdventureContent(),
     ],
 };
 
