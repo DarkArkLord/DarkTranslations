@@ -1,15 +1,8 @@
 const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('../settingTranslations');
 const { paragraphOffset, tocParagraphOffset, getFontPath, getImagePath, quickTextFormat, getTipText, getHorizontalLine, getFromDict, } = require('../commonFunctions');
 
-module.exports = function getAdventureContent() {
+function getAdventureText() {
     return [
-        {
-            text: 'Приключение - Враг Моего Врага... (The Enemy of My Enemy...)',
-            style: 'header1',
-            pageBreak: 'before',
-            tocItem: true,
-            tocStyle: { bold: true, fontSize: 16, },
-        },
         quickTextFormat(`Это один из немногих и прерывистых периодов мира на Азероте, передышка между войнами, охватившими мир с момента открытия Темного портала почти двадцать лет назад. Но в этом мире появляется звенящая нота раздора. Аванпост был потерян, и подозревается предательство. Теперь отважные герои должны отправиться туда и выяснить, что произошло, задаваясь вопросом, можно ли доверять собственным товарищам.`, { leadingIndent: paragraphOffset, }),
         quickTextFormat(`"Враг Моего Врага..." — это приключение для конверсии **Savaged Warcraft** для **Savage Worlds**. Поскольку в нем довольно много крупномасштабных массовых сражений, рекомендуется, чтобы GM имел опыт игры в Savage Worlds и, как минимум, поверхностное знакомство с Warcraft. Приключение рассчитано на группу из 3-6 высокоуровневых героев, желательно, чтобы они были представителями хотя бы одной из трех основных фракций (Альянс, Орда и Стражи). Для любителей **Warcraft**: это приключение происходит через несколько месяцев после обороны горы Хиджал, между *Reign of Chaos* и *The Frozen Throne*. Три армии живых заключили шаткое перемирие, постоянно оглядываясь на север и на угрозу Короля-лича.`, { leadingIndent: paragraphOffset, }),
         quickTextFormat(`На выбор игроков предоставляется несколько персонажей, созданных по образу Героев компьютерной игры **Warcraft III**. Если вы хотите создать своих собственных персонажей, рекомендуется, чтобы они были развиты хотя бы до ранга ${getFromDict(RanksTranslations, Ranks.Veteran)} (заранее созданные персонажи собраны на 55 очков опыта каждый). Затем они могут выбрать один из элитных отрядов (45+ очков) в качестве компаньона. Герои должны получить любую базовую экипировку, необходимую для их персонажа, а их оружие и броня должны быть улучшены дважды по соответствующей фракционной таблице. Компаньоны должны получить два повышения уровня из своих характеристик и иметь одно улучшение для оружия и брони.`, { leadingIndent: paragraphOffset, }),
@@ -121,5 +114,369 @@ module.exports = function getAdventureContent() {
             tocMargin: [tocParagraphOffset, 0, 0, 0],
         },
         quickTextFormat(`Как только персонажи справятся с угрозой Дункана Блэкроуза, они смогут связаться со своими начальниками в Калимдоре и проинформировать их о ситуации. Их похвавят за достигнутые успехи, а также попросят остаться в аванпосте, чтобы защищаться от будущих нападений Короля-лича, и налаживать отношения с Королевой Улья и ее нерубами-мятежниками. Даже отказавшись от этой неоднозначной чести, они заведут друзей на высоких постах.`, { leadingIndent: paragraphOffset, }),
+    ];
+}
+
+function getOppositionContent() {
+    function getUnitContent(data) {
+        const titleText = data.points ? {
+            text: [
+                {
+                    text: data.title,
+                    style: 'header4',
+                },
+                ' ',
+                {
+                    text: `[${data.points}]`,
+                    color: 'red',
+                }
+            ],
+        } : {
+            text: data.title,
+            style: 'header4',
+        };
+
+        const title = data.isWildCard ? {
+            layout: {
+                hLineWidth: function (i, node) { return 0; },
+                vLineWidth: function (i, node) { return 0; },
+                paddingLeft: function (i, node) { return 0; },
+                paddingRight: function (i, node) { return 0; },
+                paddingTop: function (i, node) { return 0; },
+                paddingBottom: function (i, node) { return 0; },
+            },
+            table: {
+                body: [
+                    [
+                        {
+                            image: getImagePath('wild-card-star.png'),
+                            width: 24,
+                            margin: [0, 0, 5, 0],
+                            // alignment: 'center',
+                        },
+                        titleText,
+                    ],
+                ]
+            }
+        } : titleText;
+
+        return {
+            stack: [
+                title,
+                {
+                    stack: data.lines,
+                    margin: [paragraphOffset, 0, 0, 0],
+                },
+            ],
+            alignment: 'left',
+        };
+    }
+
+    function getUnitAttributesContent(data) {
+        const attributesText = Object.keys(data ?? {})
+            .map(attr => `${StatesTranslations[attr]} d${data?.[attr]}`)
+            .join(', ');
+        return quickTextFormat(`**Атрибуты**: ${attributesText}`);
+    }
+
+    function getUnitSkillsContent(data) {
+        const skillsText = Object.keys(data ?? {})
+            .map(attr => `${SkillsTranslations[attr]} d${data?.[attr]}`)
+            .join(', ');
+        return quickTextFormat(`**Навыки**: ${skillsText}`);
+    }
+
+    function getUnitCommonAttributesContent(data) {
+        // const commonAttributesList = [States.Pace, States.Parry, States.Toughness];
+        const commonAttributesText = Object.keys(data)
+            .map(key => `**${StatesTranslations[key]}**: ${data?.[key]}`)
+            .join('; ');
+        return quickTextFormat(commonAttributesText);
+    }
+
+    return [
+        quickTextFormat(`Характеристики противников, с которыми столкнутся персонажи, приведены ниже. Некоторые из них перепечатаны из правил Savaged Warcraft для вашего удобства.`, { leadingIndent: paragraphOffset, }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Неруб, Солдат (Nerubian, Soldier)',
+            points: undefined,
+            lines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '10',
+                    [States.Smarts]: '6',
+                    [States.Spirit]: '8',
+                    [States.Strength]: '8',
+                    [States.Vigor]: '8',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Climbing]: '12',
+                    [Skills.Fighting]: '8',
+                    [Skills.Guts]: '10',
+                    [Skills.Intimidation]: '8',
+                    [Skills.Stealth]: '6',
+                    [Skills.Throwing]: '8',
+                }),
+                quickTextFormat(`**Особые способности**: ${[
+                    `Когти (Claws) (Сила+1)`,
+                    `${getFromDict(EdgesTranslations, Edges.Fearless)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Immunity)}: контроль разума (mind control) и ${getFromDict(PowersTranslations, Powers.Blight)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                ].join(', ')}`),
+                getUnitCommonAttributesContent({
+                    [States.Pace]: '8',
+                    [States.Parry]: '6',
+                    [States.Toughness]: '10 (8)',
+                }),
+                quickTextFormat(`**Снаряжение**: ${[
+                    `Копья (Сила+2, 3/6/12)`,
+                    `Хитиновая броня (+2)`,
+                ].join(', ')}`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Неруб, Прядильщик Сетей (Nerubian, Webspinner)',
+            points: undefined,
+            lines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '10',
+                    [States.Smarts]: '6',
+                    [States.Spirit]: '8',
+                    [States.Strength]: '8',
+                    [States.Vigor]: '6',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Climbing]: '12',
+                    [Skills.Fighting]: '6',
+                    [Skills.Guts]: '10',
+                    [Skills.Intimidation]: '8',
+                    [Skills.Stealth]: '6',
+                    [Skills.Throwing]: '8',
+                    [Skills.Webbing]: '8',
+                }),
+                quickTextFormat(`**Особые способности**: ${[
+                    `Когти (Claws) (Сила+1)`,
+                    `${getFromDict(EdgesTranslations, Edges.Fearless)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Immunity)}: контроль разума (mind control) и ${getFromDict(PowersTranslations, Powers.Blight)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                ].join(', ')}`),
+                getUnitCommonAttributesContent({
+                    [States.Pace]: '10',
+                    [States.Parry]: '10',
+                    [States.Toughness]: '10 (10)',
+                }),
+                quickTextFormat(`**Снаряжение**: ${[
+                    `Копья (Сила+2, 3/6/12)`,
+                ].join(', ')}`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Прядильщик Сетей (Webspinner))**: Пункты Силы - 20; Техники: ${[
+                    `*${getFromDict(PowersTranslations, Powers.Paralyze)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.Barrier)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.Fly)} (Сбрасывание
+паутины (web-drop))*`,
+                ].join(', ')}`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: true,
+            title: 'Королева Улья (Hive Queen)',
+            points: undefined,
+            lines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '10',
+                    [States.Smarts]: '10',
+                    [States.Spirit]: '12',
+                    [States.Strength]: '6',
+                    [States.Vigor]: '10',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Climbing]: '10',
+                    [Skills.Fighting]: '6',
+                    [Skills.Intimidation]: '10',
+                    [Skills.Notice]: '6',
+                    [Skills.Persuasion]: '8',
+                    [Skills.Spellcasting]: '12',
+                    [Skills.Throwing]: '6',
+                    [Skills.Webspinning]: '8',
+                }),
+                quickTextFormat(`**Черты**: ${[
+                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
+                    `${getFromDict(EdgesTranslations, Edges.Wizard)}`,
+                    `${getFromDict(EdgesTranslations, Edges.RapidRecharge)}`,
+                    `${getFromDict(EdgesTranslations, Edges.SpellAura)}`,
+                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Прядильщик Сетей (Webspinner))`,
+                    `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                    `${getFromDict(EdgesTranslations, Edges.NaturalLeader)}`,
+                    `${getFromDict(EdgesTranslations, Edges.HoldTheLine)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Особые способности**: ${[
+                    `Когти (Claws) (Сила+1)`,
+                    `${getFromDict(EdgesTranslations, Edges.Fearless)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Immunity)}: контроль разума (mind control) и ${getFromDict(PowersTranslations, Powers.Blight)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                ].join(', ')}`),
+                getUnitCommonAttributesContent({
+                    [States.Pace]: '8',
+                    [States.Parry]: '5',
+                    [States.Toughness]: '9',
+                    [States.Charisma]: '-2',
+                    [States.PowerPoints]: '25',
+                }),
+                quickTextFormat(`***Тайная Магия (Arcane Magic)***: ${[
+                    `*${getFromDict(PowersTranslations, Powers.Blast)} (Рой пауков (Spider Swarm))*`,
+                    `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.OffensiveArmor)} (Морозная броня (Frost Armor))*`,
+                    `*${getFromDict(PowersTranslations, Powers.Smite)} (Мороз (Frost))*`,
+                    `*${getFromDict(PowersTranslations, Powers.Teleport)}*`,
+                ].join(', ')}`),
+                quickTextFormat(`***Плетение паутины (Webspinning)***: ${[
+                    `*${getFromDict(PowersTranslations, Powers.Barrier)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.Paralyze)}*`,
+                ].join(', ')}`),
+            ],
+        }),
+        getUnitContent({
+            isWildCard: true,
+            title: 'Арак-арахм (Arak-Arahm)',
+            points: undefined,
+            lines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '8',
+                    [States.Smarts]: '12',
+                    [States.Spirit]: '10',
+                    [States.Strength]: '8',
+                    [States.Vigor]: '10',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Climbing]: '18',
+                    [Skills.Fighting]: '8',
+                    [Skills.Intimidation]: '10',
+                    [Skills.Notice]: '12',
+                    [Skills.Spellcasting]: '12',
+                    [Skills.Taunt]: '8',
+                }),
+                quickTextFormat(`**Черты**: ${[
+                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
+                    `${getFromDict(EdgesTranslations, Edges.Necromancer)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Wizard)}`,
+                    `${getFromDict(EdgesTranslations, Edges.CreateUndead)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Особые способности**: ${[
+                    `Когти (Claws) (Сила+1)`,
+                    `${getFromDict(EdgesTranslations, Edges.Fearless)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Immunity)}: контроль разума (mind control) и ${getFromDict(PowersTranslations, Powers.Blight)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                    `${getFromDict(EdgesTranslations, Edges.Undead)}`,
+                ].join(', ')}`),
+                getUnitCommonAttributesContent({
+                    [States.Pace]: '8',
+                    [States.Parry]: '6',
+                    [States.Toughness]: '11',
+                    [States.PowerPoints]: '25',
+                }),
+                quickTextFormat(`***Тайная Магия (Arcane Magic)***: ${[
+                    `*${getFromDict(PowersTranslations, Powers.Barrier)} (Ледяная паутина (Frost Web))*`,
+                    `*${getFromDict(PowersTranslations, Powers.Blight)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.Contact)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.LifeDrain)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.Puppet)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.Summon)} (Жук-трупоед (carrion beetle))*`,
+                    `*${getFromDict(PowersTranslations, Powers.Zombie)}*`,
+                ].join(', ')}`),
+            ],
+        }),
+        getTipText([
+            quickTextFormat(`${getFromDict(SkillsTranslations, Skills.Climbing)} d18 - это не моя опечатка, а значение из оригинального документа. Даже не уверен - он так хороши лазает или там должно быть d8 :)`),
+        ]),
+        getUnitContent({
+            isWildCard: false,
+            title: 'Могильный Дьявол/Могильщик (Crypt Fiend)',
+            points: undefined,
+            lines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '8',
+                    [States.Smarts]: '4',
+                    [States.Spirit]: '8',
+                    [States.Strength]: '8',
+                    [States.Vigor]: '8',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Climbing]: '10',
+                    [Skills.Fighting]: '8',
+                    [Skills.Guts]: '10',
+                    [Skills.Intimidation]: '8',
+                    [Skills.Stealth]: '6',
+                    [Skills.Throwing]: '6',
+                }),
+                quickTextFormat(`**Черты/Способности**: ${[
+                    getFromDict(EdgesTranslations, Edges.Undead),
+                    getFromDict(EdgesTranslations, Edges.Fearless),
+                    `Когти (Claws) (Сила+1)`,
+                    `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                ].join(', ')}`),
+                getUnitCommonAttributesContent({
+                    [States.Pace]: '8',
+                    [States.Parry]: '6',
+                    [States.Toughness]: '10',
+                }),
+                quickTextFormat(`**Развитие**: ${[
+                    `Паутина (Web) (создать сеть из паутины)`,
+                    `${getFromDict(EdgesTranslations, Edges.Burrowing)} (0, +8 к Скрытности)`,
+                ].join(', ')}`),
+            ],
+        }),
+
+
+
+        getUnitContent({
+            isWildCard: false,
+            title: 'aaaaaa (aaaaaaa)',
+            points: undefined,
+            lines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '10',
+                    [States.Smarts]: '10',
+                    [States.Spirit]: '10',
+                    [States.Strength]: '10',
+                    [States.Vigor]: '10',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Fighting]: '10',
+                }),
+                quickTextFormat(`**Особые способности**: ${[
+                    `${getFromDict(EdgesTranslations, Edges.Armor)}`,
+                ].join(', ')}`),
+                getUnitCommonAttributesContent({
+                    [States.Pace]: '10',
+                    [States.Parry]: '10',
+                    [States.Toughness]: '10 (10)',
+                }),
+                quickTextFormat(`**Снаряжение**: ${[
+                    `aaaaaaa`,
+                ].join(', ')}`),
+            ],
+        }),
+    ];
+}
+
+module.exports = function getAdventureContent() {
+    return [
+        {
+            text: 'Приключение - Враг Моего Врага... (The Enemy of My Enemy...)',
+            style: 'header1',
+            pageBreak: 'before',
+            tocItem: true,
+            tocStyle: { bold: true, fontSize: 16, },
+        },
+        getAdventureText(),
+        {
+            text: 'Противники (The Opposition)',
+            style: 'header2',
+            tocItem: true,
+            tocStyle: { bold: true, },
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
+        },
+        getOppositionContent(),
     ];
 };

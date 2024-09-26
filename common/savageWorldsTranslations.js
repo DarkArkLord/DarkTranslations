@@ -9,6 +9,8 @@ const States = Object.freeze({
     Pace: 'Pace',           // Шаг
     Parry: 'Parry',         // Защита
     Toughness: 'Toughness', // Стойкость
+    // --- --- Другое --- ---
+    PowerPoints: 'Power Points',
 });
 
 const StatesTranslations = Object.freeze({
@@ -22,6 +24,8 @@ const StatesTranslations = Object.freeze({
     [States.Pace]: 'Шаг',
     [States.Parry]: 'Защита',
     [States.Toughness]: 'Стойкость',
+    // --- --- Другое --- ---
+    [States.PowerPoints]: 'Пункты Силы',
 });
 
 const Skills = Object.freeze({
@@ -52,6 +56,7 @@ const Skills = Object.freeze({
     Guts: 'Guts',
     Gaze: 'Gaze',
     Webbing: 'Webbing',
+    Webspinning: 'Webspinning',
     // Arcane Skills
     Spellcasting: 'Spellcasting',
     Faith: 'Faith',
@@ -88,6 +93,7 @@ const SkillsTranslations = Object.freeze({
     [Skills.Guts]: 'Храбрость',
     [Skills.Gaze]: 'Взгляд (Gaze)',
     [Skills.Webbing]: 'Паутина (Webbing)',
+    [Skills.Webspinning]: 'Плетение паутины (Webspinning)',
     // Arcane Skills
     [Skills.Spellcasting]: 'Колдовство',
     [Skills.Faith]: 'Вера',
