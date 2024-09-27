@@ -616,24 +616,8 @@ function getOppositionContent() {
     ];
 }
 
-module.exports = function getAdventureContent() {
+function getMapsContent() {
     return [
-        {
-            text: 'Приключение - Враг Моего Врага... (The Enemy of My Enemy...)',
-            style: 'header1',
-            pageBreak: 'before',
-            tocItem: true,
-            tocStyle: { bold: true, fontSize: 16, },
-        },
-        getAdventureText(),
-        {
-            text: 'Противники (The Opposition)',
-            style: 'header2',
-            tocItem: true,
-            tocStyle: { bold: true, },
-            tocMargin: [tocParagraphOffset, 0, 0, 0],
-        },
-        getOppositionContent(),
         {
             text: 'Карта - Аванпост в Нордсколе',
             style: 'header2',
@@ -662,5 +646,27 @@ module.exports = function getAdventureContent() {
             margin: [0, 0, 0, 15],
             alignment: 'center',
         },
+    ];
+}
+
+module.exports = function getAdventureContent() {
+    return [
+        {
+            text: 'Приключение - Враг Моего Врага... (The Enemy of My Enemy...)',
+            style: 'header1',
+            pageBreak: 'before',
+            tocItem: true,
+            tocStyle: { bold: true, fontSize: 16, },
+        },
+        getAdventureText(),
+        {
+            text: 'Противники (The Opposition)',
+            style: 'header2',
+            tocItem: true,
+            tocStyle: { bold: true, },
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
+        },
+        getOppositionContent(),
+        getMapsContent(),
     ];
 };
