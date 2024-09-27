@@ -634,5 +634,33 @@ module.exports = function getAdventureContent() {
             tocMargin: [tocParagraphOffset, 0, 0, 0],
         },
         getOppositionContent(),
+        {
+            text: 'Карта - Аванпост в Нордсколе',
+            style: 'header2',
+            pageBreak: 'before',
+            tocItem: true,
+            tocStyle: { bold: true, },
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
+        },
+        {
+            image: getImagePath('map1.png'),
+            width: 500,
+            margin: [0, 0, 0, 15],
+            alignment: 'center',
+        },
+        {
+            text: 'Карта - Нерубское логово',
+            style: 'header2',
+            pageBreak: 'before',
+            tocItem: true,
+            tocStyle: { bold: true, },
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
+        },
+        {
+            image: getImagePath('map2.png'),
+            width: 500,
+            margin: [0, 0, 0, 15],
+            alignment: 'center',
+        },
     ];
 };
