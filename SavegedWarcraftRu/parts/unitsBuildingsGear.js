@@ -5336,9 +5336,9 @@ function getUndeadScourgeContent() {
                         [States.Vigor]: '6',
                     }),
                     getUnitSkillsContent({
-                        [Skills.Fighting]: '10',
-                        [Skills.Intimidation]: '10',
-                        [Skills.Notice]: '10',
+                        [Skills.Fighting]: '6',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Notice]: '4',
                     }),
                     quickTextFormat(`**Черты/Способности**: ${[
                         getFromDict(EdgesTranslations, Edges.Undead),
