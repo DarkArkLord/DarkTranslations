@@ -194,7 +194,7 @@ function getAllianceContent() {
                 ],
             }),
             getUnitContent({
-                title: 'Дворф-Стрелок (Dwarven Rifleman)',
+                title: 'Дворфийский Стрелок (Dwarven Rifleman)',
                 points: '35',
                 lines: [
                     getUnitAttributesContent({
@@ -759,7 +759,7 @@ function getAllianceContent() {
                         ],
                         [
                             {
-                                text: 'Дворф-Стрелок',
+                                text: 'Дворфийский Стрелок',
                             },
                             {
                                 text: `205/30`,
@@ -2310,7 +2310,7 @@ function getHordeContent() {
                                 quickTextFormat(`**Черты/Способности**: ${[
                                     `${getFromDict(EdgesTranslations, Edges.Size)} +1`,
                                     `Укус (Bite) (Сила+2)`,
-                                    `Вцепиться в горло/инстинкт хищника (Go For the Throat) (см. SW1 с. 144, SW2 с. 171)`,
+                                    `${getFromDict(EdgesTranslations, Edges.GoForTheThroat)} (см. SW1 с. 144, SW2 с. 171)`,
                                     `${getFromDict(EdgesTranslations, Edges.FleetFooted)}`,
                                 ].join(', ')}`),
                                 getUnitCommonAttributesContent({
@@ -2329,7 +2329,7 @@ function getHordeContent() {
                 ],
             }),
             getTipText([
-                quickTextFormat(`**Вцепиться в горло/инстинкт хищника**: волки инстинктивно пытаются вцепиться в самые уязвимые области тела своих противников. В случае подъёма при атаке волк поражает наименее защищённую область тела врага.`),
+                quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.GoForTheThroat)}**: волки инстинктивно пытаются вцепиться в самые уязвимые области тела своих противников. В случае подъёма при атаке волк поражает наименее защищённую область тела врага.`),
             ]),
             getUnitContent({
                 title: 'Наездник на кодо (Kodo Rider)',

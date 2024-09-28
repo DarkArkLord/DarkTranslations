@@ -379,7 +379,7 @@ const EdgesTranslations = Object.freeze({
     [Edges.Bruiser]: undefined,
     [Edges.Brawny]: 'Бугай',
     [Edges.Champion]: 'Избранный',
-    [Edges.Charismatic]: undefined,
+    [Edges.Charismatic]: 'Харизматичный',
     [Edges.CombatReflexes]: 'Боевая закалка',
     [Edges.Command]: 'Командный голос',
     [Edges.CommandPresence]: undefined,

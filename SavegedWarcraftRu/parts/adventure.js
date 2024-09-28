@@ -575,6 +575,11 @@ function getMapsContent() {
 }
 
 function getCharactersContent() {
+    const borderColor = {
+        Alliance: 'blue',
+        Horde: 'red',
+    };
+
     function getCharContent(data) {
         const titleCommonData = [];
         if (data.commonTitle) {
@@ -637,8 +642,8 @@ function getCharactersContent() {
             layout: {
                 hLineWidth: function (i, node) { return 3; },
                 vLineWidth: function (i, node) { return 3; },
-                hLineColor: function (i) { return 'blue'; },
-                vLineColor: function (i) { return 'blue'; },
+                hLineColor: function (i) { return data.border; },
+                vLineColor: function (i) { return data.border; },
                 paddingLeft: function (i, node) { return 5; },
                 paddingRight: function (i, node) { return 5; },
                 paddingTop: function (i, node) { return 5; },
@@ -655,6 +660,814 @@ function getCharactersContent() {
 
     const persinalityLineLength = 30;
 
+    function getAllianceCharacters() {
+        return [
+            {
+                text: 'Альянс (Alliance)',
+                style: 'header3',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
+            getCharContent({
+                border: borderColor.Alliance,
+                leftOffset: false,
+                image: 'bloodmage.png',
+                bigImage: true,
+                title: 'Апиландрус (Apilandrus)',
+                commonTitle: 'Высший Эльф Архимаг',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Апиландрус — отпрыск общества высших эльфов. Будучи учеником известных магов Кель'Таласа, он согласился помочь Кирин-Тору из Даларана, приобредшему значительный статус во время Второй войны. С тех пор он остался с человеческими магами и сражается с Нежитью, несмотря на уход эльфов из Альянса. Вопреки новым идеям Эльфов Крови, Апиландрус отказывается принимать магию чернокнижников, даже чтобы сражаться против них.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (57 опыта)`),
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '10',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '4',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '6',
+                        [Skills.Investigation]: '6',
+                        [Skills.Knowledge]: '8 (Магия)',
+                        [Skills.Notice]: '8',
+                        [Skills.Persuasion]: '6',
+                        [Skills.Spellcasting]: '12',
+                        [Skills.Streetwise]: '4',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '0 (-2 против Ночных Эльфов и Тауренов)',
+                        [States.Pace]: '6',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '6 (5)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Loyal)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.MagicAddiction)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Overconfident)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная Магия (Arcane Magic))`,
+                        `${getFromDict(EdgesTranslations, Edges.RapidRecharge)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Wizard)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Inspire)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Тайная Магия (Arcane Magic)**: **Пункты Силы**: 20; **Заклинания**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Bolt)} (Молния (Lightning))*`,
+                        `*${getFromDict(PowersTranslations, Powers.ContinuousBlast)} (Метель (Blizzard))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Deflection)} (Магический щит (Mystic Shield))*`,
+                        `*${getFromDict(PowersTranslations, Powers.OffensiveArmor)} (Огненный щит(Fire Shield))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Summon)}: Водный элементаль (Water Elemental)*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Боевой посох (Сила+2, +1 Парирование, Двуручное)`,
+                        `Мистическое одеяние (+1)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                border: borderColor.Alliance,
+                leftOffset: true,
+                image: 'priest.png',
+                bigImage: false,
+                title: 'Гиллидан (Gillidan)',
+                commonTitle: 'Высший Эльф Жрец Света',
+                points: '41',
+                withPictLines: [
+                    {
+                        text: `Гиллидан и его собратья Жрецы Внутреннего Света даже не думали покидать земли людей. Поступить так означало бы нарушить истины, которые они приняли.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '4',
+                        [States.Vigor]: '6',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Faith]: '8',
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '6',
+                        [Skills.Knowledge]: '8 (Религия)',
+                        [Skills.Notice]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '0 (-2 против Ночных Эльфов и Тауренов)',
+                        [States.Pace]: '6',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '5',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.MagicAddiction)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Внутренний Свет (Inner Light))`,
+                        `${getFromDict(EdgesTranslations, Edges.Priest)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Чудеса (Miracles)**: **Пункты Силы**: 15; **Заклинания**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Bolt)} (Белый свет (White Light))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.InnerFire)}*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Боевой посох (Сила+2, +1 Парирование, Двуручное)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Alliance,
+                leftOffset: true,
+                image: 'waterelement.png',
+                bigImage: false,
+                title: 'Водный элементаль (Water Elemental)',
+                commonTitle: '(Призываемый Юнит)',
+                points: undefined,
+                withPictLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '12+2',
+                        [States.Vigor]: '10',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '10',
+                        [Skills.Intimidation]: '10',
+                        [Skills.Shooting]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '5',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '13',
+                    }),
+                    quickTextFormat(`**Способности**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Armor)} +3`,
+                        `${getFromDict(EdgesTranslations, Edges.Size)} +3`,
+                        `${getFromDict(EdgesTranslations, Edges.Fearless)}`,
+                        `${getFromDict(EdgesTranslations, Edges.TwoFisted)}`,
+                    ].join(', ')}`),
+                ],
+                bottomLines: [
+                    {
+                        ul: [
+                            quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Construct)}**: +2 к восстановлению после Шока, половина урона от колющего оружия, иммунитет к прицельным выстрелам, ядам и болезням.`),
+                            quickTextFormat(`**Водяная струя (Waterspout)**: Водные элементали могут выстрелить в противника струей воды. Эта атака наносит урон в пределах Шаблона Малого Взрыва (соседние противники могут пройти проверку Ловкости, чтобы избежать ее). Урон: Сила; Дальность 3/6/12; Скорострельность: 1.`),
+                        ]
+                    }
+                ],
+            }),
+            getCharContent({
+                border: borderColor.Alliance,
+                leftOffset: false,
+                image: 'paladin.png',
+                bigImage: true,
+                title: 'Гален Сильверхэнд (Galen Silverhand)',
+                commonTitle: 'Человек Паладин',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Гален — сирота из Азерота, родители которого погибли в Первой войне против орков. Найденный рыцарями Лордерона, он был передан церкви. Когда архиепископ Фаол сформировал Рыцарей Серебряной Длани, он был взят на воспитание Орденом и стал одним из самых стойких его рыцарей.`,
+                        alignment: 'justify',
+                    },
+                    {
+                        text: `Недавний роспуск Ордена Серебряной Длани потряс Галена, но он по-прежнему клянется отстаивать идеалы Ордена и защищать земли людей.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (55 опыта)`),
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '10',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '10',
+                        [Skills.Faith]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '8',
+                        [Skills.Knowledge]: '4 (Религия)',
+                        [Skills.Notice]: '4',
+                        [Skills.Persuasion]: '6',
+                        [Skills.Riding]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '+2',
+                        [States.Pace]: '6',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '10 (6)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Heroic)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Свет (The Light))`,
+                        `${getFromDict(EdgesTranslations, Edges.Champion)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Charismatic)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                        `${getFromDict(EdgesTranslations, Edges.HoldTheLine)}`,
+                        `${getFromDict(EdgesTranslations, Edges.NaturalLeader)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SpellAura)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Свет (The Light) (Чудеса (Miracles))**: **Пункты Силы**: 15; **Заклинания**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Armor)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Healing)} (Святой свет (Holy Light))*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Усиленный латный доспех (+4)`,
+                        `Адамантиновый Боевой молот (Сила+6, ББ 1, Двуручный)`,
+                        `Лошадь боевая (Warhorse)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Alliance,
+                leftOffset: true,
+                image: 'knight.png',
+                bigImage: false,
+                title: 'Сэр Даман Стурдигард (Sir Daman Sturdyguard)',
+                commonTitle: 'Рыцарь Лордерона',
+                points: '97',
+                withPictLines: [
+                    {
+                        text: `Эти стойкие рыцари — стальной стержень сил Альянса, они врываются в бой в авангарде любой армии.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '4',
+                        [Skills.Riding]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '0',
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '10 (6)',
+                    }),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
+                        `${getFromDict(EdgesTranslations, Edges.CombatReflexes)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Sweep)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Хороший длинный меч (Сила+4)`,
+                        `Пика (Сила+4, ББ 1, Досягаемость 2)`,
+                        `Улучшеный латный достех (+4)`,
+                        `Средний щит (+1 Парирование/+1 Броня против дальних атак)`,
+                    ].join(', ')}`),
+                    { text: `Лошадь боевая (Warhorse)`, style: 'header4', },
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '6',
+                                [States.Smarts]: '4 (Ж)',
+                                [States.Spirit]: '6',
+                                [States.Strength]: '12+2',
+                                [States.Vigor]: '10',
+                            }),
+                            getUnitSkillsContent({
+                                [Skills.Fighting]: '8',
+                                [Skills.Guts]: '8',
+                                [Skills.Notice]: '4',
+                            }),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '8',
+                                [States.Parry]: '6',
+                                [States.Toughness]: '12 (10)',
+                            }),
+                            quickTextFormat(`**Черты**: ${[
+                                `${getFromDict(EdgesTranslations, Edges.FleetFooted)} (d8 для Бега)`,
+                                `${getFromDict(EdgesTranslations, Edges.Size)} +3`,
+                                `Удар ногой (Kick) (Сила+1)`,
+                            ].join(', ')}`),
+                            quickTextFormat(`**Снаряжение**: ${[
+                                `Кольчужная броня (+2)`,
+                            ].join(', ')}`),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
+            getCharContent({
+                border: borderColor.Alliance,
+                leftOffset: false,
+                image: 'mountainking.png',
+                bigImage: true,
+                title: 'Тарн Стоунфордж (Târn Stoneforge)',
+                commonTitle: 'Тан дворфов Стальгорна',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Тарн — тан клана Каменной Кузни из глубин дварфийского королевства Каз Модан. Его клан редко подвергался угрозам со стороны Орды в прошлом, что позволило Тарну и его народу свободно оттачивать свои навыки и исследовать связь с титанами, обнаруженную в конце Второй войны. Поэтому, когда Плеть обрушилась на его народ, тан клана Каменной Кузни был готов обрушить на них свою ярость.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (58 опыта)`),
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '10',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '10',
+                        [Skills.Faith]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '8',
+                        [Skills.Investigation]: '6',
+                        [Skills.Knowledge]: '6 (История)',
+                        [Skills.Notice]: '6',
+                        [Skills.Taunt]: '6',
+                        [Skills.Throwing]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '0',
+                        [States.Pace]: '5',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '12 (7)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Short)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Curious)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Quirk)}: Дворфы сделали все первыми`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Аватар (Avatar))`,
+                        `${getFromDict(EdgesTranslations, Edges.Florentine)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Frenzy)}`,
+                        `${getFromDict(EdgesTranslations, Edges.HardToKill)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Дворфийский Аватар (Dwarven Avatar) (Направление (Channeling))**: **Пункты Силы**: 15; **Силы**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Smite)} (+ Оглушает Статистов)*`,
+                        `*${getFromDict(PowersTranslations, Powers.Blast)} (Удар грома (Thunder Сlap), центр на себе, Оглушает Статистов)*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Мифриловые латы (+5)`,
+                        `Адамантиновый Боевой Топор (Сила+5, ББ 1)`,
+                        `Мифриловый Молот (Сила+3, 4/8/12, возвращается после броска)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Alliance,
+                leftOffset: true,
+                image: 'mortarteam.png',
+                bigImage: false,
+                title: 'Хадран и Колм (Hadran and Colm)',
+                commonTitle: 'Дворфийский Мортирный расчет',
+                points: '81',
+                withPictLines: [
+                    {
+                        text: `Не все ваши войны отвернулись от работы со сталью и паром. Эти стойкие мортирщики пришли на ваш призыв, как и их тан.`,
+                        alignment: 'justify',
+                    },
+                    {
+                        text: [
+                            { text: `Хадран (Hadran)`, style: 'header4', },
+                            '\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Колм (Colm)`, style: 'header4', },
+                            '\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '4',
+                        [Skills.Repair]: '6',
+                        [Skills.Shooting]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '0',
+                        [States.Pace]: '5',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '8 (6)',
+                    }),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Artillerist)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Кожаная броня с заклепками (+2)`,
+                        `Короткий меч (Сила+2)`,
+                    ].join(', ')}`),
+                    { text: `Мортира (Mortar)`, style: 'header4', },
+                    {
+                        stack: [
+                            quickTextFormat(`**Урон**: 3d6+2 в Шаблоне Малого Взрыва`),
+                            quickTextFormat(`**Дистанция**: **40/80/120**`),
+                            quickTextFormat(`1 Действие на перезарядку; не может двигаться во время стрельбы/перезарядки. Возможность вести огонь непрямой наводкой`),
+                            quickTextFormat(`**Боеприпасы**:\t***Много***\t*Мало*\t*Нет*`),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    }
+                ],
+            }),
+            getCharContent({
+                border: borderColor.Alliance,
+                leftOffset: false,
+                image: 'footman.png',
+                bigImage: false,
+                title: 'Пехотинцы (Foot Soldiers)',
+                commonTitle: undefined,
+                points: '40 каждый',
+                withPictLines: [
+                    {
+                        text: `Человеческие пехотинцы, составляющие основу армий Лордерона, хорошо известны своим мастерством владения щитами и непоколебимой преданностью своему долгу.`,
+                        alignment: 'justify',
+                    },
+                    {
+                        text: [
+                            { text: `Томас (Tomas)`, style: 'header4', },
+                            '\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Бредли (Bradly)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Колан (Colan)`, style: 'header4', },
+                            '\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Мавор (Mavor)`, style: 'header4', },
+                            '\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Дейлин (Daelen)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '4',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '8 (5)',
+                    }),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Block)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Defend)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Качественный палаш (Сила+4)`,
+                        `Латный доспех (+3)`,
+                        `Каплевидный щит (+2 Парирование, +2 Броня против дальнего боя)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Alliance,
+                leftOffset: false,
+                image: 'rifleman.png',
+                bigImage: false,
+                title: 'Дворфийские Cтрелки (Dwarven Riflemen)',
+                commonTitle: undefined,
+                points: '40 каждый',
+                withPictLines: [
+                    {
+                        text: `Из осажденного королевства Каз Модан эти дворфы прибывают со своими легендарными Длинными Винтовками для укрепления сил Альянса.`,
+                        alignment: 'justify',
+                    },
+                    {
+                        text: [
+                            { text: `Хурн (Hurn)`, style: 'header4', },
+                            '\t\t\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Мурад (Muradh)`, style: 'header4', },
+                            '\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Ангус (Angus)`, style: 'header4', },
+                            '\t\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Брадель (Bradhel)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Гровам (Grovam)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '6',
+                        [Skills.Shooting]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '5',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '8 (6)',
+                    }),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Musketeer)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Marksman)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Кожаная броня с заклепками (+2)`,
+                        `Штык (Str+2)`,
+                        `Длинная винтовка (2d8+1, ББ 1, 15/30/60, 1 Действие на перезарядку)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Боеприпасы**:\t*Очень много*\t***Много***\t*Мало*\t*Нет*`),
+                ],
+            }),
+        ];
+    }
+
+    function getHordeCharacters() {
+        return [
+            {
+                text: 'Орда (Horde)',
+                style: 'header3',
+                pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
+            getCharContent({
+                border: borderColor.Horde,
+                leftOffset: false,
+                image: 'farseer.png',
+                bigImage: true,
+                title: `Гул'кар  Сокрушитель Бурь (Gul'kar Stormbreaker)`,
+                commonTitle: 'Орк Шаман',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Гул'кар — один из последних шаманов древности. Он научился говорить с духами Дренора задолго до безумного падения Нер'зула и Гул'дана в магию чернокнижников. Долго преследуемый, теперь он помогает возрождать старые традиции, как один из советников-провидцев вождя и шамана Тралла.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (59 опыта)`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '8',
+                        [States.Spirit]: '10',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Faith]: '10',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Knowledge]: '8 (Духи)',
+                        [Skills.Notice]: '8',
+                        [Skills.Riding]: '6',
+                        [Skills.Survival]: '6',
+                        [Skills.Tracking]: '4',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2 (0 для Орды)',
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '9 (6)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.SavageHeritage)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Vengeful)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Elderly)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Brawny)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Шаман (Shaman))`,
+                        `${getFromDict(EdgesTranslations, Edges.Shaman)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
+                        `${getFromDict(EdgesTranslations, Edges.NervesOfSteel)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Шаман (Shaman) (Чудеса (Miracles))**: **Пункты Силы**: 20; **Заклинания**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Bolt)} (Цепная молния (Chain Lightning), +1 цель/подъем)*`,
+                        `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.FarSight)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Bloodlust)}*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Ториевый кольчужный хауберк (+3, игнорирует 1 ББ)`,
+                        `Ториевый Боевой клинок (Сила+4, ББ 1)`,
+                    ].join(', ')}`),
+                    { text: `Лютоволк (Dire Wolf)`, style: 'header4', },
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '8',
+                                [States.Smarts]: '4 (Ж)',
+                                [States.Spirit]: '6',
+                                [States.Strength]: '8',
+                                [States.Vigor]: '8',
+                            }),
+                            getUnitSkillsContent({
+                                [Skills.Fighting]: '8',
+                                [Skills.Guts]: '8',
+                                [Skills.Intimidation]: '6',
+                                [Skills.Notice]: '6',
+                            }),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '10',
+                                [States.Parry]: '6',
+                                [States.Toughness]: '6',
+                            }),
+                            quickTextFormat(`**Способности**: ${[
+                                `${getFromDict(EdgesTranslations, Edges.FleetFooted)} (d10 для Бега)`,
+                                `${getFromDict(EdgesTranslations, Edges.Size)} +1`,
+                                `Укус (Bite) (Сила+2)`,
+                                `${getFromDict(EdgesTranslations, Edges.GoForTheThroat)} (поражает наименее бронированную область при подъеме)`,
+                            ].join(', ')}`),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Horde,
+                leftOffset: true,
+                image: 'wolfrider.png',
+                bigImage: false,
+                title: `Каг'ар (Kag'ar)`,
+                commonTitle: 'Волчий наездник',
+                points: '96',
+                withPictLines: [
+                    {
+                        text: `Возрожденные Траллом, волчьи наездники орков больше не являются кровожадными варварами, но они по-прежнему свирепы и грозны в бою.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Notice]: '4',
+                        [Skills.Riding]: '6',
+                        [Skills.Throwing]: '6',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2 (0 для Орды)',
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '10 (7)',
+                    }),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Brawny)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Berserk)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Ториевый кольчужный хауберк (+3, игнорирует 1 ББ)`,
+                        `Ториевый Боевой клинок (Сила+4, ББ 1)`,
+                        `Сеть (Ловушки (Entraps))`,
+                    ].join(', ')}`),
+                    { text: `Лютоволк (Dire Wolf)`, style: 'header4', },
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '8',
+                                [States.Smarts]: '4 (Ж)',
+                                [States.Spirit]: '6',
+                                [States.Strength]: '8',
+                                [States.Vigor]: '8',
+                            }),
+                            getUnitSkillsContent({
+                                [Skills.Fighting]: '8',
+                                [Skills.Guts]: '8',
+                                [Skills.Intimidation]: '6',
+                                [Skills.Notice]: '6',
+                            }),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '10',
+                                [States.Parry]: '6',
+                                [States.Toughness]: '6',
+                            }),
+                            quickTextFormat(`**Способности**: ${[
+                                `${getFromDict(EdgesTranslations, Edges.FleetFooted)} (d10 для Бега)`,
+                                `${getFromDict(EdgesTranslations, Edges.Size)} +1`,
+                                `Укус (Bite) (Сила+2)`,
+                                `${getFromDict(EdgesTranslations, Edges.GoForTheThroat)}`,
+                            ].join(', ')}`),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
+        ];
+    }
+
     return [
         {
             text: 'Заранее созданные персонажи',
@@ -664,458 +1477,17 @@ function getCharactersContent() {
             tocStyle: { bold: true, },
             tocMargin: [tocParagraphOffset, 0, 0, 0],
         },
+        getAllianceCharacters(),
+        getHordeCharacters(),
+
+
+
         getCharContent({
+            border: borderColor.Horde,
             leftOffset: false,
             image: 'bloodmage.png',
             bigImage: true,
-            title: 'Апиландрус (Apilandrus)',
-            commonTitle: 'Высший Эльф Архимаг',
-            points: undefined,
-            withPictLines: [
-                {
-                    text: `Апиландрус — отпрыск общества высших эльфов. Будучи учеником известных магов Кель'Таласа, он согласился помочь Кирин-Тору из Даларана, приобредшему значительный статус во время Второй войны. С тех пор он остался с человеческими магами и сражается с Нежитью, несмотря на уход эльфов из Альянса. Вопреки новым идеям Эльфов Крови, Апиландрус отказывается принимать магию чернокнижников, даже чтобы сражаться против них.`,
-                    alignment: 'justify',
-                },
-                quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (57 опыта)`),
-            ],
-            bottomLines: [
-                getUnitAttributesContent({
-                    [States.Agility]: '6',
-                    [States.Smarts]: '10',
-                    [States.Spirit]: '8',
-                    [States.Strength]: '4',
-                    [States.Vigor]: '6',
-                }),
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '4',
-                    [Skills.Guts]: '6',
-                    [Skills.Investigation]: '6',
-                    [Skills.Knowledge]: '8 (Магия)',
-                    [Skills.Notice]: '8',
-                    [Skills.Persuasion]: '6',
-                    [Skills.Spellcasting]: '12',
-                    [Skills.Streetwise]: '4',
-                }),
-                getUnitCommonAttributesContent({
-                    [States.Charisma]: '0 (-2 против Ночных Эльфов и Тауренов)',
-                    [States.Pace]: '6',
-                    [States.Parry]: '4',
-                    [States.Toughness]: '6 (5)',
-                }),
-                quickTextFormat(`**Изъяны**: ${[
-                    `${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.Loyal)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.MagicAddiction)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.Overconfident)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Черты**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
-                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная Магия (Arcane Magic))`,
-                    `${getFromDict(EdgesTranslations, Edges.RapidRecharge)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Wizard)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Command)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Inspire)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Тайная Магия (Arcane Magic)**: **Пункты Силы**: 20; **Заклинания**: ${[
-                    `*${getFromDict(PowersTranslations, Powers.Bolt)} (Молния (Lightning))*`,
-                    `*${getFromDict(PowersTranslations, Powers.ContinuousBlast)} (Метель (Blizzard))*`,
-                    `*${getFromDict(PowersTranslations, Powers.Deflection)} (Магический щит (Mystic Shield))*`,
-                    `*${getFromDict(PowersTranslations, Powers.OffensiveArmor)} (Огненный щит(Fire Shield))*`,
-                    `*${getFromDict(PowersTranslations, Powers.Summon)}: Водный элементаль (Water Elemental)*`,
-                ].join(', ')}`),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `Боевой посох (Сила+2, +1 Парирование, Двуручное)`,
-                    `Мистическое одеяние (+1)`,
-                ].join(', ')}`),
-            ],
-        }),
-        getCharContent({
-            leftOffset: true,
-            image: 'priest.png',
-            bigImage: false,
-            title: 'Гиллидан (Gillidan)',
-            commonTitle: 'Высший Эльф Жрец Света',
-            points: '41',
-            withPictLines: [
-                {
-                    text: `Гиллидан и его собратья Жрецы Внутреннего Света даже не думали покидать земли людей. Поступить так означало бы нарушить истины, которые они приняли.`,
-                    alignment: 'justify',
-                },
-                quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
-                getUnitAttributesContent({
-                    [States.Agility]: '6',
-                    [States.Smarts]: '6',
-                    [States.Spirit]: '8',
-                    [States.Strength]: '4',
-                    [States.Vigor]: '6',
-                }),
-            ],
-            bottomLines: [
-                getUnitSkillsContent({
-                    [Skills.Faith]: '8',
-                    [Skills.Fighting]: '4',
-                    [Skills.Guts]: '6',
-                    [Skills.Knowledge]: '8 (Религия)',
-                    [Skills.Notice]: '6',
-                }),
-                getUnitCommonAttributesContent({
-                    [States.Charisma]: '0 (-2 против Ночных Эльфов и Тауренов)',
-                    [States.Pace]: '6',
-                    [States.Parry]: '4',
-                    [States.Toughness]: '5',
-                }),
-                quickTextFormat(`**Изъяны**: ${[
-                    `${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.MagicAddiction)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Черты**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
-                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Внутренний Свет (Inner Light))`,
-                    `${getFromDict(EdgesTranslations, Edges.Priest)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Чудеса (Miracles)**: **Пункты Силы**: 15; **Заклинания**: ${[
-                    `*${getFromDict(PowersTranslations, Powers.Bolt)} (Белый свет (White Light))*`,
-                    `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
-                    `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
-                    `*${getFromDict(PowersTranslations, Powers.InnerFire)}*`,
-                ].join(', ')}`),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `Боевой посох (Сила+2, +1 Парирование, Двуручное)`,
-                ].join(', ')}`),
-            ],
-        }),
-        getCharContent({
-            newPage: true,
-            leftOffset: true,
-            image: 'waterelement.png',
-            bigImage: false,
-            title: 'Водный элементаль (Water Elemental)',
-            commonTitle: '(Призываемый Юнит)',
-            points: undefined,
-            withPictLines: [
-                getUnitAttributesContent({
-                    [States.Agility]: '6',
-                    [States.Smarts]: '4',
-                    [States.Spirit]: '6',
-                    [States.Strength]: '12+2',
-                    [States.Vigor]: '10',
-                }),
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '10',
-                    [Skills.Intimidation]: '10',
-                    [Skills.Shooting]: '8',
-                }),
-                getUnitCommonAttributesContent({
-                    [States.Pace]: '5',
-                    [States.Parry]: '7',
-                    [States.Toughness]: '13',
-                }),
-                quickTextFormat(`**Способности**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.Armor)} +3`,
-                    `${getFromDict(EdgesTranslations, Edges.Size)} +3`,
-                    `${getFromDict(EdgesTranslations, Edges.Fearless)}`,
-                    `${getFromDict(EdgesTranslations, Edges.TwoFisted)}`,
-                ].join(', ')}`),
-            ],
-            bottomLines: [
-                {
-                    ul: [
-                        quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Construct)}**: +2 к восстановлению после Шока, половина урона от колющего оружия, иммунитет к прицельным выстрелам, ядам и болезням.`),
-                        quickTextFormat(`**Водяная струя (Waterspout)**: Водные элементали могут выстрелить в противника струей воды. Эта атака наносит урон в пределах Шаблона Малого Взрыва (соседние противники могут пройти проверку Ловкости, чтобы избежать ее). Урон: Сила; Дальность 3/6/12; Скорострельность: 1.`),
-                    ]
-                }
-            ],
-        }),
-        getCharContent({
-            leftOffset: false,
-            image: 'paladin.png',
-            bigImage: true,
-            title: 'Гален Сильверхэнд (Galen Silverhand)',
-            commonTitle: 'Человек Паладин',
-            points: undefined,
-            withPictLines: [
-                {
-                    text: `Гален — сирота из Азерота, родители которого погибли в Первой войне против орков. Найденный рыцарями Лордерона, он был передан церкви. Когда архиепископ Фаол сформировал Рыцарей Серебряной Длани, он был взят на воспитание Орденом и стал одним из самых стойких его рыцарей.`,
-                    alignment: 'justify',
-                },
-                {
-                    text: `Недавний роспуск Ордена Серебряной Длани потряс Галена, но он по-прежнему клянется отстаивать идеалы Ордена и защищать земли людей.`,
-                    alignment: 'justify',
-                },
-                quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (55 опыта)`),
-            ],
-            bottomLines: [
-                getUnitAttributesContent({
-                    [States.Agility]: '6',
-                    [States.Smarts]: '4',
-                    [States.Spirit]: '10',
-                    [States.Strength]: '8',
-                    [States.Vigor]: '8',
-                }),
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '10',
-                    [Skills.Faith]: '8',
-                    [Skills.Guts]: '8',
-                    [Skills.Intimidation]: '8',
-                    [Skills.Knowledge]: '4 (Религия)',
-                    [Skills.Notice]: '4',
-                    [Skills.Persuasion]: '6',
-                    [Skills.Riding]: '6',
-                }),
-                getUnitCommonAttributesContent({
-                    [States.Charisma]: '+2',
-                    [States.Pace]: '6',
-                    [States.Parry]: '7',
-                    [States.Toughness]: '10 (6)',
-                }),
-                quickTextFormat(`**Изъяны**: ${[
-                    `${getFromDict(HindrancesTranslations, Hindrances.Heroic)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Черты**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Свет (The Light))`,
-                    `${getFromDict(EdgesTranslations, Edges.Champion)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Charismatic)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Command)}`,
-                    `${getFromDict(EdgesTranslations, Edges.HoldTheLine)}`,
-                    `${getFromDict(EdgesTranslations, Edges.NaturalLeader)}`,
-                    `${getFromDict(EdgesTranslations, Edges.SpellAura)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Свет (The Light) (Чудеса (Miracles))**: **Пункты Силы**: 15; **Заклинания**: ${[
-                    `*${getFromDict(PowersTranslations, Powers.Armor)}*`,
-                    `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
-                    `*${getFromDict(PowersTranslations, Powers.Healing)} (Святой свет (Holy Light))*`,
-                ].join(', ')}`),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `Усиленный латный доспех (+4)`,
-                    `Адамантиновый Боевой молот (Сила+6, ББ 1, Двуручный)`,
-                    `Лошадь боевая (Warhorse)`,
-                ].join(', ')}`),
-            ],
-        }),
-        getCharContent({
-            newPage: true,
-            leftOffset: true,
-            image: 'knight.png',
-            bigImage: false,
-            title: 'Сэр Даман Стурдигард (Sir Daman Sturdyguard)',
-            commonTitle: 'Рыцарь Лордерона',
-            points: '97',
-            withPictLines: [
-                {
-                    text: `Эти стойкие рыцари — стальной стержень сил Альянса, они врываются в бой в авангарде любой армии.`,
-                    alignment: 'justify',
-                },
-                quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
-                getUnitAttributesContent({
-                    [States.Agility]: '6',
-                    [States.Smarts]: '4',
-                    [States.Spirit]: '6',
-                    [States.Strength]: '8',
-                    [States.Vigor]: '8',
-                }),
-            ],
-            bottomLines: [
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '8',
-                    [Skills.Guts]: '8',
-                    [Skills.Notice]: '4',
-                    [Skills.Riding]: '6',
-                }),
-                getUnitCommonAttributesContent({
-                    [States.Charisma]: '0',
-                    [States.Pace]: '6',
-                    [States.Parry]: '6',
-                    [States.Toughness]: '10 (6)',
-                }),
-                quickTextFormat(`**Черты**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
-                    `${getFromDict(EdgesTranslations, Edges.CombatReflexes)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Sweep)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `Хороший длинный меч (Сила+4)`,
-                    `Пика (Сила+4, ББ 1, Досягаемость 2)`,
-                    `Улучшеный латный достех (+4)`,
-                    `Средний щит (+1 Парирование/+1 Броня против дальних атак)`,
-                ].join(', ')}`),
-                { text: `Лошадь боевая (Warhorse)`, style: 'header4', },
-                {
-                    stack: [
-                        getUnitAttributesContent({
-                            [States.Agility]: '6',
-                            [States.Smarts]: '4 (Ж)',
-                            [States.Spirit]: '6',
-                            [States.Strength]: '12+2',
-                            [States.Vigor]: '10',
-                        }),
-                        getUnitSkillsContent({
-                            [Skills.Fighting]: '8',
-                            [Skills.Guts]: '8',
-                            [Skills.Notice]: '4',
-                        }),
-                        getUnitCommonAttributesContent({
-                            [States.Pace]: '8',
-                            [States.Parry]: '6',
-                            [States.Toughness]: '12 (10)',
-                        }),
-                        quickTextFormat(`**Черты**: ${[
-                            `${getFromDict(EdgesTranslations, Edges.FleetFooted)} (d8 для Бега)`,
-                            `${getFromDict(EdgesTranslations, Edges.Size)} +3`,
-                            `Удар ногой (Kick) (Сила+1)`,
-                        ].join(', ')}`),
-                        quickTextFormat(`**Снаряжение**: ${[
-                            `Кольчужная броня (+2)`,
-                        ].join(', ')}`),
-                    ],
-                    margin: [paragraphOffset, 0, 0, 0],
-                },
-            ],
-        }),
-        getCharContent({
-            leftOffset: false,
-            image: 'mountainking.png',
-            bigImage: true,
-            title: 'Тарн Стоунфордж (Târn Stoneforge)',
-            commonTitle: 'Тан дворфов Стальгорна',
-            points: undefined,
-            withPictLines: [
-                {
-                    text: `Тарн — тан клана Каменной Кузни из глубин дварфийского королевства Каз Модан. Его клан редко подвергался угрозам со стороны Орды в прошлом, что позволило Тарну и его народу свободно оттачивать свои навыки и исследовать связь с титанами, обнаруженную в конце Второй войны. Поэтому, когда Плеть обрушилась на его народ, тан клана Каменной Кузни был готов обрушить на них свою ярость.`,
-                    alignment: 'justify',
-                },
-                quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (58 опыта)`),
-            ],
-            bottomLines: [
-                getUnitAttributesContent({
-                    [States.Agility]: '8',
-                    [States.Smarts]: '6',
-                    [States.Spirit]: '8',
-                    [States.Strength]: '8',
-                    [States.Vigor]: '10',
-                }),
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '10',
-                    [Skills.Faith]: '8',
-                    [Skills.Guts]: '8',
-                    [Skills.Intimidation]: '8',
-                    [Skills.Investigation]: '6',
-                    [Skills.Knowledge]: '6 (История)',
-                    [Skills.Notice]: '6',
-                    [Skills.Taunt]: '6',
-                    [Skills.Throwing]: '8',
-                }),
-                getUnitCommonAttributesContent({
-                    [States.Charisma]: '0',
-                    [States.Pace]: '5',
-                    [States.Parry]: '7',
-                    [States.Toughness]: '12 (7)',
-                }),
-                quickTextFormat(`**Изъяны**: ${[
-                    `${getFromDict(HindrancesTranslations, Hindrances.Short)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.Curious)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
-                    `${getFromDict(HindrancesTranslations, Hindrances.Quirk)}: Дворфы сделали все первыми`,
-                ].join(', ')}`),
-                quickTextFormat(`**Черты**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
-                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Аватар (Avatar))`,
-                    `${getFromDict(EdgesTranslations, Edges.Florentine)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Command)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Frenzy)}`,
-                    `${getFromDict(EdgesTranslations, Edges.HardToKill)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Дворфийский Аватар (Dwarven Avatar) (Направление (Channeling))**: **Пункты Силы**: 15; **Силы**: ${[
-                    `*${getFromDict(PowersTranslations, Powers.Smite)} (+ Оглушает Статистов)*`,
-                    `*${getFromDict(PowersTranslations, Powers.Blast)} (Удар грома (Thunder Сlap), центр на себе, Оглушает Статистов)*`,
-                ].join(', ')}`),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `Мифриловые латы (+5)`,
-                    `Адамантиновый Боевой Топор (Сила+5, ББ 1)`,
-                    `Мифриловый Молот (Сила+3, 4/8/12, возвращается после броска)`,
-                ].join(', ')}`),
-            ],
-        }),
-        getCharContent({
-            newPage: true,
-            leftOffset: true,
-            image: 'mortarteam.png',
-            bigImage: false,
-            title: 'Хадран и Колм (Hadran and Colm)',
-            commonTitle: 'Дворфийский Мортирный расчет',
-            points: '81',
-            withPictLines: [
-                {
-                    text: `Не все ваши войны отвернулись от работы со сталью и паром. Эти стойкие мортирщики пришли на ваш призыв, как и их тан.`,
-                    alignment: 'justify',
-                },
-                {
-                    text: [
-                        { text: `Хадран (Hadran)`, style: 'header4', },
-                        '\t',
-                        quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
-                    ]
-                },
-                {
-                    text: [
-                        { text: `Колм (Colm)`, style: 'header4', },
-                        '\t\t\t',
-                        quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
-                    ]
-                },
-            ],
-            bottomLines: [
-                getUnitAttributesContent({
-                    [States.Agility]: '8',
-                    [States.Smarts]: '4',
-                    [States.Spirit]: '8',
-                    [States.Strength]: '6',
-                    [States.Vigor]: '8',
-                }),
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '4',
-                    [Skills.Guts]: '8',
-                    [Skills.Notice]: '4',
-                    [Skills.Repair]: '6',
-                    [Skills.Shooting]: '8',
-                }),
-                getUnitCommonAttributesContent({
-                    [States.Charisma]: '0',
-                    [States.Pace]: '5',
-                    [States.Parry]: '4',
-                    [States.Toughness]: '8 (6)',
-                }),
-                quickTextFormat(`**Черты**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
-                    `${getFromDict(EdgesTranslations, Edges.Artillerist)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `Кожаная броня с заклепками (+2)`,
-                    `Короткий меч (Сила+2)`,
-                ].join(', ')}`),
-                { text: `Мортира (Mortar)`, style: 'header4', },
-                {
-                    stack: [
-                        quickTextFormat(`**Урон**: 3d6+2 в Шаблоне Малого Взрыва`),
-                        quickTextFormat(`**Дистанция**: **40/80/120**`),
-                        quickTextFormat(`1 Действие на перезарядку; не может двигаться во время стрельбы/перезарядки. Возможность вести огонь непрямой наводкой`),
-                        quickTextFormat(`**Боеприпасы**:\t***Много***\t*Мало*\t*Нет*`),
-                    ],
-                    margin: [paragraphOffset, 0, 0, 0],
-                }
-            ],
-        }),
-
-
-
-
-
-        getCharContent({
-            leftOffset: false,
-            image: 'bloodmage.png',
-            bigImage: true,
-            title: 'Title (Title)',
+            title: `Title (Title)`,
             commonTitle: 'commonTitle',
             points: undefined,
             withPictLines: [
@@ -1157,10 +1529,11 @@ function getCharactersContent() {
             ],
         }),
         getCharContent({
+            border: borderColor.Horde,
             leftOffset: true,
             image: 'bloodmage.png',
             bigImage: false,
-            title: 'Title (Title)',
+            title: `Title (Title)`,
             commonTitle: 'commonTitle',
             points: '666',
             withPictLines: [

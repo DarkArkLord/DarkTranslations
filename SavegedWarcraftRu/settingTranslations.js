@@ -3,11 +3,13 @@ const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, Hind
 const SettingHindrances = Object.freeze({
     MagicAddiction: 'Magic Addiction',
     Short: 'Short',
+    SavageHeritage: 'Savage Heritage',
 });
 
 const SettingHindrancesTranslations = Object.freeze({
     [SettingHindrances.MagicAddiction]: 'Зависимость от магии',
     [SettingHindrances.Short]: 'Низкорослый',
+    [SettingHindrances.SavageHeritage]: 'Дикое наследие',
 });
 
 const SettingEdges = Object.freeze({
@@ -38,6 +40,7 @@ const SettingEdges = Object.freeze({
     SpellBreaker: 'Spell Breaker',
     Warlock: 'Warlock',
     NaturesFury: 'Nature’s Fury',
+    GoForTheThroat: 'Go For the Throat',
 });
 
 const SettingEdgesTranslations = Object.freeze({
@@ -68,6 +71,7 @@ const SettingEdgesTranslations = Object.freeze({
     [SettingEdges.SpellBreaker]: 'Разрушитель заклинаний',
     [SettingEdges.Warlock]: 'Чернокнижник',
     [SettingEdges.NaturesFury]: 'Ярость природы',
+    [SettingEdges.GoForTheThroat]: 'Вцепиться в горло/инстинкт хищника',
 });
 
 const SettingPowers = Object.freeze({
