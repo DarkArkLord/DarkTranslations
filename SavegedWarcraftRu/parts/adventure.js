@@ -575,6 +575,110 @@ function getMapsContent() {
     ];
 }
 
+function getCharactersContent() {
+    function getCharContent(data) {
+        const titleCommonData = [];
+        if (data.commonTitle) {
+            titleCommonData.push({ text: `, ${data.commonTitle}`, });
+        }
+        if (data.points) {
+            titleCommonData.push({ text: ` [${data.points}]`, color: 'red' });
+        }
+
+        const charData = {
+            layout: {
+                hLineWidth: function (i, node) { return 0; },
+                vLineWidth: function (i, node) { return 0; },
+                paddingLeft: function (i, node) { return 0; },
+                paddingRight: function (i, node) { return 0; },
+                paddingTop: function (i, node) { return 0; },
+                paddingBottom: function (i, node) { return 0; },
+            },
+            table: {
+                widths: ['auto', '*'],
+                body: [
+                    [
+                        {
+                            image: getImagePath(data.image),
+                            width: data.bigImage ? 150 : 100,
+                            margin: 5,
+                            alignment: 'center',
+                        },
+                        [
+                            {
+                                text: [
+                                    {
+                                        text: data.title,
+                                        style: 'header4',
+                                    },
+                                    ...titleCommonData,
+                                ],
+                                alignment: 'center',
+                            },
+                            ...data.withPictLines,
+                        ]
+                    ],
+                    [
+                        {
+                            stack: data.bottomLines,
+                            colSpan: 2,
+                        }
+                    ]
+                ]
+            }
+        };
+
+        return {
+            layout: {
+                hLineWidth: function (i, node) { return 3; },
+                vLineWidth: function (i, node) { return 3; },
+                hLineColor: function (i) { return 'blue'; },
+                vLineColor: function (i) { return 'blue'; },
+                paddingLeft: function (i, node) { return 5; },
+                paddingRight: function (i, node) { return 5; },
+                paddingTop: function (i, node) { return 5; },
+                paddingBottom: function (i, node) { return 5; },
+            },
+            table: {
+                widths: ['*'],
+                body: [[charData]],
+            },
+            margin: [(data.leftOffset ? (paragraphOffset * 2) : 0), 0, 0, 5],
+        }
+    }
+
+    return [
+        {
+            text: 'Заранее созданные персонажи',
+            style: 'header2',
+            pageBreak: 'before',
+            tocItem: true,
+            tocStyle: { bold: true, },
+            tocMargin: [tocParagraphOffset, 0, 0, 0],
+        },
+        getCharContent({
+            leftOffset: false,
+            image: 'Apilandrus.png',
+            bigImage: true,
+            title: 'Title',
+            commonTitle: 'commonTitle',
+            points: undefined,
+            withPictLines: ['1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 '],
+            bottomLines: ['321'],
+        }),
+        getCharContent({
+            leftOffset: true,
+            image: 'Apilandrus.png',
+            bigImage: false,
+            title: 'Title',
+            commonTitle: 'commonTitle',
+            points: '666',
+            withPictLines: ['1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 '],
+            bottomLines: ['321'],
+        }),
+    ];
+}
+
 module.exports = function getAdventureContent() {
     return [
         {
@@ -594,5 +698,6 @@ module.exports = function getAdventureContent() {
         },
         getOppositionContent(),
         getMapsContent(),
+        getCharactersContent(),
     ];
 };
