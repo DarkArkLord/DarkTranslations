@@ -2,10 +2,12 @@ const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, Hind
 
 const SettingHindrances = Object.freeze({
     MagicAddiction: 'Magic Addiction',
+    Short: 'Short',
 });
 
 const SettingHindrancesTranslations = Object.freeze({
     [SettingHindrances.MagicAddiction]: 'Зависимость от магии',
+    [SettingHindrances.Short]: 'Низкорослый',
 });
 
 const SettingEdges = Object.freeze({
