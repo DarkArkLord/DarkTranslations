@@ -119,7 +119,6 @@ function getAdventureText() {
 }
 
 function getOppositionContent() {
-
     return [
         quickTextFormat(`Характеристики противников, с которыми столкнутся персонажи, приведены ниже. Некоторые из них перепечатаны из правил Savaged Warcraft для вашего удобства.`, { leadingIndent: paragraphOffset, }),
         getUnitContent({
@@ -585,6 +584,8 @@ function getCharactersContent() {
             titleCommonData.push({ text: ` [${data.points}]`, color: 'red' });
         }
 
+        const imageSize = data.bigImage ? 150 : 100;
+
         const charData = {
             layout: {
                 hLineWidth: function (i, node) { return 0; },
@@ -595,12 +596,12 @@ function getCharactersContent() {
                 paddingBottom: function (i, node) { return 0; },
             },
             table: {
-                widths: ['auto', '*'],
+                widths: [imageSize + 15, '*'],
                 body: [
                     [
                         {
                             image: getImagePath(data.image),
-                            width: data.bigImage ? 150 : 100,
+                            width: imageSize,
                             margin: 5,
                             alignment: 'center',
                         },
@@ -615,12 +616,16 @@ function getCharactersContent() {
                                 ],
                                 alignment: 'center',
                             },
-                            ...data.withPictLines,
+                            {
+                                stack: data.withPictLines,
+                                alignment: 'left',
+                            },
                         ]
                     ],
                     [
                         {
                             stack: data.bottomLines,
+                            alignment: 'left',
                             colSpan: 2,
                         }
                     ]
@@ -643,9 +648,12 @@ function getCharactersContent() {
                 widths: ['*'],
                 body: [[charData]],
             },
-            margin: [(data.leftOffset ? (paragraphOffset * 2) : 0), 0, 0, 5],
+            margin: [(data.leftOffset ? (paragraphOffset * 1.5) : 0), 0, 0, 5],
+            ...(data.newPage ? { pageBreak: 'before' } : {}),
         }
     }
+
+    const persinalityLineLength = 30;
 
     return [
         {
@@ -660,21 +668,244 @@ function getCharactersContent() {
             leftOffset: false,
             image: 'Apilandrus.png',
             bigImage: true,
-            title: 'Title',
+            title: 'Апиландрус (Apilandrus)',
+            commonTitle: 'Высший Эльф Архимаг',
+            points: undefined,
+            withPictLines: [
+                {
+                    text: `Апиландрус — отпрыск общества высших эльфов. Будучи учеником известных магов Кель'Таласа, он согласился помочь Кирин-Тору из Даларана, приобредшему значительный статус во время Второй войны. С тех пор он остался с человеческими магами и сражается с Нежитью, несмотря на уход эльфов из Альянса. Вопреки новым идеям Эльфов Крови, Апиландрус отказывается принимать магию чернокнижников, даже чтобы сражаться против них.`,
+                    alignment: 'justify',
+                },
+                quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (57 опыта)`),
+            ],
+            bottomLines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '6',
+                    [States.Smarts]: '10',
+                    [States.Spirit]: '8',
+                    [States.Strength]: '4',
+                    [States.Vigor]: '6',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Fighting]: '4',
+                    [Skills.Guts]: '6',
+                    [Skills.Investigation]: '6',
+                    [Skills.Knowledge]: '8 (Магия)',
+                    [Skills.Notice]: '8',
+                    [Skills.Persuasion]: '6',
+                    [Skills.Spellcasting]: '12',
+                    [Skills.Streetwise]: '4',
+                }),
+                getUnitCommonAttributesContent({
+                    [States.Charisma]: '0 (-2 против Ночных Эльфов и Тауренов)',
+                    [States.Pace]: '6',
+                    [States.Parry]: '4',
+                    [States.Toughness]: '6 (5)',
+                }),
+                quickTextFormat(`**Изъяны**: ${[
+                    `${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`,
+                    `${getFromDict(HindrancesTranslations, Hindrances.Loyal)}`,
+                    `${getFromDict(HindrancesTranslations, Hindrances.MagicAddiction)}`,
+                    `${getFromDict(HindrancesTranslations, Hindrances.Overconfident)}`,
+                    `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Черты**: ${[
+                    `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тайная Магия (Arcane Magic))`,
+                    `${getFromDict(EdgesTranslations, Edges.RapidRecharge)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Wizard)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                    `${getFromDict(EdgesTranslations, Edges.Inspire)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Тайная Магия (Arcane Magic)**: **Пункты Силы**: 20; **Заклинания**: ${[
+                    `*${getFromDict(PowersTranslations, Powers.Bolt)} (Молния (Lightning))*`,
+                    `*${getFromDict(PowersTranslations, Powers.ContinuousBlast)} (Метель (Blizzard))*`,
+                    `*${getFromDict(PowersTranslations, Powers.Deflection)} (Магический щит (Mystic Shield))*`,
+                    `*${getFromDict(PowersTranslations, Powers.OffensiveArmor)} (Огненный щит(Fire Shield))*`,
+                    `*${getFromDict(PowersTranslations, Powers.Summon)}: Водный элементаль (Water Elemental)*`,
+                ].join(', ')}`),
+                quickTextFormat(`**Снаряжение**: ${[
+                    `Боевой посох (Сила+2, +1 Парирование, Двуручное)`,
+                    `Мистическое одеяние (+1)`,
+                ].join(', ')}`),
+            ],
+        }),
+        getCharContent({
+            leftOffset: true,
+            image: 'priest.png',
+            bigImage: false,
+            title: 'Гиллидан (Gillidan)',
+            commonTitle: 'Высший Эльф Жрец Света',
+            points: '41',
+            withPictLines: [
+                `Гиллидан и его собратья Жрецы Внутреннего Света даже не думали покидать земли людей. Поступить так означало бы нарушить истины, которые они приняли.`,
+                quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                getUnitAttributesContent({
+                    [States.Agility]: '6',
+                    [States.Smarts]: '6',
+                    [States.Spirit]: '8',
+                    [States.Strength]: '4',
+                    [States.Vigor]: '6',
+                }),
+            ],
+            bottomLines: [
+                getUnitSkillsContent({
+                    [Skills.Faith]: '8',
+                    [Skills.Fighting]: '4',
+                    [Skills.Guts]: '6',
+                    [Skills.Knowledge]: '8 (Религия)',
+                    [Skills.Notice]: '6',
+                }),
+                getUnitCommonAttributesContent({
+                    [States.Charisma]: '0 (-2 против Ночных Эльфов и Тауренов)',
+                    [States.Pace]: '6',
+                    [States.Parry]: '4',
+                    [States.Toughness]: '5',
+                }),
+                quickTextFormat(`**Изъяны**: ${[
+                    `${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`,
+                    `${getFromDict(HindrancesTranslations, Hindrances.MagicAddiction)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Черты**: ${[
+                    `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                    `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Внутренний Свет (Inner Light))`,
+                    `${getFromDict(EdgesTranslations, Edges.Priest)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Чудеса (Miracles)**: **Пункты Силы**: 15; **Заклинания**: ${[
+                    `*${getFromDict(PowersTranslations, Powers.Bolt)} (Белый свет (White Light))*`,
+                    `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                    `*${getFromDict(PowersTranslations, Powers.InnerFire)}*`,
+                ].join(', ')}`),
+                quickTextFormat(`**Снаряжение**: ${[
+                    `Боевой посох (Сила+2, +1 Парирование, Двуручное)`,
+                ].join(', ')}`),
+            ],
+        }),
+        getCharContent({
+            newPage: true,
+            leftOffset: true,
+            image: 'waterelement.png',
+            bigImage: false,
+            title: 'Водный элементаль (Water Elemental)',
+            commonTitle: '(Призываемый Юнит)',
+            points: undefined,
+            withPictLines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '6',
+                    [States.Smarts]: '4',
+                    [States.Spirit]: '6',
+                    [States.Strength]: '12+2',
+                    [States.Vigor]: '10',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Fighting]: '10',
+                    [Skills.Intimidation]: '10',
+                    [Skills.Shooting]: '8',
+                }),
+                getUnitCommonAttributesContent({
+                    [States.Pace]: '5',
+                    [States.Parry]: '7',
+                    [States.Toughness]: '13',
+                }),
+                quickTextFormat(`**Способности**: ${[
+                    `${getFromDict(EdgesTranslations, Edges.Armor)} +3`,
+                    `${getFromDict(EdgesTranslations, Edges.Size)} +3`,
+                    `${getFromDict(EdgesTranslations, Edges.Fearless)}`,
+                    `${getFromDict(EdgesTranslations, Edges.TwoFisted)}`,
+                ].join(', ')}`),
+            ],
+            bottomLines: [
+                {
+                    ul: [
+                        quickTextFormat(`**${getFromDict(EdgesTranslations, Edges.Construct)}**: +2 к восстановлению после Шока, половина урона от колющего оружия, иммунитет к прицельным выстрелам, ядам и болезням.`),
+                        quickTextFormat(`**Водяная струя (Waterspout)**: Водные элементали могут выстрелить в противника струей воды. Эта атака наносит урон в пределах Шаблона Малого Взрыва (соседние противники могут пройти проверку Ловкости, чтобы избежать ее). Урон: Сила; Дальность 3/6/12; Скорострельность: 1.`),
+                    ]
+                }
+            ],
+        }),
+
+
+
+
+
+        getCharContent({
+            leftOffset: false,
+            image: 'Apilandrus.png',
+            bigImage: true,
+            title: 'Title (Title)',
             commonTitle: 'commonTitle',
             points: undefined,
-            withPictLines: ['1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 '],
-            bottomLines: ['321'],
+            withPictLines: [
+                `123`,
+                quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (57 опыта)`),
+            ],
+            bottomLines: [
+                getUnitAttributesContent({
+                    [States.Agility]: '10',
+                    [States.Smarts]: '10',
+                    [States.Spirit]: '10',
+                    [States.Strength]: '10',
+                    [States.Vigor]: '10',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Fighting]: '10',
+                }),
+                getUnitCommonAttributesContent({
+                    [States.Charisma]: '8',
+                    [States.Pace]: '8',
+                    [States.Parry]: '6',
+                    [States.Toughness]: '10 (8)',
+                }),
+                quickTextFormat(`**Изъяны**: ${[
+                    `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Черты**: ${[
+                    `${getFromDict(EdgesTranslations, Edges.Armor)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Снаряжение**: ${[
+                    `aaaaa`,
+                ].join(', ')}`),
+            ],
         }),
         getCharContent({
             leftOffset: true,
             image: 'Apilandrus.png',
             bigImage: false,
-            title: 'Title',
+            title: 'Title (Title)',
             commonTitle: 'commonTitle',
             points: '666',
-            withPictLines: ['1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 '],
-            bottomLines: ['321'],
+            withPictLines: [
+                `123`,
+                quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                getUnitAttributesContent({
+                    [States.Agility]: '10',
+                    [States.Smarts]: '10',
+                    [States.Spirit]: '10',
+                    [States.Strength]: '10',
+                    [States.Vigor]: '10',
+                }),
+                getUnitSkillsContent({
+                    [Skills.Fighting]: '10',
+                }),
+            ],
+            bottomLines: [
+                getUnitCommonAttributesContent({
+                    [States.Charisma]: '8',
+                    [States.Pace]: '8',
+                    [States.Parry]: '6',
+                    [States.Toughness]: '10 (8)',
+                }),
+                quickTextFormat(`**Изъяны**: ${[
+                    `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Черты**: ${[
+                    `${getFromDict(EdgesTranslations, Edges.Armor)}`,
+                ].join(', ')}`),
+                quickTextFormat(`**Снаряжение**: ${[
+                    `aaaaa`,
+                ].join(', ')}`),
+            ],
         }),
     ];
 }

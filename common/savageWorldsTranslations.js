@@ -172,7 +172,7 @@ const HindrancesTranslations = Object.freeze({
     [Hindrances.Heroic]: undefined,
     [Hindrances.Illiterate]: undefined,
     [Hindrances.Lame]: undefined,
-    [Hindrances.Loyal]: undefined,
+    [Hindrances.Loyal]: 'Верный друг',
     [Hindrances.Mean]: undefined,
     [Hindrances.Obese]: undefined,
     [Hindrances.OneArm]: undefined,

@@ -1,5 +1,13 @@
 const { States, StatesTranslations, Skills, SkillsTranslations, Hindrances, HindrancesTranslations, Ranks, RanksTranslations, Edges, EdgesTranslations, Powers, PowersTranslations, } = require('../common/savageWorldsTranslations');
 
+const SettingHindrances = Object.freeze({
+    MagicAddiction: 'Magic Addiction',
+});
+
+const SettingHindrancesTranslations = Object.freeze({
+    [SettingHindrances.MagicAddiction]: 'Зависимость от магии',
+});
+
 const SettingEdges = Object.freeze({
     Defend: 'Defend',
     ImprovedDefend: 'Improved Defend',
@@ -127,8 +135,14 @@ module.exports = {
     StatesTranslations,
     Skills,
     SkillsTranslations,
-    Hindrances,
-    HindrancesTranslations,
+    Hindrances: Object.freeze({
+        ...Hindrances,
+        ...SettingHindrances,
+    }),
+    HindrancesTranslations: Object.freeze({
+        ...HindrancesTranslations,
+        ...SettingHindrancesTranslations,
+    }),
     Ranks,
     RanksTranslations,
     Edges: Object.freeze({
