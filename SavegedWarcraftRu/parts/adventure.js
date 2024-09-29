@@ -2022,7 +2022,7 @@ function getCharactersContent() {
                 ],
             }),
             getTipText([
-                quickTextFormat(`В **Знании** тоже не могя опечатка. В оригинале: "***Intimidation d6, Knowledge (religion), Riding d6***".`),
+                quickTextFormat(`В **Знании** тоже не моя опечатка. В оригинале: "***Intimidation d6, Knowledge (religion), Riding d6***".`),
             ]),
         ];
     }
