@@ -6,6 +6,8 @@ const SettingHindrances = Object.freeze({
     SavageHeritage: 'Savage Heritage',
     Lumbering: 'Lumbering',
     LowCunning: 'Low Cunning',
+    Solitary: 'Solitary',
+    Proud: 'Proud',
 });
 
 const SettingHindrancesTranslations = Object.freeze({
@@ -14,6 +16,8 @@ const SettingHindrancesTranslations = Object.freeze({
     [SettingHindrances.SavageHeritage]: 'Дикое наследие',
     [SettingHindrances.Lumbering]: 'Неуклюжий',
     [SettingHindrances.LowCunning]: 'Низкая Хитрость',
+    [SettingHindrances.Solitary]: 'Одиночество',
+    [SettingHindrances.Proud]: 'Гордость',
 });
 
 const SettingEdges = Object.freeze({
@@ -38,6 +42,7 @@ const SettingEdges = Object.freeze({
     DruidPriestShaman: 'Druid/Priest/Shaman',
     Druid: 'Druid',
     Priest: 'Priest',
+    Priestess: 'Priestess',
     Shaman: 'Shaman',
     Musketeer: 'Musketeer',
     Necromancer: 'Necromancer',
@@ -51,6 +56,8 @@ const SettingEdges = Object.freeze({
     RapidThrow: 'Rapid Throw',
     RapidThrowing: 'Rapid Throwing',
     Echolocation: 'Echolocation',
+    Shadowmeld: 'Shadowmeld',
+    Pounce: 'Pounce',
 });
 
 const SettingEdgesTranslations = Object.freeze({
@@ -75,6 +82,7 @@ const SettingEdgesTranslations = Object.freeze({
     [SettingEdges.DruidPriestShaman]: 'Друид/Жрец/Шаман',
     [SettingEdges.Druid]: 'Друид',
     [SettingEdges.Priest]: 'Жрец',
+    [SettingEdges.Priestess]: 'Жрица',
     [SettingEdges.Shaman]: 'Шаман',
     [SettingEdges.Musketeer]: 'Мушкетер',
     [SettingEdges.Necromancer]: 'Некромант',
@@ -88,6 +96,8 @@ const SettingEdgesTranslations = Object.freeze({
     [SettingEdges.RapidThrow]: 'Быстрый бросок',
     [SettingEdges.RapidThrowing]: 'Быстрый бросок',
     [SettingEdges.Echolocation]: 'Эхолокация',
+    [SettingEdges.Shadowmeld]: 'Слияние с Тенью',
+    [SettingEdges.Pounce]: 'Прыжок',
 });
 
 const SettingPowers = Object.freeze({

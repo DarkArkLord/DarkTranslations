@@ -578,6 +578,7 @@ function getCharactersContent() {
     const borderColor = {
         Alliance: 'blue',
         Horde: 'red',
+        Sentinels: '#00FFCC',
     };
 
     function getCharContent(data) {
@@ -1908,6 +1909,124 @@ function getCharactersContent() {
         ];
     }
 
+    function getSentinelsCharacters() {
+        return [
+            {
+                text: 'Стражи (The Sentinels)',
+                style: 'header3',
+                pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
+            getCharContent({
+                border: borderColor.Sentinels,
+                leftOffset: false,
+                image: 'priestess.png',
+                bigImage: true,
+                title: `Малани Серебряный Ветер (Malani Silverwind)`,
+                commonTitle: 'Ночная Эльфийка - Жрица Луны',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Малани Серебряный Ветер не входит в число первых Стражей, завербованных Тирандой Шелест Ветра для защиты Калдорай. Она — дочь одного из этих стойких защитников. Рожденная и воспитанная для защиты Калимдора, она посвящает свое сердце и душу Элуне и делу, стоящему перед ней. Она сострадательна, если не тепла, со своими союзниками, но горе ее врагам.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (58 опыта)`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '10',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Faith]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Knowledge]: '(Религия)',
+                        [Skills.Riding]: '6',
+                        [Skills.Shooting]: '8',
+                        [Skills.Stealth]: '8 (+4)',
+                        [Skills.Survival]: '6',
+                        [Skills.Tracking]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2',
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '9 (6)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Solitary)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Proud)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Heroic)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Bloodthirsty)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Shadowmeld)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Элуна (Elune))`,
+                        `${getFromDict(EdgesTranslations, Edges.Priestess)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SpellAura)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SteadyHands)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Inspire)}`,
+                        `${getFromDict(EdgesTranslations, Edges.NaturalLeader)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Жрица Луны (Moon Priestess) (Чудеса (Miracles))**: **Пункты Силы**: 20; **Силы**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Smite)} (Огненная Аура ( (Fire Aura)))*`,
+                        `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Quickness)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Summon)} (Сова-разведчица (Owl Scout))*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Латы из Лунного серебра (+3)`,
+                        `Эльфийский длинный лук (2d6+1, ББ 1, 15/30/60)`,
+                        `Глефа из Лунного серебра (Сила+3, ББ 1, 4/8/16)`,
+                    ].join(', ')}`),
+                    { text: `Ночной саблезуб-Пантера (Nightsabre Panther)`, style: 'header4', },
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '8',
+                                [States.Smarts]: '8 (Ж)',
+                                [States.Spirit]: '10',
+                                [States.Strength]: '12',
+                                [States.Vigor]: '8',
+                            }),
+                            getUnitSkillsContent({
+                                [Skills.Fighting]: '8',
+                                [Skills.Guts]: '10',
+                                [Skills.Intimidation]: '6',
+                                [Skills.Notice]: '8',
+                                [Skills.Stealth]: '8 (+4)',
+                            }),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '8',
+                                [States.Parry]: '6',
+                                [States.Toughness]: '8',
+                            }),
+                            quickTextFormat(`**Способности**: ${[
+                                `Укус/Коготь (Bite/Claw) (Сила+2)`,
+                                `${getFromDict(EdgesTranslations, Edges.Size)} +2`,
+                                `${getFromDict(EdgesTranslations, Edges.Pounce)}`,
+                            ].join(', ')}`),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
+            getTipText([
+                quickTextFormat(`В **Знании** тоже не могя опечатка. В оригинале: "***Intimidation d6, Knowledge (religion), Riding d6***".`),
+            ]),
+        ];
+    }
+
     return [
         {
             text: 'Заранее созданные персонажи',
@@ -1919,11 +2038,11 @@ function getCharactersContent() {
         },
         getAllianceCharacters(),
         getHordeCharacters(),
-
+        getSentinelsCharacters(),
 
 
         getCharContent({
-            border: borderColor.Horde,
+            border: borderColor.Sentinels,
             leftOffset: false,
             image: 'bloodmage.png',
             bigImage: true,
@@ -1969,7 +2088,7 @@ function getCharactersContent() {
             ],
         }),
         getCharContent({
-            border: borderColor.Horde,
+            border: borderColor.Sentinels,
             leftOffset: true,
             image: 'bloodmage.png',
             bigImage: false,
