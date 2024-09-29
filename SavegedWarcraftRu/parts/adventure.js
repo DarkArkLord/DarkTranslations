@@ -1596,6 +1596,6 @@ module.exports = function getAdventureContent() {
         },
         getOppositionContent(),
         getMapsContent(),
-        getCharactersContent(),
+        // getCharactersContent(),
     ];
 };
