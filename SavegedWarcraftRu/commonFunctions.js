@@ -61,7 +61,7 @@ function quickTextFormat(text, options = {}) {
     return { ...options, text: parts };
 }
 
-function getTipText(lines) {
+function getTipText(lines, newPage = false) {
     return {
         layout: 'noBorders',
         table: {
@@ -76,6 +76,7 @@ function getTipText(lines) {
                 ],
             ]
         },
+        ...(newPage ? { pageBreak: 'before' } : {}),
         margin: [0, 5, 0, 5],
     };
 }

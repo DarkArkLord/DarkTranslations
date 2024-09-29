@@ -1271,7 +1271,7 @@ function getCharactersContent() {
                     ].join(', ')}`),
                     quickTextFormat(`**Снаряжение**: ${[
                         `Кожаная броня с заклепками (+2)`,
-                        `Штык (Str+2)`,
+                        `Штык (Сила+2)`,
                         `Длинная винтовка (2d8+1, ББ 1, 15/30/60, 1 Действие на перезарядку)`,
                     ].join(', ')}`),
                     quickTextFormat(`**Боеприпасы**:\t*Очень много*\t***Много***\t*Мало*\t*Нет*`),
@@ -1407,6 +1407,8 @@ function getCharactersContent() {
                         [States.Strength]: '8',
                         [States.Vigor]: '8',
                     }),
+                ],
+                bottomLines: [
                     getUnitSkillsContent({
                         [Skills.Fighting]: '8',
                         [Skills.Guts]: '8',
@@ -1415,8 +1417,6 @@ function getCharactersContent() {
                         [Skills.Riding]: '6',
                         [Skills.Throwing]: '6',
                     }),
-                ],
-                bottomLines: [
                     getUnitCommonAttributesContent({
                         [States.Charisma]: '-2 (0 для Орды)',
                         [States.Pace]: '6',
@@ -1463,6 +1463,446 @@ function getCharactersContent() {
                         ],
                         margin: [paragraphOffset, 0, 0, 0],
                     },
+                ],
+            }),
+            getCharContent({
+                border: borderColor.Horde,
+                leftOffset: false,
+                image: 'chieftain.png',
+                bigImage: true,
+                title: `Хурак Смертельный Рев (Hûrak Deathbellow)`,
+                commonTitle: 'Вождь тауренов',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Хурак — мудрый и могущественный вождь тауренов. Уверенный в своей силе и сострадательный к молодой расе орков, он одолжил им свою мощь и мощь своего племени, чтобы защитить их от врагов и помочь им заново открыть их шаманские традиции прошлого. Его связь с землей и предками (через его тотем) дает ему огромную силу.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (56 опыта)`),
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '4',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '7',
+                        [States.Strength]: '12',
+                        [States.Vigor]: '10',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '10',
+                        [Skills.Faith]: '6',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '10',
+                        [Skills.Survival]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '0',
+                        [States.Pace]: '7',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '13 (10)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Lumbering)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Large)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Heroic)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Vow)} (Главное — защищать и направлять орков, чего бы это ни стоило)`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Loyal)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Horns)} (Сила+2)`,
+                        `${getFromDict(EdgesTranslations, Edges.Charge)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Тотемный Воин (Totem Warrior))`,
+                        `${getFromDict(EdgesTranslations, Edges.Champion)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Inspire)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Fervor)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Sweep)}`,
+                        `${getFromDict(EdgesTranslations, Edges.TrademarkWeapon)} (Алебарда (Halberd))`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Тотемный Воин (Totem Warrior) (Направление (Channeling))**: **Пункты Силы**: 15; **Силы**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Smite)} (Оглушает)*`,
+                        `*Поток огня (Fireburst) (Ударная Волна (Shockwave))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Blast)} (Громовая поступь (War Stomp), центр на персонаже, оглушает)*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Тяжелый кольчужный хауберк (+3)`,
+                        `Ториевая Алебарда (Сила+4, ББ 1, Досягаемость 1)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getTipText([
+                quickTextFormat(`Не уверен насчет "**${Hindrances.Lumbering}**", возможно, стоило перевести это как "**Лесозаготовка**", но такой изъян выглядел бы странно.`),
+                quickTextFormat(`По поводу **${getFromDict(HindrancesTranslations, Hindrances.Lumbering)}**, **${getFromDict(EdgesTranslations, Edges.Charge)}**, **Поток огня (Fireburst)** никаких пояснений не прилагается, увы.`),
+            ], true),
+            getCharContent({
+                border: borderColor.Horde,
+                leftOffset: true,
+                image: 'tauren.png',
+                bigImage: false,
+                title: `Грокка (Grokka)`,
+                commonTitle: 'Таурен-воин',
+                points: '56',
+                withPictLines: [
+                    {
+                        text: `Эти свирепые воины, преданные своему вождю Хураку, используют свои тотемы как огромные дубины, чтобы прорубать широкую полосу среди своих противников.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '4',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '12',
+                        [States.Vigor]: '10',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '8',
+                        [Skills.Notice]: '4',
+                        [Skills.Survival]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '0',
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '11 (10)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Lumbering)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Large)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Horns)} (Сила+2)`,
+                        `${getFromDict(EdgesTranslations, Edges.Charge)}`,
+                        `${getFromDict(EdgesTranslations, Edges.CombatReflexes)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Sweep)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Толстые шкуры (+1)`,
+                        `Тотем (Сил+3, ББ 2 против жесткой брони)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                border: borderColor.Horde,
+                leftOffset: false,
+                image: 'shadowhunter.png',
+                bigImage: true,
+                title: `Рагат Кровопийца (Ragath Blood Drinker)`,
+                commonTitle: 'Тролль Джунглей Охотник за Тенями (Ловец Духов)',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Рагат — один из величайших героев клана Темного Копья троллей джунглей. Мастер как боевых искусств, так и темной магии вуду, он хитер и беспощаден в охоте на своих врагов, после которой уничтожает их без жалости.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (55 опыта)`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '10',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Faith]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '8',
+                        [Skills.Stealth]: '10',
+                        [Skills.Survival]: '6',
+                        [Skills.Throwing]: '10',
+                        [Skills.Tracking]: '8',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2',
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '9 (6)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.LowCunning)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Bloodthirsty)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Overconfident)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Quirk)} (шепчется с духами)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.FastRegeneration)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Вуду (Voodoo))`,
+                        `${getFromDict(EdgesTranslations, Edges.Marksman)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Woodsman)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Вуду (Voodoo) (Чудеса (Miracles))**: **Пункты Силы**: 15; **Заклинания**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.DetectConcealArcana)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Бригантина (+3)`,
+                        `Короткий меч (Сила+2)`,
+                        `Лук и Ториевые Стрелы (2d6+1, ББ 2, 12/24/48)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Horde,
+                leftOffset: true,
+                image: 'berserker.png',
+                bigImage: false,
+                title: `Кур'рукк (Kur'rukk)`,
+                commonTitle: 'Наездник на летучей мыши',
+                points: '100',
+                withPictLines: [
+                    {
+                        text: `Хитрые и смертоносные, эти подданные Рагата летают на гигантских летучих мышах и с высоты сбрасывают вниз опасные зелья. Фанатично преданные Рагату, они даже готовы покончить с собой, если он прикажет.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '10',
+                        [Skills.Intimidation]: '4',
+                        [Skills.Notice]: '6',
+                        [Skills.Stealth]: '6',
+                        [Skills.Throwing]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '0',
+                        [States.Pace]: '6',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '11 (10)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Bloodthirsty)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.FastRegeneration)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SteadyHands)}`,
+                        `${getFromDict(EdgesTranslations, Edges.RapidThrowing)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Кожаная броня (+1)`,
+                        `Зелья Жидкого Огня (3d6+2, Малый взрыв, 3/6/12)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Боеприпасы**:\t*Очень много*\t***Много***\t*Мало*\t*Нет*`),
+                    { text: `Гигантская летучая мышь (Giant Bat)`, style: 'header4', },
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '8',
+                                [States.Smarts]: '8 (Ж)',
+                                [States.Spirit]: '6',
+                                [States.Strength]: '8',
+                                [States.Vigor]: '6',
+                            }),
+                            getUnitSkillsContent({
+                                [Skills.Fighting]: '4',
+                                [Skills.Guts]: '6',
+                                [Skills.Notice]: '10',
+                                [Skills.Tracking]: '6',
+                            }),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '2 (Полет 12 дюймов, Подъем 6 дюймов)',
+                                [States.Parry]: '4',
+                                [States.Toughness]: '9',
+                            }),
+                            quickTextFormat(`**Способности**: ${[
+                                `${getFromDict(EdgesTranslations, Edges.Size)} +3`,
+                                `${getFromDict(EdgesTranslations, Edges.Flight)}`,
+                                `${getFromDict(EdgesTranslations, Edges.Echolocation)}`,
+                            ].join(', ')}`),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Horde,
+                leftOffset: false,
+                image: 'grunt.png',
+                bigImage: false,
+                title: 'Орки Бугаи (Orc Grunts)',
+                commonTitle: undefined,
+                points: '41 каждый',
+                withPictLines: [
+                    {
+                        text: `Основная часть Орды состоит из этих доблестных и смертоносных воинов. Известные в прошлом своей жестокостью и развратом, орки начали возвращаться к своим диким, но благородным корням.`,
+                        alignment: 'justify',
+                    },
+                    {
+                        text: [
+                            { text: `Гарм (Garm)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Нурк (Nurk)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Кобла (Kobla)`, style: 'header4', },
+                            '\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Раж (Razh)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Зугар (Zugar)`, style: 'header4', },
+                            '\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '4',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '10 (7)',
+                    }),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Brawny)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Berserk)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Качественный Боевой Топор (Сила+4)`,
+                        `Тяжелый кольчужный хауберк (+3)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                border: borderColor.Horde,
+                leftOffset: false,
+                image: 'headhunter.png',
+                bigImage: false,
+                title: 'Тролли Охотники за головами (Troll Headhunters)',
+                commonTitle: undefined,
+                points: '41 каждый',
+                withPictLines: [
+                    {
+                        text: `Дикие тролли-копьеметатели из племени Черного Копья долгое время помогали Орде в качестве уплаты долга Траллу за спасение племени от уничтожения.`,
+                        alignment: 'justify',
+                    },
+                    {
+                        text: [
+                            { text: `Та'ззик (Tha'zzik)`, style: 'header4', },
+                            '\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Гиран (Giraan)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Тул (Thool)`, style: 'header4', },
+                            '\t\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Легоса (Legosa)`, style: 'header4', },
+                            '\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Накеле (Nakele)`, style: 'header4', },
+                            '\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '6',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Notice]: '6',
+                        [Skills.Stealth]: '6',
+                        [Skills.Tracking]: '4',
+                        [Skills.Throwing]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '8 (6)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Bloodthirsty)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.FastRegeneration)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Marksman)}`,
+                        `${getFromDict(EdgesTranslations, Edges.RapidThrowing)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Прочный кожаный доспех (+2)`,
+                        `Качественные Метательные Копья (Сила+3, 4/8/16)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Боеприпасы**:\t*Очень много*\t***Много***\t*Мало*\t*Нет*`),
                 ],
             }),
         ];

@@ -4,12 +4,16 @@ const SettingHindrances = Object.freeze({
     MagicAddiction: 'Magic Addiction',
     Short: 'Short',
     SavageHeritage: 'Savage Heritage',
+    Lumbering: 'Lumbering',
+    LowCunning: 'Low Cunning',
 });
 
 const SettingHindrancesTranslations = Object.freeze({
     [SettingHindrances.MagicAddiction]: 'Зависимость от магии',
     [SettingHindrances.Short]: 'Низкорослый',
     [SettingHindrances.SavageHeritage]: 'Дикое наследие',
+    [SettingHindrances.Lumbering]: 'Неуклюжий',
+    [SettingHindrances.LowCunning]: 'Низкая Хитрость',
 });
 
 const SettingEdges = Object.freeze({
@@ -41,6 +45,12 @@ const SettingEdges = Object.freeze({
     Warlock: 'Warlock',
     NaturesFury: 'Nature’s Fury',
     GoForTheThroat: 'Go For the Throat',
+    Horns: 'Horns',
+    Charge: 'Charge',
+    FastRegeneration: 'Fast Regeneration',
+    RapidThrow: 'Rapid Throw',
+    RapidThrowing: 'Rapid Throwing',
+    Echolocation: 'Echolocation',
 });
 
 const SettingEdgesTranslations = Object.freeze({
@@ -72,6 +82,12 @@ const SettingEdgesTranslations = Object.freeze({
     [SettingEdges.Warlock]: 'Чернокнижник',
     [SettingEdges.NaturesFury]: 'Ярость природы',
     [SettingEdges.GoForTheThroat]: 'Вцепиться в горло/инстинкт хищника',
+    [SettingEdges.Horns]: 'Рога',
+    [SettingEdges.Charge]: 'Рывок',
+    [SettingEdges.FastRegeneration]: 'Быстрая регенерация',
+    [SettingEdges.RapidThrow]: 'Быстрый бросок',
+    [SettingEdges.RapidThrowing]: 'Быстрый бросок',
+    [SettingEdges.Echolocation]: 'Эхолокация',
 });
 
 const SettingPowers = Object.freeze({

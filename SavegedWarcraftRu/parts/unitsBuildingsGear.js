@@ -2444,7 +2444,7 @@ function getHordeContent() {
                         `Нестабильные зелья (2d6+2, Малый взрыв, 3/6/12)`,
                     ].join(', ')}`),
                     [
-                        quickTextFormat(`***Гигантская летучая мышь***:`),
+                        quickTextFormat(`***Гигантская летучая мышь (Giant Bat)***:`),
                         {
                             stack: [
                                 getUnitAttributesContent({
