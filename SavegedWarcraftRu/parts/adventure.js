@@ -580,6 +580,7 @@ function getCharactersContent() {
         Horde: 'red',
         Sentinels: '#00FFCC',
         Undeads: '#4D4D4D',
+        Neutrals: '#CC9900',
     };
 
     function getCharContent(data) {
@@ -2677,6 +2678,18 @@ function getCharactersContent() {
         ];
     }
 
+    function getNeutralCharacters() {
+        return [
+            {
+                text: 'Нейтральные (Neutral)',
+                style: 'header3',
+                pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
+        ];
+    }
+
     return [
         {
             text: 'Заранее созданные персонажи',
@@ -2690,7 +2703,7 @@ function getCharactersContent() {
         getHordeCharacters(),
         getSentinelsCharacters(),
         getUndeadCharacters(),
-
+        getNeutralCharacters(),
 
 
         getCharContent({
