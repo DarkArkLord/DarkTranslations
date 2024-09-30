@@ -5205,7 +5205,7 @@ function getUndeadScourgeContent() {
                 ],
             }),
             getTipText([
-                quickTextFormat(`По поводу *undefned* - я не знаю, что это должно быть. В оригинале буквально: *Guts d6, d4, Notice d4*. Возможно, подразумевается *Знание*, но это не точно.`),
+                quickTextFormat(`По поводу *undefined* - я не знаю, что это должно быть. В оригинале буквально: *Guts d6, d4, Notice d4*. Возможно, подразумевается *Знание*, но это не точно.`),
             ]),
             getUnitContent({
                 title: 'Некромант (Necromancer)',
