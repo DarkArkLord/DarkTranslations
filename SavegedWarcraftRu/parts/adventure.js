@@ -579,6 +579,7 @@ function getCharactersContent() {
         Alliance: 'blue',
         Horde: 'red',
         Sentinels: '#00FFCC',
+        Undeads: '#4D4D4D',
     };
 
     function getCharContent(data) {
@@ -2510,6 +2511,172 @@ function getCharactersContent() {
         ];
     }
 
+    function getUndeadCharacters() {
+        return [
+            {
+                text: 'Нежить (Undeads)',
+                style: 'header3',
+                pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
+            getCharContent({
+                border: borderColor.Undeads,
+                leftOffset: false,
+                image: 'deathknight.png',
+                bigImage: true,
+                title: `Тайрон Блэксворд (Tyron Blacksword)`,
+                commonTitle: 'Человек Отрекшийся - Рыцарь',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Тайрон был стойким и верным рыцарем Лордерона (Lordaeron). Сражаясь против Плети (Scourge) под командованием принца Артаса (Prince Arthas), он пал и был оставлен умирать. Однако странные энергии Плети Нежити (Undead Scourge) проникли в его тело, и он восстал как один из Отрекшихся. Сдерживая свои темные побуждения силой воли, он искал своего старого командира, думая только о своей преданности. Когда он узнал, что Артас покинул Лордерон и стал Рыцарем Смерти, он поклялся, что сам убьет этого человека. Эта мрачная цель — все, что стоит между этим человеком и безумием. Путешествие в Нордскол — это, по крайней мере, начало.`,
+                        alignment: 'justify',
+                    },
+                ],
+                bottomLines: [
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (55 опыта)`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '10',
+                        [States.Vigor]: '10',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '12',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '8',
+                        [Skills.Knowledge]: '6 (Нежить)',
+                        [Skills.Riding]: '10',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-4',
+                        [States.Pace]: '6',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '14 (9)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Ugly)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.CodeOfHonor)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Loyal)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.DeathWish)} (Убить Артаса)`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Bloodthirsty)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Нежить (Undead)**: ${[
+                        `+2 Стойкость`,
+                        `+2 к восстановлению после Шока`,
+                        `половина урона от колющих атак`,
+                        `имунитет к яду, болезням (disease), прицельным выстрелам и штрафам за раны`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
+                        `${getFromDict(EdgesTranslations, Edges.TrademarkWeapon)} (Черный меч (Black Sword))`,
+                        `${getFromDict(EdgesTranslations, Edges.FirstStrike)}`,
+                        `${getFromDict(EdgesTranslations, Edges.HardToKill)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Sweep)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Berserk)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Прочный латный доспех (+4)`,
+                        `Черный двуручный меч (Сила+5, ББ 1, -1 Парирование, Двуручный)`,
+                    ].join(', ')}`),
+                    { text: `Боевой конь-скелет (Skeletal Warhorse)`, style: 'header4', },
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '6',
+                                [States.Smarts]: '4 (Ж)',
+                                [States.Spirit]: '6',
+                                [States.Strength]: '12+2',
+                                [States.Vigor]: '10',
+                            }),
+                            getUnitSkillsContent({
+                                [Skills.Fighting]: '8',
+                                [Skills.Guts]: '8',
+                                [Skills.Notice]: '4',
+                            }),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '8',
+                                [States.Parry]: '6',
+                                [States.Toughness]: '14 (12)',
+                            }),
+                            quickTextFormat(`**Черты**: ${[
+                                `${getFromDict(EdgesTranslations, Edges.FleetFooted)} (d8 для Бега)`,
+                                `${getFromDict(EdgesTranslations, Edges.Size)} +3`,
+                                `Удар ногой (Kick) (Сила+1)`,
+                                `${getFromDict(EdgesTranslations, Edges.Undead)}`,
+                            ].join(', ')}`),
+                            quickTextFormat(`**Снаряжение**: ${[
+                                `Кольчужная броня (+2)`,
+                            ].join(', ')}`),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Undeads,
+                leftOffset: true,
+                image: 'darkranger.png',
+                bigImage: false,
+                title: `Милиана (Miliana)`,
+                commonTitle: 'Темный Рейнджер',
+                points: '48',
+                withPictLines: [
+                    {
+                        text: `Эта эльфийская следопытка Кель'Таласа пала в битве и была вырвана из смерти против своей воли. Теперь она обращает тьму в своем сердце против Плети Нежити (Undead Scourge), в качестве мести за то, что с ней сделали.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '8',
+                        [Skills.Shooting]: '8',
+                        [Skills.Stealth]: '6',
+                        [Skills.Tracking]: '8',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-4',
+                        [States.Pace]: '6',
+                        [States.Parry]: '5',
+                        [States.Toughness]: '10 (8)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Ugly)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Bloodthirsty)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Marksman)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Woodsman)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Berserk)}`,
+                        `*${getFromDict(EdgesTranslations, Edges.Undead)}*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Темная кожаная броня (+2)`,
+                        `Эльфийский Длинный лук с Качественными Стрелами (2d6+1, 15/30/60)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Боеприпасы**:\t***Очень много***\t*Много*\t*Мало*\t*Нет*`),
+                ],
+            }),
+        ];
+    }
+
     return [
         {
             text: 'Заранее созданные персонажи',
@@ -2522,6 +2689,8 @@ function getCharactersContent() {
         getAllianceCharacters(),
         getHordeCharacters(),
         getSentinelsCharacters(),
+        getUndeadCharacters(),
+
 
 
         getCharContent({

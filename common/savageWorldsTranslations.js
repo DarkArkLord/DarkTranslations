@@ -159,7 +159,7 @@ const HindrancesTranslations = Object.freeze({
     [Hindrances.Bloodthirsty]: 'Жажда крови',
     [Hindrances.Cautious]: 'Перестраховщик',
     [Hindrances.Clueless]: undefined,
-    [Hindrances.CodeOfHonor]: undefined,
+    [Hindrances.CodeOfHonor]: 'Кодекс чести',
     [Hindrances.Curious]: 'Любопытство',
     [Hindrances.DeathWish]: undefined,
     [Hindrances.Delusional]: 'Заблуждение',
