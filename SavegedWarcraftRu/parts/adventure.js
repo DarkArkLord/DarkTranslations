@@ -2024,6 +2024,489 @@ function getCharactersContent() {
             getTipText([
                 quickTextFormat(`В **Знании** тоже не моя опечатка. В оригинале: "***Intimidation d6, Knowledge (religion), Riding d6***".`),
             ]),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Sentinels,
+                leftOffset: true,
+                image: 'huntress.png',
+                bigImage: false,
+                title: `Фелоре (Felore)`,
+                commonTitle: 'Охотница Калдорай',
+                points: '102',
+                withPictLines: [
+                    {
+                        text: `Охотницы Стражей патрулируют леса Калимдора с незапамятных для большинства рас времен. Свирепые, но молчаливые на своих ночных саблезубых пантерах, они — сила, с которой нужно считаться.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '6',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Notice]: '6',
+                        [Skills.Riding]: '6',
+                        [Skills.Stealth]: '8 (+4)',
+                        [Skills.Survival]: '6',
+                        [Skills.Throwing]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2',
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '11 (10)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Proud)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Shadowmeld)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SteadyHands)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Ricochet)} (${getFromDict(EdgesTranslations, Edges.RapidShot)})`,
+                        `${getFromDict(EdgesTranslations, Edges.BeastMaster)} (Сова (Owl))`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Латы из Лунного серебра (+3)`,
+                        `Глефа из Лунного серебра (Сила+3, ББ 1, 4/8/16)`,
+                    ].join(', ')}`),
+                    { text: `Ночной саблезуб-Пантера (Nightsabre Panther)`, style: 'header4', },
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '8',
+                                [States.Smarts]: '8 (Ж)',
+                                [States.Spirit]: '10',
+                                [States.Strength]: '12',
+                                [States.Vigor]: '8',
+                            }),
+                            getUnitSkillsContent({
+                                [Skills.Fighting]: '8',
+                                [Skills.Guts]: '10',
+                                [Skills.Intimidation]: '6',
+                                [Skills.Notice]: '8',
+                                [Skills.Stealth]: '8 (+4)',
+                            }),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '8',
+                                [States.Parry]: '6',
+                                [States.Toughness]: '8',
+                            }),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
+            getCharContent({
+                border: borderColor.Sentinels,
+                leftOffset: false,
+                image: 'keeper.png',
+                bigImage: true,
+                title: `Тибериус Дубовый кулак (Tiberius Oakfist)`,
+                commonTitle: 'Хранитель рощи',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Тибериус Дубовый Кулак — Дитя Кенария, потомок союза полубога с женщиной Калдорай. В нем заключена сила самого леса и связь с Природой. Хотя для Дитя Кенария необычно покидать леса Калдорай и неслыханно отправляться в такую ​​пустынную землю, как Нордскол, но у него есть на то свои причины. Когда была отправлена ​​первая экспедиция, для защиты лагеря были отправлены три семени Древних Защитников. Теперь Тибериус должен увидеть, что случилось с этими драгоценными и магическими семенами.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (57 опыта)`),
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Faith]: '10',
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '6',
+                        [Skills.Healing]: '6',
+                        [Skills.Intimidation]: '6',
+                        [Skills.Notice]: '6',
+                        [Skills.Survival]: '6',
+                        [Skills.Tracking]: '6',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2',
+                        [States.Pace]: '7',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '7 (6)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Stubborn)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Arrogant)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Loyal)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия Природы (Nature Magic))`,
+                        `${getFromDict(EdgesTranslations, Edges.NaturesFury)} (Сила+2 когти)`,
+                        `${getFromDict(EdgesTranslations, Edges.Champion)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Command)}`,
+                        `${getFromDict(EdgesTranslations, Edges.NaturalLeader)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SpellAura)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Зачарованные когти (Когти - Сила+3)`,
+                        `Зачарованная броня из шкур (+2 Брони, -1 ББ)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Магия Природы (Nature Magic)**: **Пункты Силы**: 25; **Заклинания**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.OffensiveArmor)} (Шипы (Thorns))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Healing)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Paralyze)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Smite)}*`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Sentinels,
+                leftOffset: true,
+                image: 'druidtalon.png',
+                bigImage: false,
+                title: `Арномиус (Arnomius)`,
+                commonTitle: 'Друид-ворон',
+                points: '45',
+                withPictLines: [
+                    {
+                        text: `Друиды-вороны клянутся в своей преданности тотему а Штормового Ворона и оказывают мощную поддержку армиям Стражей, выступая и в качестве заклинателей, и в качестве разведчиков.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '8',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '8',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Faith]: '8',
+                        [Skills.Fighting]: '6',
+                        [Skills.Guts]: '6',
+                        [Skills.Knowledge]: '8 (Природа)',
+                        [Skills.Notice]: '8',
+                        [Skills.Survival]: '6',
+                        [Skills.Tracking]: '6',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия Природы (Nature Magic))`,
+                        `${getFromDict(EdgesTranslations, Edges.Druid)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ImprovedDodge)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`***Пункты Силы***: 15; ***Заклинания***: ${[
+                        `*${getFromDict(PowersTranslations, Powers.BoostLowerTrait)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Stun)} (Циклон (Cyclone))*`,
+                        `*${getFromDict(PowersTranslations, Powers.ShapeChange)}*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`***Форма Штормового Ворона (Storm Crow Form)***`),
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '10',
+                                [States.Strength]: '6',
+                                [States.Vigor]: '8',
+                            }),
+                            quickTextFormat(`**Черты/Способности**: ${[
+                                `${getFromDict(EdgesTranslations, Edges.Flight)} (10 дюймов, Подъем 6 дюймов)`,
+                                `Благословленные Когти/Клюв (Claws/Beak) (Сила+1, ББ 1)`,
+                                getFromDict(EdgesTranslations, Edges.LowLightVision),
+                                `${getFromDict(EdgesTranslations, Edges.NaturesStrength)} (+1 Броня)`,
+                            ].join(', ')}`),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '2',
+                                [States.Parry]: '5',
+                                [States.Toughness]: '7 (6)',
+                            }),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '6',
+                        [States.Toughness]: '6',
+                    }),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Благословенный посох (Сила+2, ББ 1, +1 Парирование)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Sentinels,
+                leftOffset: false,
+                image: 'demonhunter.png',
+                bigImage: true,
+                title: `Малекант Падший (Malecante the Fallen)`,
+                commonTitle: 'Ночной эльф Охотник на демонов',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `После того, как Иллидан восстановил Колодец Жизни (Well of Life), у многих Калдорай появилось сильное искушение снова использовать силу тайной магии. Малекант был одним из тех, кто поддался. Фактически, он поддался так основательно, что едва не стал рабом жестокого демона. Впрочем, ему повезло. Он открыл ритуал, связывающий демона в сосуде из стали и плоти. Он своевременно выполнил ритуал и искупил свою ошибку, обуздав магическую энергию демона, чтобы сражаться с другими представителями его вида и другими угрозами Калдорай.`,
+                        alignment: 'justify',
+                    },
+                ],
+                bottomLines: [
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (58 опыта)`),
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '8',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '10',
+                        [Skills.Guts]: '10',
+                        [Skills.Intimidation]: '8',
+                        [Skills.Notice]: '8',
+                        [Skills.Spellcasting]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2 (-4 среди Калдорай)',
+                        [States.Pace]: '6',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '8 (5)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Solitary)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Proud)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.BadEyes)} (Мистическое Ослепление (Mystic Blinding))`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Bloodthirsty)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.CodeOfHonor)} (всегда давать противнику шанс защитить себя, демонстрируя свои возможности)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Охотник на Демонов (Demon Hunter))`,
+                        `${getFromDict(EdgesTranslations, Edges.TrademarkWeapon)} (Наполненный Демонической энергией Боевой клинок (Demon-Infused warblade))`,
+                        `${getFromDict(EdgesTranslations, Edges.ImprovedDodge)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ImprovedFrenzy)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Охотник на демонов (Demon Hunter) (Направление (Channeling), Магия Чернокнижника (Warlock Magic))**: **Пункты Силы**: 15; **Заклинания**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Smite)} (Охваченный Пламенем Боевой клинок (Flame-Wreathed Warblade))*`,
+                        `*${getFromDict(PowersTranslations, Powers.ManaBurn)} (${getFromDict(PowersTranslations, Powers.Bolt)} + 1d6 урона мане)*`,
+                        `*${getFromDict(PowersTranslations, Powers.OffensiveArmor)} (Жар Преисподней (Immolate))*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Броня из шкуры химеры (+3)`,
+                        `Наполненный Демонической энергией Боевой клинок (Demon-Infused warblade) (Сила+4, ББ 1)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Sentinels,
+                leftOffset: true,
+                image: 'spellbreaker.png',
+                bigImage: false,
+                title: `Мараканис (Marakanis)`,
+                commonTitle: 'Эльф крови Разрушитель заклинаний/Ведьмак',
+                points: '53',
+                withPictLines: [
+                    {
+                        text: `Кровавые Эльфы Кель'Таласа с подозрением относятся ко многим сородичам Высшим Эльфам, что уж говорить про Калдорай. Малекант вступил с ними в союз, поскольку он понимает образ мышления Кровавых Эльфов и может оценить их методы.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '8',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '8',
+                        [Skills.Guts]: '8',
+                        [Skills.Knowledge]: '8 (Магия)',
+                        [Skills.Notice]: '8',
+                        [Skills.Spellcasting]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2',
+                        [States.Pace]: '6',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '8 (5)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Cautious)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.MagicAddiction)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Магия (Magic))`,
+                        `${getFromDict(EdgesTranslations, Edges.Wizard)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SpellBreaker)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ControlSpell)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneResistance)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Block)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Тайная Магия (Arcane Magic)**: **Пункты Силы**: 10; **Заклинания**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.ManaBurn)} (${getFromDict(PowersTranslations, Powers.Bolt)} + 1d6 урона мане)*`,
+                        `*${getFromDict(PowersTranslations, Powers.Dispel)}*`,
+                        `*${getFromDict(PowersTranslations, Powers.Feedback)} (${getFromDict(PowersTranslations, Powers.Smite)} + 1d4 урона мане)*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Качественный Двойной Меч (Fine Twin Sword) (Сила+3, +1 Парирование)`,
+                        `Латный доспех (+3)`,
+                        `Каплевидный щит (+2 Парирвоание, +2 Стойкости против дальнего боя)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getTipText([
+                quickTextFormat(`Про ***${getFromDict(EdgesTranslations, Edges.ControlSpell)}*** тоже нет никаких пояснений. Возможно, имеется ввиду ***${getFromDict(EdgesTranslations, Edges.CaptureSpell)}***, но это не точно.`),
+            ]),
+            getCharContent({
+                border: borderColor.Sentinels,
+                leftOffset: false,
+                image: 'archer.png',
+                bigImage: false,
+                title: 'Лучники Калдорай (Kaldorei Archers)',
+                commonTitle: undefined,
+                points: '44 каждый',
+                withPictLines: [
+                    {
+                        text: `Передовые линии армии Стражей, скрытные и меткие лучники Ночных Эльфов вполне обоснованно внушают страх всем, кто с ними сталкивался.`,
+                        alignment: 'justify',
+                    },
+                    {
+                        text: [
+                            { text: `Катрис (Kathris)`, style: 'header4', },
+                            '\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Тета (Theta)`, style: 'header4', },
+                            '\t\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Делас (Delas)`, style: 'header4', },
+                            '\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Ариэль (Ariel)`, style: 'header4', },
+                            '\t\t\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                    {
+                        text: [
+                            { text: `Манала (Manala)`, style: 'header4', },
+                            '\t',
+                            quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                        ]
+                    },
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '6',
+                        [States.Strength]: '6',
+                        [States.Vigor]: '6',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '4',
+                        [Skills.Guts]: '6',
+                        [Skills.Notice]: '6',
+                        [Skills.Shooting]: '8',
+                        [Skills.Stealth]: '6 (+4)',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '6',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '7 (5)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Proud)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Shadowmeld)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Marksman)}`,
+                        `${getFromDict(EdgesTranslations, Edges.RapidShot)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Кольчужная рубашка (+2)`,
+                        `Эльфийский длинный лук (2d6, ББ 1, 15/30/60)`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Боеприпасы**:\t***Очень много***\t*Много*\t*Мало*\t*Нет*`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Sentinels,
+                leftOffset: false,
+                image: 'glaivethrower.png',
+                bigImage: false,
+                title: 'Метатели глеф/Баллисты (Glaive Throwers)',
+                commonTitle: undefined,
+                points: '80 каждый',
+                withPictLines: [
+                    {
+                        text: `Столь же жуткие, как и опасные, Метатели глеф Калдорай, похоже, действуют с помощью магии, без оператора. По правде говоря, эти смертоносные осадные машины приводятся в движение совместными усилиями двух Светлячков (Wisps), странных духов, которые могут быть духами мертвых Ночных Эльфов.`,
+                        alignment: 'justify',
+                    },
+                    getUnitAttributesContent({
+                        [States.Agility]: '4-2',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                ],
+                bottomLines: [
+                    getUnitSkillsContent({
+                        [Skills.Guts]: '8',
+                        [Skills.Notice]: '6',
+                        [Skills.Shooting]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Pace]: '4 (Ускорение 1)',
+                        [States.Parry]: '2',
+                        [States.Toughness]: '12 (4)',
+                    }),
+                    quickTextFormat(`**Урон**: 2d8, ББ 3. Также поражает цель на 2 дюйма позади основной цели, нанося тот же урон, но без ББ.`),
+                    quickTextFormat(`**Дистанция**: 20/40/80`),
+                    quickTextFormat(`**Перезарядка**: 1 Действие`),
+                    quickTextFormat(`**Боеприпасы**:\t*Очень много*\t***Много***\t*Мало*\t*Нет*`),
+                ],
+            }),
         ];
     }
 

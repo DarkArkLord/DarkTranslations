@@ -58,6 +58,9 @@ const SettingEdges = Object.freeze({
     Echolocation: 'Echolocation',
     Shadowmeld: 'Shadowmeld',
     Pounce: 'Pounce',
+    Ricochet: 'Ricochet',
+    NaturesStrength: `Nature's Strength`,
+    ControlSpell: 'Control Spell',
 });
 
 const SettingEdgesTranslations = Object.freeze({
@@ -98,6 +101,9 @@ const SettingEdgesTranslations = Object.freeze({
     [SettingEdges.Echolocation]: 'Эхолокация',
     [SettingEdges.Shadowmeld]: 'Слияние с Тенью',
     [SettingEdges.Pounce]: 'Прыжок',
+    [SettingEdges.Ricochet]: 'Рикошет',
+    [SettingEdges.NaturesStrength]: 'Сила природы',
+    [SettingEdges.ControlSpell]: 'Контрользаклинания/Заклинание контроля',
 });
 
 const SettingPowers = Object.freeze({
@@ -129,6 +135,7 @@ const SettingPowers = Object.freeze({
     DeathCoil: 'Death Coil',
     DeathPact: 'Death Pact',
     Paralyze: 'Paralyze',
+    Feedback: 'Feedback',
 });
 
 const SettingPowersTranslations = Object.freeze({
@@ -160,6 +167,7 @@ const SettingPowersTranslations = Object.freeze({
     [SettingPowers.DeathCoil]: 'Лик смерти',
     [SettingPowers.DeathPact]: 'Смертельный союз',
     [SettingPowers.Paralyze]: 'Паралич',
+    [SettingPowers.Feedback]: 'Обратная связь',
 });
 
 module.exports = {
