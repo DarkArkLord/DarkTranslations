@@ -18,7 +18,7 @@ const fonts = {
 
 const docDefinition = {
     info: {
-        title: 'Savaged Warcraft Ru - v0.5',
+        title: 'Savaged Warcraft Ru - v1.0',
         author: 'Dark Ark Lord',
         // subject: 'subject of document',
         // keywords: 'keywords for document',
