@@ -1,4 +1,4 @@
-# Переводы, Dark Ark Lord
+# Перевод Savaged Warcraft
 
 Для запуска:
 
