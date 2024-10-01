@@ -57,7 +57,12 @@ function getRacesContent() {
         }
 
         return [
-            { text: 'Альянс (The Alliance)', style: 'header3', tocItem: true, tocMargin: [tocParagraphOffset * 2, 0, 0, 0], },
+            {
+                text: 'Альянс (The Alliance)',
+                style: 'header3',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
             {
                 ul: [
                     getHumansRaceContent(),
@@ -107,7 +112,13 @@ function getRacesContent() {
         }
 
         return [
-            { text: 'Орда (The Horde)', style: 'header3', tocItem: true, tocMargin: [tocParagraphOffset * 2, 0, 0, 0], },
+            {
+                text: 'Орда (The Horde)',
+                style: 'header3',
+                pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
             {
                 ul: [
                     getOrksRaceContent(),
@@ -151,7 +162,13 @@ function getRacesContent() {
         }
 
         return [
-            { text: 'Стражи (The Sentinels)', style: 'header3', tocItem: true, tocMargin: [tocParagraphOffset * 2, 0, 0, 0], },
+            {
+                text: 'Стражи (The Sentinels)',
+                style: 'header3',
+                pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
             {
                 ul: [
                     getNightElvesRaceContent(),
@@ -226,7 +243,13 @@ function getRacesContent() {
         }
 
         return [
-            { text: 'Нейтральные расы (Neutral Races)', style: 'header3', tocItem: true, tocMargin: [tocParagraphOffset * 2, 0, 0, 0], },
+            {
+                text: 'Нейтральные расы (Neutral Races)',
+                style: 'header3',
+                pageBreak: 'before',
+                tocItem: true,
+                tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
+            },
             {
                 ul: [
                     getGoblinsRaceContent(),
@@ -1555,7 +1578,7 @@ function getArcaneBackgroundsContent() {
                     quickTextFormat(`*"Re-spawns"* можно перевести как *"Возрождает"*, но, вероятно, имеется ввиду не это, так что был выбран вариант *"Перепрезывает"*. Другими словами, через **5** раундов стандартной длительности **Призыва (${Powers.Summon})** призванные гоблины в любом случае взрываются, а при поддержании заклинания *"призываются"* новые. Имеют ли *"призванные поддержанием"* гоблины длительность в **5** раундов, в **1** или пока заклинание поддерживается - не понятно.`),
                     quickTextFormat(`**В рамках перевода оставим этот вопрос на совести автора оригинала**.`),
                     quickTextFormat(`По поводу вида списка заклинаний - это не моя инициатива. В оригинале у автора все предыдущие списки даны в две колонки, а тут одиночным списком.`),
-                ]),
+                ], true),
             ],
         }
     }

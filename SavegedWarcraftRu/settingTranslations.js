@@ -104,7 +104,7 @@ const SettingEdgesTranslations = Object.freeze({
     [SettingEdges.Pounce]: 'Прыжок',
     [SettingEdges.Ricochet]: 'Рикошет',
     [SettingEdges.NaturesStrength]: 'Сила природы',
-    [SettingEdges.ControlSpell]: 'Контрользаклинания/Заклинание контроля',
+    [SettingEdges.ControlSpell]: 'Контроль заклинания/Заклинание контроля',
     [SettingEdges.Swoop]: 'Пикирование',
 });
 

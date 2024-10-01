@@ -99,6 +99,7 @@ function getUnitContent(data) {
             },
         ],
         alignment: 'left',
+        ...(data.newPage ? { pageBreak: 'before' } : {}),
     };
 }
 
@@ -306,6 +307,7 @@ function getAllianceContent() {
                 ],
             }),
             getUnitContent({
+                newPage: true,
                 title: 'Наездник на дракондоре, высший или кровавый эльф (Dragonhawk Rider, High or Blood Elf)',
                 points: '49 + 58 (дракондор) = 107',
                 lines: [
@@ -480,6 +482,7 @@ function getAllianceContent() {
                 ],
             }),
             getUnitContent({
+                newPage: true,
                 title: 'Жрец Света (Priest of the Light)',
                 points: '37',
                 lines: [
@@ -880,6 +883,7 @@ function getAllianceContent() {
             },
             '\n',
             {
+                pageBreak: 'before',
                 table: { // Здания
                     widths: ['*', 'auto', 'auto', 'auto'],
                     body: [
@@ -1662,7 +1666,6 @@ function getAllianceContent() {
             },
             '\n',
             {
-                pageBreak: 'before',
                 table: { // Улучшения огнестрельного оружия
                     widths: ['*', 'auto', 75, 'auto', 'auto'],
                     body: [
@@ -2483,6 +2486,7 @@ function getHordeContent() {
                 quickTextFormat(`Никаких пояснений по поводу **Сонара (Sonar)** не прилагается.`),
             ]),
             getUnitContent({
+                newPage: true,
                 title: 'Шаман (Shaman)',
                 points: '47',
                 lines: [
@@ -5572,7 +5576,7 @@ function getUndeadScourgeContent() {
             }),
             getTipText([
                 quickTextFormat(`Никаких пояснений по поводу **Высасывания Магии (Drain Magic)** не прилагается.`),
-            ]),
+            ], true),
             getUnitContent({
                 title: 'Обсидиановая статуя (Obsidian Statue)',
                 points: '47',

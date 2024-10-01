@@ -180,7 +180,7 @@ const HindrancesTranslations = Object.freeze({
     [Hindrances.OneLeg]: undefined,
     [Hindrances.Outsider]: 'Чужак',
     [Hindrances.Overconfident]: 'Самоуверенность',
-    [Hindrances.Pacifist]: undefined,
+    [Hindrances.Pacifist]: 'Пафицизм',
     [Hindrances.Phobia]: undefined,
     [Hindrances.Poverty]: undefined,
     [Hindrances.Quirk]: 'Причуда',
