@@ -1525,7 +1525,7 @@ function getCharactersContent() {
                     ].join(', ')}`),
                     quickTextFormat(`**Тотемный Воин (Totem Warrior) (Направление (Channeling))**: **Пункты Силы**: 15; **Силы**: ${[
                         `*${getFromDict(PowersTranslations, Powers.Smite)} (Оглушает)*`,
-                        `*Поток огня (Fireburst) (Ударная Волна (Shockwave))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Fireburst)} (Ударная Волна (Shockwave))*`,
                         `*${getFromDict(PowersTranslations, Powers.Blast)} (Громовая поступь (War Stomp), центр на персонаже, оглушает)*`,
                     ].join(', ')}`),
                     quickTextFormat(`**Снаряжение**: ${[
@@ -1536,7 +1536,7 @@ function getCharactersContent() {
             }),
             getTipText([
                 quickTextFormat(`Не уверен насчет "**${Hindrances.Lumbering}**", возможно, стоило перевести это как "**Лесозаготовка**", но такой изъян выглядел бы странно.`),
-                quickTextFormat(`По поводу **${getFromDict(HindrancesTranslations, Hindrances.Lumbering)}**, **${getFromDict(EdgesTranslations, Edges.Charge)}**, **Поток огня (Fireburst)** никаких пояснений не прилагается, увы.`),
+                quickTextFormat(`По поводу **${getFromDict(HindrancesTranslations, Hindrances.Lumbering)}**, **${getFromDict(EdgesTranslations, Edges.Charge)}**, **${getFromDict(PowersTranslations, Powers.Fireburst)}** никаких пояснений не прилагается, увы.`),
             ], true),
             getCharContent({
                 border: borderColor.Horde,
@@ -2687,6 +2687,152 @@ function getCharactersContent() {
                 tocItem: true,
                 tocMargin: [tocParagraphOffset * 2, 0, 0, 0],
             },
+            getCharContent({
+                border: borderColor.Neutrals,
+                leftOffset: false,
+                image: 'pandarenbrewmaster.png',
+                bigImage: true,
+                title: `Ябба Вискифист (Yabba Whiskeyfist)`,
+                commonTitle: 'Пандаренский пивовар',
+                points: undefined,
+                withPictLines: [
+                    {
+                        text: `Ябба Вискифист — один из пандаренов. Давным-давно они делили землю с Калдорай. Когда мир раскололся, пандарены исчезли на западе. Теперь они вернулись, по общему мнению, из своей островной империи Пандария. Они жизнерадостны, духовны и неизменно испытывают глубокую любовь к выпивке. По этой причине у некоторых из них появились невероятные боевые способности, поскольку они учатся направлять дух... ну, духов!`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (56 опыта)`),
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '8',
+                        [States.Smarts]: '6',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '10',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Climbing]: '4',
+                        [Skills.Fighting]: '10',
+                        [Skills.Geomancy]: '8',
+                        [Skills.Guts]: '6',
+                        [Skills.Knowledge]: '8 (Духи)',
+                        [Skills.Taunt]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2',
+                        [States.Pace]: '4 (6 на четвереньках)',
+                        [States.Parry]: '7',
+                        [States.Toughness]: '10 (8)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Habit)} (Алкоголик (Alcoholic))`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Pacifist)} (мелкий)`,
+                        `${getFromDict(HindrancesTranslations, Hindrances.Quirk)} (Всегда Веселый (Always Cheerful))`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `Когти (Claws) (Сила+1)`,
+                        `${getFromDict(EdgesTranslations, Edges.ArcaneBackground)} (Пивовар (Brewmaster))`,
+                        `${getFromDict(EdgesTranslations, Edges.Quick)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ImprovedDodge)}`,
+                        `${getFromDict(EdgesTranslations, Edges.ImprovedFrenzy)}`,
+                        `${getFromDict(EdgesTranslations, Edges.FirstStrike)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Пивовар (Brewmaster) (Направление (Channeling))**: **Пункты Силы**: 15; **Силы**: ${[
+                        `*${getFromDict(PowersTranslations, Powers.Deflection)} (Пьяное Плетение (Drunken Weaving))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Smite)} (Пьяный Драчун  (Drunken Brawler))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Stun)} (Одна цель - Облить спиртом (Douse with alcohol))*`,
+                        `*${getFromDict(PowersTranslations, Powers.Fireburst)} (Огненное Дыхание (Breath of Fire), +1d6 урона по цели, облитой алкоголем)*`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Бамбуковая броня (+2)`,
+                        `Посох (Сила+2, Парирование +1, Двуручное)`,
+                    ].join(', ')}`),
+                ],
+            }),
+            getCharContent({
+                newPage: true,
+                border: borderColor.Neutrals,
+                leftOffset: true,
+                image: 'gryphon.png',
+                bigImage: false,
+                title: `Гаррат Громовой Молот и Крик охотника (Garrath Wildhammer and Huntscream)`,
+                commonTitle: undefined,
+                points: '112',
+                withPictLines: [
+                    {
+                        text: `Дворфы Дикого Молота из гор Каз Модана — странная и изолированная группа. Их мало волнует археология или гаджеты их сородичей. Вместо этого они сосредоточены на своей связи с грифонами Заоблачного пика. И выпивке. Не стоит забывать о выпивке.`,
+                        alignment: 'justify',
+                    },
+                    quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
+                ],
+                bottomLines: [
+                    getUnitAttributesContent({
+                        [States.Agility]: '6',
+                        [States.Smarts]: '4',
+                        [States.Spirit]: '8',
+                        [States.Strength]: '8',
+                        [States.Vigor]: '8',
+                    }),
+                    getUnitSkillsContent({
+                        [Skills.Fighting]: '6',
+                        [Skills.Guts]: '8',
+                        [Skills.Intimidation]: '8',
+                        [Skills.Notice]: '6',
+                        [Skills.Riding]: '6',
+                        [Skills.Throwing]: '8',
+                    }),
+                    getUnitCommonAttributesContent({
+                        [States.Charisma]: '-2',
+                        [States.Pace]: '5',
+                        [States.Parry]: '4',
+                        [States.Toughness]: '9 (6)',
+                    }),
+                    quickTextFormat(`**Изъяны**: ${[
+                        `${getFromDict(HindrancesTranslations, Hindrances.Outsider)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Черты**: ${[
+                        `${getFromDict(EdgesTranslations, Edges.LowLightVision)}`,
+                        `${getFromDict(EdgesTranslations, Edges.Cavalry)}`,
+                        `${getFromDict(EdgesTranslations, Edges.SteadyHands)}`,
+                        `${getFromDict(EdgesTranslations, Edges.StrafingRun)}`,
+                    ].join(', ')}`),
+                    quickTextFormat(`**Снаряжение**: ${[
+                        `Бригандина (+3)`,
+                        `Громовой Молот (Сила+2, 3/6/12; поражает 1 дюйм за целью за каждый Подъем)`,
+                    ].join(', ')}`),
+                    { text: `Грифон (Gryphon)`, style: 'header4', },
+                    {
+                        stack: [
+                            getUnitAttributesContent({
+                                [States.Agility]: '10',
+                                [States.Smarts]: '4',
+                                [States.Spirit]: '8',
+                                [States.Strength]: '12',
+                                [States.Vigor]: '6',
+                            }),
+                            getUnitSkillsContent({
+                                [Skills.Fighting]: '8',
+                                [Skills.Guts]: '8',
+                                [Skills.Notice]: '8',
+                                [Skills.Tracking]: '6',
+                            }),
+                            getUnitCommonAttributesContent({
+                                [States.Pace]: '6 (Полет 12 дюймов, Подъем 4 дюйма)',
+                                [States.Parry]: '6',
+                                [States.Toughness]: '9',
+                            }),
+                            quickTextFormat(`**Способности**: ${[
+                                `${getFromDict(EdgesTranslations, Edges.Size)} +3`,
+                                `${getFromDict(EdgesTranslations, Edges.Flight)}`,
+                                `Клюв/Когти (Beak/Claws) (Сила+2)`,
+                                `${getFromDict(EdgesTranslations, Edges.Swoop)}`,
+                            ].join(', ')}`),
+                        ],
+                        margin: [paragraphOffset, 0, 0, 0],
+                    },
+                ],
+            }),
         ];
     }
 
@@ -2704,100 +2850,6 @@ function getCharactersContent() {
         getSentinelsCharacters(),
         getUndeadCharacters(),
         getNeutralCharacters(),
-
-
-        getCharContent({
-            border: borderColor.Sentinels,
-            leftOffset: false,
-            image: 'bloodmage.png',
-            bigImage: true,
-            title: `Title (Title)`,
-            commonTitle: 'commonTitle',
-            points: undefined,
-            withPictLines: [
-                {
-                    text: `123`,
-                    alignment: 'justify',
-                },
-                quickTextFormat(`**Ранг**: ${getFromDict(RanksTranslations, Ranks.Veteran)} (57 опыта)`),
-            ],
-            bottomLines: [
-                getUnitAttributesContent({
-                    [States.Agility]: '10',
-                    [States.Smarts]: '10',
-                    [States.Spirit]: '10',
-                    [States.Strength]: '10',
-                    [States.Vigor]: '10',
-                }),
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '10',
-                }),
-                getUnitCommonAttributesContent({
-                    [States.Charisma]: '8',
-                    [States.Pace]: '8',
-                    [States.Parry]: '6',
-                    [States.Toughness]: '10 (8)',
-                }),
-                quickTextFormat(`**Изъяны**: ${[
-                    `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Черты**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.Armor)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Тайная Магия (Arcane Magic)**: **Пункты Силы**: 20; **Заклинания**: ${[
-                    `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
-                ].join(', ')}`),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `aaaaa`,
-                ].join(', ')}`),
-            ],
-        }),
-        getCharContent({
-            border: borderColor.Sentinels,
-            leftOffset: true,
-            image: 'bloodmage.png',
-            bigImage: false,
-            title: `Title (Title)`,
-            commonTitle: 'commonTitle',
-            points: '666',
-            withPictLines: [
-                {
-                    text: `123`,
-                    alignment: 'justify',
-                },
-                quickTextFormat(`**Личность**: ${'_'.repeat(persinalityLineLength)}`),
-                getUnitAttributesContent({
-                    [States.Agility]: '10',
-                    [States.Smarts]: '10',
-                    [States.Spirit]: '10',
-                    [States.Strength]: '10',
-                    [States.Vigor]: '10',
-                }),
-                getUnitSkillsContent({
-                    [Skills.Fighting]: '10',
-                }),
-            ],
-            bottomLines: [
-                getUnitCommonAttributesContent({
-                    [States.Charisma]: '8',
-                    [States.Pace]: '8',
-                    [States.Parry]: '6',
-                    [States.Toughness]: '10 (8)',
-                }),
-                quickTextFormat(`**Изъяны**: ${[
-                    `${getFromDict(HindrancesTranslations, Hindrances.AllThumbs)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Черты**: ${[
-                    `${getFromDict(EdgesTranslations, Edges.Armor)}`,
-                ].join(', ')}`),
-                quickTextFormat(`**Тайная Магия (Arcane Magic)**: **Пункты Силы**: 20; **Заклинания**: ${[
-                    `*${getFromDict(PowersTranslations, Powers.Bolt)}*`,
-                ].join(', ')}`),
-                quickTextFormat(`**Снаряжение**: ${[
-                    `aaaaa`,
-                ].join(', ')}`),
-            ],
-        }),
     ];
 }
 
