@@ -1,4 +1,4 @@
-# Переводы
+# Savaged Warcraft Ru
 
 Для запуска:
 
